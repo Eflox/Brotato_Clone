@@ -10,14 +10,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Player Player;
-    public ScriptableObject test;
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            EquipItem(test);
-        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void EquipItem(ScriptableObject item)

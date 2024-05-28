@@ -6,32 +6,46 @@
 
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public TMP_Text buttonText;
-    public Image buttonImage;
+    [SerializeField]
+    private TMP_Text _buttonText;
+    [SerializeField]
+    private Image _buttonImage;
+
+    [SerializeField]
+    private UnityAction _onHover;
 
     private Color originalTextColor;
     private Color originalBackgroundColor;
 
     void Start()
     {
-        originalTextColor = buttonText.color;
-        originalBackgroundColor = buttonImage.color;
+        if (_buttonText != null)
+            originalTextColor = _buttonText.color;
+        if (_buttonImage != null)
+            originalBackgroundColor = _buttonImage.color;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonText.color = Color.black;
-        buttonImage.color = Color.white;
+        if (_buttonText != null)
+            _buttonText.color = Color.black;
+
+        if (_buttonImage != null)
+            _buttonImage.color = Color.white;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        buttonText.color = originalTextColor;
-        buttonImage.color = originalBackgroundColor;
+        if (_buttonText != null)
+            _buttonText.color = originalTextColor;
+
+        if (_buttonImage != null)
+            _buttonImage.color = originalBackgroundColor;
     }
 }

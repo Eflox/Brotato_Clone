@@ -1489,6 +1489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player:
     Stats:
+      Materials: 0
       MaxHP: 0
       HPRegen: 0
       LifeSteal: 0
@@ -1532,7 +1533,6 @@ MonoBehaviour:
       FreeRolls: 0
       ItemRecycling: 0
       MaterialsInterestGain: 0
-  test: {fileID: 11400000, guid: fd26a3add4a4c8241a72dabf4dfbca39, type: 2}
 --- !u!1 &283774353
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,8 +3729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 1660128687}
-  buttonImage: {fileID: 739204684}
+  _buttonText: {fileID: 1660128687}
+  _buttonImage: {fileID: 739204684}
 --- !u!1 &756032831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,8 +5664,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 1612151747}
-  buttonImage: {fileID: 1189395643}
+  _buttonText: {fileID: 1612151747}
+  _buttonImage: {fileID: 1189395643}
 --- !u!1 &1189915228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7501,7 +7501,7 @@ GameObject:
   - component: {fileID: 1660128688}
   - component: {fileID: 1660128687}
   m_Layer: 5
-  m_Name: Price
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8444,8 +8444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 23354355}
-  buttonImage: {fileID: 1872983201}
+  _buttonText: {fileID: 23354355}
+  _buttonImage: {fileID: 1872983201}
 --- !u!1 &1880175011
 GameObject:
   m_ObjectHideFlags: 0
@@ -10077,8 +10077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 1883242897}
-  buttonImage: {fileID: 2129128578}
+  _buttonText: {fileID: 1883242897}
+  _buttonImage: {fileID: 2129128578}
 --- !u!1001 &1041315118988295266
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player:
     Stats:
+      Materials: 10000
       MaxHP: 0
       HPRegen: 0
       LifeSteal: 0
@@ -89,4 +90,3 @@ MonoBehaviour:
       FreeRolls: 0
       ItemRecycling: 0
       MaterialsInterestGain: 0
-  test: {fileID: 11400000, guid: f5d03589ee7aae34d9b9317395f16bbb, type: 2}

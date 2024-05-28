@@ -5,6 +5,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelectionManager : MonoBehaviour
 {
@@ -17,12 +18,11 @@ public class CharacterSelectionManager : MonoBehaviour
     private void Start()
     {
         _playerController = Instantiate(_playerPrefab).GetComponent<PlayerController>();
-
-        _playerController.EquipItem(testCharacter);
     }
 
-    private void LoadCharacters()
+    public void LoadCharacter(ScriptableObject character)
     {
-
+        _playerController.EquipItem(character);
+        SceneManager.LoadScene("GameScene");
     }
 }

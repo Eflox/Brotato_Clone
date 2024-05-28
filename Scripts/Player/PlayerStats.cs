@@ -7,6 +7,9 @@
 [System.Serializable]
 public class PlayerStats
 {
+    //Variable Stats
+    public int Materials;
+
     //Primary Stats
     public int MaxHP;
     public int HPRegen;

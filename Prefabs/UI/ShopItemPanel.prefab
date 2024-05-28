@@ -558,8 +558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 6630358299167072535}
-  buttonImage: {fileID: 817680596242458086}
+  _buttonText: {fileID: 6630358299167072535}
+  _buttonImage: {fileID: 817680596242458086}
 --- !u!1 &5428864726915269561
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,8 +694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonText: {fileID: 8382052564403777362}
-  buttonImage: {fileID: 5451446262865097305}
+  _buttonText: {fileID: 8382052564403777362}
+  _buttonImage: {fileID: 5451446262865097305}
 --- !u!1 &5862045073665280353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 8708852199347953700}
   - component: {fileID: 6630358299167072535}
   m_Layer: 5
-  m_Name: Price
+  m_Name: PriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
