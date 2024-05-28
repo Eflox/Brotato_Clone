@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c78bcfeff82234cad5e55362494955, type: 3}
   m_Name: Cryptid
   m_EditorClassIdentifier: 
-  Description: 
-  Icon: {fileID: 0}
-  Name: 
+  Description: 'More trees spawn [gray](+6)[c] [nl] Gain [g]12[c] material and XP
+    for every living tree at the end of a wave [nl] [g]+3 HP Regeneration[c] for
+    every current living tree [nl] Dodge is capped at [g]70%[c] [nl] [g]+3 Attack
+    Speed[c] until the end of the wave when you dodge an attack [nl] [r]-100%[c]
+    Life Steal [nl] [r]-100[c] Range [nl] [r]-50%[c] materials dropped from enemies '
+  Icon: {fileID: 21300000, guid: e6d6711d20f1c2d4ca0b2f35fc057bd3, type: 3}
+  Name: Cryptid
   Rarity: 0

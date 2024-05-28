@@ -92,43 +92,40 @@ Jack
 [g]+75%[c] damage against bosses and elites [nl] [g]+200%[c] materials dropped from enemies [nl] -75% Enemies [nl] [r]+250%[c] Enemy health [nl] [r]+50%[c] Enemy damage [nl] [gray]Note: On higher danger levels, only Elites spawn, never hordes[c]
 
 Lich
-
-
+[g]+10[c] HP Regeneration [nl] [g]+10%[c] Life Steal [nl] [g]100%[c] chance to deal [g]10[c] (Max HP) damage to a random enemy when you heal [nl] [r]Damage[c] modifications are reduced by [r]50%[c]
 
 Apprentice
+[g]+2 Melee Damage[c] when you level up [nl] [g]+1 Ranged Damage[c] when you level up [nl] [g]+1 Elemental Damage[c] when you level up [nl] [g]+1 Engineering[c] when you level up [nl] [r]-2 Max HP[c] when you level up
 
-
+Cryptid
+More trees spawn [gray](+6)[c] [nl] Gain [g]12[c] material and XP for every living tree at the end of a wave [nl] [g]+3 HP Regeneration[c] for every current living tree [nl] Dodge is capped at [g]70%[c] [nl] [g]+3 Attack Speed[c] until the end of the wave when you dodge an attack [nl] [r]-100%[c] Life Steal [nl] [r]-100[c] Range [nl] [r]-50%[c] materials dropped from enemies
 
 Fisherman
+[g]+5[c] Max HP [nl] [g]+20[c] Harvesting [nl] Shops always sell a [g]Bait[c] [nl] [g]-100% Bait[c] price [nl] [g]+2 Harvesting[c] for every [g]1 Bait[c] you have [nl] Baits make some special enemies spawn throughout all future waves [nl] [r]-50%[c] materials dropped from enemies
 
-
+Golem
+[g]+20[c] Max HP [nl] [g]Max HP[c] modifications are increased by [g]33%[c] [nl] [g]Armor[c] modifications are increased by [g]33%[c] [nl] [g]+40% Attack Speed[c] when you have less than 50% health [nl] [g]+20% Speed[c] when you have less than 50% health [nl] You can't heal in any way
 
 King
-
-
+[g]+50[c] Luck [nl] [g]+25% Damage[c] for every [g]Tier IV weapon[c] you have [nl] [g]+25% Attack Speed[c] for every [g]Tier IV weapon[c] you have [nl] [g]+5 Max HP[c] for every different [g]Tier IV item[c] you have [nl] [r]-15% Damage[c] for every [r]Tier I weapon[c] you have [nl] [r]-15% Attack Speed[c] for every [r]Tier I weapon[c] you have [nl] [r]-2 Max HP[c] for every different [r]Tier I item[c] you have [nl] [234,226,176]UNLISTED BONUS:[c] Starting weapon is [g]Tier II[c]
 
 Renegade
-
-
+[g]+2[c] projectiles [nl] Projectiles pierce through [g]1[c] additional target [nl] [g]+10% Damage[c] for every different Tier I item you have [nl] You can't equip melee weapons [nl] [r]-400%[c] Damage [nl] [r]-50%[c] accuracy [nl] [r]% Damage[c] modifications are reduced by [r]80%[c]
 
 One-Armed
-
-
+[g]+2[c] projectiles [nl] Projectiles pierce through [g]1[c] additional target [nl] [g]+10% Damage[c] for every different Tier I item you have [nl] You can't equip melee weapons [nl] [r]-400%[c] Damage [nl] [r]-50%[c] accuracy [nl] [r]% Damage[c] modifications are reduced by [r]80%[c]
 
 Bull
-
-
+[g]+20[c] Max HP [nl] [g]+15[c] HP Regeneration [nl] [g]+10[c] Armor [nl] [g]HP Regeneration[c] modifications are increased by [g]50%[c] [nl] You explode for [g]30[c] (300% Melee Damage, 300% Ranged Damage, 300% Elemental Damage) damage when you take damage [nl] This explosion has a 1.5x crit multiplier [nl] You can't equip weapons
 
 Soldier
-
-
+[g]+50% Damage[c] while standing still [nl] [g]+50% Attack Speed[c] while standing still [nl] [g]+10%[c] Speed [nl] [g]+200%[c] pickup range [nl] [g]+15[c] Knockback [nl] You can't attack while moving
 
 Masochist
-
-
+[g]+5% Damage[c] when you take damage until the end of the wave [nl] [g]+10[c] Max HP [nl] [g]+20[c] HP Regeneration [nl] [g]+8[c] Armor [nl] [r]-100%[c] Damage
 
 Knight
-
-
+[g]+2 Melee Damage[c] for every [g]1 Armor[c] you have [nl] [g]+5[c] Armor [nl] You can't equip ranged weapons [nl] You can only equip tier [g]2[c] weapons or above [nl] [r]% Attack Speed[c] modifications are reduced by [r]50%[c] [nl] [r]Harvesting[c] modifications are reduced by [r]80%[c]
 
 Demon
+[g]+50%[c] of your [g]Materials[c] are converted into [g]Max HP[c] at the end of a wave ([g]13 Materials=1 Max HP[c]) [nl] You buy items using Max HP instead of materials

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7415a6c89fb544182bf8eb482bd916, type: 3}
+  m_Name: Fisherman
+  m_EditorClassIdentifier: 
+  Description: '[g]+5[c] Max HP [nl] [g]+20[c] Harvesting [nl] Shops always sell
+    a [g]Bait[c] [nl] [g]-100% Bait[c] price [nl] [g]+2 Harvesting[c] for every [g]1
+    Bait[c] you have [nl] Baits make some special enemies spawn throughout all future
+    waves [nl] [r]-50%[c] materials dropped from enemies '
+  Icon: {fileID: 21300000, guid: 82a5874fe541b2f4491cc54f82a773cb, type: 3}
+  Name: Fisherman
+  Rarity: 0

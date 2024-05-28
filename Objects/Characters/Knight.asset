@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88adc7b9202c1fb4a8fe1ccd9cba89a9, type: 3}
   m_Name: Knight
   m_EditorClassIdentifier: 
-  Description: 
-  Icon: {fileID: 0}
-  Name: 
+  Description: '[g]+2 Melee Damage[c] for every [g]1 Armor[c] you have [nl] [g]+5[c]
+    Armor [nl] You can''t equip ranged weapons [nl] You can only equip tier [g]2[c]
+    weapons or above [nl] [r]% Attack Speed[c] modifications are reduced by [r]50%[c]
+    [nl] [r]Harvesting[c] modifications are reduced by [r]80%[c] '
+  Icon: {fileID: 21300000, guid: 688c773e58fb771428a4a78fc6520770, type: 3}
+  Name: Knight
   Rarity: 0
