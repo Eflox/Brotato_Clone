@@ -12,6 +12,4 @@ public abstract class ItemBase : ScriptableObject
     public string Description;
     public Sprite Icon;
     public Rarity Rarity;
-    public int BasePrice;
-    public int Limit;
 }

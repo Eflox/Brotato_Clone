@@ -16,33 +16,37 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (test is IItem item)
-            {
-                EquipItem(item);
-            }
+            EquipItem(test);
         }
     }
 
-    public void EquipItem(IItem item)
+    public void EquipItem(ScriptableObject item)
     {
-        Player.Items.Add(item);
-
-        var statsType = typeof(PlayerStats);
-        var itemType = item.GetType();
-
-        foreach (var itemField in itemType.GetFields(BindingFlags.Public | BindingFlags.Instance))
+        if (item is IItem equippableItem)
         {
-            var isEffectField = itemField.GetCustomAttribute<EffectAttribute>() != null;
-            if (isEffectField)
+            Player.Items.Add(equippableItem);
+
+            var statsType = typeof(PlayerStats);
+            var itemType = equippableItem.GetType();
+
+            foreach (var itemField in itemType.GetFields(BindingFlags.Public | BindingFlags.Instance))
             {
-                var statField = statsType.GetField(itemField.Name);
-                if (statField != null && statField.FieldType == itemField.FieldType)
+                var isEffectField = itemField.GetCustomAttribute<EffectAttribute>() != null;
+                if (isEffectField)
                 {
-                    int valueToAdd = (int)itemField.GetValue(item);
-                    int currentStatValue = (int)statField.GetValue(Player.Stats);
-                    statField.SetValue(Player.Stats, currentStatValue + valueToAdd);
+                    var statField = statsType.GetField(itemField.Name);
+                    if (statField != null && statField.FieldType == itemField.FieldType)
+                    {
+                        int valueToAdd = (int)itemField.GetValue(equippableItem);
+                        int currentStatValue = (int)statField.GetValue(Player.Stats);
+                        statField.SetValue(Player.Stats, currentStatValue + valueToAdd);
+                    }
                 }
             }
+        }
+        else
+        {
+            Debug.LogWarning("Tried to equip something that is not an item.");
         }
     }
 }

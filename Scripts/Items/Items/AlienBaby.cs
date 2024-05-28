@@ -7,11 +7,15 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AlienBaby", menuName = "Game/Item/AlienBaby")]
-public class AlienBaby : ItemBase, IItem
+public class AlienBaby : ItemBase, IItem, IBuyable
 {
-    [Effect]
-    public int MaxHP = 15;
+    public int BasePrice => 80;
+    public int Limit => 0;
 
     [Effect]
-    public int EnemySpeed = 8;
+    public readonly int MaxHP = 15;
+
+    [Effect]
+    public readonly int EnemySpeed = 8;
+
 }

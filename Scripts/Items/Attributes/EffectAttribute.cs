@@ -6,7 +6,7 @@
 
 using System;
 
-[AttributeUsage(AttributeTargets.Field)]
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class EffectAttribute : Attribute
 {
 }
