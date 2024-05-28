@@ -11,13 +11,13 @@ using UnityEngine.UI;
 public class CharacterPanelUI : MonoBehaviour
 {
     [SerializeField]
+    private TMP_Text _characterDescription;
+
+    [SerializeField]
     private Image _characterIcon;
 
     [SerializeField]
     private TMP_Text _characterName;
-
-    [SerializeField]
-    private TMP_Text _characterDescription;
 
     public void SelectCharacter(CharacterSelectionButton button)
     {
@@ -25,7 +25,7 @@ public class CharacterPanelUI : MonoBehaviour
         {
             _characterName.text = item.Name;
             _characterIcon.sprite = item.Icon;
-            _characterDescription.text = item.Description;
+            _characterDescription.text = item.Description.WithNL().WithColors();
         }
     }
 }

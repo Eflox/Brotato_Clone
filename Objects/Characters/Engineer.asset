@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3e077d8f44fc6499f0504262a4d47e, type: 3}
+  m_Name: Engineer
+  m_EditorClassIdentifier: 
+  Description: '[g]+10[c] Engineering [nl] [g]Engineering[c] modifications are increased
+    by [g]25%[c] [nl] You start with [g]1 Wrench[c] [nl] Structures spawn close to
+    each other [nl] [r]Damage[c] modifications are reduced by [r]50%[c] '
+  Icon: {fileID: 21300000, guid: 0dc60b2c037ecc8479f4dbf13994dd94, type: 3}
+  Name: Engineer
+  Rarity: 0

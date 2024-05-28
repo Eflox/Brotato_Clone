@@ -354,5 +354,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c339d0b3bb7d81a4fa3116c2da1892eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 0}
+  Character: {fileID: 11400000, guid: 9f81a0597836cf94b9dcd690242110c7, type: 2}
   _characterIcon: {fileID: 8940425620866825526}

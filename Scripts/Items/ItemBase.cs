@@ -8,8 +8,11 @@ using UnityEngine;
 
 public abstract class ItemBase : ScriptableObject
 {
-    public string Name;
     public string Description;
+
     public Sprite Icon;
+
+    public string Name;
+
     public Rarity Rarity;
 }

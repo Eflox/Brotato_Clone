@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1229234c33040f948b180ca66c01414a, type: 3}
+  m_Name: Chunky
+  m_EditorClassIdentifier: 
+  Description: '[g]Max HP[c] modifications are increased by [g]25%[c] [nl] [g]+1%[c]
+    Damage for every [g]3 Max HP[c] you have [g]+3[c] [nl] [g]+3[c] HP recovered
+    from consumables [nl] [r]-100%[c] Life Steal [nl] [r]HP Regeneration[c] modifications
+    are reduced by [r]50%[c] [nl] [r]Dodge[c] modifications are reduced by [r]50%[c]
+    [nl] [r]Speed[c] modifications are reduced by [r]100%[c] '
+  Icon: {fileID: 21300000, guid: 94cc7e91b08a7f842870ee54f9dca673, type: 3}
+  Name: Chunky
+  Rarity: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292329b4723c3fc48846c58ae33d7e4c, type: 3}
+  m_Name: Gladiator
+  m_EditorClassIdentifier: 
+  Description: '[g]+20% Attack Speed[c] for every different weapon you have [nl]
+    [g]+5[c] Melee Damage [nl] You can''t equip ranged weapons [nl] [r]-40%[c] Attack
+    Speed [nl] [r]-30[c] Luck '
+  Icon: {fileID: 21300000, guid: d6ff277244f3b0b4bbcb31ddf5091421, type: 3}
+  Name: Gladiator
+  Rarity: 0

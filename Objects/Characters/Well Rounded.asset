@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b0f2c2accf37f41b7ffa40fe72fec9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d9f01fcd6d6cb044b3580108a3ae90b, type: 3}
   m_Name: Well Rounded
   m_EditorClassIdentifier: 
+  Description: '[g]+5[c] Max Hp[nl][g]+5%[c] Speed[nl][g]+8[c] Harvesting'
+  Icon: {fileID: 21300000, guid: 65d65919e1b71c147b0b48b5985f4999, type: 3}
   Name: Well Rounded
-  Description: '<color=#00ff00>+5</color> Max Hp <color=#00ff00>+5%</color> Speed
-    <color=#00ff00>+8</color> Harvesting '
-  Icon: {fileID: 21300000, guid: 9cf97fec8ec4a8d4d80ad9f8e03dadec, type: 3}
   Rarity: 0

@@ -1490,6 +1490,7 @@ MonoBehaviour:
   Player:
     Stats:
       Materials: 0
+      MaxWeapons: 6
       MaxHP: 0
       HPRegen: 0
       LifeSteal: 0
@@ -3731,6 +3732,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 1660128687}
   _buttonImage: {fileID: 739204684}
+  _onHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _onNotHover:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &756032831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,6 +5673,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 1612151747}
   _buttonImage: {fileID: 1189395643}
+  _onHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _onNotHover:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1189915228
 GameObject:
   m_ObjectHideFlags: 0
@@ -8446,6 +8459,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 23354355}
   _buttonImage: {fileID: 1872983201}
+  _onHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _onNotHover:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1880175011
 GameObject:
   m_ObjectHideFlags: 0
@@ -10079,6 +10098,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 1883242897}
   _buttonImage: {fileID: 2129128578}
+  _onHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _onNotHover:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1041315118988295266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10091,6 +10116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3340713113843428947, guid: a80e9389a1cacd345b6914a3648c9710, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 12a4427f8081a684eb8ea85245869884, type: 3}
     - target: {fileID: 9099281010092151815, guid: a80e9389a1cacd345b6914a3648c9710, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

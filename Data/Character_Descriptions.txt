@@ -1,0 +1,134 @@
+Well Rounded
+[g]+5[c] Max Hp[nl][g]+5%[c] Speed[nl][g]+8[c] Harvesting
+
+Brawler
+[g]+50%[c] Attack Speed with [g]Unarmed[c] weapons [nl] You start with [g]1 Fist[c] [nl] [g]+15%[c] Dodge [nl] [r]-50[c] Range [nl] [r]-50[c] Ranged Damage
+
+Crazy
+[g]+100 Range[c] with [g]Precise[c] weapons [nl] [g]+25%[c] Attack Speed [nl] You start with [g]1 Knife[c] [nl] [r]-30%[c] Dodge [nl] [r]-10[c] Engineering [nl] [r]-10[c] Ranged Damage
+
+Ranger
+[g]+50[c] Range [nl] You start with [g]1 Pistol[c] [nl] [g]Ranged Damage[c] modifications are increased by [g]50%[c] [nl] You can't equip melee weapons [nl] [r]Max HP[c] modifications are reduced by [r]25%[c]
+
+Mage
+[g]Elemental Damage[c] modifications are increased by [g]33%[c] [nl] You start with [g]1 Snake[c] [nl] You start with [g]1 Scared Sausage[c] [nl] [r]Melee Damage[c] Modifications are reduced by [r]-100%[c] [nl] [r]Ranged Damage[c] Modifications are reduced by [r]-100%[c] [nl] [r]Engineering[c] Modifications are reduced by [r]-100%[c]
+
+Chunky
+[g]Max HP[c] modifications are increased by [g]25%[c] [nl] [g]+1%[c] Damage for every [g]3 Max HP[c] you have [g]+3[c] [nl] [g]+3[c] HP recovered from consumables [nl] [r]-100%[c] Life Steal [nl] [r]HP Regeneration[c] modifications are reduced by [r]50%[c] [nl] [r]Dodge[c] modifications are reduced by [r]50%[c] [nl] [r]Speed[c] modifications are reduced by [r]100%[c]
+
+Old
+[g]-25%[c] Enemy speed [nl] [g]+10[c] Harvesting [nl] -33% Map Size [nl] -10% Enemies [nl] [r]-10%[c] Speed
+
+Lucky
+[g]+100[c] Luck [nl] [g]Luck[c] modifications are increased by [g]25%[c] [nl] [g]+75%[c] chance to deal [g]1[c] (15% Luck) damage to a random enemy when you pick up a material [nl] [r]-60%[c] Attack Speed [nl] [r]-50%[c] XP Gain
+
+Mutant
+[g]+200%[c] XP Gain [nl] [r]+50%[c] Items Price
+
+Generalist
+[g]+2 Melee Damage[c] for every [g]1 Ranged Damage[c] you have [nl] [g]+1 Ranged Damage[c] for every [g]2 Melee Damage[c] you have [nl] You can only equip [r]3[c] melee weapons and [r]3[c] ranged weapons at a time
+
+Loud
+[g]+30%[c] Damage [nl] +50% Enemies [nl] [r]-3 Harvesting[c] at the end of a wave
+
+Multitasker
+[g]+20%[c] Damage [nl] You can equip up to [g]12[c] weapons at a time [nl] [r]-5% Damage[c] for every weapon you have
+
+Wilding
+[g]+30% Life Steal[c] with [g]Primitive[c] weapons [nl] You start with [g]1 Stick[c] [nl] You can't equip weapons above tier [r]2[c]
+
+Pacifist
+Gain [g]0.65[c] material and XP for every living enemy at the end of a wave [nl] You start with [g]1 Lumberjack Shirt[c] [nl] [r]-100%[c] Damage [nl] [r]-100[c] Engineering
+
+Gladiator
+[g]+20% Attack Speed[c] for every different weapon you have [nl] [g]+5[c] Melee Damage [nl] You can't equip ranged weapons [nl] [r]-40%[c] Attack Speed [nl] [r]-30[c] Luck
+
+Saver
+[g]+15[c] Harvesting [nl] [g]+1% Damage[c] for every [g]25 Materials[c] you have [nl] You start with [g]1 Piggy Bank[c] [nl] [r]+50%[c] Item & Weapon Price
+
+Sick
+[g]+12[c] Max HP [nl] [g]+25%[c] Life Steal [nl] You take [r]1[c] damage per second (does not give invulnerability time) [nl] [r]-100[c] HP Regeneration
+
+Farmer
+[g]+20[c] Harvesting [nl] Harvesting increases by an additional [g]3%[c] at the end of a wave [nl] [g]+1[c] Harvesting when eating a consumable while at full health [nl] [r]-50%[c] materials dropped
+
+Ghost
+[g]+10 Damage[c] with [g]Ethereal[c] weapons [nl] [g]+30%[c] Dodge [nl] Dodge is capped at [g]90%[c] [nl] [r]-100[c] Armor
+
+Speedy
+[g]+30%[c] Speed [nl] [g]+1 Melee Damage[c] for every [g]2% Speed[c] you have [nl] [r]-100 Armor[c] while standing still [nl] [r]-3[c] Armor
+
+Entrepreneur
+[g]-25%[c] Items Price [nl] [g]Harvesting[c] modifications are increased by [g]50%[c] [nl] Gain [g]25%[c] more materials from recycling items [nl] [r]-100%[c] of your materials at the start of waves [nl] [r]Damage[c] modifications are reduced by [r]50%[c]
+
+Engineer
+[g]+10[c] Engineering [nl] [g]Engineering[c] modifications are increased by [g]25%[c] [nl] You start with [g]1 Wrench[c] [nl] Structures spawn close to each other [nl] [r]Damage[c] modifications are reduced by [r]50%[c]
+
+Explorer
+More trees spawn [nl] You start with [g]1 Lumberjack Shirt[c] [nl] [g]+10%[c] Speed [nl] [g]+50%[c] pickup range [nl] +33% Map Size [nl] +25% Enemies [nl] [r]-50%[c] materials dropped from enemies [nl] [r]+10%[c] Enemy Speed [nl] [r]-40%[c] Damage
+
+Doctor
+[g]+200% Attack Speed[c] with [g]Medical[c] weapons [nl] [g]+5[c] HP Regeneration [nl] HP Regeneration is doubled [nl] [g]+5[c] Harvesting [nl] [r]-100%[c] Attack Speed [nl] [r]Armor[c] modifications are reduced by [r]50%[c]
+
+Hunter
+[g]+100[c] Range [nl] [g]+1% Damage[c] for every [g]10 Range[c] you have [nl] [g]Crit Chance[c] modifications are increased by [g]25%[c] [nl] [r]Harvesting[c] modifications are reduced by [r]100%[c] [nl] [r]Max HP[c] modifications are reduced by [r]33%[c]
+
+Artificer
+[g]+175%[c] Explosion Damage [nl] [g]+4% Explosion Size[c] for every [g]1 Elemental Damage[c] you have [nl] [r]-100%[c] Damage [nl] [r]Armor[c] modifications are reduced by [r]50%[c]
+
+ArmsDealer
+[g]-95%[c] Weapons Price [nl] [g]+30[c] Harvesting [nl] [g]Damage[c] modifications are increased by [g]+33%[c] [nl] You start with [g]1 Dangerous Bunny[c] [nl] Shops always sell at least [g]1[c] weapon [nl] All of your weapons are destroyed when entering a shop
+
+Streamer
+[g]+3%[c] of your materials per second while standing still ([g]+25[c] max) [nl] [g]+40% Damage[c] while moving [nl] [g]+40% Attack Speed[c] while moving [nl] [g]+2 Armor[c] for every [g]1 Structure[c] you have [nl] [r]-50%[c] materials dropped [nl] [r]-1% Damage[c] for every [r]15 Materials[c] you have [nl] [r]-1% Speed[c] for every [r]30 Materials[c] you have
+
+Cyborg
+You start with [g]1 Minigun[c] [nl] [g]Ranged Damage[c] modifications are increased by [g]250%[c] [nl] [g]100%[c] of your [g]Ranged Damage[c] are temporarily converted into [g]Engineering[c] halfway through a wave ([g]1 Ranged Damage[c] = [g]2 Engineering[c]) [nl] [r]Engineering[c] modifications are reduced by [r]75%[c] [nl] [r]Melee[c] modifications are reduced by [r]100%[c] [nl] [r]Elemental[c] modifications are reduced by [r]100%[c]
+
+Glutton
+[g]+50[c] Luck [nl] [g]+1% Explosion Damage[c] when picking up a consumable while at maximum health [nl] Consumables have a [g]100%[c] chance to explode for [g]10[c] (500% Melee Damage) damage when picked up [nl] [r]+25%[c] Items Price [nl] [r]-25%[c] XP Gain
+
+Jack
+[g]+75%[c] damage against bosses and elites [nl] [g]+200%[c] materials dropped from enemies [nl] -75% Enemies [nl] [r]+250%[c] Enemy health [nl] [r]+50%[c] Enemy damage [nl] [gray]Note: On higher danger levels, only Elites spawn, never hordes[c]
+
+Lich
+
+
+
+Apprentice
+
+
+
+Fisherman
+
+
+
+King
+
+
+
+Renegade
+
+
+
+One-Armed
+
+
+
+Bull
+
+
+
+Soldier
+
+
+
+Masochist
+
+
+
+Knight
+
+
+
+Demon

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f95f9d3791354af4a8390669734891cf, type: 3}
+  m_Script: {fileID: 11500000, guid: f60c5e038fa7bbe4a9707b5a7629293e, type: 3}
   m_Name: Brawler
   m_EditorClassIdentifier: 
+  Description: '[g]+50%[c] Attack Speed with [g]Unarmed[c] weapons [nl] You start
+    with [g]1 Fist[c] [nl] [g]+15%[c] Dodge [nl] [r]-50[c] Range [nl] [r]-50[c] Ranged
+    Damage'
+  Icon: {fileID: 21300000, guid: a5f23f9893078df4b9b8843ca13e2818, type: 3}
   Name: Brawler
-  Description: '<color=#00ff00>+50%</color> Attack Speed with <color=#00ff00>Unarmed</color>
-    weapons You start with <color=#00ff00>1 Fist</color> <color=#00ff00>+15%</color>
-    Dodge <color=#f40000>-50</color> Range <color=#f40000>-50</color> Ranged Damage '
-  Icon: {fileID: 21300000, guid: 240798d5073feb3479118df611630387, type: 3}
   Rarity: 0
