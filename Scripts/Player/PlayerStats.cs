@@ -10,6 +10,9 @@ public class PlayerStats
     //Variable Stats
     public int Materials;
 
+    //Character Specific Stats
+    public int MaxWeapons = 6;
+
     //Primary Stats
     public int MaxHP;
     public int HPRegen;

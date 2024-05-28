@@ -13,16 +13,14 @@ public class CharacterSelectionManager : MonoBehaviour
     private GameObject _playerPrefab;
     private PlayerController _playerController;
 
-    public ScriptableObject testCharacter;
-
     private void Start()
     {
         _playerController = Instantiate(_playerPrefab).GetComponent<PlayerController>();
     }
 
-    public void LoadCharacter(ScriptableObject character)
+    public void LoadCharacter(CharacterSelectionButton button)
     {
-        _playerController.EquipItem(character);
+        _playerController.EquipItem(button.Character);
         SceneManager.LoadScene("GameScene");
     }
 }

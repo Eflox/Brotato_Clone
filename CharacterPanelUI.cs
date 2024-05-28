@@ -19,9 +19,9 @@ public class CharacterPanelUI : MonoBehaviour
     [SerializeField]
     private TMP_Text _characterDescription;
 
-    public void SelectCharacter(ScriptableObject character)
+    public void SelectCharacter(CharacterSelectionButton button)
     {
-        if (character is ItemBase item)
+        if (button.Character is ItemBase item)
         {
             _characterName.text = item.Name;
             _characterIcon.sprite = item.Icon;

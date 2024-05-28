@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9cf97fec8ec4a8d4d80ad9f8e03dadec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9dceefa5e18772478de95535bbdb667, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 127420247088776629}
   - component: {fileID: 5944809637550517342}
   - component: {fileID: 6310817303459613728}
+  - component: {fileID: 9174629043556225093}
   m_Layer: 5
   m_Name: CharacterPanel
   m_TagString: Untagged
@@ -278,8 +279,8 @@ MonoBehaviour:
         m_MethodName: LoadCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c138ee63deb92a64daae2a130360cb75, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.ScriptableObject, UnityEngine
+          m_ObjectArgument: {fileID: 9174629043556225093}
+          m_ObjectArgumentAssemblyTypeName: CharacterSelectionButton, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -319,8 +320,8 @@ MonoBehaviour:
         m_MethodName: SelectCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: c138ee63deb92a64daae2a130360cb75, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.ScriptableObject, UnityEngine
+          m_ObjectArgument: {fileID: 9174629043556225093}
+          m_ObjectArgumentAssemblyTypeName: CharacterSelectionButton, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -341,3 +342,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &9174629043556225093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8645076145846717459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c339d0b3bb7d81a4fa3116c2da1892eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character: {fileID: 0}
+  _characterIcon: {fileID: 8940425620866825526}

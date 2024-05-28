@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Well Rounded
   m_EditorClassIdentifier: 
   Name: Well Rounded
-  Description: <color=green>+5</color> Max Hp\n<color=green>+5%</color> Speed\n<color=green>+8</color>
-    Harvesting
+  Description: '<color=#00ff00>+5</color> Max Hp <color=#00ff00>+5%</color> Speed
+    <color=#00ff00>+8</color> Harvesting '
   Icon: {fileID: 21300000, guid: 9cf97fec8ec4a8d4d80ad9f8e03dadec, type: 3}
   Rarity: 0

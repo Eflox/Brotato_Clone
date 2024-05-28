@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95f9d3791354af4a8390669734891cf, type: 3}
+  m_Name: Brawler
+  m_EditorClassIdentifier: 
+  Name: Brawler
+  Description: '<color=#00ff00>+50%</color> Attack Speed with <color=#00ff00>Unarmed</color>
+    weapons You start with <color=#00ff00>1 Fist</color> <color=#00ff00>+15%</color>
+    Dodge <color=#f40000>-50</color> Range <color=#f40000>-50</color> Ranged Damage '
+  Icon: {fileID: 21300000, guid: 240798d5073feb3479118df611630387, type: 3}
+  Rarity: 0
