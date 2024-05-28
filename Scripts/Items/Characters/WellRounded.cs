@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WellRounded", menuName = "Game/Characters/Well Rounded")]
+[CreateAssetMenu(fileName = "Well Rounded", menuName = "Game/Characters/Well Rounded")]
 public class WellRounded : ItemBase, IItem
 {
     [Effect]

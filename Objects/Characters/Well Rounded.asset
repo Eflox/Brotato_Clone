@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73b0f2c2accf37f41b7ffa40fe72fec9, type: 3}
-  m_Name: WellRounded
+  m_Name: Well Rounded
   m_EditorClassIdentifier: 
   Name: Well Rounded
-  Description: +5 Max Hp/n+5% Speed/n+8 Harvesting
+  Description: <color=green>+5</color> Max Hp\n<color=green>+5%</color> Speed\n<color=green>+8</color>
+    Harvesting
   Icon: {fileID: 21300000, guid: 9cf97fec8ec4a8d4d80ad9f8e03dadec, type: 3}
   Rarity: 0

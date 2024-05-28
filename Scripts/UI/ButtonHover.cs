@@ -14,11 +14,15 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     [SerializeField]
     private TMP_Text _buttonText;
+
     [SerializeField]
     private Image _buttonImage;
 
     [SerializeField]
-    private UnityAction _onHover;
+    private UnityEvent _onHover;
+
+    [SerializeField]
+    private UnityEvent _onNotHover;
 
     private Color originalTextColor;
     private Color originalBackgroundColor;
@@ -33,6 +37,9 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (_onHover != null)
+            _onHover.Invoke();
+
         if (_buttonText != null)
             _buttonText.color = Color.black;
 
@@ -42,6 +49,9 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (_onNotHover != null)
+            _onNotHover.Invoke();
+
         if (_buttonText != null)
             _buttonText.color = originalTextColor;
 
