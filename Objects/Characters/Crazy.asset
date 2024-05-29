@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5f74669b030b840ab2ab4ee745b8bd, type: 3}
   m_Name: Crazy
   m_EditorClassIdentifier: 
+  Name: Crazy
   Description: '[g]+100 Range[c] with [g]Precise[c] weapons [nl] [g]+25%[c] Attack
     Speed [nl] You start with [g]1 Knife[c] [nl] [r]-30%[c] Dodge [nl] [r]-10[c]
     Engineering [nl] [r]-10[c] Ranged Damage'
   Icon: {fileID: 21300000, guid: a92278803e0de634b909c6026ad4c779, type: 3}
-  Name: Crazy
   Rarity: 0
+  classes: 00000000

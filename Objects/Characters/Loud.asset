@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f614514ca6a90be46ab401bec2023e98, type: 3}
   m_Name: Loud
   m_EditorClassIdentifier: 
+  Name: Loud
   Description: '[g]+30%[c] Damage [nl] +50% Enemies [nl] [r]-3 Harvesting[c] at the
     end of a wave '
   Icon: {fileID: 21300000, guid: 7e300e6445ed9cd42aa2c516479016d0, type: 3}
-  Name: Loud
   Rarity: 0
+  classes: 00000000

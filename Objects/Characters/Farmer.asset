@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d0ab8e3f64d6c479980c914a9c0563, type: 3}
   m_Name: Farmer
   m_EditorClassIdentifier: 
+  Name: Farmer
   Description: '[g]+20[c] Harvesting [nl] Harvesting increases by an additional [g]3%[c]
     at the end of a wave [nl] [g]+1[c] Harvesting when eating a consumable while
     at full health [nl] [r]-50%[c] materials dropped '
   Icon: {fileID: 21300000, guid: 00591fac4c4828a44bb7fe8593bed13e, type: 3}
-  Name: Farmer
   Rarity: 0
+  classes: 00000000

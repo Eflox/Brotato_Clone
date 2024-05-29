@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1229234c33040f948b180ca66c01414a, type: 3}
   m_Name: Chunky
   m_EditorClassIdentifier: 
+  Name: Chunky
   Description: '[g]Max HP[c] modifications are increased by [g]25%[c] [nl] [g]+1%[c]
     Damage for every [g]3 Max HP[c] you have [g]+3[c] [nl] [g]+3[c] HP recovered
     from consumables [nl] [r]-100%[c] Life Steal [nl] [r]HP Regeneration[c] modifications
     are reduced by [r]50%[c] [nl] [r]Dodge[c] modifications are reduced by [r]50%[c]
     [nl] [r]Speed[c] modifications are reduced by [r]100%[c] '
   Icon: {fileID: 21300000, guid: 94cc7e91b08a7f842870ee54f9dca673, type: 3}
-  Name: Chunky
   Rarity: 0
+  classes: 00000000

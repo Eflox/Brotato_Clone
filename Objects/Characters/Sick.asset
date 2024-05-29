@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a0f97b85c7a5945864eaa5f61ca597, type: 3}
   m_Name: Sick
   m_EditorClassIdentifier: 
+  Name: Sick
   Description: '[g]+12[c] Max HP [nl] [g]+25%[c] Life Steal [nl] You take [r]1[c]
     damage per second (does not give invulnerability time) [nl] [r]-100[c] HP Regeneration '
   Icon: {fileID: 21300000, guid: a9874248a9e06754781ed6880f64d654, type: 3}
-  Name: Sick
   Rarity: 0
+  classes: 00000000

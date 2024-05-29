@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a802ddfcb5bd4948bfea94fce8d76f3, type: 3}
   m_Name: Entrepreneur
   m_EditorClassIdentifier: 
+  Name: Entrepreneur
   Description: '[g]-25%[c] Items Price [nl] [g]Harvesting[c] modifications are increased
     by [g]50%[c] [nl] Gain [g]25%[c] more materials from recycling items [nl] [r]-100%[c]
     of your materials at the start of waves [nl] [r]Damage[c] modifications are reduced
     by [r]50%[c] '
   Icon: {fileID: 21300000, guid: 9f5f94862ff1af74796660b2ceeaeaf4, type: 3}
-  Name: Entrepreneur
   Rarity: 0
+  classes: 00000000

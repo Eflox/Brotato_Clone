@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b9c45f0759fdf40b7928b48073225f, type: 3}
   m_Name: Lich
   m_EditorClassIdentifier: 
+  Name: Lich
   Description: '[g]+10[c] HP Regeneration [nl] [g]+10%[c] Life Steal [nl] [g]100%[c]
     chance to deal [g]10[c] (Max HP) damage to a random enemy when you heal [nl]
     [r]Damage[c] modifications are reduced by [r]50%[c] '
   Icon: {fileID: 21300000, guid: 64a5ac4ef52dfc541983bdf331e4378f, type: 3}
-  Name: Lich
   Rarity: 0
+  classes: 00000000

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed26dbc56aee7f343986043c8628a0c8, type: 3}
   m_Name: Generalist
   m_EditorClassIdentifier: 
+  Name: Generalist
   Description: '[g]+2 Melee Damage[c] for every [g]1 Ranged Damage[c] you have [nl]
     [g]+1 Ranged Damage[c] for every [g]2 Melee Damage[c] you have [nl] You can only
     equip [r]3[c] melee weapons and [r]3[c] ranged weapons at a time '
   Icon: {fileID: 21300000, guid: 04ecbe0ebf45f0144a055fd6bd3e5354, type: 3}
-  Name: Generalist
   Rarity: 0
+  classes: 00000000

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d84d517e677c04428409ba7ea6de8cd, type: 3}
   m_Name: Multitasker
   m_EditorClassIdentifier: 
+  Name: Multitasker
   Description: '[g]+20%[c] Damage [nl] You can equip up to [g]12[c] weapons at a
     time [nl] [r]-5% Damage[c] for every weapon you have '
   Icon: {fileID: 21300000, guid: 4ebc6c4c13a9d984cacf61746d7bdc81, type: 3}
-  Name: Multitasker
   Rarity: 0
+  classes: 00000000

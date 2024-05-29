@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 960062be5354d9746a5f775bf1fcd2ed, type: 3}
   m_Name: Pacifist
   m_EditorClassIdentifier: 
+  Name: Pacifist
   Description: 'Gain [g]0.65[c] material and XP for every living enemy at the end
     of a wave [nl] You start with [g]1 Lumberjack Shirt[c] [nl] [r]-100%[c] Damage
     [nl] [r]-100[c] Engineering '
   Icon: {fileID: 21300000, guid: 6406b1d42bbbc7048be5ad7f6acf4a5c, type: 3}
-  Name: Pacifist
   Rarity: 0
+  classes: 00000000

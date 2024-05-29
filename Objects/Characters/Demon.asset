@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c269b0b2fe63b634a9a723233749efb7, type: 3}
   m_Name: Demon
   m_EditorClassIdentifier: 
+  Name: Demon
   Description: '[g]+50%[c] of your [g]Materials[c] are converted into [g]Max HP[c]
     at the end of a wave ([g]13 Materials=1 Max HP[c]) [nl] You buy items using Max
     HP instead of materials '
   Icon: {fileID: 21300000, guid: d015b16122cfde344b8651dd20c53209, type: 3}
-  Name: Demon
   Rarity: 0
+  classes: 00000000

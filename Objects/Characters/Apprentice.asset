@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8816b08211d6c444a97c26f912372d5f, type: 3}
   m_Name: Apprentice
   m_EditorClassIdentifier: 
+  Name: Apprentice
   Description: '[g]+2 Melee Damage[c] when you level up [nl] [g]+1 Ranged Damage[c]
     when you level up [nl] [g]+1 Elemental Damage[c] when you level up [nl] [g]+1
     Engineering[c] when you level up [nl] [r]-2 Max HP[c] when you level up '
   Icon: {fileID: 21300000, guid: 3f4bc02a88651754f8aa36f2a44b3f6b, type: 3}
-  Name: Apprentice
   Rarity: 0
+  classes: 00000000

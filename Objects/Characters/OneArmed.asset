@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70aa6a21d9120f489ead0f25264e35a, type: 3}
   m_Name: OneArmed
   m_EditorClassIdentifier: 
+  Name: OneArmed
   Description: '[g]+2[c] projectiles [nl] Projectiles pierce through [g]1[c] additional
     target [nl] [g]+10% Damage[c] for every different Tier I item you have [nl] You
     can''t equip melee weapons [nl] [r]-400%[c] Damage [nl] [r]-50%[c] accuracy [nl]
     [r]% Damage[c] modifications are reduced by [r]80%[c] '
   Icon: {fileID: 21300000, guid: bba1f07785cb9264a8d867479f53c57b, type: 3}
-  Name: OneArmed
   Rarity: 0
+  classes: 00000000

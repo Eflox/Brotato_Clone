@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58456cea67e865740ad33a3723a35be2, type: 3}
   m_Name: Hunter
   m_EditorClassIdentifier: 
+  Name: Hunter
   Description: '[g]+100[c] Range [nl] [g]+1% Damage[c] for every [g]10 Range[c] you
     have [nl] [g]Crit Chance[c] modifications are increased by [g]25%[c] [nl] [r]Harvesting[c]
     modifications are reduced by [r]100%[c] [nl] [r]Max HP[c] modifications are reduced
     by [r]33%[c] '
   Icon: {fileID: 21300000, guid: 8858e06346d6b424abbd88f541a0b0b7, type: 3}
-  Name: Hunter
   Rarity: 0
+  classes: 00000000

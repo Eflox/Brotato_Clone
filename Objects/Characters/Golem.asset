@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11348c51717b6ec41975dec4f3cebd2a, type: 3}
   m_Name: Golem
   m_EditorClassIdentifier: 
+  Name: Golem
   Description: '[g]+20[c] Max HP [nl] [g]Max HP[c] modifications are increased by
     [g]33%[c] [nl] [g]Armor[c] modifications are increased by [g]33%[c] [nl] [g]+40%
     Attack Speed[c] when you have less than 50% health [nl] [g]+20% Speed[c] when
     you have less than 50% health [nl] You can''t heal in any way '
   Icon: {fileID: 21300000, guid: 583bd5d340f6f7d499a96b59a52963e5, type: 3}
-  Name: Golem
   Rarity: 0
+  classes: 00000000

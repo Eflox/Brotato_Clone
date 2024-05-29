@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c26d9e9fff4c9489d863093410a712, type: 3}
   m_Name: Bull
   m_EditorClassIdentifier: 
+  Name: Bull
   Description: '[g]+20[c] Max HP [nl] [g]+15[c] HP Regeneration [nl] [g]+10[c] Armor
     [nl] [g]HP Regeneration[c] modifications are increased by [g]50%[c] [nl] You
     explode for [g]30[c] (300% Melee Damage, 300% Ranged Damage, 300% Elemental Damage)
     damage when you take damage [nl] This explosion has a 1.5x crit multiplier [nl]
     You can''t equip weapons '
   Icon: {fileID: 21300000, guid: 8c64954b609466c438ae00abfd40399c, type: 3}
-  Name: Bull
   Rarity: 0
+  classes: 00000000

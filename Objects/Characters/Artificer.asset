@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258dbb62c242df74fa3dd08bba3f72b9, type: 3}
   m_Name: Artificer
   m_EditorClassIdentifier: 
+  Name: Artificer
   Description: '[g]+175%[c] Explosion Damage [nl] [g]+4% Explosion Size[c] for every
     [g]1 Elemental Damage[c] you have [nl] [r]-100%[c] Damage [nl] [r]Armor[c] modifications
     are reduced by [r]50%[c] '
   Icon: {fileID: 21300000, guid: 431793b51bab096419229cf7cf249d4b, type: 3}
-  Name: Artificer
   Rarity: 0
+  classes: 00000000

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b042199028e18438f3e6c454adc2b2, type: 3}
   m_Name: ArmsDealer
   m_EditorClassIdentifier: 
+  Name: ArmsDealer
   Description: '[g]-95%[c] Weapons Price [nl] [g]+30[c] Harvesting [nl] [g]Damage[c]
     modifications are increased by [g]+33%[c] [nl] You start with [g]1 Dangerous
     Bunny[c] [nl] Shops always sell at least [g]1[c] weapon [nl] All of your weapons
     are destroyed when entering a shop '
   Icon: {fileID: 21300000, guid: ddbd6f1c772816947bcbf188e85f88b9, type: 3}
-  Name: ArmsDealer
   Rarity: 0
+  classes: 00000000

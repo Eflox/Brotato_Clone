@@ -6962,6 +6962,7 @@ MonoBehaviour:
   _characterDescription: {fileID: 2013606519944717718}
   _characterIcon: {fileID: 7061473490232693405}
   _characterName: {fileID: 520660953890351191}
+  _characterClass: {fileID: 6622474808744389510}
 --- !u!114 &6622474808744389510
 MonoBehaviour:
   m_ObjectHideFlags: 0

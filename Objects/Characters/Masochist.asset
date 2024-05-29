@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 801a23b22c0c5114aa47ed182713832d, type: 3}
   m_Name: Masochist
   m_EditorClassIdentifier: 
+  Name: Masochist
   Description: '[g]+5% Damage[c] when you take damage until the end of the wave [nl]
     [g]+10[c] Max HP [nl] [g]+20[c] HP Regeneration [nl] [g]+8[c] Armor [nl] [r]-100%[c]
     Damage '
   Icon: {fileID: 21300000, guid: a2cb56f9e971a1d4085a50ec197bd521, type: 3}
-  Name: Masochist
   Rarity: 0
+  classes: 00000000

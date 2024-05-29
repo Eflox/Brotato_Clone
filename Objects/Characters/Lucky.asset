@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f9d0820089ea74b971ec91d7491c40, type: 3}
   m_Name: Lucky
   m_EditorClassIdentifier: 
+  Name: Lucky
   Description: '[g]+100[c] Luck [nl] [g]Luck[c] modifications are increased by [g]25%[c]
     [nl] [g]+75%[c] chance to deal [g]1[c] (15% Luck) damage to a random enemy when
     you pick up a material [nl] [r]-60%[c] Attack Speed [nl] [r]-50%[c] XP Gain '
   Icon: {fileID: 21300000, guid: fed78b745c9810941ad364dcc13f10d0, type: 3}
-  Name: Lucky
   Rarity: 0
+  classes: 00000000

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3c0aca766cfb0498ee58e595549383, type: 3}
   m_Name: Renegade
   m_EditorClassIdentifier: 
+  Name: Renegade
   Description: '[g]+2[c] projectiles [nl] Projectiles pierce through [g]1[c] additional
     target [nl] [g]+10% Damage[c] for every different Tier I item you have [nl] You
     can''t equip melee weapons [nl] [r]-400%[c] Damage [nl] [r]-50%[c] accuracy [nl]
     [r]% Damage[c] modifications are reduced by [r]80%[c] '
   Icon: {fileID: 21300000, guid: 405c143748b572a4dbfb678dd46401a8, type: 3}
-  Name: Renegade
   Rarity: 0
+  classes: 00000000

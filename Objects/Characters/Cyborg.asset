@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b45f01104330534fbfabd6f11d3a7a8, type: 3}
   m_Name: Cyborg
   m_EditorClassIdentifier: 
+  Name: Cyborg
   Description: 'You start with [g]1 Minigun[c] [nl] [g]Ranged Damage[c] modifications
     are increased by [g]250%[c] [nl] [g]100%[c] of your [g]Ranged Damage[c] are temporarily
     converted into [g]Engineering[c] halfway through a wave ([g]1 Ranged Damage[c]
@@ -19,5 +20,5 @@ MonoBehaviour:
     [nl] [r]Melee[c] modifications are reduced by [r]100%[c] [nl] [r]Elemental[c]
     modifications are reduced by [r]100%[c] '
   Icon: {fileID: 21300000, guid: 16fa2de453af1024cbff34ee97ada14d, type: 3}
-  Name: Cyborg
   Rarity: 0
+  classes: 00000000

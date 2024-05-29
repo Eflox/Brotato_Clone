@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b395c7a7bb47f7b478459d5df9832751, type: 3}
   m_Name: Doctor
   m_EditorClassIdentifier: 
+  Name: Doctor
   Description: '[g]+200% Attack Speed[c] with [g]Medical[c] weapons [nl] [g]+5[c]
     HP Regeneration [nl] HP Regeneration is doubled [nl] [g]+5[c] Harvesting [nl]
     [r]-100%[c] Attack Speed [nl] [r]Armor[c] modifications are reduced by [r]50%[c] '
   Icon: {fileID: 21300000, guid: 2f8d45206c20b1344b2029a302d0dd38, type: 3}
-  Name: Doctor
   Rarity: 0
+  classes: 00000000

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa017c030c073cc42b10c9509d18a975, type: 3}
   m_Name: Ranger
   m_EditorClassIdentifier: 
+  Name: Ranger
   Description: '[g]+50[c] Range [nl] You start with [g]1 Pistol[c] [nl] [g]Ranged
     Damage[c] modifications are increased by [g]50%[c] [nl] You can''t equip melee
     weapons [nl] [r]Max HP[c] modifications are reduced by [r]25%[c] '
   Icon: {fileID: 21300000, guid: c64ed6806c61865479e801909329218e, type: 3}
-  Name: Ranger
   Rarity: 0
+  classes: 00000000

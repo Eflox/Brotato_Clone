@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c051559d187351649b532df29e4d9ca0, type: 3}
   m_Name: Saver
   m_EditorClassIdentifier: 
+  Name: Saver
   Description: '[g]+15[c] Harvesting [nl] [g]+1% Damage[c] for every [g]25 Materials[c]
     you have [nl] You start with [g]1 Piggy Bank[c] [nl] [r]+50%[c] Item & Weapon
     Price '
   Icon: {fileID: 21300000, guid: a1d946c10b735b348998952dc095e580, type: 3}
-  Name: Saver
   Rarity: 0
+  classes: 00000000

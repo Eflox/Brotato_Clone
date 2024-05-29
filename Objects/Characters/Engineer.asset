@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3e077d8f44fc6499f0504262a4d47e, type: 3}
   m_Name: Engineer
   m_EditorClassIdentifier: 
+  Name: Engineer
   Description: '[g]+10[c] Engineering [nl] [g]Engineering[c] modifications are increased
     by [g]25%[c] [nl] You start with [g]1 Wrench[c] [nl] Structures spawn close to
     each other [nl] [r]Damage[c] modifications are reduced by [r]50%[c] '
   Icon: {fileID: 21300000, guid: 0dc60b2c037ecc8479f4dbf13994dd94, type: 3}
-  Name: Engineer
   Rarity: 0
+  classes: 00000000

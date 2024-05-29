@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9f01fcd6d6cb044b3580108a3ae90b, type: 3}
   m_Name: Well Rounded
   m_EditorClassIdentifier: 
+  Name: Well Rounded
   Description: '[g]+5[c] Max Hp[nl][g]+5%[c] Speed[nl][g]+8[c] Harvesting'
   Icon: {fileID: 21300000, guid: 65d65919e1b71c147b0b48b5985f4999, type: 3}
-  Name: Well Rounded
   Rarity: 0
+  classes: 00000000

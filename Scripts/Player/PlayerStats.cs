@@ -89,4 +89,21 @@ public class PlayerStats
     public int FreeRolls;
     public int ItemRecycling;
     public int MaterialsInterestGain;
+
+    //Class Weapon Count
+    public int UnarmedWeapons;
+    public int PrimitiveWeapons;
+    public int HeavyWeapons;
+    public int BladeWeapons;
+    public int MedicalWeapons;
+    public int PreciseWeapons;
+    public int LegendaryWeapons;
+    public int MedievalWeapons;
+    public int ElementalWeapons;
+    public int EtherealWeapons;
+    public int BluntWeapons;
+    public int SupportWeapons;
+    public int ExplosiveWeapons;
+    public int ToolWeapons;
+
 }
