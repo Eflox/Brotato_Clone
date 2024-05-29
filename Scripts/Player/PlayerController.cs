@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //Debug.Log(Player.);
+            StatsUpdater.UpdateVisibleStats(Player.Stats);
         }
     }
 
@@ -32,17 +33,29 @@ public class PlayerController : MonoBehaviour
             var statsType = typeof(PlayerStats);
             var itemType = equippableItem.GetType();
 
+            // Iterate over each field in the item type
             foreach (var itemField in itemType.GetFields(BindingFlags.Public | BindingFlags.Instance))
             {
-                var isStatField = itemField.GetCustomAttribute<StatAttribute>() != null;
-                if (isStatField)
+                var statAttribute = itemField.GetCustomAttribute<StatAttribute>();
+                if (statAttribute != null)
                 {
-                    var statField = statsType.GetField(itemField.Name);
-                    if (statField != null && statField.FieldType == itemField.FieldType)
+                    string statFieldName = itemField.Name.Replace("Multiplier", "");
+                    var statField = statsType.GetField(statFieldName);
+                    if (statField != null && statField.FieldType == typeof(Dictionary<StatType, int>))
                     {
-                        int valueToAdd = (int)itemField.GetValue(equippableItem);
-                        int currentStatValue = (int)statField.GetValue(Player.Stats);
-                        statField.SetValue(Player.Stats, currentStatValue + valueToAdd);
+                        var statDict = (Dictionary<StatType, int>)statField.GetValue(Player.Stats);
+                        if (statDict != null)
+                        {
+                            int valueToAdd = (int)itemField.GetValue(equippableItem);
+                            if (statAttribute.IsMultiplier)
+                            {
+                                statDict[StatType.Multiplier] += valueToAdd;
+                            }
+                            else
+                            {
+                                statDict[StatType.Base] += valueToAdd;
+                            }
+                        }
                     }
                 }
             }
@@ -52,5 +65,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("Tried to equip something that is not an item.");
         }
     }
+
+
 
 }

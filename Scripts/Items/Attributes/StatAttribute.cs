@@ -6,7 +6,10 @@
 
 using System;
 
-[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
+[AttributeUsage(AttributeTargets.Field, AllowMultiple = false)]
 public class StatAttribute : Attribute
 {
+    public bool IsMultiplier { get; }
+
+    public StatAttribute(bool isMultiplier = false) => IsMultiplier = isMultiplier;
 }

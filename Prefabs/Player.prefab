@@ -47,23 +47,7 @@ MonoBehaviour:
   Player:
     Stats:
       Materials: 10000
-      MaxHP: 0
-      HPRegen: 0
-      LifeSteal: 0
-      Damage: 0
-      MeleeDmg: 0
-      RangeDmg: 0
-      ElementalDmg: 0
-      AttackSpeed: 0
-      CritChance: 0
-      Engineering: 0
-      Range: 0
-      Armor: 0
-      Dodge: 0
-      Speed: 0
-      Luck: 0
-      Harvesting: 0
-      XPGain: 0
+      MaxWeapons: 6
       ExplosionDmg: 0
       ExplosionSize: 0
       Bounces: 0
@@ -90,3 +74,17 @@ MonoBehaviour:
       FreeRolls: 0
       ItemRecycling: 0
       MaterialsInterestGain: 0
+      UnarmedWeapons: 0
+      PrimitiveWeapons: 0
+      HeavyWeapons: 0
+      BladeWeapons: 0
+      MedicalWeapons: 0
+      PreciseWeapons: 0
+      LegendaryWeapons: 0
+      MedievalWeapons: 0
+      ElementalWeapons: 0
+      EtherealWeapons: 0
+      BluntWeapons: 0
+      SupportWeapons: 0
+      ExplosiveWeapons: 0
+      ToolWeapons: 0

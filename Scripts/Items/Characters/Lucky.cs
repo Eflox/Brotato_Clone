@@ -12,8 +12,7 @@ public class Lucky : ItemBase, IItem, IOnMaterialPickup
     [Stat]
     public readonly int Luck = 100;
 
-
-    [Stat]
+    [Stat(isMultiplier: true)]
     public readonly int LuckMultiplier = 25;
 
     [Stat]

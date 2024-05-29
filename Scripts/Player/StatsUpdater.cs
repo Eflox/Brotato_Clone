@@ -68,5 +68,7 @@ public static class StatsUpdater
         stats.Harvesting[StatType.TotalVisible] = (stats.Harvesting[StatType.Base] +
             WeaponBonusCalculator.HarvestingWeaponClassBonus(stats.SupportWeapons))
             .ApplyMultiplier(stats.Harvesting[StatType.Multiplier]);
+
+        stats.XPGain[StatType.TotalVisible] = stats.XPGain[StatType.Base];
     }
 }

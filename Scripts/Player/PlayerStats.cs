@@ -14,7 +14,6 @@ public class PlayerStats
     public Dictionary<StatType, int> MaxHP = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -23,7 +22,6 @@ public class PlayerStats
     public Dictionary<StatType, int> HPRegen = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -32,7 +30,6 @@ public class PlayerStats
     public Dictionary<StatType, int> LifeSteal = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -41,7 +38,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Damage = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -50,7 +46,6 @@ public class PlayerStats
     public Dictionary<StatType, int> MeleeDmg = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -59,7 +54,6 @@ public class PlayerStats
     public Dictionary<StatType, int> RangeDmg = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -68,7 +62,6 @@ public class PlayerStats
     public Dictionary<StatType, int> ElementalDmg = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -77,7 +70,6 @@ public class PlayerStats
     public Dictionary<StatType, int> AttackSpeed = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -86,7 +78,6 @@ public class PlayerStats
     public Dictionary<StatType, int> CritChance = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -95,7 +86,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Engineering = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -104,7 +94,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Range = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -113,7 +102,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Armor = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -122,7 +110,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Dodge = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -131,7 +118,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Speed = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -140,7 +126,6 @@ public class PlayerStats
     public Dictionary<StatType, int> Luck = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -149,8 +134,14 @@ public class PlayerStats
     public Dictionary<StatType, int> Harvesting = new Dictionary<StatType, int>
     {
         { StatType.Base, 0 },
-        { StatType.WeaponClassBonus, 0 },
         { StatType.Multiplier, 0 },
+        { StatType.TotalVisible, 0 }
+    };
+
+    [InspectableDictionary]
+    public Dictionary<StatType, int> XPGain = new Dictionary<StatType, int>
+    {
+        { StatType.Base, 0 },
         { StatType.TotalVisible, 0 }
     };
 
@@ -162,7 +153,6 @@ public class PlayerStats
 
     //Secondary Stats
     //Combat
-    public int XPGain;
     public int ExplosionDmg;
     public int ExplosionSize;
     public int Bounces;
@@ -221,7 +211,6 @@ public class PlayerStats
 public enum StatType
 {
     Base,
-    WeaponClassBonus,
     Multiplier,
     TotalVisible,
 }
