@@ -10,6 +10,18 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Player Player;
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log(Player.);
+        }
+    }
 
     public void EquipItem(ScriptableObject item)
     {
@@ -41,8 +53,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
 }

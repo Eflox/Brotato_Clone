@@ -26,7 +26,7 @@ public class Lucky : ItemBase, IItem, IOnMaterialPickup
     {
         if (Random.Range(0, 100) <= 75)
         {
-            int dmg = stats.Luck.MultiplyAndRoundUp(0.15f);
+            int dmg = stats.Luck[StatType.Base].MultiplyAndRoundUp(0.15f);
 
             //Deal dmg to random enemy
         }

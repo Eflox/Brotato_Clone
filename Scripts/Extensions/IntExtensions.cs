@@ -13,4 +13,9 @@ public static class IntExtensions
         float result = input * multiplier;
         return (int)Math.Ceiling(result);
     }
+
+    public static int ApplyMultiplier(this int baseValue, int multiplierPercent)
+    {
+        return (int)Math.Round(baseValue * (1 + multiplierPercent / 100.0));
+    }
 }
