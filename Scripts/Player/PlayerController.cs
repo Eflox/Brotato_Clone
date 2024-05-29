@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private EquipItemService _equipItemService;
     private InGameWeaponService _inGameWeaponService;
     private MovementService _movementService;
+    private VisualsService _visualsService;
 
     private void Update()
     {
@@ -58,6 +59,8 @@ public class PlayerController : MonoBehaviour
 
         _inGameWeaponService = gameObject.AddComponent<InGameWeaponService>();
         _movementService = gameObject.AddComponent<MovementService>();
+        _visualsService = gameObject.AddComponent<VisualsService>();
+        _visualsService.Init(this);
     }
 
     public void LeaveGameScene()
@@ -67,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
         Destroy(_inGameWeaponService);
         Destroy(_movementService);
+        Destroy(_visualsService);
 
     }
 
