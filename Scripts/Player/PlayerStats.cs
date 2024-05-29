@@ -53,7 +53,7 @@ public class PlayerStats
     [InspectableDictionary]
     public Dictionary<StatType, int> RangedDmg = new Dictionary<StatType, int>
     {
-        { StatType.Base, 2 },
+        { StatType.Base, 0 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };

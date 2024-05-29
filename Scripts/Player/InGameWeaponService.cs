@@ -8,13 +8,10 @@ using UnityEngine;
 
 public class InGameWeaponService : MonoBehaviour
 {
-    public void SetupWeapons()
+
+    private void Start()
     {
-        //foreach (var weapon in Player.Weapons)
-        //{
-        //    weapon.InitWeaponStats(Player.Stats);
-        //    _weaponTimers.Add((weapon, 0, weapon.AttackSpeed));
-        //}
+        //Load Weapon Visuals
     }
 
     private void Update()
