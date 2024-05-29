@@ -9,13 +9,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Brawler", menuName = "Game/Characters/Brawler")]
 public class Brawler : ItemBase, IItem
 {
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Dodge = 15;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Range = -50;
 
-    [Stat]
-    public readonly int RangeDmg = -50;
+    [Stat(operation: StatOperation.Add)]
+    public readonly int RangedDmg = -50;
 
+    [Item]
+    public ScriptableObject[] Item;
 }

@@ -29,8 +29,8 @@ public static class StatsUpdater
             WeaponBonusCalculator.MeleeDmgWeaponClassBonus(stats.BladeWeapons))
             .ApplyMultiplier(stats.MeleeDmg[StatType.Multiplier]);
 
-        stats.RangeDmg[StatType.TotalVisible] = (stats.RangeDmg[StatType.Base])
-            .ApplyMultiplier(stats.RangeDmg[StatType.Multiplier]);
+        stats.RangedDmg[StatType.TotalVisible] = (stats.RangedDmg[StatType.Base])
+            .ApplyMultiplier(stats.RangedDmg[StatType.Multiplier]);
 
         stats.ElementalDmg[StatType.TotalVisible] = (stats.ElementalDmg[StatType.Base] +
             WeaponBonusCalculator.ElementalDmgWeaponClassBonus(stats.ElementalWeapons))

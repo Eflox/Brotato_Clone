@@ -9,12 +9,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Well Rounded", menuName = "Game/Characters/Well Rounded")]
 public class WellRounded : ItemBase, IItem
 {
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Harvesting = 8;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int MaxHP = 5;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Speed = 5;
 }

@@ -37,7 +37,7 @@ public class PlayerStats
     [InspectableDictionary]
     public Dictionary<StatType, int> Damage = new Dictionary<StatType, int>
     {
-        { StatType.Base, 0 },
+        { StatType.Base, 8 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -45,15 +45,15 @@ public class PlayerStats
     [InspectableDictionary]
     public Dictionary<StatType, int> MeleeDmg = new Dictionary<StatType, int>
     {
-        { StatType.Base, 0 },
+        { StatType.Base, 4 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
 
     [InspectableDictionary]
-    public Dictionary<StatType, int> RangeDmg = new Dictionary<StatType, int>
+    public Dictionary<StatType, int> RangedDmg = new Dictionary<StatType, int>
     {
-        { StatType.Base, 0 },
+        { StatType.Base, 2 },
         { StatType.Multiplier, 0 },
         { StatType.TotalVisible, 0 }
     };
@@ -150,6 +150,11 @@ public class PlayerStats
 
     //Character Specific Stats
     public int MaxWeapons;
+    public int UnarmedAttackSpeed;
+    public int PreciseRange;
+    public int PrimitiveLifeSteal;
+    public int EtherealDamage;
+    public int MedicalAttackSpeed;
 
     //Secondary Stats
     //Combat

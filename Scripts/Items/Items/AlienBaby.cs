@@ -9,10 +9,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AlienBaby", menuName = "Game/Item/AlienBaby")]
 public class AlienBaby : ItemBase, IItem, IBuyable
 {
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int EnemySpeed = 8;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int MaxHP = 15;
 
     public int BasePrice => 80;

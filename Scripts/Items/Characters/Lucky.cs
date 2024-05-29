@@ -9,16 +9,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Lucky", menuName = "Game/Characters/Lucky")]
 public class Lucky : ItemBase, IItem, IOnMaterialPickup
 {
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Luck = 100;
 
     [Stat(isMultiplier: true)]
     public readonly int LuckMultiplier = 25;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int AttackSpeed = -60;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int XPGain = -50;
 
     public void OnMaterialPickup(PlayerStats stats)

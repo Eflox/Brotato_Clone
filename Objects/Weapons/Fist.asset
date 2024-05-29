@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8825d173899ee33488fbd2e323cb5cdb, type: 3}
-  m_Name: AlienBaby
+  m_Script: {fileID: 11500000, guid: 0436b679eb19ca443be25cbc56ef36dd, type: 3}
+  m_Name: Fist
   m_EditorClassIdentifier: 
-  Name: AlienBaby
-  Description: +15 Max HP/n+8 Enemy Speed
-  Icon: {fileID: 21300000, guid: 0481422482efd454586758ad383ac2f3, type: 3}
-  Rarity: 2
-  classes: 
+  Name: Fist
+  Description: Its a fist
+  Icon: {fileID: 21300000, guid: 73c49407ba196e748bfffaadc20dc821, type: 3}
+  Rarity: 0
+  classes: 06000000

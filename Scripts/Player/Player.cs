@@ -12,4 +12,5 @@ public class Player
     public PlayerStats Stats = new PlayerStats();
 
     public List<IItem> Items = new List<IItem>();
+    public List<IWeapon> Weapons = new List<IWeapon>();
 }

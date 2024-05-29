@@ -9,10 +9,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Acid", menuName = "Game/Item/Acid")]
 public class Acid : ItemBase, IItem, IBuyable
 {
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Dodge = -4;
 
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int MaxHP = 8;
 
     public int BasePrice => 65;

@@ -9,7 +9,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Adreneline", menuName = "Game/Item/Adreneline")]
 public class Adreneline : ItemBase, IItem, IBuyable, IOnDodged
 {
-    [Stat]
+    [Stat(operation: StatOperation.Add)]
     public readonly int Dodge = 5;
 
     public int BasePrice => 60;
