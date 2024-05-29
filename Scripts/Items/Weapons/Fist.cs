@@ -1,6 +1,6 @@
 /*
  * Script Author: Charles d'Ansembourg
- * Creation Date: #CREATIONDATE#
+ * Creation Date: 29/05/2024
  * Contact: c.dansembourg@icloud.com
  */
 
@@ -26,12 +26,11 @@ public class Fist : ItemBase, IItem, IBuyable, IWeapon
 
     public int BasePrice => 10;
     public int Limit => 0;
+    public float AttackSpeed { get; set; }
 
-    float IWeapon.AttackSpeed { get; set; }
-
-    public int CalculateAttackSpeed(PlayerStats playerStats)
+    public void InitWeaponStats(PlayerStats playerStats)
     {
-        IWeapon.AttackSpeed = BaseAttackSpeed * (playerStats.UnarmedAttackSpeed / 100 + 1);
+        AttackSpeed = (BaseAttackSpeed * (playerStats.UnarmedAttackSpeed / 100 + 1)) * (playerStats.AttackSpeed[StatType.TotalVisible] / 100 + 1);
     }
 
     public int CalculateHit(PlayerStats playerStats)
