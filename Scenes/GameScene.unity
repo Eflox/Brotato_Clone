@@ -877,9 +877,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab14e852aa662e4b80860113fe662b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _decorations: []
-  numberOfDecorations: 50
-  boundaries: {x: 5, y: 5}
+  _decorations:
+  - {fileID: 21300000, guid: b765e9be164feea4d9a770c40ee1f6fd, type: 3}
+  - {fileID: 21300000, guid: 7d1df2dabcf45c94bbcdd678396c227a, type: 3}
+  - {fileID: 21300000, guid: 3bf380d42356b6d4faee7a3e9ad61c2a, type: 3}
+  - {fileID: 21300000, guid: d10cf07fea9ef5e4c9ef23de29ba4bc2, type: 3}
+  - {fileID: 21300000, guid: fcbd512e881d1484d955cd1430ae640b, type: 3}
+  - {fileID: 21300000, guid: 6db8c1bc6dfbc42408a024517a5c8856, type: 3}
+  - {fileID: 21300000, guid: 58d5f937afb5e364f944d9e40bdcb3a4, type: 3}
+  - {fileID: 21300000, guid: 5798a5fa08a2ca349a6d3733672b1a3f, type: 3}
+  - {fileID: 21300000, guid: 449f8b671a421cd4c99de0ae4facd434, type: 3}
+  - {fileID: 21300000, guid: 47e97f01c56eac14c8d32953f8b61609, type: 3}
+  - {fileID: 21300000, guid: 6d4278ace08f60341954550a5ddd1a12, type: 3}
+  numberOfDecorations: 400
+  boundaries: {x: 12, y: 8}
+  patchProbability: 0.3
+  minPatchSize: 2
+  maxPatchSize: 5
+  patchRadius: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26.559265, y: -77.78931}
+  m_AnchoredPosition: {x: 26.559326, y: -77.78931}
   m_SizeDelta: {x: 32.05661, y: 32.05661}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142291780
@@ -1649,7 +1664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.43674, y: -23.234589}
+  m_AnchoredPosition: {x: 88.43677, y: -23.23462}
   m_SizeDelta: {x: 154.2889, y: 25.0696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398266370
@@ -2086,7 +2101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 27.642029, y: -111.5}
+  m_AnchoredPosition: {x: 27.64209, y: -111.5}
   m_SizeDelta: {x: 24.725, y: 24.725}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826643478
@@ -2161,7 +2176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.200012, y: -109.52774}
+  m_AnchoredPosition: {x: 51.19995, y: -109.52771}
   m_SizeDelta: {x: 30.1371, y: 27.4999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994047423
