@@ -9,13 +9,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Acid", menuName = "Game/Item/Acid")]
 public class Acid : ItemBase, IItem, IBuyable
 {
-    public int BasePrice => 65;
-    public int Limit => 0;
-
-    [Effect]
-    public readonly int MaxHP = 8;
-
-    [Effect]
+    [Stat]
     public readonly int Dodge = -4;
 
+    [Stat]
+    public readonly int MaxHP = 8;
+
+    public int BasePrice => 65;
+
+    public int Limit => 0;
 }

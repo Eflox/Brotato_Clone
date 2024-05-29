@@ -12,13 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d66f264d228ecff4b91aeb6741f4b56a, type: 3}
   m_Name: King
   m_EditorClassIdentifier: 
-  Description: '[g]+50[c] Luck [nl] [g]+25% Damage[c] for every [g]Tier IV weapon[c]
-    you have [nl] [g]+25% Attack Speed[c] for every [g]Tier IV weapon[c] you have
-    [nl] [g]+5 Max HP[c] for every different [g]Tier IV item[c] you have [nl] [r]-15%
-    Damage[c] for every [r]Tier I weapon[c] you have [nl] [r]-15% Attack Speed[c]
-    for every [r]Tier I weapon[c] you have [nl] [r]-2 Max HP[c] for every different
-    [r]Tier I item[c] you have [nl] [234,226,176]UNLISTED BONUS:[c] Starting weapon
-    is [g]Tier II[c] '
+  Description: '[g]+50[c] Luck[nl][g]+25% Damage[c] for every [g]Tier IV weapon[c]
+    you have[nl][g]+25% Attack Speed[c] for every [g]Tier IV weapon[c] you have[nl][g]+5
+    Max HP[c] for every different [g]Tier IV item[c] you have[nl][r]-15% Damage[c]
+    for every [r]Tier I weapon[c] you have[nl][r]-15% Attack Speed[c] for every [r]Tier
+    I weapon[c] you have[nl][r]-2 Max HP[c] for every different [r]Tier I item[c]
+    you have[nl]Starting weapon is [g]Tier II[c] '
   Icon: {fileID: 21300000, guid: 2f13481175784b447aa6fd890fefeb47, type: 3}
   Name: King
   Rarity: 0

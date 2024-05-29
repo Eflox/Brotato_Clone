@@ -31,6 +31,25 @@ public class PlayerStats
     public int Luck;
     public int Harvesting;
 
+    //Multipliers
+    public int MaxHPMultiplier;
+    public int HPRegenMultiplier;
+    public int LifeStealMultiplier;
+    public int DamageMultiplier;
+    public int MeleeDmgMultiplier;
+    public int RangeDmgMultiplier;
+    public int ElementalDmgMultiplier;
+    public int AttackSpeedMultiplier;
+    public int CritChanceMultiplier;
+    public int EngineeringMultiplier;
+    public int RangeMultiplier;
+    public int ArmorMultiplier;
+    public int DodgeMultiplier;
+    public int SpeedMultiplier;
+    public int LuckMultiplier;
+    public int HarvestingMultiplier;
+
+
     //Secondary Stats
     //Combat
     public int XPGain;

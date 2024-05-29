@@ -7,6 +7,6 @@
 using System;
 
 [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
-public class EffectAttribute : Attribute
+public class StatAttribute : Attribute
 {
 }

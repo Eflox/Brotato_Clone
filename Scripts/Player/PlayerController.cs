@@ -11,11 +11,6 @@ public class PlayerController : MonoBehaviour
 {
     public Player Player;
 
-    private void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-
     public void EquipItem(ScriptableObject item)
     {
         if (item is IItem equippableItem)
@@ -27,8 +22,8 @@ public class PlayerController : MonoBehaviour
 
             foreach (var itemField in itemType.GetFields(BindingFlags.Public | BindingFlags.Instance))
             {
-                var isEffectField = itemField.GetCustomAttribute<EffectAttribute>() != null;
-                if (isEffectField)
+                var isStatField = itemField.GetCustomAttribute<StatAttribute>() != null;
+                if (isStatField)
                 {
                     var statField = statsType.GetField(itemField.Name);
                     if (statField != null && statField.FieldType == itemField.FieldType)
@@ -44,5 +39,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("Tried to equip something that is not an item.");
         }
+    }
+
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 }
