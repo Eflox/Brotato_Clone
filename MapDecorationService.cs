@@ -38,13 +38,10 @@ public class MapDecorationService : MonoBehaviour
     {
         for (int i = 0; i < numberOfDecorations; i++)
         {
-            // Determine if we should create a patch
             if (Random.value < patchProbability)
             {
-                // Determine the patch size
                 int patchSize = Random.Range(minPatchSize, maxPatchSize + 1);
 
-                // Determine the central position of the patch
                 float patchCenterX = Random.Range(-boundaries.x, boundaries.x);
                 float patchCenterY = Random.Range(-boundaries.y, boundaries.y);
 
@@ -53,12 +50,10 @@ public class MapDecorationService : MonoBehaviour
                     CreateDecoration(patchCenterX, patchCenterY, i * 100 + j); // Use a unique ID for each decoration in the patch
                 }
 
-                // Skip creating individual decorations for the ones already created in the patch
                 i += patchSize - 1;
             }
             else
             {
-                // Create a single decoration
                 float randomX = Random.Range(-boundaries.x, boundaries.x);
                 float randomY = Random.Range(-boundaries.y, boundaries.y);
                 CreateDecoration(randomX, randomY, i);
@@ -73,7 +68,6 @@ public class MapDecorationService : MonoBehaviour
 
         spriteRenderer.sprite = _decorations[Random.Range(0, _decorations.Length)];
 
-        // If the decoration is part of a patch, slightly offset its position
         if (Random.value < patchProbability)
         {
             x += Random.Range(-patchRadius, patchRadius);
@@ -81,5 +75,6 @@ public class MapDecorationService : MonoBehaviour
         }
 
         decoration.transform.position = new Vector2(x, y);
+        decoration.transform.SetParent(transform);
     }
 }

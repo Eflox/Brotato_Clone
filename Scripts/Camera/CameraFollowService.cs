@@ -27,7 +27,7 @@ public class CameraFollowService : MonoBehaviour
         {
             Vector3 targetPosition = new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z);
             float clampedX = Mathf.Clamp(targetPosition.x, -boundaries.x, boundaries.x);
-            float clampedY = Mathf.Clamp(targetPosition.y, -boundaries.y, boundaries.y);
+            float clampedY = Mathf.Clamp(targetPosition.y, -boundaries.y, boundaries.y + 1.5f);
             transform.position = new Vector3(clampedX, clampedY, targetPosition.z);
         }
     }
