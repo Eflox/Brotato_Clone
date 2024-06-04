@@ -48,6 +48,11 @@ MonoBehaviour:
     Stats:
       Materials: 10000
       MaxWeapons: 6
+      UnarmedAttackSpeed: 0
+      PreciseRange: 0
+      PrimitiveLifeSteal: 0
+      EtherealDamage: 0
+      MedicalAttackSpeed: 0
       ExplosionDmg: 0
       ExplosionSize: 0
       Bounces: 0
