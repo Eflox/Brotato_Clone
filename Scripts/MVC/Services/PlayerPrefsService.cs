@@ -24,6 +24,15 @@ namespace Brotato_Clone.Services
         {
             string newSave = $"{character.Name}";
             PlayerPrefs.SetString("Items", newSave);
+            PlayerPrefs.SetInt("Level", 0);
+            PlayerPrefs.SetInt("Xp", 0);
+            PlayerPrefs.SetInt("Materials", 0);
+            PlayerPrefs.SetInt("BagMaterials", 0);
+        }
+
+        public int GetStat(string key)
+        {
+            return PlayerPrefs.GetInt(key);
         }
 
         /// <summary>

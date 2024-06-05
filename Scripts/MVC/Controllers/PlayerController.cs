@@ -77,8 +77,10 @@ namespace Brotato_Clone.Controllers
         private void InitializeStats()
         {
             Stats.CurrentHP = Stats.MaxHP[StatType.TotalVisible];
-            Stats.CurrentLvl = 0;
-            Stats.CurrentXp = 0;
+            Stats.CurrentLvl = _playerPrefsService.GetStat("Level");
+            Stats.CurrentXp = _playerPrefsService.GetStat("Xp"); ;
+            Stats.CurrentMaterials = _playerPrefsService.GetStat("Materials"); ;
+            Stats.CurrentBagMaterials = _playerPrefsService.GetStat("BagMaterials"); ;
         }
 
         private void UpdateView()
