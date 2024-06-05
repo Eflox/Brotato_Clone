@@ -10,6 +10,7 @@ using UnityEngine;
 
 namespace Brotato_Clone.Models
 {
+    [System.Serializable]
     public class NItem
     {
         public string Name;

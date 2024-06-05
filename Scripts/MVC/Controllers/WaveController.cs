@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-namespace Brotato_Clone.Controller
+namespace Brotato_Clone.Controllers
 {
     /// <summary>
     ///

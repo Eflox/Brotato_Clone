@@ -6,6 +6,7 @@
  */
 
 using Brotato_Clone.Models;
+using Brotato_Clone.Services;
 using Brotato_Clone.Views;
 using UnityEngine;
 
@@ -22,6 +23,9 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private CharacterDetailsView _characterDetailsView;
 
+        [SerializeField]
+        private GameObject _playerGO;
+
         private void Start()
         {
             _characterSelectionView.InitializeCharacters(ItemsData.GetItemsByClass(Class.Character), this);
@@ -32,6 +36,8 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void CharacterSelected(NItem character)
         {
+            PlayerPrefsService.NewSave(character);
+            Instantiate(_playerGO);
         }
 
         /// <summary>

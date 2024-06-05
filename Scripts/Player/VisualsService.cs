@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
 using UnityEngine;
 
 public class VisualsService : MonoBehaviour
@@ -24,6 +25,7 @@ public class VisualsService : MonoBehaviour
                     if (itemClass == Class.Character)
                         _spriteRenderer.sprite = characterItem.Icon;
     }
+
     private void OnDestroy()
     {
         Destroy(_spriteRenderer);

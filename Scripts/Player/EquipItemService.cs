@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -57,7 +58,6 @@ public class EquipItemService
             }
         }
     }
-
 
     private void ApplyItemStats(IItem item)
     {

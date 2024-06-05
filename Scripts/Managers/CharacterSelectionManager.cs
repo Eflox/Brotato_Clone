@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ public class CharacterSelectionManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject _playerPrefab;
+
     private PlayerController _playerController;
 
     private void Start()
@@ -20,7 +22,7 @@ public class CharacterSelectionManager : MonoBehaviour
 
     public void LoadCharacter(CharacterSelectionButton button)
     {
-        _playerController.EquipItem(button.Character);
+        //_playerController.EquipItem(button.Character);
         SceneManager.LoadScene("GameScene");
     }
 }
