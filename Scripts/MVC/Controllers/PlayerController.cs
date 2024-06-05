@@ -7,6 +7,7 @@
 
 using Brotato_Clone.Models;
 using Brotato_Clone.Services;
+using Brotato_Clone.Views;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,9 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerVisualsController _visualsController;
 
+        [SerializeField]
+        private PlayerView _playerView;
+
         private ApplyItemService _applyItemService;
         private GetChildItemsService _getChildItemsService;
         private PlayerPrefsService _playerPrefsService;
@@ -36,9 +40,12 @@ namespace Brotato_Clone.Controllers
             _statsUpdaterService = new StatsUpdaterService();
 
             InitializeItems();
+
             _statsUpdaterService.UpdateVisibleStats(Stats);
             _visualsController.Initialize();
             _movementController.Initialize();
+
+            InitializeStats();
         }
 
         private void InitializeItems()
@@ -58,6 +65,34 @@ namespace Brotato_Clone.Controllers
                 _applyItemService.ApplyItem(item, Stats);
 
             Items = allItems;
+        }
+
+        private void InitializeStats()
+        {
+            Stats.CurrentHP = Stats.MaxHP[StatType.TotalVisible];
+            Stats.CurrentLvl = 0;
+            Stats.CurrentXp = 0;
+
+            UpdateView();
+        }
+
+        private void UpdateView()
+        {
+            _playerView.SetHealth(Stats.CurrentHP, Stats.MaxHP[StatType.TotalVisible]);
+            _playerView.SetLevel(Stats.CurrentLvl, Stats.CurrentXp, LevelData.LevelsXP[Stats.CurrentLvl]);
+            _playerView.SetMaterials(Stats.CurrentMaterials);
+            _playerView.SetBagMaterials(Stats.CurrentBagMaterials);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Stats.CurrentHP--;
+                Stats.CurrentXp++;
+                Stats.CurrentMaterials++;
+                UpdateView();
+            }
         }
     }
 }

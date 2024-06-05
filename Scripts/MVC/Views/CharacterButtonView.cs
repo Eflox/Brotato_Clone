@@ -21,7 +21,12 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Image _icon;
 
+        [SerializeField]
+        private Image _buttonBorder;
+
+        [SerializeField]
         private NItem _character;
+
         private CharacterSelectionController _controller;
 
         /// <summary>
@@ -43,6 +48,7 @@ namespace Brotato_Clone.Views
         /// </summary>
         public void OnPointerEnter(PointerEventData eventData)
         {
+            _buttonBorder.color = Color.white;
             _controller.OnCharacterHover(_character, true);
         }
 
@@ -51,6 +57,7 @@ namespace Brotato_Clone.Views
         /// </summary>
         public void OnPointerExit(PointerEventData eventData)
         {
+            _buttonBorder.color = Color.black;
             _controller.OnCharacterHover(_character, false);
         }
 

@@ -19,6 +19,8 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerView _playerView;
 
+        [SerializeField] private GameObject _playerObject;
+
         private float baseHiddenSpeed = 5f;
         private float percentageBaseSpeed = 100f;
 
@@ -35,7 +37,7 @@ namespace Brotato_Clone.Controllers
 
         public void Initialize()
         {
-            gameObject.transform.position = Vector3.zero;
+            _playerObject.transform.position = Vector3.zero;
             _initialized = true;
 
             SetupBounceAnimation();
@@ -43,8 +45,8 @@ namespace Brotato_Clone.Controllers
 
         private void SetupBounceAnimation()
         {
-            transform.localScale = new Vector3(1 - _animationWidthChange, 1 + _animationHeightChange, 1f);
-            bounceTween = transform.DOScale(new Vector3(1 + _animationWidthChange, 1 - _animationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
+            _playerObject.transform.localScale = new Vector3(1 - _animationWidthChange, 1 + _animationHeightChange, 1f);
+            bounceTween = _playerObject.transform.DOScale(new Vector3(1 + _animationWidthChange, 1 - _animationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
         }
 
         private void Update()
@@ -75,18 +77,23 @@ namespace Brotato_Clone.Controllers
             float percentageIncrease = _playerController.Stats.Speed[Models.StatType.TotalVisible] / percentageBaseSpeed;
             float newSpeed = baseHiddenSpeed * (1 + percentageIncrease);
 
-            Vector3 newPosition = transform.position + movement * newSpeed * Time.deltaTime;
+            Vector3 newPosition = _playerObject.transform.position + movement * newSpeed * Time.deltaTime;
 
             newPosition.x = Mathf.Clamp(newPosition.x, -_bounds.x, _bounds.x);
             newPosition.y = Mathf.Clamp(newPosition.y, -_bounds.y, _bounds.y);
 
-            transform.position = newPosition;
+            _playerObject.transform.position = newPosition;
 
             if ((movement.x > 0 && _lastDirection <= 0) || (movement.x < 0 && _lastDirection >= 0))
             {
                 _playerView.FlipPlayer();
                 _lastDirection = movement.x;
             }
+        }
+
+        private void OnDestroy()
+        {
+            bounceTween.timeScale = _animationIdleSpeed;
         }
     }
 }

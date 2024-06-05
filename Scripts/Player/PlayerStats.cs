@@ -15,7 +15,7 @@ namespace Brotato_Clone.Models
         [InspectableDictionary]
         public Dictionary<StatType, int> MaxHP = new Dictionary<StatType, int>
         {
-            { StatType.Base, 0 },
+            { StatType.Base, 10 },
             { StatType.Multiplier, 0 },
             { StatType.TotalVisible, 0 }
         };
@@ -148,11 +148,16 @@ namespace Brotato_Clone.Models
         };
 
         //Variable Stats
-        public int Materials;
+
+        public int CurrentHP;
+        public int CurrentLvl;
+        public int CurrentXp;
+        public int CurrentBagMaterials;
+        public int CurrentMaterials;
 
         //Character Specific Stats
-        public int MaxWeapons;
 
+        public int MaxWeapons;
         public int UnarmedAttackSpeed;
         public int PreciseRange;
         public int PrimitiveLifeSteal;
@@ -161,8 +166,8 @@ namespace Brotato_Clone.Models
 
         //Secondary Stats
         //Combat
-        public int ExplosionDmg;
 
+        public int ExplosionDmg;
         public int ExplosionSize;
         public int Bounces;
         public int Piercing;
@@ -172,25 +177,25 @@ namespace Brotato_Clone.Models
         public int Knockback;
 
         //Stand Still
-        public int StandStillArmor;
 
+        public int StandStillArmor;
         public int StandStillDodge;
         public int StandStillDmg;
 
         //Enemies
-        public int EnemyAmount;
 
+        public int EnemyAmount;
         public int EnemySpeed;
 
         //HP & Healing
-        public int ConsumableHeal;
 
+        public int ConsumableHeal;
         public int MaterialsHealing;
         public int HPPerMaterials;
 
         //Pick-Ups & Materials
-        public int PickupRange;
 
+        public int PickupRange;
         public int Trees;
         public int MaterialsInCrates;
         public int ChanceDoubleMaterials;
@@ -198,15 +203,15 @@ namespace Brotato_Clone.Models
         public int ChanceDamageOnMaterialPickUp;
 
         //Shop & Economy
-        public int ItemPrice;
 
+        public int ItemPrice;
         public int FreeRolls;
         public int ItemRecycling;
         public int MaterialsInterestGain;
 
         //Class Weapon Count
-        public int UnarmedWeapons;
 
+        public int UnarmedWeapons;
         public int PrimitiveWeapons;
         public int HeavyWeapons;
         public int BladeWeapons;

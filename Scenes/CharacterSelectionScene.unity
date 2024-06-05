@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 478039037}
   - component: {fileID: 478039039}
   m_Layer: 0
-  m_Name: CharacterSelection
+  m_Name: CharacterSelectionHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
