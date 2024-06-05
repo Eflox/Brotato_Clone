@@ -119,8 +119,8 @@ namespace Brotato_Clone.Models
         [InspectableDictionary]
         public Dictionary<StatType, int> Speed = new Dictionary<StatType, int>
         {
-            { StatType.Base, 10 },
-            { StatType.Multiplier, 50 },
+            { StatType.Base, 0 },
+            { StatType.Multiplier, 0 },
             { StatType.TotalVisible, 0 }
         };
 

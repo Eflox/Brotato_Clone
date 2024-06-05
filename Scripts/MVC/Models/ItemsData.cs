@@ -22,7 +22,7 @@ namespace Brotato_Clone.Models
                 {
                     "WellRounded", new NItem
                     {
-                        Name = "Well Rounded",
+                        Name = "WellRounded",
                         Description = "[g]+5[c] Max Hp[nl][g]+5%[c] Speed[nl][g]+8[c] Harvesting",
                         Icon = Resources.Load<Sprite>("Characters/Well_Rounded"),
                         Rarity = Rarity.Common,

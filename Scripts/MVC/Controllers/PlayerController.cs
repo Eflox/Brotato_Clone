@@ -15,9 +15,13 @@ namespace Brotato_Clone.Controllers
     public class PlayerController : MonoBehaviour
     {
         public PlayerStats Stats = new PlayerStats();
+        public List<NItem> Items = new List<NItem>();
 
         [SerializeField]
-        private List<NItem> _items = new List<NItem>();
+        private PlayerMovementController _movementController;
+
+        [SerializeField]
+        private PlayerVisualsController _visualsController;
 
         private ApplyItemService _applyItemService;
         private GetChildItemsService _getChildItemsService;
@@ -33,15 +37,17 @@ namespace Brotato_Clone.Controllers
 
             InitializeItems();
             _statsUpdaterService.UpdateVisibleStats(Stats);
+            _visualsController.Initialize();
+            _movementController.Initialize();
         }
 
         private void InitializeItems()
         {
-            _items = _playerPrefsService.GetItems();
+            Items = _playerPrefsService.GetItems();
 
-            List<NItem> allItems = new List<NItem>(_items);
+            List<NItem> allItems = new List<NItem>(Items);
 
-            foreach (var item in _items)
+            foreach (var item in Items)
             {
                 NItem[] childItems = _getChildItemsService.GetChildItems(item);
                 if (childItems != null)
@@ -51,7 +57,7 @@ namespace Brotato_Clone.Controllers
             foreach (var item in allItems)
                 _applyItemService.ApplyItem(item, Stats);
 
-            _items = allItems;
+            Items = allItems;
         }
     }
 }
