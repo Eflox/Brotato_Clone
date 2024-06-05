@@ -4,6 +4,9 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+
+namespace Brotato.Model;
+
 public class Wave
 {
     public int Count;
