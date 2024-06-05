@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Extensions;
 using Brotato_Clone.Models;
 using System.Linq;
 using TMPro;

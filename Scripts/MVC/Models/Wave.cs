@@ -15,37 +15,37 @@ namespace Brotato_Clone.Models
         /// <summary>
         /// The wave count.
         /// </summary>
-        public int Count { get; }
+        public int Count;
 
         /// <summary>
         /// The duration of the wave.
         /// </summary>
-        public int Duration { get; }
+        public int Duration;
 
         /// <summary>
         /// The number of enemies in the wave.
         /// </summary>
-        public int EnemyCount { get; }
+        public int EnemyCount;
 
         /// <summary>
         /// The damage increase for the enemies in the wave.
         /// </summary>
-        public int DamageIncrease { get; }
+        public int DamageIncrease;
 
         /// <summary>
         /// The maximum HP increase for the enemies in the wave.
         /// </summary>
-        public int MaxHPIncrease { get; }
+        public int MaxHPIncrease;
 
         /// <summary>
         /// The speed increase for the enemies in the wave.
         /// </summary>
-        public int SpeedIncrease { get; }
+        public int SpeedIncrease;
 
         /// <summary>
         /// The item prices increase during the wave.
         /// </summary>
-        public int ItemPricesIncrease { get; }
+        public int ItemPricesIncrease;
 
         /// <summary>
         /// Initializes a new instance of the Wave class.

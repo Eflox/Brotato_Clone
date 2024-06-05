@@ -18,11 +18,16 @@ namespace Brotato_Clone.Controllers
         public PlayerStats Stats = new PlayerStats();
         public List<NItem> Items = new List<NItem>();
 
+        public GameObject PlayerObject;
+
         [SerializeField]
         private PlayerMovementController _movementController;
 
         [SerializeField]
         private PlayerVisualsController _visualsController;
+
+        [SerializeField]
+        private CameraController _cameraController;
 
         [SerializeField]
         private PlayerView _playerView;
@@ -44,8 +49,10 @@ namespace Brotato_Clone.Controllers
             _statsUpdaterService.UpdateVisibleStats(Stats);
             _visualsController.Initialize();
             _movementController.Initialize();
+            _cameraController.Initialize(PlayerObject.transform);
 
             InitializeStats();
+            UpdateView();
         }
 
         private void InitializeItems()
@@ -72,8 +79,6 @@ namespace Brotato_Clone.Controllers
             Stats.CurrentHP = Stats.MaxHP[StatType.TotalVisible];
             Stats.CurrentLvl = 0;
             Stats.CurrentXp = 0;
-
-            UpdateView();
         }
 
         private void UpdateView()
