@@ -32,7 +32,6 @@ namespace Brotato_Clone.Controllers
         private void Start()
         {
             _playerPrefsService = new PlayerPrefsService();
-
             _characterSelectionView.InitializeCharacters(ItemsData.GetItemsByClass(Class.Character), this);
         }
 
