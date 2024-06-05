@@ -15,12 +15,12 @@ namespace Brotato_Clone.Services
     /// <summary>
     /// Service for handling player preferences related to items.
     /// </summary>
-    public static class PlayerPrefsService
+    public class PlayerPrefsService
     {
         /// <summary>
         /// Saves a new character item to player preferences.
         /// </summary>
-        public static void NewSave(NItem character)
+        public void NewSave(NItem character)
         {
             string newSave = $"{character.Name}";
             PlayerPrefs.SetString("Items", newSave);
@@ -29,7 +29,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Adds an item to the existing saved items in player preferences.
         /// </summary>
-        public static void SaveItem(NItem item)
+        public void SaveItem(NItem item)
         {
             string newSave = $"{GetKeyValue()},{item.Name}";
             PlayerPrefs.SetString("Items", newSave);
@@ -38,15 +38,19 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Retrieves the list of saved items from player preferences.
         /// </summary>
-        public static List<NItem> GetItems()
+        public List<NItem> GetItems()
         {
             List<NItem> items = new List<NItem>();
             string keyValue = GetKeyValue();
             string[] itemNames = keyValue.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string item in itemNames)
+            {
                 if (ItemsData.Items.ContainsKey(item))
+                {
                     items.Add(ItemsData.Items[item]);
+                }
+            }
 
             return items;
         }
@@ -54,7 +58,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Retrieves the saved items string from player preferences.
         /// </summary>
-        private static string GetKeyValue()
+        private string GetKeyValue()
         {
             return PlayerPrefs.GetString("Items");
         }

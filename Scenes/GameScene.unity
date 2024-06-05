@@ -1428,6 +1428,7 @@ Transform:
   - {fileID: 34618765}
   - {fileID: 476574916}
   - {fileID: 1425094250}
+  - {fileID: 1539324854}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073021371
@@ -2017,6 +2018,166 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510142776}
   m_CullTransparentMesh: 1
+--- !u!1 &1539324853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539324854}
+  - component: {fileID: 1539324855}
+  - component: {fileID: 1539324856}
+  - component: {fileID: 1539324857}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1539324854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539324853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1004780287}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1539324855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539324853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5b071d63278ad40858901fb090ef53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stats:
+    Materials: 0
+    MaxWeapons: 0
+    UnarmedAttackSpeed: 0
+    PreciseRange: 0
+    PrimitiveLifeSteal: 0
+    EtherealDamage: 0
+    MedicalAttackSpeed: 0
+    ExplosionDmg: 0
+    ExplosionSize: 0
+    Bounces: 0
+    Piercing: 0
+    PiercingDmg: 0
+    BurningSpeed: 0
+    BurningSpread: 0
+    Knockback: 0
+    StandStillArmor: 0
+    StandStillDodge: 0
+    StandStillDmg: 0
+    EnemyAmount: 0
+    EnemySpeed: 0
+    ConsumableHeal: 0
+    MaterialsHealing: 0
+    HPPerMaterials: 0
+    PickupRange: 0
+    Trees: 0
+    MaterialsInCrates: 0
+    ChanceDoubleMaterials: 0
+    ChanceInstantMaterialPickup: 0
+    ChanceDamageOnMaterialPickUp: 0
+    ItemPrice: 0
+    FreeRolls: 0
+    ItemRecycling: 0
+    MaterialsInterestGain: 0
+    UnarmedWeapons: 0
+    PrimitiveWeapons: 0
+    HeavyWeapons: 0
+    BladeWeapons: 0
+    MedicalWeapons: 0
+    PreciseWeapons: 0
+    LegendaryWeapons: 0
+    MedievalWeapons: 0
+    ElementalWeapons: 0
+    EtherealWeapons: 0
+    BluntWeapons: 0
+    SupportWeapons: 0
+    ExplosiveWeapons: 0
+    ToolWeapons: 0
+  _items: []
+--- !u!114 &1539324856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539324853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba44ad9dc2a0fe4a9bade848d6eed17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 1539324855}
+--- !u!212 &1539324857
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539324853}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 04751b889c7d7b54491a01f20bccf030, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.96, y: 0.96}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1631841620
 GameObject:
   m_ObjectHideFlags: 0

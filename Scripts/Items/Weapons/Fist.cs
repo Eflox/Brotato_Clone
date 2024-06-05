@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Models;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -35,7 +36,6 @@ public class Fist : ItemBase, IItem, IBuyable, IWeapon
 
     public int CalculateHit(PlayerStats playerStats)
     {
-
         Debug.Log(AttackSpeed);
 
         int damage = BaseDamage + playerStats.MeleeDmg[StatType.TotalVisible];

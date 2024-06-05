@@ -4,6 +4,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Models;
+
 public interface IOnMaterialPickup
 {
     void OnMaterialPickup(PlayerStats stats);

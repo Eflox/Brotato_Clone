@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Models;
 using System.Collections.Generic;
 
 [System.Serializable]

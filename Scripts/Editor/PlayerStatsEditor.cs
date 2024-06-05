@@ -5,6 +5,7 @@
  */
 
 using Brotato_Clone.Controllers;
+using Brotato_Clone.Models;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
@@ -18,15 +19,15 @@ public class PlayerControllerEditor : Editor
 
         DrawDefaultInspector();
 
-        if (controller.Player == null)
+        if (controller == null)
         {
             EditorGUILayout.HelpBox("Player reference is not set.", MessageType.Warning);
             return;
         }
 
-        if (controller.Player != null && controller.Player.Stats != null)
+        if (controller != null && controller.Stats != null)
         {
-            var stats = controller.Player.Stats;
+            var stats = controller.Stats;
 
             var fields = typeof(PlayerStats).GetFields(BindingFlags.Public | BindingFlags.Instance);
             foreach (var field in fields)
@@ -43,10 +44,10 @@ public class PlayerControllerEditor : Editor
                         {
                             var value = dictionary[key];
                             int newValue = EditorGUILayout.IntField(key.ToString(), value);
-                            if (newValue != value) // check if the value changed
+                            if (newValue != value)
                             {
-                                dictionary[key] = newValue; // update the dictionary directly
-                                EditorUtility.SetDirty(controller); // mark the controller as dirty to save changes
+                                dictionary[key] = newValue;
+                                EditorUtility.SetDirty(controller);
                             }
                         }
                     }

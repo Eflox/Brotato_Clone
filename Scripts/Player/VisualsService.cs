@@ -14,16 +14,16 @@ public class VisualsService : MonoBehaviour
 
     public void Init(PlayerController playerController)
     {
-        _playerController = playerController;
+        //_playerController = playerController;
 
-        _spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        //_spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
 
-        _spriteRenderer.sortingOrder = 10;
-        foreach (var item in _playerController.Player.Items)
-            if (item is ItemBase characterItem && characterItem.classes != null)
-                foreach (var itemClass in characterItem.classes)
-                    if (itemClass == Class.Character)
-                        _spriteRenderer.sprite = characterItem.Icon;
+        //_spriteRenderer.sortingOrder = 10;
+        //foreach (var item in _playerController.Player.Items)
+        //    if (item is ItemBase characterItem && characterItem.classes != null)
+        //        foreach (var itemClass in characterItem.classes)
+        //            if (itemClass == Class.Character)
+        //                _spriteRenderer.sprite = characterItem.Icon;
     }
 
     private void OnDestroy()

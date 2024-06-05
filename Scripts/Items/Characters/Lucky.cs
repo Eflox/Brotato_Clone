@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Models;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Lucky", menuName = "Game/Characters/Lucky")]

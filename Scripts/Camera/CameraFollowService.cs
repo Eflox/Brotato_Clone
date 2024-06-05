@@ -13,12 +13,12 @@ public class CameraFollowService : MonoBehaviour
 
     private void Start()
     {
-        GameObject player = GameObject.Find("Player(Clone)");
+        GameObject player = GameObject.Find("Player");
 
         if (player != null)
             playerTransform = player.transform;
         else
-            Debug.LogError("Player(Clone) not found!");
+            Debug.LogError("Player not found!");
     }
 
     private void Update()
