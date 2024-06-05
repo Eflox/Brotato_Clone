@@ -1,6 +1,6 @@
 /*
  * Script Author: Charles d'Ansembourg
- * Creation Date: #CREATIONDATE#
+ * Creation Date: 05/06/2024
  * Contact: c.dansembourg@icloud.com
  */
 

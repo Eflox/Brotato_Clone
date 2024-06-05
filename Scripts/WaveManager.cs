@@ -4,6 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato.Models;
 using System.Collections.Generic;
 
 public static class WaveManager
@@ -18,7 +19,7 @@ public static class WaveManager
         { 4, new Wave(4, duration: 35, enemyCount: 45, damageIncrease: 4, maxHPIncrease: 20, speedIncrease: 4, itemPricesIncrease: 8) },
         { 5, new Wave(5, duration: 40, enemyCount: 55, damageIncrease: 5, maxHPIncrease: 25, speedIncrease: 5, itemPricesIncrease: 10) },
         { 6, new Wave(6, duration: 45, enemyCount: 65, damageIncrease: 6, maxHPIncrease: 30, speedIncrease: 6, itemPricesIncrease: 12) },
-        { 7, new Wave(7, duration: 50, enemyCount: 75, damageIncrease: 7, maxHPIncrease: 35, speedIncrease: 7, itemPricesIncrease: 14) },
+        { 7, new Wave(7, duration: 50, enemyCount: 75 , damageIncrease: 7, maxHPIncrease: 35, speedIncrease: 7, itemPricesIncrease: 14) },
         { 8, new Wave(8, duration: 55, enemyCount: 85, damageIncrease: 8, maxHPIncrease: 40, speedIncrease: 8, itemPricesIncrease: 16) },
         { 9, new Wave(9, duration: 60, enemyCount: 95, damageIncrease: 9, maxHPIncrease: 45, speedIncrease: 9, itemPricesIncrease: 18) },
         { 10, new Wave(10, duration: 60, enemyCount: 105, damageIncrease: 10, maxHPIncrease: 50, speedIncrease: 10, itemPricesIncrease: 20) },
