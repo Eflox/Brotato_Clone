@@ -6,7 +6,7 @@
 
 using System.Collections.Generic;
 
-namespace Brotato.Models
+namespace Brotato_Clone.Models
 {
     /// <summary>
     /// Holds predefined wave data for the game.

@@ -4,7 +4,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato.Models;
+using Brotato_Clone.Models;
 using System.Collections.Generic;
 
 public static class WaveManager
