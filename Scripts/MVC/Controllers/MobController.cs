@@ -26,21 +26,22 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private MobMovementController _mobMovementController;
 
-        private void Update()
-        {
-            if (_initialized)
-                return;
-        }
-
-        private void Initialize(Mob mobData, Transform player)
+        public void Initialize(Mob mobData, Transform player)
         {
             MobData = mobData;
 
+            gameObject.name = $"{mobData.Name}_Mob";
             _currentHP = MobData.HP;
             _mobView.SetSprite(mobData.Sprite);
             _mobMovementController.Initialize(player);
 
             _initialized = true;
+        }
+
+        private void Update()
+        {
+            if (_initialized)
+                return;
         }
     }
 }
