@@ -19,7 +19,7 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerView _playerView;
 
-        private float baseHiddenSpeed = 10f;
+        private float baseHiddenSpeed = 5f;
         private float percentageBaseSpeed = 100f;
 
         private bool _initialized = false;

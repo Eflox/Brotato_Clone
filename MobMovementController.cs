@@ -34,8 +34,9 @@ namespace Brotato_Clone
 
         private float _lastDirection = 1f;
 
-        public void Initialize(Transform player)
+        public void Initialize(Transform player, int speed)
         {
+            baseSpeed = speed;
             _player = player;
             SetupBounceAnimation();
             _initialized = true;
@@ -60,7 +61,7 @@ namespace Brotato_Clone
             else if (!isCurrentlyMoving && bounceTween.timeScale != 1f)
                 bounceTween.timeScale = _animationIdleSpeed;
 
-            _rb.velocity = direction * (baseSpeed * 670) * Time.deltaTime;
+            _rb.velocity = direction * (baseSpeed * 7) * Time.deltaTime;
 
             if ((direction.x > 0 && _lastDirection <= 0) || (direction.x < 0 && _lastDirection >= 0))
             {
@@ -72,6 +73,15 @@ namespace Brotato_Clone
         private void OnDestroy()
         {
             bounceTween.timeScale = _animationIdleSpeed;
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            {
+                // Ignore collision with other enemies
+                Physics2D.IgnoreCollision(collision.collider, _rb.GetComponent<Collider2D>());
+            }
         }
     }
 }

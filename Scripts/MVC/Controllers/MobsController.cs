@@ -33,9 +33,7 @@ namespace Brotato_Clone.Controllers
                 return;
 
             if (Input.GetKeyDown(KeyCode.Space))
-            {
                 SpawnMob();
-            }
         }
 
         private void SpawnMob()

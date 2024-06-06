@@ -24,7 +24,7 @@ namespace Brotato_Clone
                     {
                         Name = "BabyAlien",
                         Description = "Chases the character, deals damage on touch.",
-                        Sprite = Resources.Load<Sprite>("Mobs/Baby_Alien"),
+                        Sprite = Resources.Load<Sprite>("Mobs/Common/Baby_Alien"),
                         HP = 3,
                         AddedHPPerWave = 2.0f,
                         SpeedRange = new int[] { 200, 300 },

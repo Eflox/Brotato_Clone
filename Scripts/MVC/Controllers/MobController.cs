@@ -33,7 +33,9 @@ namespace Brotato_Clone.Controllers
             gameObject.name = $"{mobData.Name}_Mob";
             _currentHP = MobData.HP;
             _mobView.SetSprite(mobData.Sprite);
-            _mobMovementController.Initialize(player);
+
+            int speed = Random.Range(mobData.SpeedRange[0], mobData.SpeedRange[1]);
+            _mobMovementController.Initialize(player, speed);
 
             _initialized = true;
         }
