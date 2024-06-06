@@ -23,6 +23,9 @@ namespace Brotato_Clone
         private Rigidbody2D _rb;
 
         [SerializeField]
+        private CircleCollider2D _collider;
+
+        [SerializeField]
         private float baseSpeed = 10f;
 
         private Tween bounceTween;
@@ -39,6 +42,9 @@ namespace Brotato_Clone
             baseSpeed = speed;
             _player = player;
             SetupBounceAnimation();
+
+            _collider.enabled = true;
+
             _initialized = true;
         }
 
@@ -54,14 +60,20 @@ namespace Brotato_Clone
                 return;
 
             Vector2 direction = (_player.position - transform.position).normalized;
-            bool isCurrentlyMoving = direction != Vector2.zero;
+            float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
+            float stoppingDistance = 0.2f;
+
+            bool isCurrentlyMoving = direction != Vector2.zero && distanceToPlayer > stoppingDistance;
 
             if (isCurrentlyMoving && bounceTween.timeScale != 5f)
                 bounceTween.timeScale = _animationMovingSpeed;
             else if (!isCurrentlyMoving && bounceTween.timeScale != 1f)
                 bounceTween.timeScale = _animationIdleSpeed;
 
-            _rb.velocity = direction * (baseSpeed * 7) * Time.deltaTime;
+            if (distanceToPlayer > stoppingDistance)
+                _rb.velocity = direction * (baseSpeed * 7) * Time.deltaTime;
+            else
+                _rb.velocity = Vector2.zero;
 
             if ((direction.x > 0 && _lastDirection <= 0) || (direction.x < 0 && _lastDirection >= 0))
             {
@@ -79,7 +91,6 @@ namespace Brotato_Clone
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
-                // Ignore collision with other enemies
                 Physics2D.IgnoreCollision(collision.collider, _rb.GetComponent<Collider2D>());
             }
         }

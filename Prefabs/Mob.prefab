@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mobView: {fileID: 8409722592149292142}
   _rb: {fileID: 7010121950247090358}
+  _collider: {fileID: 802454495976492911}
   baseSpeed: 5
 --- !u!114 &8409722592149292142
 MonoBehaviour:
@@ -127,7 +128,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693358878085293269}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

@@ -33,6 +33,8 @@ namespace Brotato_Clone.Controllers
         private float _animationMovingSpeed = 3.0f;
         private float _animationIdleSpeed = 0.3f;
 
+        private bool _isMoving = false;
+
         public void Initialize()
         {
             _playerController.PlayerObject.transform.position = Vector3.zero;
@@ -86,6 +88,17 @@ namespace Brotato_Clone.Controllers
             {
                 _playerView.FlipPlayer();
                 _lastDirection = movement.x;
+            }
+
+            if (isCurrentlyMoving && !_isMoving)
+            {
+                //_playerView.PlayerMoving(true);
+                _isMoving = true;
+            }
+            else if (!isCurrentlyMoving && _isMoving)
+            {
+                //_playerView.PlayerMoving(false);
+                _isMoving = false;
             }
         }
 

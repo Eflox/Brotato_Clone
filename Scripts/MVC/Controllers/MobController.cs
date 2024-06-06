@@ -15,6 +15,8 @@ namespace Brotato_Clone.Controllers
     {
         public Mob MobData;
 
+        private Transform _player;
+
         [SerializeField]
         private int _currentHP;
 
@@ -29,15 +31,22 @@ namespace Brotato_Clone.Controllers
         public void Initialize(Mob mobData, Transform player)
         {
             MobData = mobData;
-
+            _player = player;
             gameObject.name = $"{mobData.Name}_Mob";
             _currentHP = MobData.HP;
-            _mobView.SetSprite(mobData.Sprite);
 
-            int speed = Random.Range(mobData.SpeedRange[0], mobData.SpeedRange[1]);
-            _mobMovementController.Initialize(player, speed);
+            _mobView.SetSpawnSprite(Resources.Load<Sprite>("Symbols/SpawnCross"));
+
+            Invoke("Spawn", 1f);
 
             _initialized = true;
+        }
+
+        private void Spawn()
+        {
+            _mobView.SetSprite(MobData.Sprite);
+            int speed = Random.Range(MobData.SpeedRange[0], MobData.SpeedRange[1]);
+            _mobMovementController.Initialize(_player, speed);
         }
 
         private void Update()
