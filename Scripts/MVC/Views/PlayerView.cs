@@ -39,7 +39,6 @@ namespace Brotato_Clone.Views
 
         public void SetCharacter(Sprite characterSprite)
         {
-            _spriteRenderer.sortingOrder = 10;
             _spriteRenderer.sprite = characterSprite;
         }
 
