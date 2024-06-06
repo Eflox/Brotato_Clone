@@ -30,6 +30,9 @@ namespace Brotato_Clone.Controllers
         private CameraController _cameraController;
 
         [SerializeField]
+        private WaveController _waveController;
+
+        [SerializeField]
         private PlayerView _playerView;
 
         private ApplyItemService _applyItemService;
@@ -45,13 +48,13 @@ namespace Brotato_Clone.Controllers
             _statsUpdaterService = new StatsUpdaterService();
 
             InitializeItems();
+            InitializeStats();
 
-            _statsUpdaterService.UpdateVisibleStats(Stats);
             _visualsController.Initialize();
             _movementController.Initialize();
+            _waveController.Initialize(WaveData.Waves[Stats.CurrentWave]);
             _cameraController.Initialize(PlayerObject.transform);
 
-            InitializeStats();
             UpdateView();
         }
 
@@ -76,9 +79,13 @@ namespace Brotato_Clone.Controllers
 
         private void InitializeStats()
         {
+            _statsUpdaterService.UpdateVisibleStats(Stats);
+
             Stats.CurrentHP = Stats.MaxHP[StatType.TotalVisible];
+            Stats.CurrentWave = _playerPrefsService.GetStat("Wave");
             Stats.CurrentLvl = _playerPrefsService.GetStat("Level");
             Stats.CurrentXp = _playerPrefsService.GetStat("Xp"); ;
+            Stats.CurrentMaterials = _playerPrefsService.GetStat("Materials"); ;
             Stats.CurrentMaterials = _playerPrefsService.GetStat("Materials"); ;
             Stats.CurrentBagMaterials = _playerPrefsService.GetStat("BagMaterials"); ;
         }

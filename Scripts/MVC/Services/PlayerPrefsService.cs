@@ -24,6 +24,7 @@ namespace Brotato_Clone.Services
         {
             string newSave = $"{character.Name}";
             PlayerPrefs.SetString("Items", newSave);
+            PlayerPrefs.SetInt("Wave", 1);
             PlayerPrefs.SetInt("Level", 0);
             PlayerPrefs.SetInt("Xp", 0);
             PlayerPrefs.SetInt("Materials", 0);

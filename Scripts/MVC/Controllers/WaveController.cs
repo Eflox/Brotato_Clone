@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Models;
 using Brotato_Clone.Views;
 using UnityEngine;
 
@@ -19,16 +20,34 @@ namespace Brotato_Clone.Controllers
         private PlayerMovementController _playerMovementController;
 
         [SerializeField]
+        private MobsController _mobsController;
+
+        [SerializeField]
         private WaveView _waveView;
 
-        private float _countdownTime = 30f;
+        private float _countdownTimer;
+
+        private bool _initialized = false;
+
+        public void Initialize(Wave wave)
+        {
+            _countdownTimer = wave.Duration;
+            _waveView.SetWaveCount(wave.Count);
+
+            _mobsController.Initialize(wave);
+
+            _initialized = true;
+        }
 
         private void Update()
         {
-            if (_countdownTime > 0)
+            if (!_initialized)
+                return;
+
+            if (_countdownTimer > 0)
             {
-                _countdownTime -= Time.deltaTime;
-                int timeLeft = Mathf.CeilToInt(_countdownTime);
+                _countdownTimer -= Time.deltaTime;
+                int timeLeft = Mathf.CeilToInt(_countdownTimer);
                 _waveView.SetTimer(timeLeft);
             }
             else
