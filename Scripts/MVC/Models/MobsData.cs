@@ -5,11 +5,10 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Models;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Models
 {
     public static class MobsData
     {

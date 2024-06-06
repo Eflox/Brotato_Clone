@@ -6,6 +6,7 @@
  */
 
 using Brotato_Clone.Models;
+using System.Collections;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -13,7 +14,6 @@ namespace Brotato_Clone.Controllers
     public class MobsController : MonoBehaviour
     {
         private Wave _currentWave;
-        private bool _initialized = false;
 
         [SerializeField]
         private GameObject _mobPrefab;
@@ -24,23 +24,45 @@ namespace Brotato_Clone.Controllers
         public void Initialize(Wave wave)
         {
             _currentWave = wave;
-            _initialized = true;
+
+            StartWave();
         }
 
-        private void Update()
+        private void StartWave()
         {
-            if (!_initialized)
-                return;
+            StartCoroutine(SpawnMobsRoutine());
+        }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+        private IEnumerator SpawnMobsRoutine()
+        {
+            float spawnInterval = (float)_currentWave.Duration / _currentWave.EnemyCount;
+            float elapsedTime = 0f;
+
+            for (int i = 0; i < _currentWave.EnemyCount; i++)
+            {
                 SpawnMob();
+
+                float randomFactor = Random.Range(0.8f, 1.2f);
+                yield return new WaitForSeconds(spawnInterval * randomFactor);
+
+                elapsedTime += spawnInterval * randomFactor;
+                if (elapsedTime >= _currentWave.Duration)
+                    break;
+            }
         }
 
         private void SpawnMob()
         {
-            MobController mob = Instantiate(_mobPrefab, new Vector3(5, 5, 0), Quaternion.identity).GetComponent<MobController>();
-
+            Vector3 spawnPosition = GetRandomSpawnPosition();
+            MobController mob = Instantiate(_mobPrefab, spawnPosition, Quaternion.identity).GetComponent<MobController>();
             mob.Initialize(MobsData.Mobs["BabyAlien"], _playerController.PlayerObject.transform);
+        }
+
+        private Vector3 GetRandomSpawnPosition()
+        {
+            float x = Random.Range(-10f, 10f);
+            float y = Random.Range(-10f, 10f);
+            return new Vector3(x, y, 0);
         }
     }
 }

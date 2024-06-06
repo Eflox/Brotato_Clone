@@ -9,7 +9,7 @@ using Brotato_Clone.Views;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Controllers
 {
     public class MobMovementController : MonoBehaviour
     {
