@@ -12,14 +12,6 @@ namespace Brotato_Clone.Controllers
 {
     public class MenuController : MonoBehaviour
     {
-        private void Awake()
-        {
-            Application.targetFrameRate = 60;
-
-            if (QualitySettings.vSyncCount != 0)
-                QualitySettings.vSyncCount = 0;
-        }
-
         public void LoadScene(string scene)
         {
             SceneManager.LoadScene(scene);

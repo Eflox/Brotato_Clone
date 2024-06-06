@@ -21,6 +21,9 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerController _playerController;
 
+        [SerializeField]
+        private Vector2 _boundaries;
+
         public void Initialize(Wave wave)
         {
             _currentWave = wave;
@@ -60,8 +63,8 @@ namespace Brotato_Clone.Controllers
 
         private Vector3 GetRandomSpawnPosition()
         {
-            float x = Random.Range(-10f, 10f);
-            float y = Random.Range(-10f, 10f);
+            float y = Random.Range(-_boundaries.y, _boundaries.y);
+            float x = Random.Range(-_boundaries.x, _boundaries.x);
             return new Vector3(x, y, 0);
         }
     }

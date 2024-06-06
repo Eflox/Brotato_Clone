@@ -507,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mobPrefab: {fileID: 693358878085293269, guid: 2425170d6b31fdc468e666076d93526f, type: 3}
   _playerController: {fileID: 541956791}
+  _boundaries: {x: 12.8, y: 8.7}
 --- !u!1 &261176335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1083,7 @@ GameObject:
   - component: {fileID: 541956790}
   - component: {fileID: 541956789}
   - component: {fileID: 541956788}
+  - component: {fileID: 541956792}
   m_Layer: 0
   m_Name: PlayerHandler
   m_TagString: Untagged
@@ -1225,6 +1227,18 @@ MonoBehaviour:
   _cameraController: {fileID: 690839402}
   _waveController: {fileID: 1073021374}
   _playerView: {fileID: 541956788}
+--- !u!114 &541956792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3867a142d9545448e758ac4fde4c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &690839400
 GameObject:
   m_ObjectHideFlags: 0
