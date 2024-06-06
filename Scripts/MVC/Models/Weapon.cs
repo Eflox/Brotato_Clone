@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Interfaces;
 using Brotato_Clone.Models;
 
 namespace Brotato_Clone
@@ -14,8 +15,11 @@ namespace Brotato_Clone
         public int Damage;
         public float Cooldown;
         public int CritChance;
+        public float CritDamage;
         public int Range;
         public int Knockback;
         public int LifeSteal;
+
+        public IWeaponMechanic WeaponMechanic;
     }
 }

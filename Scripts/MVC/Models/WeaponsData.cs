@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,11 @@ namespace Brotato_Clone.Models
 {
     public static class WeaponsData
     {
-        public static readonly IReadOnlyDictionary<string, NItem> Weapons;
+        public static readonly IReadOnlyDictionary<string, Weapon> Weapons;
 
         static WeaponsData()
         {
-            Weapons = new Dictionary<string, NItem>
+            Weapons = new Dictionary<string, Weapon>
             {
                 {
                     "Fist", new Weapon
@@ -26,7 +27,16 @@ namespace Brotato_Clone.Models
                         Icon = Resources.Load<Sprite>("Weapons/Fist"),
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Unarmed },
-                        Attribute = null,
+
+                        Damage = 8,
+                        Cooldown = 0.78f,
+                        CritChance = 1,
+                        CritDamage = 1.5f,
+                        Range = 150,
+                        Knockback = 15,
+                        LifeSteal = 0,
+
+                        WeaponMechanic = new FistController()
                     }
                 }
             };
