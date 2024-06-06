@@ -1,16 +1,15 @@
 /*
- * MenuController.cs
+ * GameController.cs
  * Script Author: Charles d'Ansembourg
- * Creation Date: 28/05/2024
+ * Creation Date: 06/06/2024
  * Contact: c.dansembourg@icloud.com
  */
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Brotato_Clone.Controllers
 {
-    public class MenuController : MonoBehaviour
+    public class GameController : MonoBehaviour
     {
         private void Awake()
         {
@@ -18,11 +17,6 @@ namespace Brotato_Clone.Controllers
 
             if (QualitySettings.vSyncCount != 0)
                 QualitySettings.vSyncCount = 0;
-        }
-
-        public void LoadScene(string scene)
-        {
-            SceneManager.LoadScene(scene);
         }
     }
 }

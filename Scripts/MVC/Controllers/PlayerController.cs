@@ -40,6 +40,8 @@ namespace Brotato_Clone.Controllers
         private PlayerPrefsService _playerPrefsService;
         private StatsUpdaterService _statsUpdaterService;
 
+        private bool _paused = false;
+
         private void Start()
         {
             _applyItemService = new ApplyItemService();
@@ -106,6 +108,16 @@ namespace Brotato_Clone.Controllers
                 Stats.CurrentXp++;
                 Stats.CurrentMaterials++;
                 UpdateView();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                _paused = !_paused;
+
+                if (!_paused)
+                    Time.timeScale = 1;
+                else
+                    Time.timeScale = 0;
             }
         }
     }

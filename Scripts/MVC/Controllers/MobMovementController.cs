@@ -32,7 +32,7 @@ namespace Brotato_Clone.Controllers
 
         private float _animationWidthChange = 0.1f;
         private float _animationHeightChange = 0.2f;
-        private float _animationMovingSpeed = 3.0f;
+        private float _animationMovingSpeed = 1.0f;
         private float _animationIdleSpeed = 0.3f;
 
         private float _lastDirection = 1f;
@@ -41,6 +41,9 @@ namespace Brotato_Clone.Controllers
         {
             baseSpeed = speed;
             _player = player;
+
+            _animationMovingSpeed += Random.Range(-0.1f, 0.1f);
+
             SetupBounceAnimation();
 
             _collider.enabled = true;
@@ -54,7 +57,7 @@ namespace Brotato_Clone.Controllers
             bounceTween = transform.DOScale(new Vector3(1 + _animationWidthChange, 1 - _animationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (!_initialized)
                 return;
@@ -67,11 +70,9 @@ namespace Brotato_Clone.Controllers
 
             if (isCurrentlyMoving && bounceTween.timeScale != 5f)
                 bounceTween.timeScale = _animationMovingSpeed;
-            else if (!isCurrentlyMoving && bounceTween.timeScale != 1f)
-                bounceTween.timeScale = _animationIdleSpeed;
 
             if (distanceToPlayer > stoppingDistance)
-                _rb.velocity = direction * (baseSpeed * 7) * Time.deltaTime;
+                _rb.velocity = direction * (baseSpeed / 2) * Time.fixedDeltaTime;
             else
                 _rb.velocity = Vector2.zero;
 

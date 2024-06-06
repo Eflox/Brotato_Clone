@@ -38,9 +38,9 @@ namespace Brotato_Clone.Controllers
         public void Initialize()
         {
             _playerController.PlayerObject.transform.position = Vector3.zero;
-            _initialized = true;
 
             SetupBounceAnimation();
+            _initialized = true;
         }
 
         private void SetupBounceAnimation()
