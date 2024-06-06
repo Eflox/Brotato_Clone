@@ -5,7 +5,6 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Controllers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +35,7 @@ namespace Brotato_Clone.Models
                         Knockback = 15,
                         LifeSteal = 0,
 
-                        WeaponMechanic = new FistController()
+                        //WeaponMechanic = new FistController()
                     }
                 }
             };

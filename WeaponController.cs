@@ -15,8 +15,9 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private WeaponView _weaponView;
 
-        public void Initialize()
+        public void Initialize(Weapon weapon)
         {
+            _weaponView.SetSprite(weapon.Icon);
         }
     }
 }

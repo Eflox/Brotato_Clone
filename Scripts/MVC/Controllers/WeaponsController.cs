@@ -18,6 +18,9 @@ namespace Brotato_Clone.Controllers
 
         private List<Transform> _weaponContainers = new List<Transform>();
 
+        [SerializeField]
+        private GameObject _weaponPrefab;
+
         private void Start()
         {
             Weapon[] weaponsTest = new Weapon[]
@@ -39,6 +42,11 @@ namespace Brotato_Clone.Controllers
 
         private void SpawnWeapons(Weapon[] weapons)
         {
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                var newWeapon = Instantiate(_weaponPrefab, _weaponContainers[i].position, Quaternion.identity, _weaponContainers[i]);
+                newWeapon.GetComponent<WeaponController>().Initialize(weapons[i]);
+            }
         }
 
         private void CreateWeaponContainers(Weapon[] weapons)

@@ -11,5 +11,12 @@ namespace Brotato_Clone.Views
 {
     public class WeaponView : MonoBehaviour
     {
+        [SerializeField]
+        private SpriteRenderer _spriteRenderer;
+
+        public void SetSprite(Sprite weaponSprite)
+        {
+            _spriteRenderer.sprite = weaponSprite;
+        }
     }
 }

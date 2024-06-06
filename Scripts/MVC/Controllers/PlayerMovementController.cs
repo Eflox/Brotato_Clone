@@ -6,7 +6,6 @@
  */
 
 using Brotato_Clone.Views;
-using DG.Tweening;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -26,12 +25,6 @@ namespace Brotato_Clone.Controllers
         private float _lastDirection = 1f;
 
         public Vector2 _bounds = new Vector2(10f, 10f);
-        private Tween bounceTween;
-
-        private float _animationWidthChange = 0.1f;
-        private float _animationHeightChange = 0.2f;
-        private float _animationMovingSpeed = 3.0f;
-        private float _animationIdleSpeed = 0.3f;
 
         private bool _isMoving = false;
 
@@ -39,14 +32,8 @@ namespace Brotato_Clone.Controllers
         {
             _playerController.PlayerObject.transform.position = Vector3.zero;
 
-            SetupBounceAnimation();
+            _playerView.SetupBounceAnimation();
             _initialized = true;
-        }
-
-        private void SetupBounceAnimation()
-        {
-            _playerController.PlayerObject.transform.localScale = new Vector3(1 - _animationWidthChange, 1 + _animationHeightChange, 1f);
-            bounceTween = _playerController.PlayerObject.transform.DOScale(new Vector3(1 + _animationWidthChange, 1 - _animationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
         }
 
         private void Update()
@@ -69,10 +56,10 @@ namespace Brotato_Clone.Controllers
 
             bool isCurrentlyMoving = movement != Vector3.zero;
 
-            if (isCurrentlyMoving && bounceTween.timeScale != 5f)
-                bounceTween.timeScale = _animationMovingSpeed;
-            else if (!isCurrentlyMoving && bounceTween.timeScale != 1f)
-                bounceTween.timeScale = _animationIdleSpeed;
+            if (isCurrentlyMoving)
+                _playerView.SetBounceAnimationSpeed(_playerView.AnimationMovingSpeed);
+            else
+                _playerView.SetBounceAnimationSpeed(_playerView.AnimationIdleSpeed);
 
             float percentageIncrease = _playerController.Stats.Speed[Models.StatType.TotalVisible] / percentageBaseSpeed;
             float newSpeed = baseHiddenSpeed * (1 + percentageIncrease);
@@ -104,7 +91,7 @@ namespace Brotato_Clone.Controllers
 
         private void OnDestroy()
         {
-            bounceTween.timeScale = _animationIdleSpeed;
+            _playerView.SetBounceAnimationSpeed(_playerView.AnimationIdleSpeed);
         }
     }
 }

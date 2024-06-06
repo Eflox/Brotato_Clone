@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ namespace Brotato_Clone.Views
 {
     public class PlayerView : MonoBehaviour
     {
+        [SerializeField]
+        private Transform _playerGraphics;
+
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
@@ -36,6 +40,27 @@ namespace Brotato_Clone.Views
 
         [SerializeField]
         private Image _bagSprite;
+
+        private Tween bounceTween;
+
+        public float AnimationWidthChange { get; private set; } = 0.1f;
+        public float AnimationHeightChange { get; private set; } = 0.2f;
+        public float AnimationMovingSpeed { get; private set; } = 3.0f;
+        public float AnimationIdleSpeed { get; private set; } = 0.3f;
+
+        public void SetupBounceAnimation()
+        {
+            _playerGraphics.localScale = new Vector3(1 - AnimationWidthChange, 1 + AnimationHeightChange, 1f);
+            bounceTween = _playerGraphics.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
+        }
+
+        public void SetBounceAnimationSpeed(float speed)
+        {
+            if (bounceTween != null)
+            {
+                bounceTween.timeScale = speed;
+            }
+        }
 
         public void SetCharacter(Sprite characterSprite)
         {
