@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ namespace Brotato_Clone.Models
                         LifeSteal = 0,
 
                         Sprite = Resources.Load<Sprite>("Weapons/Sprites/Fist"),
-                        //WeaponMechanic = new FistController()
+                        WeaponMechanic = typeof(FistController)
                     }
                 }
             };

@@ -16,6 +16,9 @@ namespace Brotato_Clone.Controllers
         private PlayerController _playerController;
 
         [SerializeField]
+        private WeaponsController _weaponsController;
+
+        [SerializeField]
         private PlayerView _playerView;
 
         private float baseHiddenSpeed = 5f;
@@ -74,6 +77,7 @@ namespace Brotato_Clone.Controllers
             if ((movement.x > 0 && _lastDirection <= 0) || (movement.x < 0 && _lastDirection >= 0))
             {
                 _playerView.FlipPlayer();
+                _weaponsController.FlipWeapons();
                 _lastDirection = movement.x;
             }
 

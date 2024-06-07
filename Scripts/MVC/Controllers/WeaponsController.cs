@@ -30,8 +30,6 @@ namespace Brotato_Clone.Controllers
             {
                 WeaponsData.Weapons["Fist"],
                 WeaponsData.Weapons["Fist"],
-                WeaponsData.Weapons["Fist"],
-                WeaponsData.Weapons["Fist"],
             };
 
             Initialize(weaponsTest);
@@ -46,17 +44,17 @@ namespace Brotato_Clone.Controllers
         public void FlipWeapons()
         {
             foreach (var weapon in _weaponControllers)
-            {
                 weapon.FlipWeapon();
-            }
         }
 
         private void SpawnWeapons(Weapon[] weapons)
         {
             for (int i = 0; i < weapons.Length; i++)
             {
-                var newWeapon = Instantiate(_weaponPrefab, _weaponContainers[i].position, Quaternion.identity, _weaponContainers[i]);
-                newWeapon.GetComponent<WeaponController>().Initialize(weapons[i]);
+                var newWeaponObject = Instantiate(_weaponPrefab, _weaponContainers[i].position, Quaternion.identity, _weaponContainers[i]);
+                var weaponController = newWeaponObject.GetComponent<WeaponController>();
+                weaponController.Initialize(weapons[i]);
+                _weaponControllers.Add(weaponController);
             }
         }
 

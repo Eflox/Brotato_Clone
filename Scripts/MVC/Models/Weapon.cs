@@ -5,8 +5,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Interfaces;
 using Brotato_Clone.Models;
+using System;
 using UnityEngine;
 
 namespace Brotato_Clone
@@ -22,6 +22,6 @@ namespace Brotato_Clone
         public int LifeSteal;
         public Sprite Sprite;
 
-        public IWeaponMechanic WeaponMechanic;
+        public Type WeaponMechanic;
     }
 }

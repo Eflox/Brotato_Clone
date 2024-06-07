@@ -9,5 +9,6 @@ namespace Brotato_Clone.Interfaces
 {
     public interface IWeaponMechanic
     {
+        void Attack();
     }
 }
