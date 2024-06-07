@@ -81,5 +81,11 @@ namespace Brotato_Clone.Controllers
         }
 
         public void CheckDirection() => _playerMovementController.CheckDirection(true);
+
+        private void OnDestroy()
+        {
+            foreach (var weapon in _weaponControllers)
+                Destroy(weapon);
+        }
     }
 }

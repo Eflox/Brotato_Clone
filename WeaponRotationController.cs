@@ -92,5 +92,10 @@ namespace Brotato_Clone.Controllers
 
             return nearestEnemy;
         }
+
+        private void OnDestroy()
+        {
+            transform.rotation = Quaternion.identity;
+        }
     }
 }

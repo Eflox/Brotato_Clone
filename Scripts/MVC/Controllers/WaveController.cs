@@ -20,6 +20,9 @@ namespace Brotato_Clone.Controllers
         private PlayerMovementController _playerMovementController;
 
         [SerializeField]
+        private WeaponsController _weaponsController;
+
+        [SerializeField]
         private MobsController _mobsController;
 
         [SerializeField]
@@ -58,6 +61,7 @@ namespace Brotato_Clone.Controllers
         {
             _waveView.SetTimer(0);
             Destroy(_playerMovementController);
+            Destroy(_weaponsController);
         }
     }
 }
