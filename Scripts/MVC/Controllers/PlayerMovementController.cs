@@ -115,7 +115,7 @@ namespace Brotato_Clone.Controllers
 
         private void OnDestroy()
         {
-            _playerView.SetPlayerIdle();
+            //_playerView.SetPlayerIdle();
         }
     }
 }
