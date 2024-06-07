@@ -1226,6 +1226,10 @@ MonoBehaviour:
   _materialsText: {fileID: 209093952}
   _bagMaterialsText: {fileID: 1994047423}
   _bagSprite: {fileID: 1826643478}
+  AnimationWidthChange: 0.1
+  AnimationHeightChange: 0.2
+  AnimationMovingSpeed: 3
+  AnimationIdleSpeed: 0.3
 --- !u!114 &541956789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1253,6 +1257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 541956791}
+  _weaponsController: {fileID: 541956792}
   _playerView: {fileID: 541956788}
   _bounds: {x: 13, y: 8.8}
 --- !u!114 &541956791
@@ -1340,7 +1345,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 541956791}
+  _playerMovementController: {fileID: 541956790}
   _weaponPrefab: {fileID: 2577986720493552561, guid: 142f3d3195ea8f04a97d5cce9b844892, type: 3}
+  _weaponControllers: []
 --- !u!1 &690839400
 GameObject:
   m_ObjectHideFlags: 0

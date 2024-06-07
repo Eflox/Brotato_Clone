@@ -13,13 +13,14 @@ namespace Brotato_Clone.Controllers
 {
     public class FistController : MonoBehaviour, IWeaponMechanic
     {
-        public float PunchDistance = 1.0f;
-        public float PunchDuration = 0.2f;
-        public float ReturnDuration = 0.2f;
+        private float PunchDistance = 1.0f;
+        private float PunchDuration = 0.2f;
+        private float ReturnDuration = 0.2f;
 
         public void Attack()
         {
-            Vector3 punchPosition = Vector3.zero + new Vector3(PunchDistance, 0, 0);
+            Vector3 punchDirection = transform.right * PunchDistance;
+            Vector3 punchPosition = transform.localPosition + punchDirection;
 
             transform.DOLocalMove(punchPosition, PunchDuration)
                 .OnComplete(() =>

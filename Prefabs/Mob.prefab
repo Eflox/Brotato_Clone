@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 802454495976492911}
   m_Layer: 0
   m_Name: Mob
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   _mobView: {fileID: 8409722592149292142}
   _rb: {fileID: 7010121950247090358}
   _collider: {fileID: 802454495976492911}
-  baseSpeed: 5
+  baseSpeed: 1
 --- !u!114 &8409722592149292142
 MonoBehaviour:
   m_ObjectHideFlags: 0

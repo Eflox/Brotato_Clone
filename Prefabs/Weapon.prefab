@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3890978783664943385}
   - component: {fileID: 3600601540876278082}
+  - component: {fileID: 7399820425106117161}
   - component: {fileID: 312177021371714610}
   m_Layer: 0
   m_Name: Weapon
@@ -46,7 +47,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a80fa4717fc8424cb2eefaa088a9ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponsController: {fileID: 0}
   _weaponView: {fileID: 312177021371714610}
+  _weaponRotationController: {fileID: 7399820425106117161}
+--- !u!114 &7399820425106117161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2577986720493552561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9397418f6386b624eac7833570ee5ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponController: {fileID: 3600601540876278082}
+  _weaponView: {fileID: 312177021371714610}
+  detectionRange: 2
 --- !u!114 &312177021371714610
 MonoBehaviour:
   m_ObjectHideFlags: 0

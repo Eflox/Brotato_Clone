@@ -25,11 +25,14 @@ namespace Brotato_Clone.Controllers
         private float percentageBaseSpeed = 100f;
 
         private bool _initialized = false;
-        private float _lastDirection = 1f;
 
         public Vector2 _bounds = new Vector2(10f, 10f);
 
         private bool _isMoving = false;
+
+        private bool _facingRight = true;
+
+        private Vector3 _movement = Vector3.zero;
 
         public void Initialize()
         {
@@ -44,20 +47,20 @@ namespace Brotato_Clone.Controllers
             if (!_initialized)
                 return;
 
-            Vector3 movement = Vector3.zero;
+            _movement = Vector3.zero;
 
             if (Input.GetKey(KeyCode.W))
-                movement.y += 1;
+                _movement.y += 1;
             if (Input.GetKey(KeyCode.S))
-                movement.y -= 1;
+                _movement.y -= 1;
             if (Input.GetKey(KeyCode.A))
-                movement.x -= 1;
+                _movement.x -= 1;
             if (Input.GetKey(KeyCode.D))
-                movement.x += 1;
+                _movement.x += 1;
 
-            movement.Normalize();
+            _movement.Normalize();
 
-            bool isCurrentlyMoving = movement != Vector3.zero;
+            bool isCurrentlyMoving = _movement != Vector3.zero;
 
             if (isCurrentlyMoving)
                 _playerView.SetMovingAnimationSpeed();
@@ -67,19 +70,14 @@ namespace Brotato_Clone.Controllers
             float percentageIncrease = _playerController.Stats.Speed[Models.StatType.TotalVisible] / percentageBaseSpeed;
             float newSpeed = baseHiddenSpeed * (1 + percentageIncrease);
 
-            Vector3 newPosition = _playerController.PlayerObject.transform.position + movement * newSpeed * Time.deltaTime;
+            Vector3 newPosition = _playerController.PlayerObject.transform.position + _movement * newSpeed * Time.deltaTime;
 
             newPosition.x = Mathf.Clamp(newPosition.x, -_bounds.x, _bounds.x);
             newPosition.y = Mathf.Clamp(newPosition.y, -_bounds.y, _bounds.y);
 
             _playerController.PlayerObject.transform.position = newPosition;
 
-            if ((movement.x > 0 && _lastDirection <= 0) || (movement.x < 0 && _lastDirection >= 0))
-            {
-                _playerView.FlipPlayer();
-                _weaponsController.FlipWeapons();
-                _lastDirection = movement.x;
-            }
+            CheckDirection(false);
 
             if (isCurrentlyMoving && !_isMoving)
             {
@@ -90,6 +88,28 @@ namespace Brotato_Clone.Controllers
             {
                 //_playerView.PlayerMoving(false);
                 _isMoving = false;
+            }
+        }
+
+        public void CheckDirection(bool onlyWeaponsCheck)
+        {
+            if (_movement.x > 0 && (!_facingRight || onlyWeaponsCheck))
+            {
+                if (!onlyWeaponsCheck)
+                {
+                    _facingRight = true;
+                    _playerView.FlipPlayer();
+                }
+                _weaponsController.FlipWeapons(_facingRight);
+            }
+            else if (_movement.x < 0 && (_facingRight || onlyWeaponsCheck))
+            {
+                if (!onlyWeaponsCheck)
+                {
+                    _facingRight = false;
+                    _playerView.FlipPlayer();
+                }
+                _weaponsController.FlipWeapons(_facingRight);
             }
         }
     }

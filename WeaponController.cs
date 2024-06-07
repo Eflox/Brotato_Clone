@@ -13,10 +13,15 @@ namespace Brotato_Clone.Controllers
 {
     public class WeaponController : MonoBehaviour
     {
+        private WeaponsController _weaponsController;
+
         [SerializeField]
         private WeaponView _weaponView;
 
         private IWeaponMechanic _weaponMechanic;
+
+        [SerializeField]
+        private WeaponRotationController _weaponRotationController;
 
         private void Update()
         {
@@ -26,15 +31,21 @@ namespace Brotato_Clone.Controllers
             }
         }
 
-        public void Initialize(Weapon weapon)
+        public void Initialize(Weapon weapon, WeaponsController weaponsController)
         {
+            _weaponsController = weaponsController;
             _weaponView.SetSprite(weapon.Sprite);
             _weaponMechanic = gameObject.AddComponent(weapon.WeaponMechanic) as IWeaponMechanic;
         }
 
-        public void FlipWeapon()
+        public void Flip(bool right)
         {
-            _weaponView.Flip();
+            _weaponRotationController.Flip(right);
+        }
+
+        public void CheckDirection()
+        {
+            _weaponsController.CheckDirection();
         }
     }
 }
