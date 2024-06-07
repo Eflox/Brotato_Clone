@@ -62,10 +62,10 @@ namespace Brotato_Clone.Controllers
 
             bool isCurrentlyMoving = _movement != Vector3.zero;
 
-            if (isCurrentlyMoving)
-                _playerView.SetMovingAnimationSpeed();
-            else
-                _playerView.SetIdleAnmiSpeed();
+            //if (isCurrentlyMoving)
+            //    _playerView.SetPlayerMoving(_facingRight);
+            //else
+            //    _playerView.SetPlayerIdle();
 
             float percentageIncrease = _playerController.Stats.Speed[Models.StatType.TotalVisible] / percentageBaseSpeed;
             float newSpeed = baseHiddenSpeed * (1 + percentageIncrease);
@@ -81,12 +81,12 @@ namespace Brotato_Clone.Controllers
 
             if (isCurrentlyMoving && !_isMoving)
             {
-                //_playerView.PlayerMoving(true);
+                _playerView.SetPlayerMoving();
                 _isMoving = true;
             }
             else if (!isCurrentlyMoving && _isMoving)
             {
-                //_playerView.PlayerMoving(false);
+                _playerView.SetPlayerIdle();
                 _isMoving = false;
             }
         }

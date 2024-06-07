@@ -21,6 +21,7 @@ namespace Brotato_Clone.Models
         public int LifeSteal;
         public Sprite Sprite;
         public AttackType AttackType;
+        public WeaponType WeaponType;
         public Type WeaponMechanic;
     }
 
@@ -29,5 +30,11 @@ namespace Brotato_Clone.Models
         None,
         Thrust,
         Sweep
+    }
+
+    public enum WeaponType
+    {
+        Range,
+        Melee
     }
 }

@@ -6,6 +6,7 @@
  */
 
 using DG.Tweening;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -41,6 +42,12 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Image _bagSprite;
 
+        [SerializeField]
+        private Animator _animator;
+
+        [SerializeField]
+        private GameObject _dustParticlePrefab;
+
         private Tween bounceTween;
 
         public float AnimationWidthChange = 0.1f;
@@ -48,20 +55,45 @@ namespace Brotato_Clone.Views
         public float AnimationMovingSpeed = 3.0f;
         public float AnimationIdleSpeed = 0.3f;
 
+        private bool _spawnParticles = false;
+        private float dustSpawnInterval = 0.1f;
+        private Coroutine _dustSpawnCoroutine;
+
+        private bool _facingRight = true;
+
         public void SetupBounceAnimation()
         {
             _playerGraphics.localScale = new Vector3(1 - AnimationWidthChange, 1 + AnimationHeightChange, 1f);
             bounceTween = _playerGraphics.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
         }
 
-        public void SetMovingAnimationSpeed()
+        public void SetPlayerMoving()
         {
             bounceTween.timeScale = AnimationMovingSpeed;
+            _animator.SetInteger("MoveState", _facingRight ? 1 : 2);
+
+            _spawnParticles = true;
+            _dustSpawnCoroutine = StartCoroutine(SpawnDustParticles());
         }
 
-        public void SetIdleAnmiSpeed()
+        public void SetPlayerIdle()
         {
             bounceTween.timeScale = AnimationIdleSpeed;
+            _animator.SetInteger("MoveState", 0);
+
+            _spawnParticles = false;
+
+            if (_dustSpawnCoroutine != null)
+                StopCoroutine(_dustSpawnCoroutine);
+        }
+
+        private IEnumerator SpawnDustParticles()
+        {
+            while (_spawnParticles)
+            {
+                Instantiate(_dustParticlePrefab, _playerGraphics.position - new Vector3(0, 0.35f), Quaternion.identity);
+                yield return new WaitForSeconds(dustSpawnInterval);
+            }
         }
 
         public void SetCharacter(Sprite characterSprite)
@@ -71,7 +103,9 @@ namespace Brotato_Clone.Views
 
         public void FlipPlayer()
         {
+            _facingRight = !_facingRight;
             _spriteRenderer.flipX = !_spriteRenderer.flipX;
+            _animator.SetInteger("MoveState", _facingRight ? 1 : 2);
         }
 
         public void SetHealth(int currentHealth, int maxHealth)

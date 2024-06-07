@@ -6,6 +6,7 @@
  */
 
 using Brotato_Clone.Interfaces;
+using Brotato_Clone.Models;
 using DG.Tweening;
 using UnityEngine;
 
@@ -14,19 +15,20 @@ namespace Brotato_Clone.Controllers
     public class FistController : MonoBehaviour, IWeaponMechanic
     {
         private WeaponController _weaponController;
+        private Weapon _weapon;
 
-        private float PunchDistance = 1.0f;
-        private float PunchDuration = 0.2f;
-        private float ReturnDuration = 0.2f;
+        private float PunchDuration = 0.08f;
+        private float ReturnDuration = 0.3f;
 
-        public void Initialize(WeaponController weaponController)
+        public void Initialize(WeaponController weaponController, Weapon weapon)
         {
             _weaponController = weaponController;
+            _weapon = weapon;
         }
 
         public void Attack()
         {
-            Vector3 punchDirection = transform.right * PunchDistance;
+            Vector3 punchDirection = transform.right * ((_weapon.Range / 30) / 2);
             Vector3 punchPosition = transform.localPosition + punchDirection;
 
             transform.DOLocalMove(punchPosition, PunchDuration)

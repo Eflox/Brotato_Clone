@@ -25,9 +25,16 @@ namespace Brotato_Clone.Controllers
         private Weapon _weapon;
         private float _attackCooldown = 0f;
 
-        public void AttackFinished()
+        public void Initialize(Weapon weapon, WeaponsController weaponsController)
         {
-            _weaponRotationController.IsAttacking = false;
+            _weapon = weapon;
+
+            _weaponsController = weaponsController;
+            _weaponView.SetSprite(_weapon.Sprite);
+            _weaponMechanic = gameObject.AddComponent(_weapon.WeaponMechanic) as IWeaponMechanic;
+            _weaponMechanic.Initialize(this, _weapon);
+
+            _weaponRotationController.Initialize(_weapon);
         }
 
         private void Update()
@@ -57,14 +64,9 @@ namespace Brotato_Clone.Controllers
             }
         }
 
-        public void Initialize(Weapon weapon, WeaponsController weaponsController)
+        public void AttackFinished()
         {
-            _weapon = weapon;
-
-            _weaponsController = weaponsController;
-            _weaponView.SetSprite(_weapon.Sprite);
-            _weaponMechanic = gameObject.AddComponent(_weapon.WeaponMechanic) as IWeaponMechanic;
-            _weaponMechanic.Initialize(this);
+            _weaponRotationController.IsAttacking = false;
         }
 
         public void Flip(bool right)

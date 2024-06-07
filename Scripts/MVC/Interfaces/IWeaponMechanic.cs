@@ -6,12 +6,13 @@
  */
 
 using Brotato_Clone.Controllers;
+using Brotato_Clone.Models;
 
 namespace Brotato_Clone.Interfaces
 {
     public interface IWeaponMechanic
     {
-        void Initialize(WeaponController weaponController);
+        void Initialize(WeaponController weaponController, Weapon weapon);
 
         void Attack();
 

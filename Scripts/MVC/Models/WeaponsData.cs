@@ -36,6 +36,7 @@ namespace Brotato_Clone.Models
                         Knockback = 15,
                         LifeSteal = 0,
                         Sprite = Resources.Load<Sprite>("Weapons/Sprites/Fist"),
+                        WeaponType = WeaponType.Melee,
                         AttackType = AttackType.Thrust,
                         WeaponMechanic = typeof(FistController)
                     }
@@ -57,6 +58,7 @@ namespace Brotato_Clone.Models
                         Knockback = 2,
                         LifeSteal = 0,
                         Sprite = Resources.Load<Sprite>("Weapons/Sprites/Knife"),
+                        WeaponType = WeaponType.Melee,
                         AttackType = AttackType.Thrust,
                         WeaponMechanic = typeof(FistController)
                     }

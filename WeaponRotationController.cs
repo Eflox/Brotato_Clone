@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Models;
 using Brotato_Clone.Views;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace Brotato_Clone.Controllers
     {
         public bool EnemyInRange = false;
         public bool IsAttacking = false;
+        private bool _rotatedWeapon = false;
 
         [SerializeField]
         private WeaponController _weaponController;
@@ -21,10 +23,20 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private WeaponView _weaponView;
 
-        [SerializeField]
-        private float detectionRange = 2.0f;
-
+        private Weapon _weapon;
         private bool _shouldFlip = true;
+
+        private float _attackDistance;
+
+        public void Initialize(Weapon weapon)
+        {
+            _weapon = weapon;
+
+            _attackDistance = (_weapon.Range / 13) / 2;
+
+            if (_weapon.WeaponType == WeaponType.Melee)
+                _attackDistance /= 2;
+        }
 
         private void Update()
         {
@@ -43,7 +55,11 @@ namespace Brotato_Clone.Controllers
             GameObject nearestEnemy = FindNearestEnemy();
             if (nearestEnemy != null)
             {
-                EnemyInRange = true;
+                _rotatedWeapon = true;
+
+                float distance = Vector2.Distance(transform.position, nearestEnemy.transform.position);
+                if (distance < _attackDistance)
+                    EnemyInRange = true;
 
                 _weaponView.ResetFlip();
                 _shouldFlip = false;
@@ -52,8 +68,9 @@ namespace Brotato_Clone.Controllers
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
-            else if (EnemyInRange)
+            else if (_rotatedWeapon)
             {
+                _rotatedWeapon = false;
                 EnemyInRange = false;
                 _shouldFlip = true;
                 transform.rotation = Quaternion.identity;
@@ -65,16 +82,12 @@ namespace Brotato_Clone.Controllers
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
             GameObject nearestEnemy = null;
-            float minDistance = detectionRange;
 
             foreach (GameObject enemy in enemies)
             {
                 float distance = Vector2.Distance(transform.position, enemy.transform.position);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
+                if (distance < _attackDistance + 1)
                     nearestEnemy = enemy;
-                }
             }
 
             return nearestEnemy;
