@@ -23,7 +23,7 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Fist",
                         Description = "",
-                        Icon = Resources.Load<Sprite>("Weapons/Fist"),
+                        Icon = Resources.Load<Sprite>("Weapons/Icons/Fist"),
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Unarmed },
 
@@ -35,6 +35,7 @@ namespace Brotato_Clone.Models
                         Knockback = 15,
                         LifeSteal = 0,
 
+                        Sprite = Resources.Load<Sprite>("Weapons/Sprites/Fist"),
                         //WeaponMechanic = new FistController()
                     }
                 }

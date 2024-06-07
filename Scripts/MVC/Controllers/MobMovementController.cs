@@ -33,7 +33,6 @@ namespace Brotato_Clone.Controllers
         private float _animationWidthChange = 0.1f;
         private float _animationHeightChange = 0.2f;
         private float _animationMovingSpeed = 1.0f;
-        private float _animationIdleSpeed = 0.3f;
 
         private float _lastDirection = 1f;
 
@@ -81,11 +80,6 @@ namespace Brotato_Clone.Controllers
                 _mobView.Flip();
                 _lastDirection = direction.x;
             }
-        }
-
-        private void OnDestroy()
-        {
-            bounceTween.timeScale = _animationIdleSpeed;
         }
 
         private void OnCollisionEnter2D(Collision2D collision)

@@ -43,10 +43,10 @@ namespace Brotato_Clone.Views
 
         private Tween bounceTween;
 
-        public float AnimationWidthChange { get; private set; } = 0.1f;
-        public float AnimationHeightChange { get; private set; } = 0.2f;
-        public float AnimationMovingSpeed { get; private set; } = 3.0f;
-        public float AnimationIdleSpeed { get; private set; } = 0.3f;
+        public float AnimationWidthChange = 0.1f;
+        public float AnimationHeightChange = 0.2f;
+        public float AnimationMovingSpeed = 3.0f;
+        public float AnimationIdleSpeed = 0.3f;
 
         public void SetupBounceAnimation()
         {
@@ -54,12 +54,14 @@ namespace Brotato_Clone.Views
             bounceTween = _playerGraphics.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
         }
 
-        public void SetBounceAnimationSpeed(float speed)
+        public void SetMovingAnimationSpeed()
         {
-            if (bounceTween != null)
-            {
-                bounceTween.timeScale = speed;
-            }
+            bounceTween.timeScale = AnimationMovingSpeed;
+        }
+
+        public void SetIdleAnmiSpeed()
+        {
+            bounceTween.timeScale = AnimationIdleSpeed;
         }
 
         public void SetCharacter(Sprite characterSprite)

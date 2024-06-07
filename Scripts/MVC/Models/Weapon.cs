@@ -7,6 +7,7 @@
 
 using Brotato_Clone.Interfaces;
 using Brotato_Clone.Models;
+using UnityEngine;
 
 namespace Brotato_Clone
 {
@@ -19,6 +20,7 @@ namespace Brotato_Clone
         public int Range;
         public int Knockback;
         public int LifeSteal;
+        public Sprite Sprite;
 
         public IWeaponMechanic WeaponMechanic;
     }

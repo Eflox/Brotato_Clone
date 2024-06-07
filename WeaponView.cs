@@ -18,5 +18,10 @@ namespace Brotato_Clone.Views
         {
             _spriteRenderer.sprite = weaponSprite;
         }
+
+        public void Flip()
+        {
+            _spriteRenderer.flipX = !_spriteRenderer.flipX;
+        }
     }
 }

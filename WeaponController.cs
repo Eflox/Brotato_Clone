@@ -17,7 +17,12 @@ namespace Brotato_Clone.Controllers
 
         public void Initialize(Weapon weapon)
         {
-            _weaponView.SetSprite(weapon.Icon);
+            _weaponView.SetSprite(weapon.Sprite);
+        }
+
+        public void FlipWeapon()
+        {
+            _weaponView.Flip();
         }
     }
 }
