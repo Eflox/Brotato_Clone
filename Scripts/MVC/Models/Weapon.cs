@@ -5,11 +5,10 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Models;
 using System;
 using UnityEngine;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Models
 {
     public class Weapon : NItem
     {
@@ -21,7 +20,14 @@ namespace Brotato_Clone
         public int Knockback;
         public int LifeSteal;
         public Sprite Sprite;
-
+        public AttackType AttackType;
         public Type WeaponMechanic;
+    }
+
+    public enum AttackType
+    {
+        None,
+        Thrust,
+        Sweep
     }
 }

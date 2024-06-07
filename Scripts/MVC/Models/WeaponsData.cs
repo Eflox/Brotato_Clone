@@ -35,11 +35,32 @@ namespace Brotato_Clone.Models
                         Range = 150,
                         Knockback = 15,
                         LifeSteal = 0,
-
                         Sprite = Resources.Load<Sprite>("Weapons/Sprites/Fist"),
+                        AttackType = AttackType.Thrust,
                         WeaponMechanic = typeof(FistController)
                     }
-                }
+                },
+                {
+                    "Knife", new Weapon
+                    {
+                        Name = "Knife",
+                        Description = "",
+                        Icon = Resources.Load<Sprite>("Weapons/Icons/Knife"),
+                        Rarity = Rarity.Common,
+                        Classes = new Class[] { Class.Precise },
+
+                        Damage = 6,
+                        Cooldown = 1.01f,
+                        CritChance = 20,
+                        CritDamage = 2.5f,
+                        Range = 150,
+                        Knockback = 2,
+                        LifeSteal = 0,
+                        Sprite = Resources.Load<Sprite>("Weapons/Sprites/Knife"),
+                        AttackType = AttackType.Thrust,
+                        WeaponMechanic = typeof(FistController)
+                    }
+                },
             };
         }
     }

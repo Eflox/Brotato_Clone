@@ -6,6 +6,7 @@
  */
 
 using Brotato_Clone.Interfaces;
+using Brotato_Clone.Models;
 using Brotato_Clone.Views;
 using UnityEngine;
 
@@ -13,18 +14,15 @@ namespace Brotato_Clone.Controllers
 {
     public class WeaponController : MonoBehaviour
     {
-        private WeaponsController _weaponsController;
-
         [SerializeField]
         private WeaponView _weaponView;
-
-        private IWeaponMechanic _weaponMechanic;
 
         [SerializeField]
         private WeaponRotationController _weaponRotationController;
 
+        private WeaponsController _weaponsController;
+        private IWeaponMechanic _weaponMechanic;
         private Weapon _weapon;
-
         private float _attackCooldown = 0f;
 
         public void AttackFinished()
