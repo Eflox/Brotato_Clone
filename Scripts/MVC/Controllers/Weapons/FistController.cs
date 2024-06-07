@@ -13,9 +13,16 @@ namespace Brotato_Clone.Controllers
 {
     public class FistController : MonoBehaviour, IWeaponMechanic
     {
+        private WeaponController _weaponController;
+
         private float PunchDistance = 1.0f;
         private float PunchDuration = 0.2f;
         private float ReturnDuration = 0.2f;
+
+        public void Initialize(WeaponController weaponController)
+        {
+            _weaponController = weaponController;
+        }
 
         public void Attack()
         {
@@ -25,9 +32,13 @@ namespace Brotato_Clone.Controllers
             transform.DOLocalMove(punchPosition, PunchDuration)
                 .OnComplete(() =>
                     transform.DOLocalMove(Vector3.zero, ReturnDuration)
+                        .OnComplete(() => AttackFinish())
                 );
+        }
 
-            Debug.Log("Fist Attacked");
+        public void AttackFinish()
+        {
+            _weaponController.AttackFinished();
         }
     }
 }

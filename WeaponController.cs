@@ -23,19 +23,50 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private WeaponRotationController _weaponRotationController;
 
+        private Weapon _weapon;
+
+        private float _attackCooldown = 0f;
+
+        public void AttackFinished()
+        {
+            _weaponRotationController.IsAttacking = false;
+        }
+
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                _weaponMechanic.Attack();
+                if (_weaponRotationController.EnemyInRange)
+                    _weaponMechanic.Attack();
+            }
+
+            HandleAutoAttack();
+        }
+
+        private void HandleAutoAttack()
+        {
+            if (!_weaponRotationController.IsAttacking)
+                _attackCooldown -= Time.deltaTime;
+
+            if (_attackCooldown <= 0f)
+            {
+                if (_weaponRotationController.EnemyInRange)
+                {
+                    _weaponRotationController.IsAttacking = true;
+                    _weaponMechanic.Attack();
+                    _attackCooldown = _weapon.Cooldown;
+                }
             }
         }
 
         public void Initialize(Weapon weapon, WeaponsController weaponsController)
         {
+            _weapon = weapon;
+
             _weaponsController = weaponsController;
-            _weaponView.SetSprite(weapon.Sprite);
-            _weaponMechanic = gameObject.AddComponent(weapon.WeaponMechanic) as IWeaponMechanic;
+            _weaponView.SetSprite(_weapon.Sprite);
+            _weaponMechanic = gameObject.AddComponent(_weapon.WeaponMechanic) as IWeaponMechanic;
+            _weaponMechanic.Initialize(this);
         }
 
         public void Flip(bool right)

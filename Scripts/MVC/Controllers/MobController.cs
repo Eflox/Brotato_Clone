@@ -44,6 +44,7 @@ namespace Brotato_Clone.Controllers
 
         private void Spawn()
         {
+            gameObject.tag = "Mob";
             _mobView.SetSprite(MobData.Sprite);
             int speed = Random.Range(MobData.SpeedRange[0], MobData.SpeedRange[1]);
             _mobMovementController.Initialize(_player, speed);

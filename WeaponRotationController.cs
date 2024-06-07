@@ -12,6 +12,9 @@ namespace Brotato_Clone.Controllers
 {
     public class WeaponRotationController : MonoBehaviour
     {
+        public bool EnemyInRange = false;
+        public bool IsAttacking = false;
+
         [SerializeField]
         private WeaponController _weaponController;
 
@@ -22,11 +25,11 @@ namespace Brotato_Clone.Controllers
         private float detectionRange = 2.0f;
 
         private bool _shouldFlip = true;
-        private bool _mobSearchReset = false;
 
         private void Update()
         {
-            RotateTowardsNearestEnemy();
+            if (!IsAttacking)
+                RotateTowardsNearestEnemy();
         }
 
         public void Flip(bool right)
@@ -40,7 +43,7 @@ namespace Brotato_Clone.Controllers
             GameObject nearestEnemy = FindNearestEnemy();
             if (nearestEnemy != null)
             {
-                _mobSearchReset = true;
+                EnemyInRange = true;
 
                 _weaponView.ResetFlip();
                 _shouldFlip = false;
@@ -49,9 +52,9 @@ namespace Brotato_Clone.Controllers
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             }
-            else if (_mobSearchReset)
+            else if (EnemyInRange)
             {
-                _mobSearchReset = false;
+                EnemyInRange = false;
                 _shouldFlip = true;
                 transform.rotation = Quaternion.identity;
                 _weaponController.CheckDirection();
