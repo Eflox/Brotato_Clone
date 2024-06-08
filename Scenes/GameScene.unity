@@ -699,6 +699,7 @@ MonoBehaviour:
   _playerController: {fileID: 541956791}
   _boundaries: {x: 12.8, y: 8.7}
   _mobControllers: []
+  _damageNumber: {fileID: 1904555652687940879, guid: 133ae440467470641850794728b3b4cd, type: 3}
 --- !u!1 &261176335
 GameObject:
   m_ObjectHideFlags: 0

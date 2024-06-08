@@ -7,6 +7,7 @@
 
 using Brotato_Clone.Models;
 using Brotato_Clone.Views;
+using DamageNumbersPro;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -28,10 +29,13 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private MobMovementController _mobMovementController;
 
-        public void Initialize(Mob mobData, Transform player)
+        private DamageNumber _damageNumber;
+
+        public void Initialize(Mob mobData, Transform player, DamageNumber damageNumber)
         {
             MobData = mobData;
             _player = player;
+            _damageNumber = damageNumber;
             gameObject.name = $"{mobData.Name}_Mob";
             _currentHP = MobData.HP;
 
@@ -60,6 +64,8 @@ namespace Brotato_Clone.Controllers
         {
             _currentHP -= damage;
             _mobMovementController.ApplyKnockback(knockback / 7, direction);
+
+            _damageNumber.Spawn(transform.position, damage);
 
             Debug.Log("Got hit");
         }

@@ -69,6 +69,8 @@ namespace Brotato_Clone.Views
 
         public void togglePauseMenu(bool open)
         {
+            CloseRestartConfirmationMenu();
+            CloseMainMenuConfirmationMenu();
             _pauseMenuBackground.SetActive(open);
             _pauseMenu.SetActive(open);
         }
