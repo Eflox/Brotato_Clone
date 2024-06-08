@@ -1,5 +1,5 @@
 /*
- * DustParticleController.cs
+ * ParticleController.cs
  * Script Author: Charles d'Ansembourg
  * Creation Date: 07/06/2024
  * Contact: c.dansembourg@icloud.com
@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-public class DustParticleController : MonoBehaviour
+public class ParticleController : MonoBehaviour
 {
     [SerializeField]
     private float lifeTime = 1.0f;

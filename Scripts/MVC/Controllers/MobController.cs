@@ -69,5 +69,9 @@ namespace Brotato_Clone.Controllers
 
             Debug.Log("Got hit");
         }
+
+        public void Die()
+        {
+        }
     }
 }
