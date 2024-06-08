@@ -27,6 +27,7 @@ namespace Brotato_Clone.Controllers
         private bool _shouldFlip = true;
 
         private float _attackDistance;
+        private GameObject _currentTarget = null;
 
         public void Initialize(Weapon weapon)
         {
@@ -59,7 +60,14 @@ namespace Brotato_Clone.Controllers
 
                 float distance = Vector2.Distance(transform.position, nearestEnemy.transform.position);
                 if (distance < _attackDistance)
+                {
                     EnemyInRange = true;
+                    _currentTarget = nearestEnemy;
+                }
+                else
+                {
+                    EnemyInRange = false;
+                }
 
                 _weaponView.ResetFlip();
                 _shouldFlip = false;
@@ -75,6 +83,13 @@ namespace Brotato_Clone.Controllers
                 _shouldFlip = true;
                 transform.rotation = Quaternion.identity;
                 _weaponController.CheckDirection();
+                _currentTarget = null;
+            }
+
+            if (_currentTarget != null && Vector2.Distance(transform.position, _currentTarget.transform.position) >= _attackDistance)
+            {
+                _currentTarget = null;
+                EnemyInRange = false;
             }
         }
 
@@ -82,12 +97,16 @@ namespace Brotato_Clone.Controllers
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
             GameObject nearestEnemy = null;
+            float minDistance = _attackDistance + 1;
 
             foreach (GameObject enemy in enemies)
             {
                 float distance = Vector2.Distance(transform.position, enemy.transform.position);
-                if (distance < _attackDistance + 1)
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
                     nearestEnemy = enemy;
+                }
             }
 
             return nearestEnemy;
