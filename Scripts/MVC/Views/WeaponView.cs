@@ -25,13 +25,13 @@ namespace Brotato_Clone.Views
 
         public void ResetFlip()
         {
+            _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
             _spriteRenderer.flipX = false;
         }
 
         public void Flip(bool right)
         {
             _spriteRenderer.flipX = !right;
-
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(right ? 0.3f : -0.3f, 0);
         }
 

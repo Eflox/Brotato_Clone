@@ -64,10 +64,9 @@ namespace Brotato_Clone.Controllers
         {
             _currentHP -= damage;
             _mobMovementController.ApplyKnockback(knockback / 7, direction);
-
             _damageNumber.Spawn(transform.position, damage);
 
-            Debug.Log("Got hit");
+            _mobView.GetHit();
         }
 
         public void Die()
