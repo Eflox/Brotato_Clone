@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 5184593803883940368}
+  _hitPrefab: {fileID: 2291481341790799776, guid: 724143b5c1a9ee04d9332b068bfe85dc, type: 3}
 --- !u!1 &6872486231062808304
 GameObject:
   m_ObjectHideFlags: 0

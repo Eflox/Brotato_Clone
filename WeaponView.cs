@@ -14,6 +14,9 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
+        [SerializeField]
+        private GameObject _hitPrefab;
+
         public void SetSprite(Sprite weaponSprite)
         {
             _spriteRenderer.sprite = weaponSprite;
@@ -30,6 +33,11 @@ namespace Brotato_Clone.Views
             _spriteRenderer.flipX = !right;
 
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(right ? 0.3f : -0.3f, 0);
+        }
+
+        public void OnHit(Vector2 position)
+        {
+            Instantiate(_hitPrefab, position, Quaternion.identity);
         }
     }
 }

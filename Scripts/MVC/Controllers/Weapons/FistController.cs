@@ -60,10 +60,15 @@ namespace Brotato_Clone.Controllers
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.tag == "Mob")
-            {
-                Vector2 hitDirection = (collision.transform.position - transform.position).normalized;
-                collision.gameObject.GetComponent<MobController>().GetHit(5, 15, hitDirection);
-            }
+                Hit(collision.gameObject);
+        }
+
+        private void Hit(GameObject mob)
+        {
+            Vector2 hitDirection = (mob.transform.position - transform.position).normalized;
+            mob.GetComponent<MobController>().GetHit(5, 15, hitDirection);
+
+            _weaponController.OnHit(mob.transform.position);
         }
     }
 }

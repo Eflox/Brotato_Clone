@@ -77,5 +77,10 @@ namespace Brotato_Clone.Controllers
         {
             Destroy(_weaponRotationController);
         }
+
+        public void OnHit(Vector2 hitPosition)
+        {
+            _weaponView.OnHit(hitPosition);
+        }
     }
 }
