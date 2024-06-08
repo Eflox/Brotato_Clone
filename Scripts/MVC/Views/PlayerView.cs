@@ -48,7 +48,7 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private GameObject _dustParticlePrefab;
 
-        private Tween bounceTween;
+        private Tween _tweener;
 
         public float AnimationWidthChange = 0.1f;
         public float AnimationHeightChange = 0.2f;
@@ -64,12 +64,12 @@ namespace Brotato_Clone.Views
         public void SetupBounceAnimation()
         {
             _playerGraphics.localScale = new Vector3(1 - AnimationWidthChange, 1 + AnimationHeightChange, 1f);
-            bounceTween = _playerGraphics.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
+            _tweener = _playerGraphics.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.5f).SetLoops(-1, LoopType.Yoyo);
         }
 
         public void SetPlayerMoving()
         {
-            bounceTween.timeScale = AnimationMovingSpeed;
+            _tweener.timeScale = AnimationMovingSpeed;
             _animator.SetInteger("MoveState", _facingRight ? 1 : 2);
 
             _spawnParticles = true;
@@ -78,7 +78,7 @@ namespace Brotato_Clone.Views
 
         public void SetPlayerIdle()
         {
-            bounceTween.timeScale = AnimationIdleSpeed;
+            _tweener.timeScale = AnimationIdleSpeed;
             _animator.SetInteger("MoveState", 0);
 
             _spawnParticles = false;
@@ -141,6 +141,12 @@ namespace Brotato_Clone.Views
                 _bagMaterialsText.text = "";
                 _bagSprite.enabled = false;
             }
+        }
+
+        public void OnDestroy()
+        {
+            if (_tweener != null && _tweener.IsActive())
+                _tweener.Kill();
         }
     }
 }

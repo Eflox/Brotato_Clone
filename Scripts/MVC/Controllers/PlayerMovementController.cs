@@ -112,10 +112,5 @@ namespace Brotato_Clone.Controllers
                 _weaponsController.FlipWeapons(_facingRight);
             }
         }
-
-        private void OnDestroy()
-        {
-            //_playerView.SetPlayerIdle();
-        }
     }
 }

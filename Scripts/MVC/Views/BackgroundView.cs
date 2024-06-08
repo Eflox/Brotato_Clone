@@ -17,6 +17,7 @@ namespace Brotato_Clone.Views
 
         private float AnimationWidthChange = 0.05f;
         private float AnimationHeightChange = 0.05f;
+        private Tweener _tweener;
 
         private void Start()
         {
@@ -26,7 +27,15 @@ namespace Brotato_Clone.Views
         public void SetupBounceAnimation()
         {
             _characterObject.localScale = new Vector3(1 - AnimationWidthChange, 1 + AnimationHeightChange, 1f);
-            _characterObject.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.9f).SetLoops(-1, LoopType.Yoyo);
+            _tweener = _characterObject.DOScale(new Vector3(1 + AnimationWidthChange, 1 - AnimationHeightChange, 1f), 0.9f).SetLoops(-1, LoopType.Yoyo);
+        }
+
+        private void OnDestroy()
+        {
+            if (_tweener != null && _tweener.IsActive())
+            {
+                _tweener.Kill();
+            }
         }
     }
 }
