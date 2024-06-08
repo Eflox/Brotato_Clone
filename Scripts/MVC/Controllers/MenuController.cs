@@ -21,9 +21,20 @@ namespace Brotato_Clone.Controllers
             _menuView.Initialize();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                _menuView.OpenMainMenu();
+        }
+
         public void CharacterLoadScene()
         {
             SceneManager.LoadScene("CharacterSelectionScene");
+        }
+
+        public void Quit()
+        {
+            Application.Quit();
         }
     }
 }

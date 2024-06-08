@@ -67,7 +67,7 @@ namespace Brotato_Clone.Views
             _optionsButton.onClick.AddListener(_gameController.OptionsMenu);
         }
 
-        public void togglePauseMenu(bool open)
+        public void TogglePauseMenu(bool open)
         {
             CloseRestartConfirmationMenu();
             CloseMainMenuConfirmationMenu();

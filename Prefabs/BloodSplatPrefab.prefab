@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df2abf519f8e064a83e305c227ba25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.7
+  lifeTime: 0.4
   initialScaleRange: {x: 1, y: 1.4}
 --- !u!114 &6273194948492752885
 MonoBehaviour:
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2d: {fileID: 8347091968323964893}
-  _forceMagnitude: 3
+  _forceMagnitude: 5
 --- !u!50 &8347091968323964893
 Rigidbody2D:
   serializedVersion: 4

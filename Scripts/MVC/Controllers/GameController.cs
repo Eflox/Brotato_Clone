@@ -50,7 +50,7 @@ namespace Brotato_Clone.Controllers
         private void TogglePause()
         {
             _paused = !_paused;
-            _gameView.togglePauseMenu(_paused);
+            _gameView.TogglePauseMenu(_paused);
             Time.timeScale = _paused ? 0 : 1;
         }
 

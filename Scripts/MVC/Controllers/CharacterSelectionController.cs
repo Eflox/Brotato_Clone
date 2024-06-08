@@ -35,6 +35,14 @@ namespace Brotato_Clone.Controllers
             _characterSelectionView.InitializeCharacters(ItemsData.GetItemsByClass(Class.Character), this);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene("MenuScene");
+            }
+        }
+
         /// <summary>
         /// Handles the event when a character is selected from the character selection view.
         /// </summary>

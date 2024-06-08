@@ -19,9 +19,49 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Button _startButton;
 
+        [SerializeField]
+        private Button _optionsButton;
+
+        [SerializeField]
+        private Button _backButton;
+
+        [SerializeField]
+        private Image _logo;
+
+        [SerializeField]
+        private GameObject _mainMenu;
+
+        [SerializeField]
+        private GameObject _subMenus;
+
+        [SerializeField]
+        private GameObject _optionsMenu;
+
+        [SerializeField]
+        private Button _quitButton;
+
         public void Initialize()
         {
             _startButton.onClick.AddListener(_menuController.CharacterLoadScene);
+            _optionsButton.onClick.AddListener(OpenOptionsMenu);
+            _backButton.onClick.AddListener(OpenMainMenu);
+            _quitButton.onClick.AddListener(_menuController.Quit);
+        }
+
+        public void OpenOptionsMenu()
+        {
+            _logo.enabled = false;
+            _mainMenu.SetActive(false);
+            _subMenus.SetActive(true);
+            _optionsMenu.SetActive(true);
+        }
+
+        public void OpenMainMenu()
+        {
+            _logo.enabled = true;
+            _mainMenu.SetActive(true);
+            _subMenus.SetActive(false);
+            _optionsMenu.SetActive(false);
         }
     }
 }

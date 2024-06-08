@@ -29,6 +29,8 @@ namespace Brotato_Clone.Views
 
         private CharacterSelectionController _controller;
 
+        private AudioSource _audioSource;
+
         /// <summary>
         /// Initializes the button with character data and sets up the controller reference.
         /// </summary>
@@ -40,6 +42,9 @@ namespace Brotato_Clone.Views
 
             gameObject.name = $"{_character.Name}_Spawned_Button";
 
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.clip = Resources.Load<AudioClip>("Audio/ButtonSelectAudio");
+
             GetComponent<Button>().onClick.AddListener(OnButtonClick);
         }
 
@@ -48,6 +53,8 @@ namespace Brotato_Clone.Views
         /// </summary>
         public void OnPointerEnter(PointerEventData eventData)
         {
+            _audioSource.Play();
+
             _buttonBorder.color = Color.white;
             _controller.OnCharacterHover(_character, true);
         }
