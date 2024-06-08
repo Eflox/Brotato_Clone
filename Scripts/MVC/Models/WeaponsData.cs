@@ -38,7 +38,8 @@ namespace Brotato_Clone.Models
                         Sprite = Resources.Load<Sprite>("Weapons/Sprites/Fist"),
                         WeaponType = WeaponType.Melee,
                         AttackType = AttackType.Thrust,
-                        WeaponMechanic = typeof(FistController)
+                        WeaponMechanic = typeof(FistController),
+                        ImpactSound = Resources.Load<AudioClip>("Audio/Weapons/Fist"),
                     }
                 },
                 {
@@ -60,7 +61,8 @@ namespace Brotato_Clone.Models
                         Sprite = Resources.Load<Sprite>("Weapons/Sprites/Knife"),
                         WeaponType = WeaponType.Melee,
                         AttackType = AttackType.Thrust,
-                        WeaponMechanic = typeof(FistController)
+                        WeaponMechanic = typeof(FistController),
+                        ImpactSound = Resources.Load<AudioClip>("Audio/Weapons/Fist"),
                     }
                 },
             };

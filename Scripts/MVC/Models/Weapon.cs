@@ -23,6 +23,7 @@ namespace Brotato_Clone.Models
         public AttackType AttackType;
         public WeaponType WeaponType;
         public Type WeaponMechanic;
+        public AudioClip ImpactSound;
     }
 
     public enum AttackType

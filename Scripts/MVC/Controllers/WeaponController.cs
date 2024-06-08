@@ -30,7 +30,9 @@ namespace Brotato_Clone.Controllers
             _weapon = weapon;
 
             _weaponsController = weaponsController;
-            _weaponView.SetSprite(_weapon.Sprite);
+
+            _weaponView.Initialize(weapon);
+
             _weaponMechanic = gameObject.AddComponent(_weapon.WeaponMechanic) as IWeaponMechanic;
             _weaponMechanic.Initialize(this, _weapon);
 
