@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Views;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,9 +13,17 @@ namespace Brotato_Clone.Controllers
 {
     public class MenuController : MonoBehaviour
     {
-        public void LoadScene(string scene)
+        [SerializeField]
+        private MenuView _menuView;
+
+        private void Start()
         {
-            SceneManager.LoadScene(scene);
+            _menuView.Initialize();
+        }
+
+        public void CharacterLoadScene()
+        {
+            SceneManager.LoadScene("CharacterSelectionScene");
         }
     }
 }

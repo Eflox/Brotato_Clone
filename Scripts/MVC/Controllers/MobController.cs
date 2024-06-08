@@ -55,5 +55,13 @@ namespace Brotato_Clone.Controllers
             if (_initialized)
                 return;
         }
+
+        public void GetHit(int damage, int knockback, Vector2 direction)
+        {
+            _currentHP -= damage;
+            _mobMovementController.ApplyKnockback(knockback, direction);
+
+            Debug.Log("Got hit");
+        }
     }
 }

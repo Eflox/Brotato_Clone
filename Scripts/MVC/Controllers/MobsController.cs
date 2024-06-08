@@ -7,6 +7,7 @@
 
 using Brotato_Clone.Models;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -23,6 +24,9 @@ namespace Brotato_Clone.Controllers
 
         [SerializeField]
         private Vector2 _boundaries;
+
+        [SerializeField]
+        private List<MobController> _mobControllers = new List<MobController>();
 
         public void Initialize(Wave wave)
         {
@@ -57,8 +61,9 @@ namespace Brotato_Clone.Controllers
         private void SpawnMob()
         {
             Vector3 spawnPosition = GetRandomSpawnPosition();
-            MobController mob = Instantiate(_mobPrefab, spawnPosition, Quaternion.identity).GetComponent<MobController>();
-            mob.Initialize(MobsData.Mobs["BabyAlien"], _playerController.PlayerObject.transform);
+            MobController mobController = Instantiate(_mobPrefab, spawnPosition, Quaternion.identity).GetComponent<MobController>();
+            mobController.Initialize(MobsData.Mobs["BabyAlien"], _playerController.PlayerObject.transform);
+            _mobControllers.Add(mobController);
         }
 
         private Vector3 GetRandomSpawnPosition()
@@ -66,6 +71,17 @@ namespace Brotato_Clone.Controllers
             float y = Random.Range(-_boundaries.y, _boundaries.y);
             float x = Random.Range(-_boundaries.x, _boundaries.x);
             return new Vector3(x, y, 0);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                foreach (var mobController in _mobControllers)
+                {
+                    mobController.GetHit(5, 5, Vector2.right);
+                }
+            }
         }
     }
 }

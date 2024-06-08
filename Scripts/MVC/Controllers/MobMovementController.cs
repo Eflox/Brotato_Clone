@@ -20,7 +20,7 @@ namespace Brotato_Clone.Controllers
         private MobView _mobView;
 
         [SerializeField]
-        private Rigidbody2D _rb;
+        private Rigidbody2D _rigidbody;
 
         [SerializeField]
         private CircleCollider2D _collider;
@@ -35,19 +35,32 @@ namespace Brotato_Clone.Controllers
         private float _animationMovingSpeed = 1.0f;
 
         private float _lastDirection = 1f;
+        private bool _isKnockback = false;
 
         public void Initialize(Transform player, int speed)
         {
             baseSpeed = speed;
             _player = player;
-
             _animationMovingSpeed += Random.Range(-0.1f, 0.1f);
 
             SetupBounceAnimation();
 
             _collider.enabled = true;
-
             _initialized = true;
+        }
+
+        public void ApplyKnockback(int knockback, Vector2 direction)
+        {
+            if (_isKnockback) return;
+
+            _isKnockback = true;
+
+            Vector2 knockbackPosition = (Vector2)transform.position + direction.normalized * knockback;
+
+            transform.DOMove(knockbackPosition, 0.2f).SetEase(Ease.OutQuad).OnComplete(() =>
+            {
+                _isKnockback = false;
+            });
         }
 
         private void SetupBounceAnimation()
@@ -71,9 +84,9 @@ namespace Brotato_Clone.Controllers
                 bounceTween.timeScale = _animationMovingSpeed;
 
             if (distanceToPlayer > stoppingDistance)
-                _rb.velocity = direction * (baseSpeed / 2) * Time.fixedDeltaTime;
+                _rigidbody.velocity = direction * (baseSpeed / 2) * Time.fixedDeltaTime;
             else
-                _rb.velocity = Vector2.zero;
+                _rigidbody.velocity = Vector2.zero;
 
             if ((direction.x > 0 && _lastDirection <= 0) || (direction.x < 0 && _lastDirection >= 0))
             {
@@ -86,7 +99,7 @@ namespace Brotato_Clone.Controllers
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
-                Physics2D.IgnoreCollision(collision.collider, _rb.GetComponent<Collider2D>());
+                Physics2D.IgnoreCollision(collision.collider, _rigidbody.GetComponent<Collider2D>());
             }
         }
     }

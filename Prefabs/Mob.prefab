@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobView: {fileID: 8409722592149292142}
-  _rb: {fileID: 7010121950247090358}
+  _rigidbody: {fileID: 7010121950247090358}
   _collider: {fileID: 802454495976492911}
   baseSpeed: 1
 --- !u!114 &8409722592149292142

@@ -39,12 +39,6 @@ namespace Brotato_Clone.Controllers
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (_weaponRotationController.EnemyInRange)
-                    _weaponMechanic.Attack();
-            }
-
             HandleAutoAttack();
         }
 

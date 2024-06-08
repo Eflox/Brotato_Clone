@@ -16,6 +16,8 @@ namespace Brotato_Clone.Controllers
     public class PlayerController : MonoBehaviour
     {
         public PlayerStats Stats = new PlayerStats();
+
+        public NItem Character = new NItem();
         public List<NItem> Items = new List<NItem>();
 
         public GameObject PlayerObject;
@@ -39,8 +41,6 @@ namespace Brotato_Clone.Controllers
         private GetChildItemsService _getChildItemsService;
         private PlayerPrefsService _playerPrefsService;
         private StatsUpdaterService _statsUpdaterService;
-
-        private bool _paused = false;
 
         private void Start()
         {
@@ -77,6 +77,8 @@ namespace Brotato_Clone.Controllers
                 _applyItemService.ApplyItem(item, Stats);
 
             Items = allItems;
+
+            Character = Items[0];
         }
 
         private void InitializeStats()
@@ -108,16 +110,6 @@ namespace Brotato_Clone.Controllers
                 Stats.CurrentXp++;
                 Stats.CurrentMaterials++;
                 UpdateView();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                _paused = !_paused;
-
-                if (!_paused)
-                    Time.timeScale = 1;
-                else
-                    Time.timeScale = 0;
             }
         }
     }

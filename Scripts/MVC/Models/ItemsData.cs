@@ -46,7 +46,7 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Crazy",
                         Description = "[g]+100 Range[c] with [g]Precise[c] weapons [nl][g]+25%[c] Attack Speed [nl]You start with [g]1 Knife[c] [nl][r]-30%[c] Dodge [nl][r]-10[c] Engineering [nl][r]-10[c] Ranged Damage",
-                        Icon = Resources.Load<Sprite>("Characters/Brawler"),
+                        Icon = Resources.Load<Sprite>("Characters/Crazy"),
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Character },
                         Attribute = new BrawlerAttributeData()
