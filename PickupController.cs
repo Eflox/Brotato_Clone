@@ -19,7 +19,7 @@ namespace Brotato_Clone.Controllers
             _range = 3 + playerController.Stats.PickupRange;
             _playerController = playerController;
 
-            InvokeRepeating(nameof(ScanForMaterials), 0f, 0.1f);
+            InvokeRepeating(nameof(ScanForMaterials), 0f, 0.05f);
         }
 
         private void ScanForMaterials()

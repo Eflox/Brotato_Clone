@@ -2352,6 +2352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stats:
+    LevelsGainedDuringWave: 0
     CurrentWave: 0
     CurrentHP: 0
     CurrentLvl: 0

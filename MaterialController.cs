@@ -26,7 +26,7 @@ namespace Brotato_Clone.Controllers
             _value = 1;
             _materialView.SetSprite();
 
-            Invoke(nameof(EnableMaterial), 0.3f);
+            Invoke(nameof(EnableMaterial), 0.2f);
         }
 
         private void EnableMaterial()
