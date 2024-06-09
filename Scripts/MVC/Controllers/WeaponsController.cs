@@ -29,10 +29,46 @@ namespace Brotato_Clone.Controllers
 
         private void Start()
         {
+            //Weapon[] weaponsTest = new Weapon[]
+            //{
+            //    WeaponsData.Weapons["Knife"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Knife"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Knife"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Knife"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //    WeaponsData.Weapons["Fist"],
+            //};
+
             Weapon[] weaponsTest = new Weapon[]
             {
                 WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Fist"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Knife"],
             };
 
             Initialize(weaponsTest);
@@ -63,14 +99,16 @@ namespace Brotato_Clone.Controllers
 
         private void CreateWeaponContainers(Weapon[] weapons)
         {
-            float baseRadius = 0.4f;
-            float radiusIncrement = 0.1f;
-            float radius = baseRadius + (weapons.Length - 1) * radiusIncrement;
+            float baseRadius = 0.7f;
+            float radiusIncrement = 0f;
+            //float radius = baseRadius + (weapons.Length - 1) * radiusIncrement;
 
             for (int i = 0; i < weapons.Length; i++)
             {
                 float angle = i * Mathf.PI * 2 / weapons.Length;
-                Vector2 position = new Vector2(Mathf.Cos(angle), (Mathf.Sin(angle)) - 0.6f) * radius;
+
+                var yOffset = weapons.Length <= 2 ? 0.5f : 0;
+                Vector2 position = new Vector2(Mathf.Cos(angle), (Mathf.Sin(angle)) - yOffset) * baseRadius;
 
                 Transform newPosition = new GameObject($"{weapons[i].Name}_Container").transform;
                 newPosition.position = position;
