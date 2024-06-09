@@ -35,6 +35,9 @@ namespace Brotato_Clone.Controllers
         private WaveController _waveController;
 
         [SerializeField]
+        private PickupController _pickupController;
+
+        [SerializeField]
         private PlayerView _playerView;
 
         private ApplyItemService _applyItemService;
@@ -52,6 +55,7 @@ namespace Brotato_Clone.Controllers
             InitializeItems();
             InitializeStats();
 
+            _pickupController.Initialize(Stats);
             _visualsController.Initialize();
             _movementController.Initialize();
             _waveController.Initialize(WaveData.Waves[Stats.CurrentWave]);
@@ -111,6 +115,10 @@ namespace Brotato_Clone.Controllers
                 Stats.CurrentMaterials++;
                 UpdateView();
             }
+        }
+
+        public void AddMaterial(int value)
+        {
         }
     }
 }
