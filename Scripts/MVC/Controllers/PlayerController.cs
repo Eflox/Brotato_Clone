@@ -55,7 +55,7 @@ namespace Brotato_Clone.Controllers
             InitializeItems();
             InitializeStats();
 
-            _pickupController.Initialize(Stats);
+            _pickupController.Initialize(this);
             _visualsController.Initialize();
             _movementController.Initialize();
             _waveController.Initialize(WaveData.Waves[Stats.CurrentWave]);

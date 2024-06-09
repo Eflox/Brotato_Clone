@@ -66,6 +66,7 @@ MonoBehaviour:
   _mobView: {fileID: 8409722592149292142}
   _mobMovementController: {fileID: 7814657479040325778}
   _circleCollider2D: {fileID: 802454495976492911}
+  _materialPrefab: {fileID: 4388534298311791150, guid: d86f70d943b504e428caccead98baacd, type: 3}
 --- !u!114 &7814657479040325778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,17 +16,27 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private MaterialView _materialView;
 
+        [SerializeField]
+        private CircleCollider2D _circleCollider;
+
         private int _value;
 
         private void Start()
         {
             _value = 1;
             _materialView.SetSprite();
+
+            Invoke(nameof(EnableMaterial), 0.3f);
+        }
+
+        private void EnableMaterial()
+        {
+            _circleCollider.enabled = true;
         }
 
         public void PickUp(PlayerController playerController)
         {
-            transform.DOMove(playerController.PlayerObject.transform.position, 0.5f)
+            transform.DOMove(playerController.PlayerObject.transform.position, 0.3f)
                      .OnComplete(() => ReachedPlayer(playerController));
         }
 

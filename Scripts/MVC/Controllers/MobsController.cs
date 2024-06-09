@@ -42,9 +42,8 @@ namespace Brotato_Clone.Controllers
         public void EndWave()
         {
             foreach (var mobController in _mobControllers)
-            {
-                mobController.Die(Vector2.zero);
-            }
+                if (mobController != null)
+                    mobController.Die(Vector2.zero, false);
         }
 
         private void StartWave()
