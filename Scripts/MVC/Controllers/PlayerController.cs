@@ -119,6 +119,8 @@ namespace Brotato_Clone.Controllers
 
         public void AddMaterial(int value)
         {
+            Stats.CurrentMaterials += value;
+            _playerView.SetMaterials(Stats.CurrentMaterials);
         }
     }
 }

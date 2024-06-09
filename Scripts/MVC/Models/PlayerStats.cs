@@ -150,6 +150,7 @@ namespace Brotato_Clone.Models
 
         //Variable Stats
 
+        public int LevelsGainedDuringWave;
         public int CurrentWave;
         public int CurrentHP;
         public int CurrentLvl;
