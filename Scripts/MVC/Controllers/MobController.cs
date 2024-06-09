@@ -21,13 +21,14 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private int _currentHP;
 
-        private bool _initialized = false;
-
         [SerializeField]
         private MobView _mobView;
 
         [SerializeField]
         private MobMovementController _mobMovementController;
+
+        [SerializeField]
+        private CircleCollider2D _circleCollider2D;
 
         private DamageNumber _damageNumber;
 
@@ -38,39 +39,51 @@ namespace Brotato_Clone.Controllers
             _damageNumber = damageNumber;
             gameObject.name = $"{mobData.Name}_Mob";
             _currentHP = MobData.HP;
+            _circleCollider2D.enabled = false;
 
             _mobView.SetSpawnSprite(Resources.Load<Sprite>("Symbols/SpawnCross"));
 
             Invoke("Spawn", 1f);
-
-            _initialized = true;
         }
 
         private void Spawn()
         {
+            _circleCollider2D.enabled = true;
             gameObject.tag = "Mob";
             _mobView.SetSprite(MobData.Sprite);
             int speed = Random.Range(MobData.SpeedRange[0], MobData.SpeedRange[1]);
             _mobMovementController.Initialize(_player, speed);
         }
 
-        private void Update()
-        {
-            if (_initialized)
-                return;
-        }
-
         public void GetHit(int damage, int knockback, Vector2 direction)
         {
             _currentHP -= damage;
-            _mobMovementController.ApplyKnockback(knockback / 7, direction);
+
+            if (_currentHP <= 0)
+            {
+                Die(direction);
+            }
+            else
+            {
+                _mobMovementController.ApplyKnockback(knockback / 7, direction);
+            }
+
             _damageNumber.Spawn(transform.position, damage);
 
             _mobView.GetHit();
         }
 
-        public void Die()
+        public void Die(Vector2 direction)
         {
+            gameObject.tag = "Untagged";
+            _circleCollider2D.enabled = false;
+            _mobView.Die(direction);
+            _mobMovementController.StopMovement();
+        }
+
+        public void Dead()
+        {
+            Destroy(gameObject);
         }
     }
 }

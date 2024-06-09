@@ -5,6 +5,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +14,9 @@ namespace Brotato_Clone.Views
 {
     public class MobView : MonoBehaviour
     {
+        [SerializeField]
+        private MobController _mobController;
+
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
 
@@ -90,6 +95,19 @@ namespace Brotato_Clone.Views
 
                 yield return new WaitForSeconds(0.2f);
             }
+        }
+
+        public void Die(Vector2 direction)
+        {
+            Vector3 moveDirection = new Vector3(direction.x, direction.y, 0);
+            float moveDistance = 3f;
+            Vector3 targetPosition = transform.position + moveDirection * moveDistance;
+
+            Sequence dieSequence = DOTween.Sequence();
+            dieSequence.Append(transform.DORotate(new Vector3(0, 0, 360), 0.8f, RotateMode.FastBeyond360))
+                       .Join(transform.DOScale(Vector3.zero, 0.8f))
+                       .Join(transform.DOMove(targetPosition, 0.8f))
+                       .OnComplete(() => _mobController.Dead());
         }
     }
 }

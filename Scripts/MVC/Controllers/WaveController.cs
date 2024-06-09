@@ -59,6 +59,7 @@ namespace Brotato_Clone.Controllers
 
         private void WaveEnd()
         {
+            _mobsController.EndWave();
             _waveView.SetTimer(0);
             Destroy(_playerMovementController);
             Destroy(_weaponsController);

@@ -65,6 +65,7 @@ MonoBehaviour:
   _currentHP: 0
   _mobView: {fileID: 8409722592149292142}
   _mobMovementController: {fileID: 7814657479040325778}
+  _circleCollider2D: {fileID: 802454495976492911}
 --- !u!114 &7814657479040325778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +80,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mobView: {fileID: 8409722592149292142}
   _rigidbody: {fileID: 7010121950247090358}
-  _collider: {fileID: 802454495976492911}
   baseSpeed: 1
 --- !u!114 &8409722592149292142
 MonoBehaviour:
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f17e7be7309094b8a65ccb5665ed5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mobController: {fileID: 8442213399628759975}
   _spriteRenderer: {fileID: 3689959434929774465}
 --- !u!50 &7010121950247090358
 Rigidbody2D:

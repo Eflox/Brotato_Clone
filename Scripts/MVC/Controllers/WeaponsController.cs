@@ -57,17 +57,7 @@ namespace Brotato_Clone.Controllers
 
             Weapon[] weaponsTest = new Weapon[]
             {
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Fist"],
                 WeaponsData.Weapons["Knife"],
             };
 

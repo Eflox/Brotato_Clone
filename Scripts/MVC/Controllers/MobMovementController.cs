@@ -23,9 +23,6 @@ namespace Brotato_Clone.Controllers
         private Rigidbody2D _rigidbody;
 
         [SerializeField]
-        private CircleCollider2D _collider;
-
-        [SerializeField]
         private float baseSpeed = 10f;
 
         private Tween bounceTween;
@@ -45,8 +42,12 @@ namespace Brotato_Clone.Controllers
 
             SetupBounceAnimation();
 
-            _collider.enabled = true;
             _initialized = true;
+        }
+
+        public void StopMovement()
+        {
+            _initialized = false;
         }
 
         public void ApplyKnockback(int knockback, Vector2 direction)

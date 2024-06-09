@@ -66,7 +66,7 @@ namespace Brotato_Clone.Controllers
         private void Hit(GameObject mob)
         {
             Vector2 hitDirection = (mob.transform.position - transform.position).normalized;
-            mob.GetComponent<MobController>().GetHit(5, 15, hitDirection);
+            mob.GetComponent<MobController>().GetHit(1, 15, hitDirection);
 
             _weaponController.OnHit(mob.transform.position);
         }

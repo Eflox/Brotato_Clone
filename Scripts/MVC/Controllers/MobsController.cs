@@ -39,6 +39,14 @@ namespace Brotato_Clone.Controllers
             StartWave();
         }
 
+        public void EndWave()
+        {
+            foreach (var mobController in _mobControllers)
+            {
+                mobController.Die(Vector2.zero);
+            }
+        }
+
         private void StartWave()
         {
             StartCoroutine(SpawnMobsRoutine());
@@ -75,17 +83,6 @@ namespace Brotato_Clone.Controllers
             float y = Random.Range(-_boundaries.y, _boundaries.y);
             float x = Random.Range(-_boundaries.x, _boundaries.x);
             return new Vector3(x, y, 0);
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                foreach (var mobController in _mobControllers)
-                {
-                    mobController.GetHit(5, 5, Vector2.right);
-                }
-            }
         }
     }
 }
