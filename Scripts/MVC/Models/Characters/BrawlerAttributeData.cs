@@ -24,6 +24,6 @@ namespace Brotato_Clone.Models
         public readonly int RangedDmg = -50;
 
         [Item]
-        public string[] Item = { "Fists" };
+        public string[] Item = { "Fist" };
     }
 }

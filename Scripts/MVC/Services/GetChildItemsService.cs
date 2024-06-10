@@ -42,10 +42,12 @@ namespace Brotato_Clone.Services
                                 childItems.Add(ItemsData.Items[itemName]);
                             else
                                 Debug.LogWarning($"Item {itemName} not found in ItemsData.");
+
                         return childItems.ToArray();
                     }
                 }
             }
+
             return null;
         }
     }
