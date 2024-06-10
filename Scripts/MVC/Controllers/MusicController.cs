@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Services;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,8 +25,9 @@ namespace Brotato_Clone.Controllers
         private string _lastSceneName;
 
         private static MusicController _instance;
+        private PlayerPrefsService _playerPrefsService;
 
-        private void Awake()
+        private void Start()
         {
             if (_instance != null && _instance != this)
             {
@@ -35,7 +37,14 @@ namespace Brotato_Clone.Controllers
 
             _instance = this;
 
+            _playerPrefsService = new PlayerPrefsService();
+
             DontDestroyOnLoad(this.gameObject);
+        }
+
+        public void SetVolume()
+        {
+            _musicSource.volume = _playerPrefsService.GetStat("MusicVolume");
         }
 
         private void OnEnable()

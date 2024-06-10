@@ -21,7 +21,7 @@ namespace Brotato_Clone.Controllers
         private float _returnDuration = 0.3f;
         private CircleCollider2D _circleCollider;
 
-        private float _radius = 0.4f;
+        private float _radius = 0.7f;
         private float _offset = 0.5f;
 
         public void Initialize(WeaponController weaponController, Weapon weapon)

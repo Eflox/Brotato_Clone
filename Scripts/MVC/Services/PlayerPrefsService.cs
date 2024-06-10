@@ -31,9 +31,20 @@ namespace Brotato_Clone.Services
             PlayerPrefs.SetInt("BagMaterials", 0);
         }
 
+        /// <summary>
+        /// Gets a stat based of a key.
+        /// </summary>
         public int GetStat(string key)
         {
             return PlayerPrefs.GetInt(key);
+        }
+
+        /// <summary>
+        /// Saves a key and value.
+        /// </summary>
+        public void SetKey(string key, int value)
+        {
+            PlayerPrefs.SetInt(key, value);
         }
 
         /// <summary>

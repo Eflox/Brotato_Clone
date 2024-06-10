@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Services;
 using Brotato_Clone.Views;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,8 +17,11 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private MenuView _menuView;
 
+        private PlayerPrefsService _playerPrefsService;
+
         private void Start()
         {
+            _playerPrefsService = new PlayerPrefsService();
             _menuView.Initialize();
         }
 
@@ -35,6 +39,12 @@ namespace Brotato_Clone.Controllers
         public void Quit()
         {
             Application.Quit();
+        }
+
+        public void MuteAllSounds()
+        {
+            _playerPrefsService.SetKey("SoundVolume", 0);
+            _playerPrefsService.SetKey("MusicVolume", 0);
         }
     }
 }

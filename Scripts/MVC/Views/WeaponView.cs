@@ -55,7 +55,7 @@ namespace Brotato_Clone.Views
         private void PlayRandomizedSound()
         {
             _audioSource.pitch = Random.Range(0.9f, 1.1f);
-            _audioSource.volume = Random.Range(0.8f, 1.0f);
+            //_audioSource.volume = Random.Range(0.8f, 1.0f);
             _audioSource.Play();
         }
     }

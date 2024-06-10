@@ -40,12 +40,16 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Button _quitButton;
 
+        [SerializeField]
+        private Button _muteButton;
+
         public void Initialize()
         {
             _startButton.onClick.AddListener(_menuController.CharacterLoadScene);
             _optionsButton.onClick.AddListener(OpenOptionsMenu);
             _backButton.onClick.AddListener(OpenMainMenu);
             _quitButton.onClick.AddListener(_menuController.Quit);
+            _muteButton.onClick.AddListener(_menuController.MuteAllSounds);
         }
 
         public void OpenOptionsMenu()

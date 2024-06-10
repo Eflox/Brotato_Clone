@@ -120,7 +120,16 @@ namespace Brotato_Clone.Controllers
         public void AddMaterial(int value)
         {
             Stats.CurrentMaterials += value;
-            _playerView.SetMaterials(Stats.CurrentMaterials);
+            Stats.CurrentXp += value;
+
+            if (Stats.CurrentXp >= LevelData.LevelsXP[Stats.CurrentLvl])
+            {
+                Stats.CurrentLvl++;
+                Stats.LevelsGainedDuringWave++;
+                Stats.CurrentXp = 0;
+            }
+
+            UpdateView();
         }
     }
 }
