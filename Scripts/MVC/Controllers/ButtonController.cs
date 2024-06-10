@@ -14,12 +14,12 @@ namespace Brotato_Clone.Controllers
 {
     public class ButtonController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        private Image buttonImage;
-        private TMP_Text buttonText;
-        private Color originalButtonColor = Color.black;
-        private Color hoverButtonColor = Color.white;
-        private Color originalTextColor = Color.white;
-        private Color hoverTextColor = Color.black;
+        private Image _buttonImage;
+        private TMP_Text _buttonText;
+        private Color _originalButtonColor = Color.black;
+        private Color _hoverButtonColor = Color.white;
+        private Color _originalTextColor = Color.white;
+        private Color _hoverTextColor = Color.black;
         private AudioSource _audioSource;
 
         private void Start()
@@ -27,25 +27,25 @@ namespace Brotato_Clone.Controllers
             _audioSource = gameObject.AddComponent<AudioSource>();
             _audioSource.clip = Resources.Load<AudioClip>("Audio/ButtonSelectAudio");
 
-            buttonImage = GetComponent<Image>();
-            buttonText = GetComponentInChildren<TMP_Text>();
+            _buttonImage = GetComponent<Image>();
+            _buttonText = GetComponentInChildren<TMP_Text>();
 
-            buttonImage.color = originalButtonColor;
-            buttonText.color = originalTextColor;
+            _originalButtonColor = _buttonImage.color;
+            _originalTextColor = _buttonText.color;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
             _audioSource.Play();
 
-            buttonImage.color = hoverButtonColor;
-            buttonText.color = hoverTextColor;
+            _buttonImage.color = _hoverButtonColor;
+            _buttonText.color = _hoverTextColor;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            buttonImage.color = originalButtonColor;
-            buttonText.color = originalTextColor;
+            _buttonImage.color = _originalButtonColor;
+            _buttonText.color = _originalTextColor;
         }
     }
 }

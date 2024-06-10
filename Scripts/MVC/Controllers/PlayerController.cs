@@ -19,8 +19,12 @@ namespace Brotato_Clone.Controllers
 
         public NItem Character = new NItem();
         public List<NItem> Items = new List<NItem>();
+        public List<Upgrade> Upgrades = new List<Upgrade>();
 
         public GameObject PlayerObject;
+
+        [SerializeField]
+        private LevelUpMenuController _levelUpMenuController;
 
         [SerializeField]
         private PlayerMovementController _movementController;
@@ -130,6 +134,17 @@ namespace Brotato_Clone.Controllers
             }
 
             UpdateView();
+        }
+
+        public void WaveEnd()
+        {
+            if (Stats.LevelsGainedDuringWave > 0)
+                _levelUpMenuController.OpenLevelUpMenu(Stats.LevelsGainedDuringWave);
+        }
+
+        public void AddUpgrade(Upgrade upgrade)
+        {
+            Debug.Log($"Added upgrade: {upgrade.Name}");
         }
     }
 }

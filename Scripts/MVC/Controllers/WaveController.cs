@@ -17,6 +17,9 @@ namespace Brotato_Clone.Controllers
     public class WaveController : MonoBehaviour
     {
         [SerializeField]
+        private PlayerController _playerController;
+
+        [SerializeField]
         private PlayerMovementController _playerMovementController;
 
         [SerializeField]
@@ -59,10 +62,13 @@ namespace Brotato_Clone.Controllers
 
         private void WaveEnd()
         {
+            _playerController.WaveEnd();
             _mobsController.EndWave();
             _waveView.SetTimer(0);
             Destroy(_playerMovementController);
             Destroy(_weaponsController);
+
+            _initialized = false;
         }
     }
 }

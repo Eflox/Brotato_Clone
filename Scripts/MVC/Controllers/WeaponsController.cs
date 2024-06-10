@@ -90,7 +90,7 @@ namespace Brotato_Clone.Controllers
         private void CreateWeaponContainers(Weapon[] weapons)
         {
             float baseRadius = 0.7f;
-            float radiusIncrement = 0f;
+            //float radiusIncrement = 0f;
             //float radius = baseRadius + (weapons.Length - 1) * radiusIncrement;
 
             for (int i = 0; i < weapons.Length; i++)

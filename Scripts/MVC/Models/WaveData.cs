@@ -22,7 +22,7 @@ namespace Brotato_Clone.Models
         {
             Waves = new Dictionary<int, Wave>
             {
-                { 1, new Wave(count: 1, duration: 20, enemyCount: 15, damageIncrease: 1, maxHPIncrease: 5, speedIncrease: 1, itemPricesIncrease: 2) },
+                { 1, new Wave(count: 1, duration: 3 /*20*/, enemyCount: 15, damageIncrease: 1, maxHPIncrease: 5, speedIncrease: 1, itemPricesIncrease: 2) },
                 { 2, new Wave(count: 2, duration: 25, enemyCount: 25, damageIncrease: 2, maxHPIncrease: 10, speedIncrease: 2, itemPricesIncrease: 4) },
                 { 3, new Wave(count: 3, duration: 30, enemyCount: 35, damageIncrease: 3, maxHPIncrease: 15, speedIncrease: 3, itemPricesIncrease: 6) },
                 { 4, new Wave(count: 4, duration: 35, enemyCount: 45, damageIncrease: 4, maxHPIncrease: 20, speedIncrease: 4, itemPricesIncrease: 8) },
