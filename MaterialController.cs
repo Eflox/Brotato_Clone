@@ -6,7 +6,7 @@
  */
 
 using Brotato_Clone.Views;
-using DG.Tweening;
+using System.Collections;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -34,16 +34,33 @@ namespace Brotato_Clone.Controllers
             _circleCollider.enabled = true;
         }
 
-        public void PickUp(PlayerController playerController)
+        public void PickUp(PlayerController controller, Transform playerTransform)
         {
-            transform.DOMove(playerController.PlayerObject.transform.position, 0.3f)
-                     .OnComplete(() => ReachedPlayer(playerController));
+            StartCoroutine(MoveToPlayer(controller, playerTransform));
         }
 
-        private void ReachedPlayer(PlayerController playerController)
+        private IEnumerator MoveToPlayer(PlayerController controller, Transform playerTransform)
         {
-            playerController.AddMaterial(_value);
-            Destroy(this.gameObject);
+            float duration = 0.2f;
+            float elapsedTime = 0f;
+            Vector3 startingPosition = transform.position;
+            Vector3 targetPosition = playerTransform.position;
+
+            while (elapsedTime < duration)
+            {
+                transform.position = Vector3.Lerp(startingPosition, targetPosition, elapsedTime / duration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            transform.position = targetPosition;
+            ReachedPlayer(controller);
+        }
+
+        private void ReachedPlayer(PlayerController controller)
+        {
+            controller.AddMaterial(_value);
+            Destroy(gameObject);
         }
     }
 }

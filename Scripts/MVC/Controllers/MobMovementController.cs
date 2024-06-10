@@ -103,5 +103,10 @@ namespace Brotato_Clone.Controllers
                 Physics2D.IgnoreCollision(collision.collider, _rigidbody.GetComponent<Collider2D>());
             }
         }
+
+        private void OnDestroy()
+        {
+            bounceTween.Kill();
+        }
     }
 }

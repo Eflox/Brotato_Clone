@@ -35,8 +35,11 @@ namespace Brotato_Clone.Controllers
 
         private DamageNumber _damageNumber;
 
-        public void Initialize(Mob mobData, Transform player, DamageNumber damageNumber)
+        private MobsController _mobsController;
+
+        public void Initialize(Mob mobData, Transform player, DamageNumber damageNumber, MobsController mobsController)
         {
+            _mobsController = mobsController;
             MobData = mobData;
             _player = player;
             _damageNumber = damageNumber;
@@ -63,13 +66,9 @@ namespace Brotato_Clone.Controllers
             _currentHP -= damage;
 
             if (_currentHP <= 0)
-            {
                 Die(direction, true);
-            }
             else
-            {
                 _mobMovementController.ApplyKnockback(knockback / 7, direction);
-            }
 
             _damageNumber.Spawn(transform.position, damage);
 

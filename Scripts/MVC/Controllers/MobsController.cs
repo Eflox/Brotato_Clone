@@ -8,7 +8,6 @@
 using Brotato_Clone.Models;
 using DamageNumbersPro;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -27,9 +26,6 @@ namespace Brotato_Clone.Controllers
         private Vector2 _boundaries;
 
         [SerializeField]
-        private List<MobController> _mobControllers = new List<MobController>();
-
-        [SerializeField]
         private DamageNumber _damageNumber;
 
         public void Initialize(Wave wave)
@@ -41,9 +37,8 @@ namespace Brotato_Clone.Controllers
 
         public void EndWave()
         {
-            foreach (var mobController in _mobControllers)
-                if (mobController != null)
-                    mobController.Die(Vector2.zero, false);
+            foreach (var mob in GameObject.FindGameObjectsWithTag("Mob"))
+                mob.GetComponent<MobController>().Die(Vector2.zero, false);
         }
 
         private void StartWave()
@@ -73,8 +68,7 @@ namespace Brotato_Clone.Controllers
         {
             Vector3 spawnPosition = GetRandomSpawnPosition();
             MobController mobController = Instantiate(_mobPrefab, spawnPosition, Quaternion.identity).GetComponent<MobController>();
-            mobController.Initialize(MobsData.Mobs["BabyAlien"], _playerController.PlayerObject.transform, _damageNumber);
-            _mobControllers.Add(mobController);
+            mobController.Initialize(MobsData.Mobs["BabyAlien"], _playerController.PlayerObject.transform, _damageNumber, this);
         }
 
         private Vector3 GetRandomSpawnPosition()

@@ -16,7 +16,7 @@ namespace Brotato_Clone.Controllers
 
         public void Initialize(PlayerController playerController)
         {
-            _range = 3 + playerController.Stats.PickupRange;
+            _range = 3 + playerController.Stats.PickupRange + 4;
             _playerController = playerController;
 
             InvokeRepeating(nameof(ScanForMaterials), 0f, 0.05f);
@@ -32,7 +32,7 @@ namespace Brotato_Clone.Controllers
                 {
                     MaterialController materialController = hitCollider.GetComponent<MaterialController>();
 
-                    materialController.PickUp(_playerController);
+                    materialController.PickUp(_playerController, _playerController.PlayerObject.transform);
                 }
             }
         }
