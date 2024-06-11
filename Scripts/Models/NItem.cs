@@ -19,5 +19,7 @@ namespace Brotato_Clone.Models
         public Rarity Rarity;
         public Class[] Classes;
         public IAttribute Attribute;
+
+        public void AddItem() => EventManager.TriggerEvent(PlayerEvent.PlayerAddItem, this);
     }
 }

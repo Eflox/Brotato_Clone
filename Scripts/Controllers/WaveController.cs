@@ -23,7 +23,7 @@ namespace Brotato_Clone.Controllers
         private PlayerMovementController _playerMovementController;
 
         [SerializeField]
-        private WeaponsController _weaponsController;
+        private PlayerAllWeaponsController _weaponsController;
 
         [SerializeField]
         private MobsController _mobsController;

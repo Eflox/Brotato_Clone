@@ -15,7 +15,7 @@ namespace Brotato_Clone.Models
     {
         public static readonly IReadOnlyDictionary<string, NItem> Items;
 
-        private static string _assetSource = "Brotato";
+        private static readonly string _assetSource = "Brotato";
 
         static ItemsData()
         {
