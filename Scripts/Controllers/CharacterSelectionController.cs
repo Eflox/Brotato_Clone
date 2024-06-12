@@ -6,8 +6,8 @@
  */
 
 using Brotato_Clone.Models;
-using Brotato_Clone.Services;
 using Brotato_Clone.Views;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,7 +45,12 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void CharacterSelected(NItem character)
         {
-            PlayerPrefsManager.NewSave(character);
+            SaveManager.SaveCharacter(character);
+
+            List<Weapon> weapons = new List<Weapon>();
+            weapons.Add(WeaponsData.Weapons["Fist"]);
+
+            SaveManager.SaveWeapons(weapons);
             SceneManager.LoadScene("GameScene");
         }
 

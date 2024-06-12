@@ -12,7 +12,7 @@ namespace Brotato_Clone.Controllers
     public class WeaponRotationController : MonoBehaviour
     {
         private Transform _target;
-        private bool _hasTarget;
+        private bool _hasTarget = false;
 
         public void FoundTarget(Transform target)
         {
@@ -30,7 +30,7 @@ namespace Brotato_Clone.Controllers
 
         private void Update()
         {
-            if (!_hasTarget)
+            if (_hasTarget)
                 RotateTowardsTarget();
         }
 
