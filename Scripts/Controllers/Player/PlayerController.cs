@@ -7,7 +7,6 @@
 
 using Brotato_Clone.Models;
 using Brotato_Clone.Player.Views;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -52,7 +51,7 @@ namespace Brotato_Clone.Controllers
             //Events
             EventManager.Subscribe(GameEvent.GameStart, OnGameStart);
 
-            EventManager.Subscribe(WaveEvent.WaveStart, OnWaveStart);
+            EventManager.Subscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
             EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
 
             EventManager.Subscribe(PlayerEvent.PlayerDead, OnPlayerDead);
@@ -72,8 +71,10 @@ namespace Brotato_Clone.Controllers
             _playerView.LoadPlayer();
         }
 
-        public void OnWaveStart()
+        public void OnWaveStart(Wave wave)
         {
+            Debug.Log("Player wave started");
+
             var stats = _playerStatsController.GetStats();
 
             _playerStatsController.StartWaveStats();
@@ -115,69 +116,6 @@ namespace Brotato_Clone.Controllers
         public GameObject GetPlayerObject()
         {
             return _playerObject;
-        }
-
-        //--------------------------------------------------------------------------------------
-        //--------------------------------------------------------------------------------------
-        //--------------------------------------------------------------------------------------
-
-        public NItem Character = new NItem();
-        public List<NItem> Items = new List<NItem>();
-        public List<Upgrade> Upgrades = new List<Upgrade>();
-
-        [SerializeField]
-        private LevelUpMenuController _levelUpMenuController;
-
-        [SerializeField]
-        private PlayerLifecycleController _visualsController;
-
-        [SerializeField]
-        private PlayerCameraController _cameraController;
-
-        [SerializeField]
-        private WaveController _waveController;
-
-        [SerializeField]
-        private PlayerView _playerViewOld;
-
-        private void InitializeOld()
-        {
-            _visualsController.Initialize();
-
-            //_waveController.Initialize(WaveData.Waves[Stats.CurrentWave]);
-            //_cameraController.Initialize(PlayerObject.transform);
-
-            UpdateView();
-        }
-
-        private void UpdateView()
-        {
-            //_playerViewOld.SetHealth(Stats.CurrentHP, Stats.MaxHP[StatType.TotalVisible]);
-            //_playerViewOld.SetLevel(Stats.CurrentLvl, Stats.CurrentXp, LevelData.LevelsXP[Stats.CurrentLvl]);
-            //_playerViewOld.SetMaterials(Stats.CurrentMaterials);
-            //_playerViewOld.SetBagMaterials(Stats.CurrentBagMaterials);
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                //Stats.CurrentHP--;
-                //Stats.CurrentXp++;
-                //Stats.CurrentMaterials++;
-                UpdateView();
-            }
-        }
-
-        public void WaveEnd()
-        {
-            //if (Stats.LevelsGainedDuringWave > 0)
-            //    _levelUpMenuController.OpenLevelUpMenu(Stats.LevelsGainedDuringWave);
-        }
-
-        public void AddUpgrade(Upgrade upgrade)
-        {
-            Debug.Log($"Added upgrade: {upgrade.Name}");
         }
     }
 }

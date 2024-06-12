@@ -47,8 +47,8 @@ namespace Brotato_Clone.Controllers
 
         public void Flip(bool right)
         {
-            if (_shouldFlip)
-                _weaponView.Flip(right);
+            //if (_shouldFlip)
+            //    _weaponView.Flip(right);
         }
 
         private void RotateTowardsNearestEnemy()

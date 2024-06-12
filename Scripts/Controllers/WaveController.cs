@@ -60,7 +60,7 @@ namespace Brotato_Clone.Controllers
         {
             _waveView.SetTimer(0);
 
-            EventManager.TriggerEvent(WaveEvent.WaveStart);
+            EventManager.TriggerEvent(WaveEvent.WaveEnd);
 
             _waveStarted = false;
         }

@@ -18,16 +18,14 @@ namespace Brotato_Clone.Controllers
         private Transform _playerTransform;
         private int _playerSpeed;
 
-        private float baseHiddenSpeed = 5f;
-        private float percentageBaseSpeed = 100f;
+        private const float BaseHiddenSpeed = 5f;
+        private const float PercentageBaseSpeed = 100f;
 
         private bool _canMove = false;
+        private bool _isMoving = false;
+        private bool _facingRight = true;
 
         public Vector2 _bounds = new Vector2(10f, 10f);
-
-        private bool _isMoving = false;
-
-        private bool _facingRight = true;
 
         private Vector3 _movement = Vector3.zero;
 
@@ -35,7 +33,6 @@ namespace Brotato_Clone.Controllers
         {
             _playerSpeed = playerSpeed;
             _playerTransform = playerTransform;
-
             _canMove = true;
         }
 
@@ -68,9 +65,8 @@ namespace Brotato_Clone.Controllers
             _movement.Normalize();
 
             bool isCurrentlyMoving = _movement != Vector3.zero;
-
-            float percentageIncrease = _playerSpeed / percentageBaseSpeed;
-            float newSpeed = baseHiddenSpeed * (1 + percentageIncrease);
+            float percentageIncrease = _playerSpeed / PercentageBaseSpeed;
+            float newSpeed = BaseHiddenSpeed * (1 + percentageIncrease);
 
             Vector3 newPosition = _playerTransform.position + _movement * newSpeed * Time.deltaTime;
 
@@ -79,7 +75,7 @@ namespace Brotato_Clone.Controllers
 
             _playerTransform.position = newPosition;
 
-            CheckDirection(false);
+            CheckDirection();
 
             if (isCurrentlyMoving && !_isMoving)
             {
@@ -93,25 +89,25 @@ namespace Brotato_Clone.Controllers
             }
         }
 
-        public void CheckDirection(bool onlyWeaponsCheck)
+        private void CheckDirection()
         {
-            if (_movement.x > 0 && (!_facingRight || onlyWeaponsCheck))
+            bool flipDirection = false;
+
+            if (_movement.x > 0 && !_facingRight)
             {
-                if (!onlyWeaponsCheck)
-                {
-                    _facingRight = true;
-                    _playerView.FlipPlayer();
-                }
-                //_weaponsController.FlipWeapons(_facingRight);
+                _facingRight = true;
+                flipDirection = true;
             }
-            else if (_movement.x < 0 && (_facingRight || onlyWeaponsCheck))
+            else if (_movement.x < 0 && _facingRight)
             {
-                if (!onlyWeaponsCheck)
-                {
-                    _facingRight = false;
-                    _playerView.FlipPlayer();
-                }
-                //_weaponsController.FlipWeapons(_facingRight);
+                _facingRight = false;
+                flipDirection = true;
+            }
+
+            if (flipDirection)
+            {
+                _playerView.FlipPlayer();
+                EventManager.TriggerEvent(PlayerEvent.PlayerFlipPlayer, _facingRight);
             }
         }
     }

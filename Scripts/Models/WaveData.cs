@@ -26,7 +26,7 @@ namespace Brotato_Clone.Models
                     1, new Wave
                     {
                         Count = 1,
-                        Duration = 3 /*20*/,
+                        Duration = 30 /*20*/,
                         EnemyCount = 15,
                         DamageIncrease = 1,
                         MaxHPIncrease = 5,

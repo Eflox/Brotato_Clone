@@ -21,11 +21,23 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private AudioSource _audioSource;
 
+        private bool _playerFacingRight;
+
         public void Initialize(Weapon weapon)
         {
             _audioSource.clip = weapon.ImpactSound;
 
             SetSprite(weapon.Sprite);
+
+            EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+        }
+
+        private void OnFlipPlayer(bool right)
+        {
+            _playerFacingRight = right;
+
+            _spriteRenderer.flipX = !right;
+            _spriteRenderer.gameObject.transform.localPosition = new Vector3(right ? 0.3f : -0.3f, 0);
         }
 
         private void SetSprite(Sprite weaponSprite)
@@ -38,12 +50,6 @@ namespace Brotato_Clone.Views
         {
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
             _spriteRenderer.flipX = false;
-        }
-
-        public void Flip(bool right)
-        {
-            _spriteRenderer.flipX = !right;
-            _spriteRenderer.gameObject.transform.localPosition = new Vector3(right ? 0.3f : -0.3f, 0);
         }
 
         public void OnHit(Vector2 position)

@@ -23,7 +23,7 @@ namespace Brotato_Clone.Views
 
         public void SetWaveCount(int wave)
         {
-            _waveCountText.text = $"Wave {wave}";
+            _waveCountText.text = $"WAVE {wave}";
         }
 
         public void SetTimer(int time)

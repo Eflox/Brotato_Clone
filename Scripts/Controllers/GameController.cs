@@ -43,12 +43,14 @@ namespace Brotato_Clone.Controllers
             _mobsController.Initialize(_playerController.GetPlayerObject().transform);
 
             _gameView.Initialize();
-
-            EventManager.TriggerEvent(GameEvent.GameStart);
         }
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                EventManager.TriggerEvent(GameEvent.GameStart);
+            }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 TogglePause();

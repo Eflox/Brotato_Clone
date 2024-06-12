@@ -19,9 +19,6 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private GameObject _weaponPrefab;
 
-        [SerializeField]
-        private List<WeaponController> _weaponControllers = new List<WeaponController>();
-
         private List<Transform> _weaponContainers = new List<Transform>();
 
         public void LoadWeapons(List<Weapon> weapons, Transform playerTransform)
@@ -38,12 +35,6 @@ namespace Brotato_Clone.Controllers
             SpawnWeapons(weaponsTest.ToList());
         }
 
-        public void FlipWeapons(bool right)
-        {
-            foreach (var weaponController in _weaponControllers)
-                weaponController.Flip(right);
-        }
-
         private void SpawnWeapons(List<Weapon> weapons)
         {
             for (int i = 0; i < weapons.Count; i++)
@@ -51,7 +42,6 @@ namespace Brotato_Clone.Controllers
                 var newWeaponObject = Instantiate(_weaponPrefab, _weaponContainers[i].position, Quaternion.identity, _weaponContainers[i]);
                 var weaponController = newWeaponObject.GetComponent<WeaponController>();
                 weaponController.Initialize(weapons[i], this);
-                _weaponControllers.Add(weaponController);
             }
         }
 
@@ -77,11 +67,5 @@ namespace Brotato_Clone.Controllers
         }
 
         //public void CheckDirection() => _playerMovementController.CheckDirection(true);
-
-        private void OnDestroy()
-        {
-            foreach (var weapon in _weaponControllers)
-                Destroy(weapon);
-        }
     }
 }
