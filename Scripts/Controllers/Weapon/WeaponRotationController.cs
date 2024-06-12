@@ -5,107 +5,45 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Models;
-using Brotato_Clone.Views;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
     public class WeaponRotationController : MonoBehaviour
     {
-        public bool EnemyInRange = false;
-        public bool IsAttacking = false;
-        private bool _rotatedWeapon = false;
+        private Transform _target;
+        private bool _hasTarget;
 
-        [SerializeField]
-        private WeaponController _weaponController;
-
-        [SerializeField]
-        private WeaponView _weaponView;
-
-        private Weapon _weapon;
-
-        private float _attackDistance;
-        private GameObject _currentTarget = null;
-
-        public void Initialize(Weapon weapon)
+        public void FoundTarget(Transform target)
         {
-            _weapon = weapon;
+            _target = target;
+            _hasTarget = true;
+        }
 
-            _attackDistance = (_weapon.Range / 13) / 2;
+        public void LostTarget()
+        {
+            ResetRotation();
 
-            if (_weapon.WeaponType == WeaponType.Melee)
-                _attackDistance /= 2;
+            _target = null;
+            _hasTarget = false;
         }
 
         private void Update()
         {
-            if (!IsAttacking)
-                RotateTowardsNearestEnemy();
+            if (!_hasTarget)
+                RotateTowardsTarget();
         }
 
-        private void RotateTowardsNearestEnemy()
+        private void RotateTowardsTarget()
         {
-            GameObject nearestEnemy = FindNearestEnemy();
-            if (nearestEnemy != null)
-            {
-                _rotatedWeapon = true;
-
-                float distance = Vector2.Distance(transform.position, nearestEnemy.transform.position);
-                if (distance < _attackDistance)
-                {
-                    EnemyInRange = true;
-                    _currentTarget = nearestEnemy;
-                }
-                else
-                {
-                    EnemyInRange = false;
-                }
-
-                _weaponView.ResetFlip();
-
-                Vector3 direction = nearestEnemy.transform.position - transform.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            }
-            else if (_rotatedWeapon)
-            {
-                _rotatedWeapon = false;
-                EnemyInRange = false;
-                transform.rotation = Quaternion.identity;
-                _weaponController.CheckDirection();
-                _currentTarget = null;
-            }
-
-            if (_currentTarget != null && Vector2.Distance(transform.position, _currentTarget.transform.position) >= _attackDistance)
-            {
-                _currentTarget = null;
-                EnemyInRange = false;
-            }
+            Vector3 direction = _target.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 
-        private GameObject FindNearestEnemy()
+        private void ResetRotation()
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Mob");
-            GameObject nearestEnemy = null;
-            float minDistance = _attackDistance + 1;
-
-            foreach (GameObject enemy in enemies)
-            {
-                float distance = Vector2.Distance(transform.position, enemy.transform.position);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    nearestEnemy = enemy;
-                }
-            }
-
-            return nearestEnemy;
-        }
-
-        private void OnDestroy()
-        {
-            transform.rotation = Quaternion.identity;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }

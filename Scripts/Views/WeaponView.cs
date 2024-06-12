@@ -22,6 +22,7 @@ namespace Brotato_Clone.Views
         private AudioSource _audioSource;
 
         private bool _playerFacingRight;
+        private bool _canFlip = true;
 
         public void Initialize(Weapon weapon)
         {
@@ -37,6 +38,9 @@ namespace Brotato_Clone.Views
         {
             _playerFacingRight = right;
 
+            if (!_canFlip)
+                return;
+
             _spriteRenderer.flipX = !right;
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(right ? 0.3f : -0.3f, 0);
         }
@@ -47,10 +51,22 @@ namespace Brotato_Clone.Views
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
         }
 
-        public void ResetFlip()
+        public void HasTarget(bool hasTarget)
         {
-            _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
-            _spriteRenderer.flipX = false;
+            _canFlip = !hasTarget;
+
+            if (hasTarget)
+            {
+                Debug.Log("Found target");
+
+                _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
+                _spriteRenderer.flipX = false;
+            }
+            else
+            {
+                Debug.Log("Lost target");
+                OnFlipPlayer(_playerFacingRight);
+            }
         }
 
         public void OnHit(Vector2 position)

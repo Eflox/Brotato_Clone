@@ -16,7 +16,7 @@ public enum PlayerEvent
     PlayerTakeDamage,
     PlayerSelectItem,
     PlayerStatsChanged,
-    PlayerPickupDrop
+    PlayerPickupDrop,
 }
 
 public enum WaveEvent

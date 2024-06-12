@@ -14,65 +14,46 @@ namespace Brotato_Clone.Controllers
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField]
         private WeaponView _weaponView;
 
-        [SerializeField]
         private WeaponRotationController _weaponRotationController;
+        private WeaponAttackController _weaponAttackController;
 
-        private PlayerAllWeaponsController _weaponsController;
-        private IWeaponMechanic _weaponMechanic;
-        private Weapon _weapon;
-        private float _attackCooldown = 0f;
-
-        public void Initialize(Weapon weapon, PlayerAllWeaponsController weaponsController)
+        public void Initialize()
         {
-            _weapon = weapon;
-
-            _weaponsController = weaponsController;
-
-            _weaponView.Initialize(weapon);
-
-            _weaponMechanic = gameObject.AddComponent(_weapon.WeaponMechanic) as IWeaponMechanic;
-            _weaponMechanic.Initialize(this, _weapon);
-
-            _weaponRotationController.Initialize(_weapon);
+            _weaponRotationController = GetComponent<WeaponRotationController>();
+            _weaponAttackController = GetComponent<WeaponAttackController>();
         }
 
-        private void Update()
+        public void Attack()
         {
-            HandleAutoAttack();
-        }
-
-        private void HandleAutoAttack()
-        {
-            if (!_weaponRotationController.IsAttacking)
-                _attackCooldown -= Time.deltaTime;
-
-            if (_attackCooldown <= 0f)
-            {
-                if (_weaponRotationController.EnemyInRange)
-                {
-                    _weaponRotationController.IsAttacking = true;
-                    _weaponMechanic.Attack();
-                    _attackCooldown = _weapon.Cooldown;
-                }
-            }
         }
 
         public void AttackFinished()
         {
-            _weaponRotationController.IsAttacking = false;
+            _weaponAttackController.AttackFinished();
         }
 
-        public void CheckDirection()
+        public void LoadWeapon(Weapon weapon)
         {
-            //_weaponsController.CheckDirection();
+            _weaponView.Initialize(weapon);
+
+            IWeaponMechanic weaponMechanic = gameObject.AddComponent(weapon.WeaponMechanic) as IWeaponMechanic;
+            weaponMechanic.Initialize(this, weapon);
+
+            _weaponAttackController.SetupWeapon(weapon.Cooldown, weaponMechanic, this);
         }
 
-        private void OnDestroy()
+        public void TargetFound(Transform target)
         {
-            Destroy(_weaponRotationController);
+            _weaponRotationController.FoundTarget(target);
+            _weaponAttackController.TargetFound();
+        }
+
+        public void TargetLost()
+        {
+            _weaponAttackController.TargetLost();
+            _weaponRotationController.LostTarget();
         }
 
         public void OnHit(Vector2 hitPosition)

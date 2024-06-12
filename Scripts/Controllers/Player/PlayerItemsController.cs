@@ -49,6 +49,11 @@ namespace Brotato_Clone
             return _weapons;
         }
 
+        public List<Upgrade> GetUpgrades()
+        {
+            return _upgrades;
+        }
+
         public NItem GetCharacter()
         {
             return _character;
@@ -61,7 +66,15 @@ namespace Brotato_Clone
 
         public void LoadItems()
         {
-            _allItems = PlayerPrefsManager.GetItems();
+            _character = SaveManager.GetCharacter();
+            _weapons = SaveManager.GetWeapons();
+            _items = SaveManager.GetItems();
+            _upgrades = SaveManager.GetUpgrades();
+
+            _allItems = new List<NItem>();
+            _allItems.AddRange(_weapons);
+            _allItems.AddRange(_items);
+            _allItems.AddRange(_upgrades);
 
             List<NItem> allItemsWithChildItems = new List<NItem>(_allItems);
 

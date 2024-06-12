@@ -7,7 +7,6 @@
 
 using Brotato_Clone.Models;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -25,14 +24,8 @@ namespace Brotato_Clone.Controllers
         {
             _playerTransform = playerTransform;
 
-            Weapon[] weaponsTest = new Weapon[]
-            {
-                WeaponsData.Weapons["Fist"],
-                WeaponsData.Weapons["Knife"],
-            };
-
-            CreateWeaponContainers(weaponsTest.ToList());
-            SpawnWeapons(weaponsTest.ToList());
+            CreateWeaponContainers(weapons);
+            SpawnWeapons(weapons);
         }
 
         private void SpawnWeapons(List<Weapon> weapons)
@@ -41,7 +34,8 @@ namespace Brotato_Clone.Controllers
             {
                 var newWeaponObject = Instantiate(_weaponPrefab, _weaponContainers[i].position, Quaternion.identity, _weaponContainers[i]);
                 var weaponController = newWeaponObject.GetComponent<WeaponController>();
-                weaponController.Initialize(weapons[i], this);
+                weaponController.Initialize();
+                weaponController.LoadWeapon(weapons[i]);
             }
         }
 
