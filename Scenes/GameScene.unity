@@ -2969,14 +2969,22 @@ GameObject:
   - component: {fileID: 541956787}
   - component: {fileID: 541956791}
   - component: {fileID: 541956790}
+  - component: {fileID: 541956798}
   - component: {fileID: 541956789}
-  - component: {fileID: 541956788}
   - component: {fileID: 541956792}
   - component: {fileID: 541956794}
   - component: {fileID: 541956795}
   - component: {fileID: 541956796}
   - component: {fileID: 541956797}
-  - component: {fileID: 541956798}
+  - component: {fileID: 541956788}
+  - component: {fileID: 541956807}
+  - component: {fileID: 541956806}
+  - component: {fileID: 541956805}
+  - component: {fileID: 541956804}
+  - component: {fileID: 541956803}
+  - component: {fileID: 541956801}
+  - component: {fileID: 541956800}
+  - component: {fileID: 541956799}
   m_Layer: 0
   m_Name: PlayerHandler
   m_TagString: Untagged
@@ -3011,21 +3019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903fdf6f94c6f844eae430cbb1b3e13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerGraphics: {fileID: 321995691}
-  _spriteRenderer: {fileID: 321995693}
-  _healthText: {fileID: 1432441857}
-  _healthBar: {fileID: 1402371097}
-  _levelText: {fileID: 745741481}
-  _levelBar: {fileID: 261176336}
-  _materialsText: {fileID: 209093952}
-  _bagMaterialsText: {fileID: 1994047423}
-  _bagSprite: {fileID: 1826643478}
-  _animator: {fileID: 220260132}
-  _dustParticlePrefab: {fileID: 1825501806043249180, guid: a6f2a6081ac4f874196686187112037d, type: 3}
-  AnimationWidthChange: 0.1
-  AnimationHeightChange: 0.2
-  AnimationMovingSpeed: 3
-  AnimationIdleSpeed: 0.3
 --- !u!114 &541956789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,8 +3031,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85157449744518846b082ac7c532b798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerView: {fileID: 541956788}
-  _playerController: {fileID: 541956791}
 --- !u!114 &541956790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,18 +3058,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerObject: {fileID: 1539324853}
-  Character:
-    Name: 
-    Description: 
-    Icon: {fileID: 0}
-    Rarity: 0
-    Classes: 
-  Items: []
-  _levelUpMenuController: {fileID: 20603333}
-  _visualsController: {fileID: 541956789}
-  _cameraController: {fileID: 690839402}
-  _waveController: {fileID: 1073021374}
-  _playerViewOld: {fileID: 0}
 --- !u!114 &541956792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3092,7 +3071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponPrefab: {fileID: 2577986720493552561, guid: 142f3d3195ea8f04a97d5cce9b844892, type: 3}
-  _weaponControllers: []
 --- !u!114 &541956794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,6 +3083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1b392e839e449409a2a19dd7e3a576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _visibleItems: []
   _allItems: []
   _items: []
 --- !u!114 &541956795
@@ -3210,6 +3189,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundaries: {x: 2.6, y: 3.42}
+--- !u!114 &541956799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f6efb6f8295de4cbd4960d2de84fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &541956800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e33f4ec41278d4e885268a7f33a8d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &541956801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed4f3e1927f93b439718e13c219a482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &541956803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64629335234a4e45b89f97981de2e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthText: {fileID: 1432441857}
+  _healthBar: {fileID: 1402371097}
+  _levelText: {fileID: 745741481}
+  _levelBar: {fileID: 261176336}
+  _materialsText: {fileID: 209093952}
+  _bagMaterialsText: {fileID: 1994047423}
+  _bagSprite: {fileID: 1826643478}
+--- !u!114 &541956804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f7a0bd38d4fa749ac0e045b988033e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dustParticlePrefab: {fileID: 1825501806043249180, guid: a6f2a6081ac4f874196686187112037d, type: 3}
+  _playerTransform: {fileID: 1539324854}
+--- !u!114 &541956805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f8652a0c11a7a49b63d3aa5741f94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 321995693}
+--- !u!114 &541956806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad25721895fc11a459a77581e211399d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 519420031}
+--- !u!114 &541956807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf2a251486597f4191f1343f8f14f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerTransform: {fileID: 321995691}
+  _animator: {fileID: 220260132}
 --- !u!1001 &564993724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5724,7 +5812,7 @@ GameObject:
   - component: {fileID: 1142291781}
   - component: {fileID: 1142291780}
   m_Layer: 5
-  m_Name: MaterialImage
+  m_Name: MaterialsImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8532,7 +8620,7 @@ GameObject:
   - component: {fileID: 1994047424}
   - component: {fileID: 1994047423}
   m_Layer: 5
-  m_Name: LeftOverText
+  m_Name: BaggedMaterialsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -40,6 +40,8 @@ namespace Brotato_Clone
             _playerStats.CurrentMaterials = PlayerPrefsManager.GetStat("Materials");
             _playerStats.CurrentMaterials = PlayerPrefsManager.GetStat("Materials");
             _playerStats.CurrentBagMaterials = PlayerPrefsManager.GetStat("BagMaterials");
+
+            EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
         public void UpdateStats(List<NItem> items)

@@ -28,7 +28,7 @@ namespace Brotato_Clone.Player.Views
 
         public void OnFlipPlayer(bool right)
         {
-            _spriteRenderer.flipX = right;
+            _spriteRenderer.flipX = !right;
         }
     }
 }
