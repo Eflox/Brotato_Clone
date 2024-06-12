@@ -65,11 +65,6 @@ namespace Brotato_Clone.Controllers
             _weaponRotationController.IsAttacking = false;
         }
 
-        public void Flip(bool right)
-        {
-            _weaponRotationController.Flip(right);
-        }
-
         public void CheckDirection()
         {
             //_weaponsController.CheckDirection();

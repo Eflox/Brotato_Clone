@@ -24,7 +24,6 @@ namespace Brotato_Clone.Controllers
         private WeaponView _weaponView;
 
         private Weapon _weapon;
-        private bool _shouldFlip = true;
 
         private float _attackDistance;
         private GameObject _currentTarget = null;
@@ -43,12 +42,6 @@ namespace Brotato_Clone.Controllers
         {
             if (!IsAttacking)
                 RotateTowardsNearestEnemy();
-        }
-
-        public void Flip(bool right)
-        {
-            //if (_shouldFlip)
-            //    _weaponView.Flip(right);
         }
 
         private void RotateTowardsNearestEnemy()
@@ -70,7 +63,6 @@ namespace Brotato_Clone.Controllers
                 }
 
                 _weaponView.ResetFlip();
-                _shouldFlip = false;
 
                 Vector3 direction = nearestEnemy.transform.position - transform.position;
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -80,7 +72,6 @@ namespace Brotato_Clone.Controllers
             {
                 _rotatedWeapon = false;
                 EnemyInRange = false;
-                _shouldFlip = true;
                 transform.rotation = Quaternion.identity;
                 _weaponController.CheckDirection();
                 _currentTarget = null;

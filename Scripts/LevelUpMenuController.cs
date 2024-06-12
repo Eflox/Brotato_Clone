@@ -38,7 +38,7 @@ namespace Brotato_Clone.Controllers
 
         public void UpgradeSelected(Upgrade upgrade)
         {
-            _playerController.AddUpgrade(upgrade);
+            EventManager.TriggerEvent<NItem>(PlayerEvent.PlayerSelectItem, upgrade);
         }
     }
 }

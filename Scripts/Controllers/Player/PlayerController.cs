@@ -27,18 +27,10 @@ namespace Brotato_Clone.Controllers
         private PlayerMovementController _playerMovementController;
         private PlayerHealthController _playerHealthController;
 
-        //TEMPORARY
-        private void Start()
-        {
-            Initialize();
-        }
-
         public void Initialize()
         {
-            //View
             _playerView = GetComponent<PlayerView>();
 
-            //Controllers
             _playerCameraController = GetComponent<PlayerCameraController>();
             _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
             _playerItemsController = GetComponent<PlayerItemsController>();
@@ -48,33 +40,26 @@ namespace Brotato_Clone.Controllers
             _playerMovementController = GetComponent<PlayerMovementController>();
             _playerHealthController = GetComponent<PlayerHealthController>();
 
-            //Events
-            EventManager.Subscribe(GameEvent.GameStart, OnGameStart);
+            _playerView.Initialize();
 
+            EventManager.Subscribe(GameEvent.GameStart, OnGameStart);
             EventManager.Subscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
             EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
-
             EventManager.Subscribe(PlayerEvent.PlayerDead, OnPlayerDead);
-
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
             EventManager.Subscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
-
-            Debug.Log("Player initialized");
         }
 
         public void OnGameStart()
         {
-            _playerLifecycleController.LoadPlayer();
             _playerItemsController.LoadItems();
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
 
-            _playerView.LoadPlayer();
+            _playerView.LoadView(_playerItemsController.GetCharacter(), _playerItemsController.GetVisibleItems());
         }
 
         public void OnWaveStart(Wave wave)
         {
-            Debug.Log("Player wave started");
-
             var stats = _playerStatsController.GetStats();
 
             _playerStatsController.StartWaveStats();
@@ -109,6 +94,7 @@ namespace Brotato_Clone.Controllers
 
         public void OnSelectedItem(NItem item)
         {
+            Debug.Log(item.Name);
             _playerItemsController.AddItem(item);
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
         }

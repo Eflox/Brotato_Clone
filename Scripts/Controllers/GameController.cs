@@ -7,6 +7,7 @@
 
 using Brotato_Clone.Services;
 using Brotato_Clone.Views;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -28,33 +29,26 @@ namespace Brotato_Clone.Controllers
 
         private bool _paused = false;
 
-        private void Awake()
+        private void Start()
         {
             Application.targetFrameRate = 60;
 
             if (QualitySettings.vSyncCount != 0)
                 QualitySettings.vSyncCount = 0;
-        }
 
-        private void Start()
-        {
             _playerController.Initialize();
             _waveController.Initialize();
             _mobsController.Initialize(_playerController.GetPlayerObject().transform);
 
             _gameView.Initialize();
+
+            EventManager.TriggerEvent(GameEvent.GameStart);
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                EventManager.TriggerEvent(GameEvent.GameStart);
-            }
             if (Input.GetKeyDown(KeyCode.Escape))
-            {
                 TogglePause();
-            }
         }
 
         private void TogglePause()
@@ -72,7 +66,7 @@ namespace Brotato_Clone.Controllers
         public void RestartGame()
         {
             TogglePause();
-            PlayerPrefsManager.NewSave(_playerController.Character);
+            PlayerPrefsManager.NewSave(PlayerPrefsManager.GetItems().ElementAt(0));
             SceneManager.LoadScene("GameScene");
         }
 

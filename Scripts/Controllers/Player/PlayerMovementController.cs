@@ -79,12 +79,12 @@ namespace Brotato_Clone.Controllers
 
             if (isCurrentlyMoving && !_isMoving)
             {
-                EventManager.TriggerEvent(PlayerEvent.PlayerMoving);
+                EventManager.TriggerEvent(PlayerEvent.PlayerMoveChange, true);
                 _isMoving = true;
             }
             else if (!isCurrentlyMoving && _isMoving)
             {
-                EventManager.TriggerEvent(PlayerEvent.PlayerIdle);
+                EventManager.TriggerEvent(PlayerEvent.PlayerMoveChange, false);
                 _isMoving = false;
             }
         }
@@ -105,10 +105,7 @@ namespace Brotato_Clone.Controllers
             }
 
             if (flipDirection)
-            {
-                _playerView.FlipPlayer();
                 EventManager.TriggerEvent(PlayerEvent.PlayerFlipPlayer, _facingRight);
-            }
         }
     }
 }

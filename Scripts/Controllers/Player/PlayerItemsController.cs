@@ -17,6 +17,9 @@ namespace Brotato_Clone
     public class PlayerItemsController : MonoBehaviour
     {
         [SerializeField]
+        private List<NItem> _visibleItems = new List<NItem>();
+
+        [SerializeField]
         private List<NItem> _allItems = new List<NItem>();
 
         [SerializeField]
@@ -44,6 +47,16 @@ namespace Brotato_Clone
         public List<Weapon> GetWeapons()
         {
             return _weapons;
+        }
+
+        public NItem GetCharacter()
+        {
+            return _character;
+        }
+
+        public List<NItem> GetVisibleItems()
+        {
+            return _visibleItems;
         }
 
         public void LoadItems()

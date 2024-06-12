@@ -30,6 +30,7 @@ namespace Brotato_Clone.Views
             SetSprite(weapon.Sprite);
 
             EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+            EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
         }
 
         private void OnFlipPlayer(bool right)

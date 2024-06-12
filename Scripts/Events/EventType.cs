@@ -9,8 +9,7 @@
 public enum PlayerEvent
 {
     PlayerDead,
-    PlayerMoving,
-    PlayerIdle,
+    PlayerMoveChange,
     PlayerDie,
     PlayerFlipPlayer,
     PlayerDealDamage,
