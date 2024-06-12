@@ -72,7 +72,7 @@ namespace Brotato_Clone.Controllers
 
         public void CheckDirection()
         {
-            _weaponsController.CheckDirection();
+            //_weaponsController.CheckDirection();
         }
 
         private void OnDestroy()

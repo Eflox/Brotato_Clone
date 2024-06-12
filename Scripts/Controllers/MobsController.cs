@@ -20,30 +20,32 @@ namespace Brotato_Clone.Controllers
         private GameObject _mobPrefab;
 
         [SerializeField]
-        private PlayerController _playerController;
-
-        [SerializeField]
         private Vector2 _boundaries;
 
         [SerializeField]
         private DamageNumber _damageNumber;
 
-        public void Initialize(Wave wave)
+        private Transform _targetTransform;
+
+        public void Initialize(Transform targetTransform)
+        {
+            _targetTransform = targetTransform;
+
+            EventManager.Subscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
+            EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
+        }
+
+        private void OnWaveStart(Wave wave)
         {
             _currentWave = wave;
 
-            StartWave();
+            StartCoroutine(SpawnMobsRoutine());
         }
 
-        public void EndWave()
+        private void OnWaveEnd()
         {
             foreach (var mob in GameObject.FindGameObjectsWithTag("Mob"))
                 mob.GetComponent<MobController>().Die(Vector2.zero, false);
-        }
-
-        private void StartWave()
-        {
-            StartCoroutine(SpawnMobsRoutine());
         }
 
         private IEnumerator SpawnMobsRoutine()
@@ -68,7 +70,7 @@ namespace Brotato_Clone.Controllers
         {
             Vector3 spawnPosition = GetRandomSpawnPosition();
             MobController mobController = Instantiate(_mobPrefab, spawnPosition, Quaternion.identity).GetComponent<MobController>();
-            mobController.Initialize(MobsData.Mobs["BabyAlien"], _playerController.PlayerObject.transform, _damageNumber, this);
+            mobController.Initialize(MobsData.Mobs["BabyAlien"], _targetTransform, _damageNumber, this);
         }
 
         private Vector3 GetRandomSpawnPosition()

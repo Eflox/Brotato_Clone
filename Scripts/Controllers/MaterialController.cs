@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
-    public class MaterialController : MonoBehaviour
+    public class MaterialController : MonoBehaviour, IDrop
     {
         [SerializeField]
         private MaterialView _materialView;
@@ -19,11 +19,12 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private CircleCollider2D _circleCollider;
 
-        private int _value;
+        public int Value => 1;
+
+        public DropType Drop => DropType.Material;
 
         private void Start()
         {
-            _value = 1;
             _materialView.SetSprite();
 
             Invoke(nameof(EnableMaterial), 0.2f);
@@ -34,12 +35,12 @@ namespace Brotato_Clone.Controllers
             _circleCollider.enabled = true;
         }
 
-        public void PickUp(PlayerController controller, Transform playerTransform)
+        public void PickUp(Transform playerTransform)
         {
-            StartCoroutine(MoveToPlayer(controller, playerTransform));
+            StartCoroutine(MoveToPlayer(playerTransform));
         }
 
-        private IEnumerator MoveToPlayer(PlayerController controller, Transform playerTransform)
+        private IEnumerator MoveToPlayer(Transform playerTransform)
         {
             float duration = 0.2f;
             float elapsedTime = 0f;
@@ -54,12 +55,12 @@ namespace Brotato_Clone.Controllers
             }
 
             transform.position = targetPosition;
-            ReachedPlayer(controller);
+            ReachedPlayer();
         }
 
-        private void ReachedPlayer(PlayerController controller)
+        private void ReachedPlayer()
         {
-            controller.AddMaterial(_value);
+            EventManager.TriggerEvent(PlayerEvent.PlayerPickupDrop, this);
             Destroy(gameObject);
         }
     }

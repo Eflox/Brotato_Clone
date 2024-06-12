@@ -23,5 +23,7 @@ public enum Class
     Support,
     Explosive,
     Tool,
-    Gun
+    Gun,
+    Weapon,
+    Upgrade
 }

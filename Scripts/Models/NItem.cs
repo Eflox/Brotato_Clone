@@ -20,6 +20,6 @@ namespace Brotato_Clone.Models
         public Class[] Classes;
         public IAttribute Attribute;
 
-        public void AddItem() => EventManager.TriggerEvent(PlayerEvent.PlayerAddItem, this);
+        public void SelectItem() => EventManager.TriggerEvent(PlayerEvent.PlayerSelectItem, this);
     }
 }

@@ -965,7 +965,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mobPrefab: {fileID: 693358878085293269, guid: 2425170d6b31fdc468e666076d93526f, type: 3}
-  _playerController: {fileID: 541956791}
   _boundaries: {x: 12.8, y: 8.7}
   _damageNumber: {fileID: 1904555652687940879, guid: 133ae440467470641850794728b3b4cd, type: 3}
 --- !u!1 &261176335
@@ -1206,12 +1205,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1495163048}
   - {fileID: 1073021372}
   - {fileID: 541956787}
   - {fileID: 248483235}
   - {fileID: 690839401}
   - {fileID: 980898060}
-  - {fileID: 1495163048}
   - {fileID: 20603331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2973,7 +2972,11 @@ GameObject:
   - component: {fileID: 541956789}
   - component: {fileID: 541956788}
   - component: {fileID: 541956792}
-  - component: {fileID: 541956793}
+  - component: {fileID: 541956794}
+  - component: {fileID: 541956795}
+  - component: {fileID: 541956796}
+  - component: {fileID: 541956797}
+  - component: {fileID: 541956798}
   m_Layer: 0
   m_Name: PlayerHandler
   m_TagString: Untagged
@@ -3049,8 +3052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba44ad9dc2a0fe4a9bade848d6eed17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 541956791}
-  _weaponsController: {fileID: 541956792}
   _playerView: {fileID: 541956788}
   _bounds: {x: 13, y: 8.8}
 --- !u!114 &541956791
@@ -3065,7 +3066,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5b071d63278ad40858901fb090ef53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stats:
+  _playerObject: {fileID: 1539324853}
+  Character:
+    Name: 
+    Description: 
+    Icon: {fileID: 0}
+    Rarity: 0
+    Classes: 
+  Items: []
+  _levelUpMenuController: {fileID: 20603333}
+  _visualsController: {fileID: 541956789}
+  _cameraController: {fileID: 690839402}
+  _waveController: {fileID: 1073021374}
+  _playerViewOld: {fileID: 0}
+--- !u!114 &541956792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3867a142d9545448e758ac4fde4c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponPrefab: {fileID: 2577986720493552561, guid: 142f3d3195ea8f04a97d5cce9b844892, type: 3}
+  _weaponControllers: []
+--- !u!114 &541956794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1b392e839e449409a2a19dd7e3a576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allItems: []
+  _items: []
+--- !u!114 &541956795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b75acf9aa38f5a4f8bc11bfc9c6db47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerStats:
     LevelsGainedDuringWave: 0
     CurrentWave: 0
     CurrentHP: 0
@@ -3119,22 +3173,7 @@ MonoBehaviour:
     SupportWeapons: 0
     ExplosiveWeapons: 0
     ToolWeapons: 0
-  Character:
-    Name: 
-    Description: 
-    Icon: {fileID: 0}
-    Rarity: 0
-    Classes: 
-  Items: []
-  PlayerObject: {fileID: 1539324853}
-  _levelUpMenuController: {fileID: 20603333}
-  _movementController: {fileID: 541956790}
-  _visualsController: {fileID: 541956789}
-  _cameraController: {fileID: 690839402}
-  _waveController: {fileID: 1073021374}
-  _pickupController: {fileID: 541956793}
-  _playerView: {fileID: 541956788}
---- !u!114 &541956792
+--- !u!114 &541956796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3143,14 +3182,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 541956786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf3867a142d9545448e758ac4fde4c5d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe69bd5854fad4341b11a378a88767bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 541956791}
-  _playerMovementController: {fileID: 541956790}
-  _weaponPrefab: {fileID: 2577986720493552561, guid: 142f3d3195ea8f04a97d5cce9b844892, type: 3}
-  _weaponControllers: []
---- !u!114 &541956793
+--- !u!114 &541956797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3159,9 +3194,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 541956786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f91e85025561428449493dad3e490dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 71a2994b164bebc40ac2d21d3db87c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &541956798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a17c9c444adb954fa8b86396d93de63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boundaries: {x: 2.6, y: 3.42}
 --- !u!1001 &564993724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3488,7 +3536,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundaries: {x: 2.6, y: 3.42}
-  _camera: {fileID: 519420031}
 --- !u!1 &696231962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5475,10 +5522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fbf955c2ca62b4db48a95096bb9ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 541956791}
-  _playerMovementController: {fileID: 541956790}
-  _weaponsController: {fileID: 541956792}
-  _mobsController: {fileID: 248483236}
   _waveView: {fileID: 1073021373}
 --- !u!1001 &1088001586
 PrefabInstance:
@@ -6995,6 +7038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameView: {fileID: 1495163050}
   _playerController: {fileID: 541956791}
+  _waveController: {fileID: 1073021374}
+  _mobsController: {fileID: 248483236}
 --- !u!114 &1495163050
 MonoBehaviour:
   m_ObjectHideFlags: 0

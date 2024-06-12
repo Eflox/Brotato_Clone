@@ -13,18 +13,15 @@ namespace Brotato_Clone.Controllers
     public class PlayerMovementController : MonoBehaviour
     {
         [SerializeField]
-        private PlayerController _playerController;
-
-        [SerializeField]
-        private PlayerAllWeaponsController _weaponsController;
-
-        [SerializeField]
         private PlayerView _playerView;
+
+        private Transform _playerTransform;
+        private int _playerSpeed;
 
         private float baseHiddenSpeed = 5f;
         private float percentageBaseSpeed = 100f;
 
-        private bool _initialized = false;
+        private bool _canMove = false;
 
         public Vector2 _bounds = new Vector2(10f, 10f);
 
@@ -34,25 +31,27 @@ namespace Brotato_Clone.Controllers
 
         private Vector3 _movement = Vector3.zero;
 
-        public void StartMovement()
+        public void StartMovement(int playerSpeed, Transform playerTransform)
         {
+            _playerSpeed = playerSpeed;
+            _playerTransform = playerTransform;
+
+            _canMove = true;
+        }
+
+        public void UpdateSpeed(int playerSpeed)
+        {
+            _playerSpeed = playerSpeed;
         }
 
         public void StopMovement()
         {
-        }
-
-        public void Initialize()
-        {
-            _playerController.PlayerObject.transform.position = Vector3.zero;
-
-            _playerView.SetupBounceAnimation();
-            _initialized = true;
+            _canMove = false;
         }
 
         private void Update()
         {
-            if (!_initialized)
+            if (!_canMove)
                 return;
 
             _movement = Vector3.zero;
@@ -70,31 +69,26 @@ namespace Brotato_Clone.Controllers
 
             bool isCurrentlyMoving = _movement != Vector3.zero;
 
-            //if (isCurrentlyMoving)
-            //    _playerView.SetPlayerMoving(_facingRight);
-            //else
-            //    _playerView.SetPlayerIdle();
-
-            float percentageIncrease = _playerController.Stats.Speed[Models.StatType.TotalVisible] / percentageBaseSpeed;
+            float percentageIncrease = _playerSpeed / percentageBaseSpeed;
             float newSpeed = baseHiddenSpeed * (1 + percentageIncrease);
 
-            Vector3 newPosition = _playerController.PlayerObject.transform.position + _movement * newSpeed * Time.deltaTime;
+            Vector3 newPosition = _playerTransform.position + _movement * newSpeed * Time.deltaTime;
 
             newPosition.x = Mathf.Clamp(newPosition.x, -_bounds.x, _bounds.x);
             newPosition.y = Mathf.Clamp(newPosition.y, -_bounds.y, _bounds.y);
 
-            _playerController.PlayerObject.transform.position = newPosition;
+            _playerTransform.position = newPosition;
 
             CheckDirection(false);
 
             if (isCurrentlyMoving && !_isMoving)
             {
-                _playerView.SetPlayerMoving();
+                EventManager.TriggerEvent(PlayerEvent.PlayerMoving);
                 _isMoving = true;
             }
             else if (!isCurrentlyMoving && _isMoving)
             {
-                _playerView.SetPlayerIdle();
+                EventManager.TriggerEvent(PlayerEvent.PlayerIdle);
                 _isMoving = false;
             }
         }
@@ -108,7 +102,7 @@ namespace Brotato_Clone.Controllers
                     _facingRight = true;
                     _playerView.FlipPlayer();
                 }
-                _weaponsController.FlipWeapons(_facingRight);
+                //_weaponsController.FlipWeapons(_facingRight);
             }
             else if (_movement.x < 0 && (_facingRight || onlyWeaponsCheck))
             {
@@ -117,7 +111,7 @@ namespace Brotato_Clone.Controllers
                     _facingRight = false;
                     _playerView.FlipPlayer();
                 }
-                _weaponsController.FlipWeapons(_facingRight);
+                //_weaponsController.FlipWeapons(_facingRight);
             }
         }
     }

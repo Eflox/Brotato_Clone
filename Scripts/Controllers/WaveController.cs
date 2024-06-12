@@ -6,6 +6,7 @@
  */
 
 using Brotato_Clone.Models;
+using Brotato_Clone.Services;
 using Brotato_Clone.Views;
 using UnityEngine;
 
@@ -17,37 +18,32 @@ namespace Brotato_Clone.Controllers
     public class WaveController : MonoBehaviour
     {
         [SerializeField]
-        private PlayerController _playerController;
-
-        [SerializeField]
-        private PlayerMovementController _playerMovementController;
-
-        [SerializeField]
-        private PlayerAllWeaponsController _weaponsController;
-
-        [SerializeField]
-        private MobsController _mobsController;
-
-        [SerializeField]
         private WaveView _waveView;
 
         private float _countdownTimer;
 
-        private bool _initialized = false;
+        private bool _waveStarted = false;
 
-        public void Initialize(Wave wave)
+        public void Initialize()
         {
-            _countdownTimer = wave.Duration;
+            EventManager.Subscribe(GameEvent.GameStart, OnGameStart);
+        }
+
+        public void OnGameStart()
+        {
+            Wave wave = WaveData.Waves[PlayerPrefsManager.GetStat("Wave")];
+
             _waveView.SetWaveCount(wave.Count);
 
-            _mobsController.Initialize(wave);
+            _countdownTimer = wave.Duration;
+            _waveStarted = true;
 
-            _initialized = true;
+            EventManager.TriggerEvent(WaveEvent.WaveStart, wave);
         }
 
         private void Update()
         {
-            if (!_initialized)
+            if (!_waveStarted)
                 return;
 
             if (_countdownTimer > 0)
@@ -62,13 +58,11 @@ namespace Brotato_Clone.Controllers
 
         private void WaveEnd()
         {
-            _playerController.WaveEnd();
-            _mobsController.EndWave();
             _waveView.SetTimer(0);
-            Destroy(_playerMovementController);
-            Destroy(_weaponsController);
 
-            _initialized = false;
+            EventManager.TriggerEvent(WaveEvent.WaveStart);
+
+            _waveStarted = false;
         }
     }
 }

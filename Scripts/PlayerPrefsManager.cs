@@ -1,5 +1,5 @@
 /*
- * PlayerPrefsService.cs
+ * PlayerPrefsManager.cs
  * Script Author: Charles d'Ansembourg
  * Creation Date: 05/06/2024
  * Contact: c.dansembourg@icloud.com
@@ -15,12 +15,12 @@ namespace Brotato_Clone.Services
     /// <summary>
     /// Service for handling player preferences related to items.
     /// </summary>
-    public class PlayerPrefsService
+    public static class PlayerPrefsManager
     {
         /// <summary>
         /// Saves a new character item to player preferences.
         /// </summary>
-        public void NewSave(NItem character)
+        public static void NewSave(NItem character)
         {
             string newSave = $"{character.Name}";
             PlayerPrefs.SetString("Items", newSave);
@@ -34,7 +34,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Gets a stat based of a key.
         /// </summary>
-        public int GetStat(string key)
+        public static int GetStat(string key)
         {
             return PlayerPrefs.GetInt(key);
         }
@@ -42,7 +42,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Saves a key and value.
         /// </summary>
-        public void SetKey(string key, int value)
+        public static void SetKey(string key, int value)
         {
             PlayerPrefs.SetInt(key, value);
         }
@@ -50,7 +50,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Adds an item to the existing saved items in player preferences.
         /// </summary>
-        public void SaveItem(NItem item)
+        public static void SaveItem(NItem item)
         {
             string newSave = $"{GetKeyValue()},{item.Name}";
             PlayerPrefs.SetString("Items", newSave);
@@ -59,7 +59,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Retrieves the list of saved items from player preferences.
         /// </summary>
-        public List<NItem> GetItems()
+        public static List<NItem> GetItems()
         {
             List<NItem> items = new List<NItem>();
             string keyValue = GetKeyValue();
@@ -79,7 +79,7 @@ namespace Brotato_Clone.Services
         /// <summary>
         /// Retrieves the saved items string from player preferences.
         /// </summary>
-        private string GetKeyValue()
+        private static string GetKeyValue()
         {
             return PlayerPrefs.GetString("Items");
         }

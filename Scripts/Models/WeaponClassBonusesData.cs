@@ -11,6 +11,11 @@ namespace Brotato_Clone.Models
 {
     public static class WeaponClassBonusesData
     {
+        public static int CalculateBonus(int weaponCount, Dictionary<int, int> bonusMap)
+        {
+            return bonusMap.TryGetValue(weaponCount, out int bonus) ? bonus : 0;
+        }
+
         public static readonly Dictionary<int, int> LegendaryWeaponsBonusMap = new Dictionary<int, int>
         {
             {2, -20}, {3, -40}, {4, -60}, {5, -80}, {6, -100}
@@ -80,10 +85,5 @@ namespace Brotato_Clone.Models
         {
             {2, 5}, {3, 10}, {4, 15}, {5, 20}, {6, 25}
         };
-
-        public static int CalculateBonus(int weaponCount, Dictionary<int, int> bonusMap)
-        {
-            return bonusMap.TryGetValue(weaponCount, out int bonus) ? bonus : 0;
-        }
     }
 }

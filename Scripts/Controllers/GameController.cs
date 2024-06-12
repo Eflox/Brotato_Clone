@@ -20,14 +20,16 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerController _playerController;
 
-        private PlayerPrefsService _playerPrefsService;
+        [SerializeField]
+        private WaveController _waveController;
+
+        [SerializeField]
+        private MobsController _mobsController;
 
         private bool _paused = false;
 
         private void Awake()
         {
-            _playerPrefsService = new PlayerPrefsService();
-
             Application.targetFrameRate = 60;
 
             if (QualitySettings.vSyncCount != 0)
@@ -36,7 +38,13 @@ namespace Brotato_Clone.Controllers
 
         private void Start()
         {
+            _playerController.Initialize();
+            _waveController.Initialize();
+            _mobsController.Initialize(_playerController.GetPlayerObject().transform);
+
             _gameView.Initialize();
+
+            EventManager.TriggerEvent(GameEvent.GameStart);
         }
 
         private void Update()
@@ -62,7 +70,7 @@ namespace Brotato_Clone.Controllers
         public void RestartGame()
         {
             TogglePause();
-            _playerPrefsService.NewSave(_playerController.Character);
+            PlayerPrefsManager.NewSave(_playerController.Character);
             SceneManager.LoadScene("GameScene");
         }
 

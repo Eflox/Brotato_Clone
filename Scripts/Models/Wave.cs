@@ -47,18 +47,18 @@ namespace Brotato_Clone.Models
         /// </summary>
         public int ItemPricesIncrease;
 
-        /// <summary>
-        /// Initializes a new instance of the Wave class.
-        /// </summary>
-        public Wave(int count, int duration, int enemyCount, int damageIncrease, int maxHPIncrease, int speedIncrease, int itemPricesIncrease)
-        {
-            Count = count;
-            Duration = duration;
-            EnemyCount = enemyCount;
-            DamageIncrease = damageIncrease;
-            MaxHPIncrease = maxHPIncrease;
-            SpeedIncrease = speedIncrease;
-            ItemPricesIncrease = itemPricesIncrease;
-        }
+        ///// <summary>
+        ///// Initializes a new instance of the Wave class.
+        ///// </summary>
+        //public Wave(int count, int duration, int enemyCount, int damageIncrease, int maxHPIncrease, int speedIncrease, int itemPricesIncrease)
+        //{
+        //    Count = count;
+        //    Duration = duration;
+        //    EnemyCount = enemyCount;
+        //    DamageIncrease = damageIncrease;
+        //    MaxHPIncrease = maxHPIncrease;
+        //    SpeedIncrease = speedIncrease;
+        //    ItemPricesIncrease = itemPricesIncrease;
+        //}
     }
 }

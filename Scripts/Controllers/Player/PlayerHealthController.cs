@@ -11,7 +11,11 @@ namespace Brotato_Clone
 {
     public class PlayerHealthController : MonoBehaviour
     {
-        public void InitializeHealth()
+        public void SetHealth(int maxHP)
+        {
+        }
+
+        public void UpdateMaxHP(int maxHP)
         {
         }
     }

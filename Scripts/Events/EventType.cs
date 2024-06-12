@@ -12,12 +12,12 @@ public enum PlayerEvent
     PlayerMoving,
     PlayerIdle,
     PlayerDie,
-    FlipPlayer,
+    PlayerFlipPlayer,
     PlayerDealDamage,
     PlayerTakeDamage,
-    PlayerAddItem,
-    PlayerItemsChanged,
-    PlayerStatsChanged
+    PlayerSelectItem,
+    PlayerStatsChanged,
+    PlayerPickupDrop
 }
 
 public enum WaveEvent

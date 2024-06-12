@@ -7,17 +7,14 @@
 
 using Brotato_Clone.Models;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
     public class PlayerAllWeaponsController : MonoBehaviour
     {
-        [SerializeField]
-        private PlayerController _playerController;
-
-        [SerializeField]
-        private PlayerMovementController _playerMovementController;
+        private Transform _playerTransform;
 
         [SerializeField]
         private GameObject _weaponPrefab;
@@ -27,21 +24,18 @@ namespace Brotato_Clone.Controllers
 
         private List<Transform> _weaponContainers = new List<Transform>();
 
-        private void Start()
+        public void LoadWeapons(List<Weapon> weapons, Transform playerTransform)
         {
+            _playerTransform = playerTransform;
+
             Weapon[] weaponsTest = new Weapon[]
             {
                 WeaponsData.Weapons["Fist"],
                 WeaponsData.Weapons["Knife"],
             };
 
-            Initialize(weaponsTest);
-        }
-
-        public void Initialize(Weapon[] weapons)
-        {
-            CreateWeaponContainers(weapons);
-            SpawnWeapons(weapons);
+            CreateWeaponContainers(weaponsTest.ToList());
+            SpawnWeapons(weaponsTest.ToList());
         }
 
         public void FlipWeapons(bool right)
@@ -50,9 +44,9 @@ namespace Brotato_Clone.Controllers
                 weaponController.Flip(right);
         }
 
-        private void SpawnWeapons(Weapon[] weapons)
+        private void SpawnWeapons(List<Weapon> weapons)
         {
-            for (int i = 0; i < weapons.Length; i++)
+            for (int i = 0; i < weapons.Count; i++)
             {
                 var newWeaponObject = Instantiate(_weaponPrefab, _weaponContainers[i].position, Quaternion.identity, _weaponContainers[i]);
                 var weaponController = newWeaponObject.GetComponent<WeaponController>();
@@ -61,28 +55,28 @@ namespace Brotato_Clone.Controllers
             }
         }
 
-        private void CreateWeaponContainers(Weapon[] weapons)
+        private void CreateWeaponContainers(List<Weapon> weapons)
         {
             float baseRadius = 0.7f;
             //float radiusIncrement = 0f;
             //float radius = baseRadius + (weapons.Length - 1) * radiusIncrement;
 
-            for (int i = 0; i < weapons.Length; i++)
+            for (int i = 0; i < weapons.Count; i++)
             {
-                float angle = i * Mathf.PI * 2 / weapons.Length;
+                float angle = i * Mathf.PI * 2 / weapons.Count;
 
-                var yOffset = weapons.Length <= 2 ? 0.5f : 0;
+                var yOffset = weapons.Count <= 2 ? 0.5f : 0;
                 Vector2 position = new Vector2(Mathf.Cos(angle), (Mathf.Sin(angle)) - yOffset) * baseRadius;
 
                 Transform newPosition = new GameObject($"{weapons[i].Name}_Container").transform;
                 newPosition.position = position;
-                newPosition.SetParent(_playerController.PlayerObject.transform);
+                newPosition.SetParent(_playerTransform.transform);
 
                 _weaponContainers.Add(newPosition);
             }
         }
 
-        public void CheckDirection() => _playerMovementController.CheckDirection(true);
+        //public void CheckDirection() => _playerMovementController.CheckDirection(true);
 
         private void OnDestroy()
         {

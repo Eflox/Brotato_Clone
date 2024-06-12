@@ -6,18 +6,128 @@
  */
 
 using Brotato_Clone.Models;
+using Brotato_Clone.Services;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 namespace Brotato_Clone
 {
     public class PlayerItemsController : MonoBehaviour
     {
+        [SerializeField]
+        private List<NItem> _allItems = new List<NItem>();
+
+        [SerializeField]
+        private List<NItem> _items = new List<NItem>();
+
+        [SerializeField]
+        private List<Upgrade> _upgrades = new List<Upgrade>();
+
+        [SerializeField]
+        private List<Weapon> _weapons = new List<Weapon>();
+
+        private NItem _character;
+
         public void AddItem(NItem item)
         {
+            PlayerPrefsManager.SaveItem(item);
+            LoadItems();
+        }
+
+        public List<NItem> GetItems()
+        {
+            return _allItems;
+        }
+
+        public List<Weapon> GetWeapons()
+        {
+            return _weapons;
         }
 
         public void LoadItems()
         {
+            _allItems = PlayerPrefsManager.GetItems();
+
+            List<NItem> allItemsWithChildItems = new List<NItem>(_allItems);
+
+            foreach (var item in _allItems)
+            {
+                NItem[] childItems = GetChildItems(item);
+                if (childItems != null)
+                    allItemsWithChildItems.AddRange(childItems);
+            }
+            _allItems = allItemsWithChildItems;
+
+            CategoriseItems();
+        }
+
+        private void CategoriseItems()
+        {
+            foreach (var item in _allItems)
+            {
+                if (item.Classes != null)
+                {
+                    foreach (var itemClass in item.Classes)
+                    {
+                        switch (itemClass)
+                        {
+                            case Class.Item:
+                                _items.Add(item);
+                                break;
+
+                            case Class.Upgrade:
+                                _upgrades.Add(item as Upgrade);
+                                break;
+
+                            case Class.Weapon:
+                                _weapons.Add(item as Weapon);
+                                break;
+
+                            case Class.Character:
+                                _character = item;
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private NItem[] GetChildItems(NItem item)
+        {
+            if (item.Attribute == null)
+            {
+                Debug.LogWarning("The item has no attribute.");
+                return null;
+            }
+
+            Type attributeType = item.Attribute.GetType();
+            FieldInfo[] fields = attributeType.GetFields(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (var field in fields)
+            {
+                var itemAttribute = field.GetCustomAttribute<ItemAttribute>();
+
+                if (itemAttribute != null)
+                {
+                    var value = field.GetValue(item.Attribute) as string[];
+                    if (value != null && value.Length > 0)
+                    {
+                        List<NItem> childItems = new List<NItem>();
+
+                        foreach (var itemName in value)
+                            if (ItemsData.Items.ContainsKey(itemName))
+                                childItems.Add(ItemsData.Items[itemName]);
+                            else
+                                Debug.LogWarning($"Item {itemName} not found in ItemsData.");
+
+                        return childItems.ToArray();
+                    }
+                }
+            }
+
+            return null;
         }
     }
 }

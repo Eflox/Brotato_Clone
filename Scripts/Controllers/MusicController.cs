@@ -25,7 +25,6 @@ namespace Brotato_Clone.Controllers
         private string _lastSceneName;
 
         private static MusicController _instance;
-        private PlayerPrefsService _playerPrefsService;
 
         private void Start()
         {
@@ -37,14 +36,12 @@ namespace Brotato_Clone.Controllers
 
             _instance = this;
 
-            _playerPrefsService = new PlayerPrefsService();
-
             DontDestroyOnLoad(this.gameObject);
         }
 
         public void SetVolume()
         {
-            _musicSource.volume = _playerPrefsService.GetStat("MusicVolume");
+            _musicSource.volume = PlayerPrefsManager.GetStat("MusicVolume");
         }
 
         private void OnEnable()

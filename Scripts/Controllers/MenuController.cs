@@ -17,11 +17,8 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private MenuView _menuView;
 
-        private PlayerPrefsService _playerPrefsService;
-
         private void Start()
         {
-            _playerPrefsService = new PlayerPrefsService();
             _menuView.Initialize();
         }
 
@@ -43,8 +40,8 @@ namespace Brotato_Clone.Controllers
 
         public void MuteAllSounds()
         {
-            _playerPrefsService.SetKey("SoundVolume", 0);
-            _playerPrefsService.SetKey("MusicVolume", 0);
+            PlayerPrefsManager.SetKey("SoundVolume", 0);
+            PlayerPrefsManager.SetKey("MusicVolume", 0);
         }
     }
 }

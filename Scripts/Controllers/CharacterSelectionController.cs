@@ -27,11 +27,8 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private GameObject _playerGO;
 
-        private PlayerPrefsService _playerPrefsService;
-
         private void Start()
         {
-            _playerPrefsService = new PlayerPrefsService();
             _characterSelectionView.InitializeCharacters(ItemsData.GetItemsByClass(Class.Character), this);
         }
 
@@ -48,7 +45,7 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void CharacterSelected(NItem character)
         {
-            _playerPrefsService.NewSave(character);
+            PlayerPrefsManager.NewSave(character);
             SceneManager.LoadScene("GameScene");
         }
 

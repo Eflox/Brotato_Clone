@@ -14,35 +14,29 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private Vector2 _boundaries = new Vector2(2.6f, 3.42f);
 
-        [SerializeField]
-        private Camera _camera;
-
-        private Transform _player;
-        private bool _initialized = false;
-
-        public void Initialize(Transform playerObject)
-        {
-            _player = playerObject;
-            _initialized = true;
-        }
+        private Transform _playerTransform;
+        private bool _canFollow = false;
 
         private void Update()
         {
-            if (!_initialized)
+            if (!_canFollow)
                 return;
 
-            Vector3 targetPosition = new Vector3(_player.position.x, _player.position.y, _camera.transform.position.z);
+            Vector3 targetPosition = new Vector3(_playerTransform.position.x, _playerTransform.position.y, Camera.main.transform.position.z);
             float clampedX = Mathf.Clamp(targetPosition.x, -_boundaries.x, _boundaries.x);
             float clampedY = Mathf.Clamp(targetPosition.y, -_boundaries.y, _boundaries.y + 1.5f);
-            _camera.transform.position = new Vector3(clampedX, clampedY, targetPosition.z);
+            Camera.main.transform.position = new Vector3(clampedX, clampedY, targetPosition.z);
         }
 
-        public void StartFollow()
+        public void StartFollow(Transform playerTransform)
         {
+            _playerTransform = playerTransform;
+            _canFollow = true;
         }
 
         public void StopFollow()
         {
+            _canFollow = false;
         }
     }
 }
