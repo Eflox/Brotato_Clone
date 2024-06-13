@@ -6,13 +6,13 @@
  */
 
 using Brotato_Clone.Interfaces;
+using Brotato_Clone.Models;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
     public class WeaponAttackController : MonoBehaviour
     {
-        private WeaponController _weaponController;
         private IWeaponMechanic _weaponMechanic;
 
         private float _weaponCooldown;
@@ -20,14 +20,18 @@ namespace Brotato_Clone.Controllers
         private bool _hasTarget = false;
         private bool _attackOngoing = false;
 
-        public void SetupWeapon(float weaponCooldown, IWeaponMechanic weaponMechanic, WeaponController weaponController)
+        public void SetupWeapon(string weaponName, float weaponCooldown, int range)
         {
             _weaponCooldown = weaponCooldown;
             _currentAttackCooldown = _weaponCooldown;
+
+            _weaponMechanic = gameObject.AddComponent(WeaponsData.WeaponControllers[weaponName]) as IWeaponMechanic;
+            _weaponMechanic.Initialize(range);
         }
 
         public void TargetFound()
         {
+            Debug.Log("Found target");
             _hasTarget = true;
         }
 
@@ -38,7 +42,7 @@ namespace Brotato_Clone.Controllers
 
         public void AttackFinished()
         {
-            _hasTarget = false;
+            _attackOngoing = false;
         }
 
         private void Update()
@@ -48,7 +52,7 @@ namespace Brotato_Clone.Controllers
 
         private void HandleAutoAttack()
         {
-            if (_attackOngoing)
+            if (!_attackOngoing)
                 _currentAttackCooldown -= Time.deltaTime;
 
             if (_currentAttackCooldown <= 0f)
@@ -58,6 +62,8 @@ namespace Brotato_Clone.Controllers
                     _attackOngoing = true;
                     _weaponMechanic.Attack();
                     _currentAttackCooldown = _weaponCooldown;
+
+                    Debug.Log("Attack");
                 }
             }
         }

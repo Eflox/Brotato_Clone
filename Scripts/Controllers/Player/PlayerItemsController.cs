@@ -124,7 +124,7 @@ namespace Brotato_Clone
         {
             if (item.Attribute == null)
             {
-                Debug.LogWarning("The item has no attribute.");
+                Debug.LogWarning($"{item.Name} has no attribute.");
                 return null;
             }
 

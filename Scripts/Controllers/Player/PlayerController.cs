@@ -7,6 +7,7 @@
 
 using Brotato_Clone.Models;
 using Brotato_Clone.Player.Views;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -56,6 +57,13 @@ namespace Brotato_Clone.Controllers
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
 
             _playerView.LoadView(_playerItemsController.GetCharacter(), _playerItemsController.GetVisibleItems());
+
+            foreach (var item in _playerItemsController.GetItems())
+                Debug.Log(item.Name);
+            foreach (var weapon in _playerItemsController.GetWeapons())
+                Debug.Log(weapon.Name);
+
+            Debug.Log(_playerItemsController.GetCharacter().Name);
         }
 
         public void OnWaveStart(Wave wave)
@@ -67,7 +75,13 @@ namespace Brotato_Clone.Controllers
             _playerMovementController.StartMovement(stats.Speed[StatType.TotalVisible], _playerObject.transform);
             _playerHealthController.SetHealth(stats.MaxHP[StatType.TotalVisible]);
             _playerPickupController.StartPickupSearch(stats.PickupRange, _playerObject);
-            _playerAllWeaponsController.LoadWeapons(_playerItemsController.GetWeapons(), _playerObject.transform);
+
+            List<Weapon> weapons = _playerItemsController.GetWeapons();
+
+            foreach (var weapon in weapons)
+                Debug.Log(weapon.Name);
+
+            _playerAllWeaponsController.LoadWeapons(weapons, _playerObject.transform);
         }
 
         public void OnPlayerDead()

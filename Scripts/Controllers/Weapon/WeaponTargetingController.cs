@@ -5,7 +5,6 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Models;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -22,9 +21,9 @@ namespace Brotato_Clone.Controllers
             _weaponController = weaponController;
         }
 
-        public void SetRange(int range, WeaponType weaponType)
+        public void SetRange(int range)
         {
-            _range = weaponType == WeaponType.Melee ? range / 26 : range / 13;
+            _range = range;
         }
 
         private void Update()

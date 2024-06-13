@@ -23,7 +23,6 @@ namespace Brotato_Clone.Models
         public Sprite Sprite;
         public AttackType AttackType;
         public WeaponType WeaponType;
-        public Type WeaponMechanic;
         public AudioClip ImpactSound;
     }
 

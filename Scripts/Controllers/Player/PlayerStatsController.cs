@@ -58,7 +58,7 @@ namespace Brotato_Clone
         {
             if (item.Attribute == null)
             {
-                Debug.LogWarning("Tried to equip an item with no attribute.");
+                Debug.LogWarning($"Tried to equip {item.Name} with no attribute.");
                 return;
             }
 

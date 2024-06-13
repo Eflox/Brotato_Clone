@@ -51,7 +51,7 @@ namespace Brotato_Clone.Views
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
         }
 
-        public void HasTarget(bool hasTarget)
+        public void TargetStatus(bool hasTarget)
         {
             _canFlip = !hasTarget;
 

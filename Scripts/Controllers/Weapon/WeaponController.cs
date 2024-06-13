@@ -5,7 +5,6 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Interfaces;
 using Brotato_Clone.Models;
 using Brotato_Clone.Views;
 using UnityEngine;
@@ -18,42 +17,41 @@ namespace Brotato_Clone.Controllers
 
         private WeaponRotationController _weaponRotationController;
         private WeaponAttackController _weaponAttackController;
+        private WeaponTargetingController _weaponTargetingController;
 
         public void Initialize()
         {
+            _weaponView = GetComponent<WeaponView>();
+
+            _weaponTargetingController = GetComponent<WeaponTargetingController>();
             _weaponRotationController = GetComponent<WeaponRotationController>();
             _weaponAttackController = GetComponent<WeaponAttackController>();
-        }
 
-        public void Attack()
-        {
-        }
-
-        public void AttackFinished()
-        {
-            _weaponAttackController.AttackFinished();
+            _weaponTargetingController.Initialize(this);
         }
 
         public void LoadWeapon(Weapon weapon)
         {
             _weaponView.Initialize(weapon);
 
-            IWeaponMechanic weaponMechanic = gameObject.AddComponent(weapon.WeaponMechanic) as IWeaponMechanic;
-            weaponMechanic.Initialize(this, weapon);
+            int range = weapon.WeaponType == WeaponType.Melee ? weapon.Range / 26 : weapon.Range / 13;
 
-            _weaponAttackController.SetupWeapon(weapon.Cooldown, weaponMechanic, this);
+            _weaponTargetingController.SetRange(range);
+            _weaponAttackController.SetupWeapon(weapon.Name, weapon.Cooldown, range);
         }
 
         public void TargetFound(Transform target)
         {
             _weaponRotationController.FoundTarget(target);
             _weaponAttackController.TargetFound();
+            _weaponView.TargetStatus(true);
         }
 
         public void TargetLost()
         {
             _weaponAttackController.TargetLost();
             _weaponRotationController.LostTarget();
+            _weaponView.TargetStatus(false);
         }
 
         public void OnHit(Vector2 hitPosition)

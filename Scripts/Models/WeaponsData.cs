@@ -5,7 +5,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Controllers;
+using Brotato_Clone.Controllers.Brotato_Clone.Controllers;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,11 +15,18 @@ namespace Brotato_Clone.Models
     public static class WeaponsData
     {
         public static readonly IReadOnlyDictionary<string, Weapon> Weapons;
+        public static readonly IReadOnlyDictionary<string, Type> WeaponControllers;
 
         private static readonly string _assetSource = "Brotato";
 
         static WeaponsData()
         {
+            WeaponControllers = new Dictionary<string, Type>
+            {
+                { "Fist", typeof(FistController) },
+                { "Knife", typeof(FistController) }
+            };
+
             Weapons = new Dictionary<string, Weapon>
             {
                 {
@@ -40,7 +48,6 @@ namespace Brotato_Clone.Models
                         Sprite = Resources.Load<Sprite>($"{_assetSource}/Sprites/Weapons/Graphics/Fist"),
                         WeaponType = WeaponType.Melee,
                         AttackType = AttackType.Thrust,
-                        WeaponMechanic = typeof(FistController),
                         ImpactSound = Resources.Load<AudioClip>($"{_assetSource}/Audio/Weapons/Fist"),
                     }
                 },
@@ -63,7 +70,6 @@ namespace Brotato_Clone.Models
                         Sprite = Resources.Load<Sprite>($"{_assetSource}/Sprites/Weapons/Graphics/Knife"),
                         WeaponType = WeaponType.Melee,
                         AttackType = AttackType.Thrust,
-                        WeaponMechanic = typeof(FistController),
                         ImpactSound = Resources.Load<AudioClip>($"{_assetSource}/Audio/Weapons/Fist"),
                     }
                 },
