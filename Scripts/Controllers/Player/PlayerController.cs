@@ -7,13 +7,17 @@
 
 using Brotato_Clone.Models;
 using Brotato_Clone.Player.Views;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Controls access to the player controllers.
+    /// </summary>
     public class PlayerController : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private GameObject _playerObject;
 
@@ -28,18 +32,27 @@ namespace Brotato_Clone.Controllers
         private PlayerMovementController _playerMovementController;
         private PlayerHealthController _playerHealthController;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the player controller and its components.
+        /// </summary>
         public void Initialize()
         {
             _playerView = GetComponent<PlayerView>();
 
             _playerCameraController = GetComponent<PlayerCameraController>();
-            _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
-            _playerItemsController = GetComponent<PlayerItemsController>();
             _playerLifecycleController = GetComponent<PlayerLifecycleController>();
+            _playerItemsController = GetComponent<PlayerItemsController>();
             _playerStatsController = GetComponent<PlayerStatsController>();
             _playerPickupController = GetComponent<PlayerPickupController>();
             _playerMovementController = GetComponent<PlayerMovementController>();
             _playerHealthController = GetComponent<PlayerHealthController>();
+            _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
+
+            _playerMovementController.Initialize();
 
             _playerView.Initialize();
 
@@ -51,22 +64,39 @@ namespace Brotato_Clone.Controllers
             EventManager.Subscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
         }
 
-        public void OnGameStart()
+        /// <summary>
+        /// Gets the player object.
+        /// </summary>
+        public GameObject GetPlayerObject()
+        {
+            return _playerObject;
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                EventManager.TriggerEvent(PlayerEvent.PlayerTakeDamage);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                EventManager.TriggerEvent(PlayerEvent.PlayerDealDamage);
+            }
+        }
+
+        private void OnGameStart()
         {
             _playerItemsController.LoadItems();
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
 
             _playerView.LoadView(_playerItemsController.GetCharacter(), _playerItemsController.GetVisibleItems());
-
-            foreach (var item in _playerItemsController.GetItems())
-                Debug.Log(item.Name);
-            foreach (var weapon in _playerItemsController.GetWeapons())
-                Debug.Log(weapon.Name);
-
-            Debug.Log(_playerItemsController.GetCharacter().Name);
         }
 
-        public void OnWaveStart(Wave wave)
+        private void OnWaveStart(Wave wave)
         {
             var stats = _playerStatsController.GetStats();
 
@@ -75,16 +105,10 @@ namespace Brotato_Clone.Controllers
             _playerMovementController.StartMovement(stats.Speed[StatType.TotalVisible], _playerObject.transform);
             _playerHealthController.SetHealth(stats.MaxHP[StatType.TotalVisible]);
             _playerPickupController.StartPickupSearch(stats.PickupRange, _playerObject);
-
-            List<Weapon> weapons = _playerItemsController.GetWeapons();
-
-            foreach (var weapon in weapons)
-                Debug.Log(weapon.Name);
-
-            _playerAllWeaponsController.LoadWeapons(weapons, _playerObject.transform);
+            _playerAllWeaponsController.LoadWeapons(_playerItemsController.GetWeapons(), _playerObject.transform);
         }
 
-        public void OnPlayerDead()
+        private void OnPlayerDead()
         {
             _playerCameraController.StopFollow();
             _playerMovementController.StopMovement();
@@ -92,30 +116,27 @@ namespace Brotato_Clone.Controllers
             _playerLifecycleController.KillPlayer();
         }
 
-        public void OnWaveEnd()
+        private void OnWaveEnd()
         {
             _playerCameraController.StopFollow();
             _playerMovementController.StopMovement();
             _playerPickupController.StopSearch();
         }
 
-        public void OnStatsChanged(PlayerStats stats)
+        private void OnStatsChanged(PlayerStats stats)
         {
             _playerPickupController.UpdateRange(stats.PickupRange);
             _playerMovementController.UpdateSpeed(stats.Speed[StatType.TotalVisible]);
             _playerHealthController.UpdateMaxHP(stats.MaxHP[StatType.TotalVisible]);
         }
 
-        public void OnSelectedItem(NItem item)
+        private void OnSelectedItem(NItem item)
         {
             Debug.Log(item.Name);
             _playerItemsController.AddItem(item);
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
         }
 
-        public GameObject GetPlayerObject()
-        {
-            return _playerObject;
-        }
+        #endregion Private Methods
     }
 }

@@ -1,64 +1,73 @@
 /*
+ * PlayerParticlesView.cs
  * Script Author: Charles d'Ansembourg
- * Creation Date: 29/05/2024
+ * Creation Date: 11/06/2024
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone;
-using Brotato_Clone.Models;
-using System.Collections.Generic;
-using System.Reflection;
-using UnityEditor;
+using System.Collections;
+using UnityEngine;
 
-[CustomEditor(typeof(PlayerStatsController))]
-public class PlayerStatsControllerEditor : Editor
+namespace Brotato_Clone.Player.Views
 {
-    public override void OnInspectorGUI()
+    /// <summary>
+    /// Manages the particle effects for the player, such as spawning dust particles when the player moves.
+    /// </summary>
+    public class PlayerParticlesView : MonoBehaviour
     {
-        PlayerStatsController controller = target as PlayerStatsController;
+        #region Fields
 
-        if (controller == null)
+        [SerializeField]
+        private GameObject _dustParticlePrefab;
+
+        [SerializeField]
+        private Transform _playerTransform;
+
+        private bool _spawnParticles = false;
+        private float _dustSpawnInterval = 0.1f;
+        private Coroutine _dustSpawnCoroutine;
+
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the player particles view by subscribing to the player movement change event.
+        /// </summary>
+        public void Initialize()
         {
-            EditorGUILayout.HelpBox("Player reference is not set.", MessageType.Warning);
-            return;
+            EventManager.Subscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
         }
 
-        DrawDefaultInspector();
+        #endregion Public Methods
 
-        var stats = controller.GetStats();
-        if (stats == null)
-        {
-            EditorGUILayout.HelpBox("Player stats are not set.", MessageType.Warning);
-            return;
-        }
+        #region Private Methods
 
-        var fields = typeof(PlayerStats).GetFields(BindingFlags.Public | BindingFlags.Instance);
-        foreach (var field in fields)
+        private void OnPlayerMoveChange(bool isMoving)
         {
-            var attribute = field.GetCustomAttribute<InspectableDictionaryAttribute>();
-            if (attribute != null)
+            if (isMoving)
             {
-                var dictionary = field.GetValue(stats) as IDictionary<StatType, int>;
-                if (dictionary != null)
-                {
-                    EditorGUILayout.Space();
-                    EditorGUILayout.LabelField(field.Name, EditorStyles.boldLabel);
-                    foreach (var key in dictionary.Keys)
-                    {
-                        var value = dictionary[key];
-                        int newValue = EditorGUILayout.IntField(key.ToString(), value);
-                        if (newValue != value)
-                        {
-                            dictionary[key] = newValue;
-                            EditorUtility.SetDirty(controller);
-                        }
-                    }
-                }
-                else
-                {
-                    EditorGUILayout.HelpBox($"Field {field.Name} is not a valid dictionary.", MessageType.Error);
-                }
+                _spawnParticles = true;
+                _dustSpawnCoroutine = StartCoroutine(SpawnDustParticles());
+            }
+            else
+            {
+                _spawnParticles = false;
+
+                if (_dustSpawnCoroutine != null)
+                    StopCoroutine(_dustSpawnCoroutine);
             }
         }
+
+        private IEnumerator SpawnDustParticles()
+        {
+            while (_spawnParticles)
+            {
+                Instantiate(_dustParticlePrefab, _playerTransform.position - new Vector3(0, 0.35f), Quaternion.identity);
+                yield return new WaitForSeconds(_dustSpawnInterval);
+            }
+        }
+
+        #endregion Private Methods
     }
 }

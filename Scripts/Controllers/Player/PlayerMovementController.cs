@@ -10,8 +10,13 @@ using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Controls the player's movement and handles input for movement directions.
+    /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private PlayerView _playerView;
 
@@ -21,14 +26,28 @@ namespace Brotato_Clone.Controllers
         private const float BaseHiddenSpeed = 5f;
         private const float PercentageBaseSpeed = 100f;
 
-        private bool _canMove = false;
+        private bool _canMove = true;
         private bool _isMoving = false;
         private bool _facingRight = true;
 
-        public Vector2 _bounds = new Vector2(10f, 10f);
-
+        private Vector2 _bounds = new Vector2(13f, 8.5f);
         private Vector3 _movement = Vector3.zero;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Subscribes to needed events.
+        /// </summary>
+        public void Initialize()
+        {
+            EventManager.Subscribe<bool>(GameEvent.GamePaused, OnGamePause);
+        }
+
+        /// <summary>
+        /// Starts the player movement with the specified speed and transform.
+        /// </summary>
         public void StartMovement(int playerSpeed, Transform playerTransform)
         {
             _playerSpeed = playerSpeed;
@@ -36,15 +55,25 @@ namespace Brotato_Clone.Controllers
             _canMove = true;
         }
 
+        /// <summary>
+        /// Updates the player's movement speed.
+        /// </summary>
         public void UpdateSpeed(int playerSpeed)
         {
             _playerSpeed = playerSpeed;
         }
 
+        /// <summary>
+        /// Stops the player movement.
+        /// </summary>
         public void StopMovement()
         {
             _canMove = false;
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void Update()
         {
@@ -107,5 +136,12 @@ namespace Brotato_Clone.Controllers
             if (flipDirection)
                 EventManager.TriggerEvent(PlayerEvent.PlayerFlipPlayer, _facingRight);
         }
+
+        private void OnGamePause(bool paused)
+        {
+            _canMove = !paused;
+        }
+
+        #endregion Private Methods
     }
 }

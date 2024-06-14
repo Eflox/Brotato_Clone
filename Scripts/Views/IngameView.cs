@@ -11,10 +11,12 @@ using UnityEngine.UI;
 
 namespace Brotato_Clone.Views
 {
-    public class GameView : MonoBehaviour
+    /// <summary>
+    /// Manages the in-game UI, including the pause menu and confirmation dialogs.
+    /// </summary>
+    public class IngameView : MonoBehaviour
     {
-        [SerializeField]
-        private GameController _gameController;
+        #region Fields
 
         [SerializeField]
         private GameObject _pauseMenuBackground;
@@ -52,28 +54,44 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Button _mainMenuNoButton;
 
-        public void Initialize()
+        private IngameController _ingameController;
+
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the in-game view with the given in-game controller.
+        /// </summary>
+        public void Initialize(IngameController ingameController)
         {
-            _resumeButton.onClick.AddListener(_gameController.ResumeGame);
-
+            _ingameController = ingameController;
+            _resumeButton.onClick.AddListener(_ingameController.ResumeGame);
             _restartButton.onClick.AddListener(OpenRestartConfirmationMenu);
-            _restartYesButton.onClick.AddListener(_gameController.RestartGame);
+            _restartYesButton.onClick.AddListener(_ingameController.RestartGame);
             _restartNoButton.onClick.AddListener(CloseRestartConfirmationMenu);
-
             _mainMenuButton.onClick.AddListener(OpenMainMenuConfirmationMenu);
-            _mainMenuYesButton.onClick.AddListener(_gameController.ReturnMainMenu);
+            _mainMenuYesButton.onClick.AddListener(_ingameController.ReturnMainMenu);
             _mainMenuNoButton.onClick.AddListener(CloseMainMenuConfirmationMenu);
+            _optionsButton.onClick.AddListener(_ingameController.OptionsMenu);
 
-            _optionsButton.onClick.AddListener(_gameController.OptionsMenu);
+            EventManager.Subscribe<bool>(GameEvent.GamePaused, OnGamePause);
         }
 
-        public void TogglePauseMenu(bool open)
+        /// <summary>
+        /// Handles the game pause event by toggling the pause menu.
+        /// </summary>
+        public void OnGamePause(bool open)
         {
             CloseRestartConfirmationMenu();
             CloseMainMenuConfirmationMenu();
             _pauseMenuBackground.SetActive(open);
             _pauseMenu.SetActive(open);
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void OpenRestartConfirmationMenu()
         {
@@ -84,7 +102,6 @@ namespace Brotato_Clone.Views
         private void CloseRestartConfirmationMenu()
         {
             _pauseMenu.SetActive(true);
-
             _restartConfirmation.SetActive(false);
         }
 
@@ -99,5 +116,7 @@ namespace Brotato_Clone.Views
             _pauseMenu.SetActive(true);
             _returnMainMenuConfirmation.SetActive(false);
         }
+
+        #endregion Private Methods
     }
 }

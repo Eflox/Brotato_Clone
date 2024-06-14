@@ -10,8 +10,13 @@ using UnityEngine;
 
 namespace Brotato_Clone.Player.Views
 {
+    /// <summary>
+    /// Manages the particle effects for the player, such as spawning dust particles when the player moves.
+    /// </summary>
     public class PlayerParticlesView : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private GameObject _dustParticlePrefab;
 
@@ -19,13 +24,24 @@ namespace Brotato_Clone.Player.Views
         private Transform _playerTransform;
 
         private bool _spawnParticles = false;
-        private float dustSpawnInterval = 0.1f;
+        private float _dustSpawnInterval = 0.1f;
         private Coroutine _dustSpawnCoroutine;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the player particles view by subscribing to the player movement change event.
+        /// </summary>
         public void Initialize()
         {
             EventManager.Subscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void OnPlayerMoveChange(bool isMoving)
         {
@@ -48,8 +64,10 @@ namespace Brotato_Clone.Player.Views
             while (_spawnParticles)
             {
                 Instantiate(_dustParticlePrefab, _playerTransform.position - new Vector3(0, 0.35f), Quaternion.identity);
-                yield return new WaitForSeconds(dustSpawnInterval);
+                yield return new WaitForSeconds(_dustSpawnInterval);
             }
         }
+
+        #endregion Private Methods
     }
 }

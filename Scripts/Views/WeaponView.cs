@@ -57,14 +57,11 @@ namespace Brotato_Clone.Views
 
             if (hasTarget)
             {
-                Debug.Log("Found target");
-
                 _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
                 _spriteRenderer.flipX = false;
             }
             else
             {
-                Debug.Log("Lost target");
                 OnFlipPlayer(_playerFacingRight);
             }
         }

@@ -2982,7 +2982,6 @@ GameObject:
   - component: {fileID: 541956805}
   - component: {fileID: 541956804}
   - component: {fileID: 541956803}
-  - component: {fileID: 541956801}
   - component: {fileID: 541956800}
   - component: {fileID: 541956799}
   m_Layer: 0
@@ -3044,7 +3043,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerView: {fileID: 541956788}
-  _bounds: {x: 13, y: 8.8}
 --- !u!114 &541956791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3083,9 +3081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1b392e839e449409a2a19dd7e3a576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visibleItems: []
-  _allItems: []
-  _items: []
 --- !u!114 &541956795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3211,18 +3206,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9e33f4ec41278d4e885268a7f33a8d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &541956801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541956786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed4f3e1927f93b439718e13c219a482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &541956803
@@ -7089,6 +7072,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1495163048}
   - component: {fileID: 1495163049}
+  - component: {fileID: 1495163052}
+  - component: {fileID: 1495163051}
   - component: {fileID: 1495163050}
   m_Layer: 0
   m_Name: GameHandler
@@ -7140,7 +7125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8dffa0147e83c74c8e8fa2f5133121b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameController: {fileID: 1495163049}
+  _ingameController: {fileID: 0}
   _pauseMenuBackground: {fileID: 1368699803}
   _pauseMenu: {fileID: 1736183467}
   _restartConfirmation: {fileID: 499670468}
@@ -7153,6 +7138,30 @@ MonoBehaviour:
   _restartNoButton: {fileID: 162079331}
   _mainMenuYesButton: {fileID: 794893396}
   _mainMenuNoButton: {fileID: 2072442285}
+--- !u!114 &1495163051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495163047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e004e7b42f0f4d4f93bd9630caaea07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1495163052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495163047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ff434276d1e9dc49b03d2ef99fd734d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1497239029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8522793275646340086, guid: d86f70d943b504e428caccead98baacd, type: 3}

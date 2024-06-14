@@ -31,7 +31,6 @@ namespace Brotato_Clone.Controllers
 
         public void TargetFound()
         {
-            Debug.Log("Found target");
             _hasTarget = true;
         }
 
@@ -62,8 +61,6 @@ namespace Brotato_Clone.Controllers
                     _attackOngoing = true;
                     _weaponMechanic.Attack();
                     _currentAttackCooldown = _weaponCooldown;
-
-                    Debug.Log("Attack");
                 }
             }
         }

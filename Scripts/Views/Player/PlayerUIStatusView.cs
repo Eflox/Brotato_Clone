@@ -12,8 +12,13 @@ using UnityEngine.UI;
 
 namespace Brotato_Clone.Player.Views
 {
+    /// <summary>
+    /// Manages the player's UI status, including health, level, and materials display.
+    /// </summary>
     public class PlayerUIStatusView : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private TMP_Text _healthText;
 
@@ -35,11 +40,21 @@ namespace Brotato_Clone.Player.Views
         [SerializeField]
         private Image _bagSprite;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the player UI status view by subscribing to relevant events.
+        /// </summary>
         public void Initialize()
         {
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnPlayerStatsChanged);
         }
 
+        /// <summary>
+        /// Updates the UI based on the player's stats.
+        /// </summary>
         public void OnPlayerStatsChanged(PlayerStats playerStats)
         {
             SetHealth(playerStats.CurrentHP, playerStats.MaxHP[StatType.TotalVisible]);
@@ -47,6 +62,10 @@ namespace Brotato_Clone.Player.Views
             SetMaterials(playerStats.CurrentMaterials);
             SetBagMaterials(playerStats.CurrentBagMaterials);
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void SetHealth(int currentHealth, int maxHealth)
         {
@@ -60,8 +79,8 @@ namespace Brotato_Clone.Player.Views
         {
             _levelText.text = $"LV.{level}";
 
-            float levelPrecentage = (float)xp / nextLevelXp;
-            _levelBar.localScale = new Vector3(levelPrecentage, _levelBar.localScale.y, _levelBar.localScale.z);
+            float levelPercentage = (float)xp / nextLevelXp;
+            _levelBar.localScale = new Vector3(levelPercentage, _levelBar.localScale.y, _levelBar.localScale.z);
         }
 
         private void SetMaterials(int materials)
@@ -82,5 +101,7 @@ namespace Brotato_Clone.Player.Views
                 _bagSprite.enabled = false;
             }
         }
+
+        #endregion Private Methods
     }
 }

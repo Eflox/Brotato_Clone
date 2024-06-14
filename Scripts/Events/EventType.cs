@@ -30,4 +30,5 @@ public enum GameEvent
 {
     GameStart,
     GameEnd,
+    GamePaused,
 }

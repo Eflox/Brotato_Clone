@@ -11,24 +11,41 @@ using UnityEngine;
 
 namespace Brotato_Clone.Player.Views
 {
+    /// <summary>
+    /// Manages the player's graphics, including loading the player sprite and flipping the sprite direction.
+    /// </summary>
     public class PlayerGraphicsView : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
+
+        #endregion Fields
+
+        #region Public Methods
 
         public void Initialize()
         {
             EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
         }
 
+        /// <summary>
+        /// Loads the player sprite based on the character and wearable items.
+        /// </summary>
         public void LoadPlayer(NItem character, List<NItem> wearableItems)
         {
             _spriteRenderer.sprite = character.Icon;
         }
 
+        /// <summary>
+        /// Flips the player sprite based on the direction.
+        /// </summary>
         public void OnFlipPlayer(bool right)
         {
             _spriteRenderer.flipX = !right;
         }
+
+        #endregion Public Methods
     }
 }

@@ -9,13 +9,43 @@ using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Handles camera movement.
+    /// </summary>
     public class PlayerCameraController : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private Vector2 _boundaries = new Vector2(2.6f, 3.42f);
 
         private Transform _playerTransform;
         private bool _canFollow = false;
+
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Starts following the player.
+        /// </summary>
+        public void StartFollow(Transform playerTransform)
+        {
+            _playerTransform = playerTransform;
+            _canFollow = true;
+        }
+
+        /// <summary>
+        /// Stops following the player.
+        /// </summary>
+        public void StopFollow()
+        {
+            _canFollow = false;
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void Update()
         {
@@ -28,15 +58,6 @@ namespace Brotato_Clone.Controllers
             Camera.main.transform.position = new Vector3(clampedX, clampedY, targetPosition.z);
         }
 
-        public void StartFollow(Transform playerTransform)
-        {
-            _playerTransform = playerTransform;
-            _canFollow = true;
-        }
-
-        public void StopFollow()
-        {
-            _canFollow = false;
-        }
+        #endregion Private Methods
     }
 }

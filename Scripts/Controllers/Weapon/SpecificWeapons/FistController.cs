@@ -6,7 +6,6 @@
  */
 
 using Brotato_Clone.Interfaces;
-using DG.Tweening;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -17,12 +16,13 @@ namespace Brotato_Clone.Controllers
         {
             private WeaponAttackController _weaponAttackController;
 
-            private float _punchDuration = 0.08f;
-            private float _returnDuration = 0.3f;
+            private IAttackStyle _attackStyle;
+
+            //private float _punchDuration = 0.08f;
+            //private float _returnDuration = 0.3f;
             private CircleCollider2D _circleCollider;
 
             private float _radius = 0.7f;
-            private float _offset = 0.5f;
 
             private float _range;
 
@@ -36,23 +36,8 @@ namespace Brotato_Clone.Controllers
                 _circleCollider.enabled = false;
                 _circleCollider.isTrigger = true;
                 _circleCollider.radius = _radius;
-            }
 
-            public void Attack()
-            {
-                Vector3 punchDirection = transform.right * ((_range / 15) / 2);
-                Vector3 punchPosition = transform.localPosition + punchDirection;
-
-                _circleCollider.offset = new Vector2(_offset, 0);
-                _circleCollider.enabled = true;
-
-                transform.DOLocalMove(punchPosition, _punchDuration)
-                    .OnComplete(() =>
-                    {
-                        _circleCollider.enabled = false;
-                        transform.DOLocalMove(Vector3.zero, _returnDuration)
-                            .OnComplete(() => AttackFinish());
-                    });
+                //_attackStyle = WeaponAttackStylesData.StyleControllers[0]
             }
 
             public void AttackFinish()
@@ -70,8 +55,11 @@ namespace Brotato_Clone.Controllers
             {
                 Vector2 hitDirection = (mob.transform.position - transform.position).normalized;
                 mob.GetComponent<MobController>().GetHit(1, 15, hitDirection);
+            }
 
-                //_weaponController.OnHit(mob.transform.position);
+            public void Attack()
+            {
+                //_attackStyle.Attack(this, _circleCollider, _range, _punchDuration, _returnDuration);
             }
         }
     }

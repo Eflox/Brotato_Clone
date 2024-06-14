@@ -9,10 +9,21 @@ using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Handles player lifecycle.
+    /// </summary>
     public class PlayerLifecycleController : MonoBehaviour
     {
+        #region Public Methods
+
+        /// <summary>
+        /// Kills the player
+        /// </summary>
         public void KillPlayer()
         {
+            EventManager.TriggerEvent(PlayerEvent.PlayerDead);
         }
+
+        #endregion Public Methods
     }
 }

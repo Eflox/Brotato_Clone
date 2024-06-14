@@ -11,26 +11,34 @@ using UnityEngine;
 
 namespace Brotato_Clone.Player.Views
 {
+    /// <summary>
+    /// Manages the player's visual components, including animations, camera, graphics, particles, UI status, stats, items, and sounds.
+    /// </summary>
     public class PlayerView : MonoBehaviour
     {
+        #region Fields
+
+        private PlayerParticlesView _playerParticlesView;
         private PlayerAnimationsView _animationsView;
         private PlayerCameraView _playerCameraView;
         private PlayerGraphicsView _playerGraphicsView;
-        private PlayerParticlesView _playerParticlesView;
         private PlayerUIStatusView _playerUIStatusView;
 
-        //Not setup yet
-
         private PlayerStatsView _playerStatsView;
-        private PlayerCombatView _playerCombatView;
         private PlayerItemsView _playerItemsView;
         private PlayerSoundsView _playerSoundsView;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes all player view components.
+        /// </summary>
         public void Initialize()
         {
             _animationsView = GetComponent<PlayerAnimationsView>();
             _playerCameraView = GetComponent<PlayerCameraView>();
-            _playerCombatView = GetComponent<PlayerCombatView>();
             _playerGraphicsView = GetComponent<PlayerGraphicsView>();
             _playerItemsView = GetComponent<PlayerItemsView>();
             _playerParticlesView = GetComponent<PlayerParticlesView>();
@@ -38,16 +46,21 @@ namespace Brotato_Clone.Player.Views
             _playerStatsView = GetComponent<PlayerStatsView>();
             _playerUIStatusView = GetComponent<PlayerUIStatusView>();
 
-            _playerGraphicsView.Initialize();
             _animationsView.Initialize();
             _playerCameraView.Initialize();
             _playerUIStatusView.Initialize();
+            _playerGraphicsView.Initialize();
         }
 
+        /// <summary>
+        /// Loads the player view with character and visible items.
+        /// </summary>
         public void LoadView(NItem character, List<NItem> visibleItems)
         {
             _animationsView.SetupAnimations();
             _playerGraphicsView.LoadPlayer(character, visibleItems);
         }
+
+        #endregion Public Methods
     }
 }

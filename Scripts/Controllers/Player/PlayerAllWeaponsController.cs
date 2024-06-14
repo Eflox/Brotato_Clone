@@ -11,15 +11,26 @@ using UnityEngine;
 
 namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Controls all weapons of the player, including loading, creating containers, and spawning weapons.
+    /// </summary>
     public class PlayerAllWeaponsController : MonoBehaviour
     {
-        private Transform _playerTransform;
+        #region Fields
 
         [SerializeField]
         private GameObject _weaponPrefab;
 
+        private Transform _playerTransform;
         private List<Transform> _weaponContainers = new List<Transform>();
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Loads the player's weapons and creates containers for them.
+        /// </summary>
         public void LoadWeapons(List<Weapon> weapons, Transform playerTransform)
         {
             _playerTransform = playerTransform;
@@ -27,6 +38,10 @@ namespace Brotato_Clone.Controllers
             CreateWeaponContainers(weapons);
             SpawnWeapons(weapons);
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void SpawnWeapons(List<Weapon> weapons)
         {
@@ -42,8 +57,6 @@ namespace Brotato_Clone.Controllers
         private void CreateWeaponContainers(List<Weapon> weapons)
         {
             float baseRadius = 0.7f;
-            //float radiusIncrement = 0f;
-            //float radius = baseRadius + (weapons.Length - 1) * radiusIncrement;
 
             for (int i = 0; i < weapons.Count; i++)
             {
@@ -54,12 +67,12 @@ namespace Brotato_Clone.Controllers
 
                 Transform newPosition = new GameObject($"{weapons[i].Name}_Container").transform;
                 newPosition.position = position;
-                newPosition.SetParent(_playerTransform.transform);
+                newPosition.SetParent(_playerTransform);
 
                 _weaponContainers.Add(newPosition);
             }
         }
 
-        //public void CheckDirection() => _playerMovementController.CheckDirection(true);
+        #endregion Private Methods
     }
 }

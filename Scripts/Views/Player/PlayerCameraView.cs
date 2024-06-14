@@ -8,54 +8,67 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerCameraView : MonoBehaviour
+namespace Brotato_Clone.Player.Views
 {
-    [SerializeField]
-    private Camera _camera;
-
-    private Vector3 originalPosition;
-    private Coroutine shakeCoroutine;
-
-    public void Initialize()
+    /// <summary>
+    /// Manages the player camera effects.
+    /// </summary>
+    public class PlayerCameraView : MonoBehaviour
     {
-        originalPosition = _camera.transform.localPosition;
-        EventManager.Subscribe(PlayerEvent.PlayerTakeDamage, OnPlayerTakeDamage);
-        EventManager.Subscribe(PlayerEvent.PlayerDealDamage, OnPlayerDealDamage);
-    }
+        #region Fields
 
-    private void OnPlayerTakeDamage()
-    {
-        if (shakeCoroutine != null)
-            StopCoroutine(shakeCoroutine);
+        [SerializeField]
+        private Camera _camera;
 
-        shakeCoroutine = StartCoroutine(ShakeCamera(0.2f, 0.3f));
-    }
+        private Vector3 _originalPosition;
+        private Coroutine _shakeCoroutine;
 
-    private void OnPlayerDealDamage()
-    {
-        if (shakeCoroutine != null)
-            StopCoroutine(shakeCoroutine);
+        #endregion Fields
 
-        shakeCoroutine = StartCoroutine(ShakeCamera(0.1f, 0.2f));
-    }
+        #region Public Methods
 
-    private IEnumerator ShakeCamera(float duration, float magnitude)
-    {
-        float elapsed = 0.0f;
-
-        while (elapsed < duration)
+        /// <summary>
+        /// Initializes the player camera view by subscribing to relevant events.
+        /// </summary>
+        public void Initialize()
         {
-            float offsetX = Random.Range(-1f, 1f) * magnitude;
-            float offsetY = Random.Range(-1f, 1f) * magnitude;
-
-            _camera.transform.localPosition = new Vector3(originalPosition.x + offsetX, originalPosition.y + offsetY, originalPosition.z);
-
-            elapsed += Time.deltaTime;
-
-            yield return null;
+            EventManager.Subscribe(PlayerEvent.PlayerTakeDamage, OnDealOrTakeDamage);
+            EventManager.Subscribe(PlayerEvent.PlayerDealDamage, OnDealOrTakeDamage);
         }
 
-        _camera.transform.localPosition = originalPosition;
-        shakeCoroutine = null;
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private void OnDealOrTakeDamage()
+        {
+            if (_shakeCoroutine != null)
+                StopCoroutine(_shakeCoroutine);
+
+            _originalPosition = _camera.transform.localPosition;
+            _shakeCoroutine = StartCoroutine(ShakeCamera(0.06f, 0.1f));
+        }
+
+        private IEnumerator ShakeCamera(float duration, float magnitude)
+        {
+            float elapsed = 0.0f;
+
+            while (elapsed < duration)
+            {
+                float offsetX = Random.Range(-1f, 1f) * magnitude;
+                float offsetY = Random.Range(-1f, 1f) * magnitude;
+
+                _camera.transform.localPosition = new Vector3(_originalPosition.x + offsetX, _originalPosition.y + offsetY, _originalPosition.z);
+
+                elapsed += Time.deltaTime;
+
+                yield return null;
+            }
+
+            _camera.transform.localPosition = _originalPosition;
+            _shakeCoroutine = null;
+        }
+
+        #endregion Private Methods
     }
 }

@@ -12,58 +12,100 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Controller for managing player items, including loading, saving, and categorizing items.
+    /// </summary>
     public class PlayerItemsController : MonoBehaviour
     {
-        [SerializeField]
+        #region Fields
+
         private List<NItem> _visibleItems = new List<NItem>();
-
-        [SerializeField]
         private List<NItem> _allItems = new List<NItem>();
-
-        [SerializeField]
         private List<NItem> _items = new List<NItem>();
-
-        [SerializeField]
         private List<Upgrade> _upgrades = new List<Upgrade>();
-
-        [SerializeField]
         private List<Weapon> _weapons = new List<Weapon>();
-
         private NItem _character;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Adds an item to the player's collection and saves it.
+        /// </summary>
         public void AddItem(NItem item)
         {
             PlayerPrefsManager.SaveItem(item);
             LoadItems();
         }
 
+        /// <summary>
+        /// Gets the list of all items.
+        /// </summary>
         public List<NItem> GetItems()
         {
             return _allItems;
         }
 
+        /// <summary>
+        /// Gets the list of all weapons.
+        /// </summary>
         public List<Weapon> GetWeapons()
         {
             return _weapons;
         }
 
+        /// <summary>
+        /// Gets the list of all upgrades.
+        /// </summary>
         public List<Upgrade> GetUpgrades()
         {
             return _upgrades;
         }
 
+        /// <summary>
+        /// Gets the current character item.
+        /// </summary>
         public NItem GetCharacter()
         {
             return _character;
         }
 
+        /// <summary>
+        /// Gets the list of visible items.
+        /// </summary>
         public List<NItem> GetVisibleItems()
         {
             return _visibleItems;
         }
 
+        /// <summary>
+        /// Clears all items, including character, weapons, and upgrades.
+        /// </summary>
+        public void ClearItems()
+        {
+            ClearCharacterSave();
+            ClearWeaponsSave();
+            ClearItemsSave();
+            ClearUpgradesSave();
+        }
+
+        /// <summary>
+        /// Saves all items, including character, weapons, and upgrades.
+        /// </summary>
+        public void SaveItems()
+        {
+            SaveManager.SaveCharacter(_character);
+            SaveManager.SaveWeapons(_weapons);
+            SaveManager.SaveItems(_items);
+            SaveManager.SaveUpgrades(_upgrades);
+        }
+
+        /// <summary>
+        /// Loads all items from the save data.
+        /// </summary>
         public void LoadItems()
         {
             _character = SaveManager.GetCharacter();
@@ -72,9 +114,12 @@ namespace Brotato_Clone
             _upgrades = SaveManager.GetUpgrades();
 
             _allItems = new List<NItem>();
-            _allItems.AddRange(_weapons);
-            _allItems.AddRange(_items);
-            _allItems.AddRange(_upgrades);
+            if (_weapons != null)
+                _allItems.AddRange(_weapons);
+            if (_items != null)
+                _allItems.AddRange(_items);
+            if (_upgrades != null)
+                _allItems.AddRange(_upgrades);
 
             List<NItem> allItemsWithChildItems = new List<NItem>(_allItems);
 
@@ -87,6 +132,34 @@ namespace Brotato_Clone
             _allItems = allItemsWithChildItems;
 
             CategoriseItems();
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private void ClearCharacterSave()
+        {
+            _character = null;
+            SaveManager.SaveCharacter(null);
+        }
+
+        private void ClearWeaponsSave()
+        {
+            _weapons.Clear();
+            SaveManager.SaveWeapons(_weapons);
+        }
+
+        private void ClearItemsSave()
+        {
+            _items.Clear();
+            SaveManager.SaveItems(_items);
+        }
+
+        private void ClearUpgradesSave()
+        {
+            _upgrades.Clear();
+            SaveManager.SaveUpgrades(_upgrades);
         }
 
         private void CategoriseItems()
@@ -124,7 +197,6 @@ namespace Brotato_Clone
         {
             if (item.Attribute == null)
             {
-                Debug.LogWarning($"{item.Name} has no attribute.");
                 return null;
             }
 
@@ -155,5 +227,7 @@ namespace Brotato_Clone
 
             return null;
         }
+
+        #endregion Private Methods
     }
 }

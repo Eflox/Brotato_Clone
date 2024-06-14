@@ -14,23 +14,41 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Controllers
 {
+    /// <summary>
+    /// Handles the stat manipulation of the player.
+    /// </summary>
     public class PlayerStatsController : MonoBehaviour
     {
+        #region Fields
+
         [SerializeField]
         private PlayerStats _playerStats;
 
+        #endregion Fields
+
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the player stats controller by subscribing to the drop pickup event.
+        /// </summary>
         public void Initialize()
         {
             EventManager.Subscribe<IDrop>(PlayerEvent.PlayerPickupDrop, OnDropPickup);
         }
 
+        /// <summary>
+        /// Gets the current player stats.
+        /// </summary>
         public PlayerStats GetStats()
         {
             return _playerStats;
         }
 
+        /// <summary>
+        /// Initializes the stats at the start of the wave.
+        /// </summary>
         public void StartWaveStats()
         {
             _playerStats.CurrentHP = _playerStats.MaxHP[StatType.TotalVisible];
@@ -44,6 +62,9 @@ namespace Brotato_Clone
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
+        /// <summary>
+        /// Updates the player stats based on a list of items.
+        /// </summary>
         public void UpdateStats(List<NItem> items)
         {
             foreach (var item in items)
@@ -54,11 +75,14 @@ namespace Brotato_Clone
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
+        #endregion Public Methods
+
+        #region Private Methods
+
         private void ApplyItem(NItem item)
         {
             if (item.Attribute == null)
             {
-                Debug.LogWarning($"Tried to equip {item.Name} with no attribute.");
                 return;
             }
 
@@ -190,5 +214,7 @@ namespace Brotato_Clone
 
             _playerStats.XPGain[StatType.TotalVisible] = _playerStats.XPGain[StatType.Base];
         }
+
+        #endregion Private Methods
     }
 }
