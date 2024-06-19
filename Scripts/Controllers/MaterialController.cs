@@ -60,7 +60,7 @@ namespace Brotato_Clone.Controllers
 
         private void ReachedPlayer()
         {
-            EventManager.TriggerEvent(PlayerEvent.PlayerPickupDrop, this);
+            EventManager.TriggerEvent(PlayerEvent.PlayerPickupDrop);
             Destroy(gameObject);
         }
     }

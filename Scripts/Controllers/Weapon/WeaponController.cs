@@ -34,7 +34,7 @@ namespace Brotato_Clone.Controllers
         {
             _weaponView.Initialize(weapon);
 
-            int range = weapon.WeaponType == WeaponType.Melee ? weapon.Range / 26 : weapon.Range / 13;
+            int range = weapon.WeaponType == WeaponType.Melee ? weapon.Range / 40 : weapon.Range / 20;
 
             _weaponTargetingController.SetRange(range);
             _weaponAttackController.SetupWeapon(weapon.Name, weapon.Cooldown, range);

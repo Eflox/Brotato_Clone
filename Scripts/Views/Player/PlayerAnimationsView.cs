@@ -40,8 +40,8 @@ namespace Brotato_Clone.Player.Views
         /// </summary>
         public void Initialize()
         {
-            EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
             EventManager.Subscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
+            EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
         }
 
         /// <summary>
@@ -60,6 +60,7 @@ namespace Brotato_Clone.Player.Views
         private void OnFlipPlayer(bool facingRight)
         {
             _facingRight = facingRight;
+            OnPlayerMoveChange(true);
         }
 
         private void OnPlayerMoveChange(bool isMoving)

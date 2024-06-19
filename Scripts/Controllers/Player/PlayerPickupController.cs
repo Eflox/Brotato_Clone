@@ -26,10 +26,9 @@ namespace Brotato_Clone.Controllers
         /// <summary>
         /// Starts searching for pickups within the specified range.
         /// </summary>
-        public void StartPickupSearch(int pickupRange, GameObject playerObject)
+        public void StartPickupSearch(GameObject playerObject)
         {
             _playerObject = playerObject;
-            _range = pickupRange + 4;
             InvokeRepeating(nameof(ScanForMaterials), 0f, 0.05f);
         }
 

@@ -15,6 +15,7 @@ namespace Brotato_Clone.Models
     {
         public string Name;
         public string Description;
+        public string SpritePath;
         public Sprite Icon;
         public Rarity Rarity;
         public Class[] Classes;

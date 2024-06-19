@@ -6,7 +6,6 @@
  */
 
 using Brotato_Clone.Models;
-using Brotato_Clone.Services;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -33,11 +32,27 @@ namespace Brotato_Clone.Controllers
         #region Public Methods
 
         /// <summary>
+        /// Save default character
+        /// </summary>
+        public void SaveDefault()
+        {
+            SaveManager.SaveCharacter(ItemsData.Items["WellRounded"]);
+
+            List<Weapon> weapons = new List<Weapon>
+            {
+                WeaponsData.Weapons["Knife"],
+                WeaponsData.Weapons["Fist"]
+            };
+
+            SaveManager.SaveWeapons(weapons);
+        }
+
+        /// <summary>
         /// Adds an item to the player's collection and saves it.
         /// </summary>
         public void AddItem(NItem item)
         {
-            PlayerPrefsManager.SaveItem(item);
+            //SaveManager.SaveItems(item.);
             LoadItems();
         }
 

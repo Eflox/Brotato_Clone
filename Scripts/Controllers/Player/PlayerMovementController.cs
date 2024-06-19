@@ -20,13 +20,15 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerView _playerView;
 
+        [SerializeField]
         private Transform _playerTransform;
+
         private int _playerSpeed;
 
         private const float BaseHiddenSpeed = 5f;
         private const float PercentageBaseSpeed = 100f;
 
-        private bool _canMove = true;
+        private bool _canMove = false;
         private bool _isMoving = false;
         private bool _facingRight = true;
 

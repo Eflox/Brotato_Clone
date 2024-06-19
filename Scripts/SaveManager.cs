@@ -63,7 +63,9 @@ public static class SaveManager
         if (string.IsNullOrEmpty(json))
             return null;
 
-        return JsonUtility.FromJson<NItem>(json);
+        NItem character = JsonUtility.FromJson<NItem>(json);
+        character.Icon = Resources.Load<Sprite>(character.SpritePath);
+        return character;
     }
 
     private static void EnsureDirectoryExists()
@@ -98,6 +100,7 @@ public class WeaponListWrapper : IItemListWrapper<Weapon>
 
     public List<Weapon> GetItems()
     {
+        Weapons.ForEach(weapon => weapon.Icon = Resources.Load<Sprite>(weapon.SpritePath));
         return Weapons;
     }
 }
@@ -109,6 +112,7 @@ public class ItemListWrapper : IItemListWrapper<NItem>
 
     public List<NItem> GetItems()
     {
+        Items.ForEach(item => item.Icon = Resources.Load<Sprite>(item.SpritePath));
         return Items;
     }
 }
@@ -120,6 +124,7 @@ public class UpgradeListWrapper : IItemListWrapper<Upgrade>
 
     public List<Upgrade> GetItems()
     {
+        //Upgrades.ForEach(upgrade => upgrade.Icon = Resources.Load<Sprite>(upgrade.SpritePath));
         return Upgrades;
     }
 }

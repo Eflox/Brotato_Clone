@@ -75,6 +75,15 @@ namespace Brotato_Clone.Controllers
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
+        /// <summary>
+        /// Updates material count
+        /// </summary>
+        public void UpdateMaterials(int materials)
+        {
+            _playerStats.CurrentMaterials += materials;
+            EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
+        }
+
         #endregion Public Methods
 
         #region Private Methods

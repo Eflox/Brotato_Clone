@@ -53,8 +53,9 @@ namespace Brotato_Clone.Controllers
             _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
 
             _playerMovementController.Initialize();
-
             _playerView.Initialize();
+
+            _playerItemsController.SaveDefault();
 
             EventManager.Subscribe(GameEvent.GameStart, OnGameStart);
             EventManager.Subscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
@@ -62,6 +63,7 @@ namespace Brotato_Clone.Controllers
             EventManager.Subscribe(PlayerEvent.PlayerDead, OnPlayerDead);
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
             EventManager.Subscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
+            EventManager.Subscribe(PlayerEvent.PlayerPickupDrop, OnPickupDrop);
         }
 
         /// <summary>
@@ -90,6 +92,7 @@ namespace Brotato_Clone.Controllers
 
         private void OnGameStart()
         {
+            Debug.Log("On Game Start");
             _playerItemsController.LoadItems();
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
 
@@ -98,18 +101,21 @@ namespace Brotato_Clone.Controllers
 
         private void OnWaveStart(Wave wave)
         {
+            Debug.Log("On Wave Start");
+
             var stats = _playerStatsController.GetStats();
 
             _playerStatsController.StartWaveStats();
             _playerCameraController.StartFollow(_playerObject.transform);
             _playerMovementController.StartMovement(stats.Speed[StatType.TotalVisible], _playerObject.transform);
             _playerHealthController.SetHealth(stats.MaxHP[StatType.TotalVisible]);
-            _playerPickupController.StartPickupSearch(stats.PickupRange, _playerObject);
+            _playerPickupController.StartPickupSearch(_playerObject);
             _playerAllWeaponsController.LoadWeapons(_playerItemsController.GetWeapons(), _playerObject.transform);
         }
 
         private void OnPlayerDead()
         {
+            Debug.Log("On Player Dead");
             _playerCameraController.StopFollow();
             _playerMovementController.StopMovement();
             _playerPickupController.StopSearch();
@@ -118,6 +124,7 @@ namespace Brotato_Clone.Controllers
 
         private void OnWaveEnd()
         {
+            Debug.Log("On Wave End");
             _playerCameraController.StopFollow();
             _playerMovementController.StopMovement();
             _playerPickupController.StopSearch();
@@ -125,6 +132,7 @@ namespace Brotato_Clone.Controllers
 
         private void OnStatsChanged(PlayerStats stats)
         {
+            Debug.Log("On Stats Changed");
             _playerPickupController.UpdateRange(stats.PickupRange);
             _playerMovementController.UpdateSpeed(stats.Speed[StatType.TotalVisible]);
             _playerHealthController.UpdateMaxHP(stats.MaxHP[StatType.TotalVisible]);
@@ -132,9 +140,16 @@ namespace Brotato_Clone.Controllers
 
         private void OnSelectedItem(NItem item)
         {
+            Debug.Log("On Selected Item");
+
             Debug.Log(item.Name);
             _playerItemsController.AddItem(item);
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
+        }
+
+        private void OnPickupDrop()
+        {
+            _playerStatsController.UpdateMaterials(1);
         }
 
         #endregion Private Methods

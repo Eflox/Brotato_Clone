@@ -198,7 +198,7 @@ namespace Brotato_Clone.Models
 
         //Pick-Ups & Materials
 
-        public int PickupRange;
+        public int PickupRange = 10;
         public int Trees;
         public int MaterialsInCrates;
         public int ChanceDoubleMaterials;
