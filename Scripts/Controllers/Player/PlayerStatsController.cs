@@ -88,6 +88,11 @@ namespace Brotato_Clone.Controllers
 
         #region Private Methods
 
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe<IDrop>(PlayerEvent.PlayerPickupDrop, OnDropPickup);
+        }
+
         private void ApplyItem(NItem item)
         {
             if (item.Attribute == null)

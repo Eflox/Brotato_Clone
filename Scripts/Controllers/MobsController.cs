@@ -48,6 +48,12 @@ namespace Brotato_Clone.Controllers
                 mob.GetComponent<MobController>().Die(Vector2.zero, false);
         }
 
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
+            EventManager.Unsubscribe(WaveEvent.WaveEnd, OnWaveEnd);
+        }
+
         private IEnumerator SpawnMobsRoutine()
         {
             float spawnInterval = (float)_currentWave.Duration / _currentWave.EnemyCount;

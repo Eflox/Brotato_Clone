@@ -47,5 +47,14 @@ namespace Brotato_Clone.Player.Views
         }
 
         #endregion Public Methods
+
+        #region Private Methods
+
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+        }
+
+        #endregion Private Methods
     }
 }

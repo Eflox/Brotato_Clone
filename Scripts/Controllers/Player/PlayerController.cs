@@ -92,6 +92,17 @@ namespace Brotato_Clone.Controllers
             }
         }
 
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe(GameEvent.GameStart, OnGameStart);
+            EventManager.Unsubscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
+            EventManager.Unsubscribe(WaveEvent.WaveEnd, OnWaveEnd);
+            EventManager.Unsubscribe(PlayerEvent.PlayerDead, OnPlayerDead);
+            EventManager.Unsubscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
+            EventManager.Unsubscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
+            EventManager.Unsubscribe(PlayerEvent.PlayerPickupDrop, OnPickupDrop);
+        }
+
         private void OnGameStart()
         {
             Debug.Log("On Game Start");

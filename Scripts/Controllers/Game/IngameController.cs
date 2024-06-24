@@ -96,6 +96,11 @@ namespace Brotato_Clone.Controllers
             EventManager.TriggerEvent(GameEvent.GameStart);
         }
 
+        private void OnDisable()
+        {
+            EventManager.ClearEvents();
+        }
+
         #endregion Private Methods
     }
 }

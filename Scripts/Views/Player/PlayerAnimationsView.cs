@@ -42,6 +42,7 @@ namespace Brotato_Clone.Player.Views
         {
             EventManager.Subscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
             EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+            EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
         }
 
         /// <summary>
@@ -77,8 +78,12 @@ namespace Brotato_Clone.Player.Views
             }
         }
 
-        private void OnDisable()
+        private void OnWaveEnd()
         {
+            _tweener.Kill();
+
+            _animator.SetInteger("MoveState", 0);
+
             EventManager.Unsubscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
             EventManager.Unsubscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
         }

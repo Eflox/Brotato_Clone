@@ -10,6 +10,9 @@ using UnityEngine;
 
 namespace Brotato_Clone.Views
 {
+    /// <summary>
+    /// View controls weapon visuals.
+    /// </summary>
     public class WeaponView : MonoBehaviour
     {
         [SerializeField]
@@ -24,6 +27,11 @@ namespace Brotato_Clone.Views
         private bool _playerFacingRight;
         private bool _canFlip = true;
 
+        #region Public Methods
+
+        /// <summary>
+        /// Initializes the weapon.
+        /// </summary>
         public void Initialize(Weapon weapon)
         {
             _audioSource.clip = weapon.ImpactSound;
@@ -33,6 +41,37 @@ namespace Brotato_Clone.Views
             EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
             EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
         }
+
+        /// <summary>
+        /// Status of the target.
+        /// </summary>
+        public void TargetStatus(bool hasTarget)
+        {
+            _canFlip = !hasTarget;
+
+            if (hasTarget)
+            {
+                _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
+                _spriteRenderer.flipX = false;
+            }
+            else
+            {
+                OnFlipPlayer(_playerFacingRight);
+            }
+        }
+
+        /// <summary>
+        /// Get called when attack hits.
+        /// </summary>
+        public void OnHit(Vector2 position)
+        {
+            Instantiate(_hitPrefab, position, Quaternion.identity);
+            PlayRandomizedSound();
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void OnFlipPlayer(bool right)
         {
@@ -51,32 +90,19 @@ namespace Brotato_Clone.Views
             _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
         }
 
-        public void TargetStatus(bool hasTarget)
-        {
-            _canFlip = !hasTarget;
-
-            if (hasTarget)
-            {
-                _spriteRenderer.gameObject.transform.localPosition = new Vector3(0.3f, 0);
-                _spriteRenderer.flipX = false;
-            }
-            else
-            {
-                OnFlipPlayer(_playerFacingRight);
-            }
-        }
-
-        public void OnHit(Vector2 position)
-        {
-            Instantiate(_hitPrefab, position, Quaternion.identity);
-            PlayRandomizedSound();
-        }
-
         private void PlayRandomizedSound()
         {
             _audioSource.pitch = Random.Range(0.9f, 1.1f);
             //_audioSource.volume = Random.Range(0.8f, 1.0f);
             _audioSource.Play();
         }
+
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+            EventManager.Unsubscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+        }
+
+        #endregion Private Methods
     }
 }

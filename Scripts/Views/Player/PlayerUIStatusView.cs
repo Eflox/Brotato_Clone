@@ -49,7 +49,6 @@ namespace Brotato_Clone.Player.Views
         /// </summary>
         public void Initialize()
         {
-            Debug.Log("First");
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnPlayerStatsChanged);
         }
 
@@ -58,7 +57,6 @@ namespace Brotato_Clone.Player.Views
         /// </summary>
         public void OnPlayerStatsChanged(PlayerStats playerStats)
         {
-            Debug.Log("Second");
             SetHealth(playerStats.CurrentHP, playerStats.MaxHP[StatType.TotalVisible]);
             SetLevel(playerStats.CurrentLvl, playerStats.CurrentXp, LevelData.LevelsXP[playerStats.CurrentLvl]);
             SetMaterials(playerStats.CurrentMaterials);
@@ -130,6 +128,11 @@ namespace Brotato_Clone.Player.Views
             {
                 Debug.LogWarning("Bag materials text or bag sprite is null.");
             }
+        }
+
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnPlayerStatsChanged);
         }
 
         #endregion Private Methods
