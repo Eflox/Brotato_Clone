@@ -8,12 +8,14 @@
 using Brotato_Clone.Models;
 using Brotato_Clone.Views;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Brotato_Clone.Controllers
 {
     public class PlayerLevelUpMenuController : MonoBehaviour
     {
         private PlayerLevelUpMenuView _playerLevelUpMenuView;
+        private int _upgradeCount;
 
         public void Initialize()
         {
@@ -24,6 +26,7 @@ namespace Brotato_Clone.Controllers
 
         public void ShowMenu(int levelsGained)
         {
+            _upgradeCount = levelsGained;
             _playerLevelUpMenuView.ShowMenu();
             LoadUpgrades();
         }
@@ -31,6 +34,12 @@ namespace Brotato_Clone.Controllers
         public void LoadUpgrades()
         {
             _playerLevelUpMenuView.ClearMenu();
+
+            if (_upgradeCount-- == 0)
+            {
+                SceneManager.LoadScene("ShopScene");
+                return;
+            }
 
             for (int i = 0; i < 4; i++)
             {
