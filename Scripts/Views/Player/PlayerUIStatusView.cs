@@ -49,6 +49,7 @@ namespace Brotato_Clone.Player.Views
         /// </summary>
         public void Initialize()
         {
+            Debug.Log("First");
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnPlayerStatsChanged);
         }
 
@@ -57,6 +58,7 @@ namespace Brotato_Clone.Player.Views
         /// </summary>
         public void OnPlayerStatsChanged(PlayerStats playerStats)
         {
+            Debug.Log("Second");
             SetHealth(playerStats.CurrentHP, playerStats.MaxHP[StatType.TotalVisible]);
             SetLevel(playerStats.CurrentLvl, playerStats.CurrentXp, LevelData.LevelsXP[playerStats.CurrentLvl]);
             SetMaterials(playerStats.CurrentMaterials);
@@ -69,36 +71,64 @@ namespace Brotato_Clone.Player.Views
 
         private void SetHealth(int currentHealth, int maxHealth)
         {
-            _healthText.text = $"{currentHealth} / {maxHealth}";
+            if (_healthText != null && _healthBar != null)
+            {
+                _healthText.text = $"{currentHealth} / {maxHealth}";
 
-            float healthPercentage = (float)currentHealth / maxHealth;
-            _healthBar.localScale = new Vector3(healthPercentage, _healthBar.localScale.y, _healthBar.localScale.z);
+                float healthPercentage = (float)currentHealth / maxHealth;
+                _healthBar.localScale = new Vector3(healthPercentage, _healthBar.localScale.y, _healthBar.localScale.z);
+            }
+            else
+            {
+                Debug.LogWarning("Health text or health bar is null.");
+            }
         }
 
         private void SetLevel(int level, int xp, int nextLevelXp)
         {
-            _levelText.text = $"LV.{level}";
+            if (_levelText != null && _levelBar != null)
+            {
+                _levelText.text = $"LV.{level}";
 
-            float levelPercentage = (float)xp / nextLevelXp;
-            _levelBar.localScale = new Vector3(levelPercentage, _levelBar.localScale.y, _levelBar.localScale.z);
+                float levelPercentage = (float)xp / nextLevelXp;
+                _levelBar.localScale = new Vector3(levelPercentage, _levelBar.localScale.y, _levelBar.localScale.z);
+            }
+            else
+            {
+                Debug.LogWarning("Level text or level bar is null.");
+            }
         }
 
         private void SetMaterials(int materials)
         {
-            _materialsText.text = $"{materials}";
+            if (_materialsText != null)
+            {
+                _materialsText.text = $"{materials}";
+            }
+            else
+            {
+                Debug.LogWarning("Materials text is null.");
+            }
         }
 
         private void SetBagMaterials(int bagMaterials)
         {
-            if (bagMaterials != 0)
+            if (_bagMaterialsText != null && _bagSprite != null)
             {
-                _bagSprite.enabled = true;
-                _bagMaterialsText.text = $"{bagMaterials}";
+                if (bagMaterials != 0)
+                {
+                    _bagSprite.enabled = true;
+                    _bagMaterialsText.text = $"{bagMaterials}";
+                }
+                else
+                {
+                    _bagMaterialsText.text = "";
+                    _bagSprite.enabled = false;
+                }
             }
             else
             {
-                _bagMaterialsText.text = "";
-                _bagSprite.enabled = false;
+                Debug.LogWarning("Bag materials text or bag sprite is null.");
             }
         }
 

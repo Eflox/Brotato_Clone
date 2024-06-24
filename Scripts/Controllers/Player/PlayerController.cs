@@ -64,6 +64,8 @@ namespace Brotato_Clone.Controllers
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
             EventManager.Subscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
             EventManager.Subscribe(PlayerEvent.PlayerPickupDrop, OnPickupDrop);
+
+            Debug.Log("Player Initialize");
         }
 
         /// <summary>

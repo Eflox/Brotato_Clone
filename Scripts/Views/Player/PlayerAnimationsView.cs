@@ -77,6 +77,12 @@ namespace Brotato_Clone.Player.Views
             }
         }
 
+        private void OnDisable()
+        {
+            EventManager.Unsubscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
+            EventManager.Unsubscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+        }
+
         #endregion Private Methods
     }
 }
