@@ -32,7 +32,6 @@ namespace Brotato_Clone.Controllers
             _targetTransform = targetTransform;
 
             EventManager.Subscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
-            EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
         }
 
         private void OnWaveStart(Wave wave)
@@ -40,18 +39,6 @@ namespace Brotato_Clone.Controllers
             _currentWave = wave;
 
             StartCoroutine(SpawnMobsRoutine());
-        }
-
-        private void OnWaveEnd()
-        {
-            foreach (var mob in GameObject.FindGameObjectsWithTag("Mob"))
-                mob.GetComponent<MobController>().Die(Vector2.zero, false);
-        }
-
-        private void OnDisable()
-        {
-            EventManager.Unsubscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
-            EventManager.Unsubscribe(WaveEvent.WaveEnd, OnWaveEnd);
         }
 
         private IEnumerator SpawnMobsRoutine()

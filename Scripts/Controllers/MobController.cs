@@ -49,7 +49,14 @@ namespace Brotato_Clone.Controllers
 
             _mobView.SetSpawnSprite(MobData.SpawnSprite);
 
+            EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
+
             Invoke("Spawn", 1f);
+        }
+
+        private void OnWaveEnd()
+        {
+            Die(Vector2.zero, false);
         }
 
         private void Spawn()
@@ -77,6 +84,12 @@ namespace Brotato_Clone.Controllers
 
         public void Die(Vector2 direction, bool spawnMaterial)
         {
+            if (gameObject.tag != "Mob")
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             if (spawnMaterial)
                 Instantiate(_materialPrefab, this.transform.position, Quaternion.identity);
 

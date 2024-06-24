@@ -82,10 +82,17 @@ namespace Brotato_Clone.Player.Views
         {
             _tweener.Kill();
 
+            _playerTransform.localScale = new Vector2(1, 1);
+
             _animator.SetInteger("MoveState", 0);
 
             EventManager.Unsubscribe<bool>(PlayerEvent.PlayerMoveChange, OnPlayerMoveChange);
             EventManager.Unsubscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
+        }
+
+        private void OnDisable()
+        {
+            _tweener.Kill();
         }
 
         #endregion Private Methods
