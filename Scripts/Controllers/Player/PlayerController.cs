@@ -163,6 +163,7 @@ namespace Brotato_Clone.Controllers
         private void OnPickupDrop()
         {
             _playerStatsController.UpdateMaterials(1);
+            _playerStatsController.UpdateMaterials(1);
         }
 
         #endregion Private Methods

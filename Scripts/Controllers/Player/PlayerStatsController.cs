@@ -81,12 +81,25 @@ namespace Brotato_Clone.Controllers
         public void UpdateMaterials(int materials)
         {
             _playerStats.CurrentMaterials += materials;
+            IncreaseXP(materials);
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
         #endregion Public Methods
 
         #region Private Methods
+
+        private void IncreaseXP(int value)
+        {
+            _playerStats.CurrentXp += value;
+
+            if (_playerStats.CurrentXp >= LevelData.LevelsXP[_playerStats.CurrentLvl])
+            {
+                _playerStats.CurrentXp = 0;
+                _playerStats.CurrentLvl++;
+                _playerStats.LevelsGainedDuringWave++;
+            }
+        }
 
         private void OnDisable()
         {

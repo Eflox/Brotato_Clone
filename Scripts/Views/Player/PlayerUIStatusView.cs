@@ -20,6 +20,12 @@ namespace Brotato_Clone.Player.Views
         #region Fields
 
         [SerializeField]
+        private Transform _currentWavelevelUpsContainer;
+
+        [SerializeField]
+        private GameObject _levelUpPrefab;
+
+        [SerializeField]
         private TMP_Text _healthText;
 
         [SerializeField]
@@ -58,7 +64,7 @@ namespace Brotato_Clone.Player.Views
         public void OnPlayerStatsChanged(PlayerStats playerStats)
         {
             SetHealth(playerStats.CurrentHP, playerStats.MaxHP[StatType.TotalVisible]);
-            SetLevel(playerStats.CurrentLvl, playerStats.CurrentXp, LevelData.LevelsXP[playerStats.CurrentLvl]);
+            SetLevel(playerStats.CurrentLvl, playerStats.CurrentXp, LevelData.LevelsXP[playerStats.CurrentLvl], playerStats.LevelsGainedDuringWave);
             SetMaterials(playerStats.CurrentMaterials);
             SetBagMaterials(playerStats.CurrentBagMaterials);
         }
@@ -69,64 +75,41 @@ namespace Brotato_Clone.Player.Views
 
         private void SetHealth(int currentHealth, int maxHealth)
         {
-            if (_healthText != null && _healthBar != null)
-            {
-                _healthText.text = $"{currentHealth} / {maxHealth}";
+            _healthText.text = $"{currentHealth} / {maxHealth}";
 
-                float healthPercentage = (float)currentHealth / maxHealth;
-                _healthBar.localScale = new Vector3(healthPercentage, _healthBar.localScale.y, _healthBar.localScale.z);
-            }
-            else
-            {
-                Debug.LogWarning("Health text or health bar is null.");
-            }
+            float healthPercentage = (float)currentHealth / maxHealth;
+            _healthBar.localScale = new Vector3(healthPercentage, _healthBar.localScale.y, _healthBar.localScale.z);
         }
 
-        private void SetLevel(int level, int xp, int nextLevelXp)
+        private void SetLevel(int level, int xp, int nextLevelXp, int waveLevelUps)
         {
-            if (_levelText != null && _levelBar != null)
-            {
-                _levelText.text = $"LV.{level}";
+            _levelText.text = $"LV.{level}";
 
-                float levelPercentage = (float)xp / nextLevelXp;
-                _levelBar.localScale = new Vector3(levelPercentage, _levelBar.localScale.y, _levelBar.localScale.z);
-            }
-            else
+            float levelPercentage = (float)xp / nextLevelXp;
+            _levelBar.localScale = new Vector3(levelPercentage, _levelBar.localScale.y, _levelBar.localScale.z);
+
+            for (int i = 0; i < waveLevelUps; i++)
             {
-                Debug.LogWarning("Level text or level bar is null.");
+                Instantiate(_levelUpPrefab, _currentWavelevelUpsContainer);
             }
         }
 
         private void SetMaterials(int materials)
         {
-            if (_materialsText != null)
-            {
-                _materialsText.text = $"{materials}";
-            }
-            else
-            {
-                Debug.LogWarning("Materials text is null.");
-            }
+            _materialsText.text = $"{materials}";
         }
 
         private void SetBagMaterials(int bagMaterials)
         {
-            if (_bagMaterialsText != null && _bagSprite != null)
+            if (bagMaterials != 0)
             {
-                if (bagMaterials != 0)
-                {
-                    _bagSprite.enabled = true;
-                    _bagMaterialsText.text = $"{bagMaterials}";
-                }
-                else
-                {
-                    _bagMaterialsText.text = "";
-                    _bagSprite.enabled = false;
-                }
+                _bagSprite.enabled = true;
+                _bagMaterialsText.text = $"{bagMaterials}";
             }
             else
             {
-                Debug.LogWarning("Bag materials text or bag sprite is null.");
+                _bagMaterialsText.text = "";
+                _bagSprite.enabled = false;
             }
         }
 
