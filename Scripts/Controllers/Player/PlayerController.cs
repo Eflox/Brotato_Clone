@@ -31,6 +31,7 @@ namespace Brotato_Clone.Controllers
         private PlayerPickupController _playerPickupController;
         private PlayerMovementController _playerMovementController;
         private PlayerHealthController _playerHealthController;
+        private PlayerLevelUpMenuController _playerLevelUpMenuController;
 
         #endregion Fields
 
@@ -51,7 +52,9 @@ namespace Brotato_Clone.Controllers
             _playerMovementController = GetComponent<PlayerMovementController>();
             _playerHealthController = GetComponent<PlayerHealthController>();
             _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
+            _playerLevelUpMenuController = GetComponent<PlayerLevelUpMenuController>();
 
+            _playerLevelUpMenuController.Initialize();
             _playerMovementController.Initialize();
             _playerView.Initialize();
 
@@ -141,6 +144,7 @@ namespace Brotato_Clone.Controllers
             _playerCameraController.StopFollow();
             _playerMovementController.StopMovement();
             _playerPickupController.StopSearch();
+            _playerLevelUpMenuController.ShowMenu(_playerStatsController.GetStats().LevelsGainedDuringWave);
         }
 
         private void OnStatsChanged(PlayerStats stats)
@@ -162,7 +166,6 @@ namespace Brotato_Clone.Controllers
 
         private void OnPickupDrop()
         {
-            _playerStatsController.UpdateMaterials(1);
             _playerStatsController.UpdateMaterials(1);
         }
 

@@ -92,9 +92,11 @@ namespace Brotato_Clone.Controllers
         private void IncreaseXP(int value)
         {
             _playerStats.CurrentXp += value;
+            Debug.Log(_playerStats.CurrentXp);
 
             if (_playerStats.CurrentXp >= LevelData.LevelsXP[_playerStats.CurrentLvl])
             {
+                Debug.Log("Levelup");
                 _playerStats.CurrentXp = 0;
                 _playerStats.CurrentLvl++;
                 _playerStats.LevelsGainedDuringWave++;

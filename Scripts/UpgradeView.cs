@@ -5,8 +5,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Controllers;
 using Brotato_Clone.Extensions;
+using Brotato_Clone.Models;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,12 +27,10 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Button _chooseButton;
 
-        private LevelUpMenuController _levelUpMenuController;
         private Upgrade _upgrade;
 
-        public void Initialize(LevelUpMenuController levelUpMenuController, Upgrade upgrade)
+        public void Initialize(Upgrade upgrade)
         {
-            _levelUpMenuController = levelUpMenuController;
             _upgrade = upgrade;
             _chooseButton.onClick.AddListener(Selected);
 
@@ -43,7 +41,7 @@ namespace Brotato_Clone.Views
 
         private void Selected()
         {
-            _levelUpMenuController.UpgradeSelected(_upgrade);
+            EventManager.TriggerEvent<NItem>(PlayerEvent.PlayerSelectItem, _upgrade);
         }
     }
 }

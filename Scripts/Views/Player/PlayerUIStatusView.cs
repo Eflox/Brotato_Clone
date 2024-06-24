@@ -88,6 +88,11 @@ namespace Brotato_Clone.Player.Views
             float levelPercentage = (float)xp / nextLevelXp;
             _levelBar.localScale = new Vector3(levelPercentage, _levelBar.localScale.y, _levelBar.localScale.z);
 
+            foreach (Transform child in _currentWavelevelUpsContainer)
+            {
+                Destroy(child.gameObject);
+            }
+
             for (int i = 0; i < waveLevelUps; i++)
             {
                 Instantiate(_levelUpPrefab, _currentWavelevelUpsContainer);

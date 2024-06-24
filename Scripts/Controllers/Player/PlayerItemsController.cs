@@ -20,11 +20,22 @@ namespace Brotato_Clone.Controllers
     {
         #region Fields
 
+        [SerializeField]
         private List<NItem> _visibleItems = new List<NItem>();
+
+        [SerializeField]
         private List<NItem> _allItems = new List<NItem>();
+
+        [SerializeField]
         private List<NItem> _items = new List<NItem>();
+
+        [SerializeField]
         private List<Upgrade> _upgrades = new List<Upgrade>();
+
+        [SerializeField]
         private List<Weapon> _weapons = new List<Weapon>();
+
+        [SerializeField]
         private NItem _character;
 
         #endregion Fields
@@ -52,7 +63,7 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void AddItem(NItem item)
         {
-            //SaveManager.SaveItems(item.);
+            SaveManager.SaveItem(item);
             LoadItems();
         }
 

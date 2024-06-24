@@ -32,6 +32,13 @@ public static class SaveManager
         File.WriteAllText(ItemsSavePath, json);
     }
 
+    public static void SaveItem(NItem item)
+    {
+        var items = GetItems();
+        items.Add(item);
+        SaveItems(items);
+    }
+
     public static void SaveWeapons(List<Weapon> weapons)
     {
         EnsureDirectoryExists();
