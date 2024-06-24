@@ -39,6 +39,11 @@ namespace Brotato_Clone.Views
             _description.text = _upgrade.Description.WithColors();
         }
 
+        public void Remove()
+        {
+            Destroy(this.gameObject);
+        }
+
         private void Selected()
         {
             EventManager.TriggerEvent<NItem>(PlayerEvent.PlayerSelectItem, _upgrade);

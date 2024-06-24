@@ -5,6 +5,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Brotato_Clone.Views
@@ -20,6 +22,8 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private GameObject _upgradesPrefab;
 
+        private List<UpgradeView> _upgradeViews = new List<UpgradeView>();
+
         public void ShowMenu()
         {
             _levelUpMenu.SetActive(true);
@@ -27,18 +31,16 @@ namespace Brotato_Clone.Views
 
         public void ClearMenu()
         {
-            foreach (Transform child in _levelUpContainer)
-            {
-                Destroy(child);
-            }
-            Debug.Log("Cleared");
+            _upgradeViews.ForEach(u => u.Remove());
+            _upgradeViews.Clear();
         }
 
         public void LoadUpgrade(Upgrade upgrade)
         {
-            Instantiate(_upgradesPrefab, _levelUpContainer)
-                .GetComponent<UpgradeView>()
-                .Initialize(upgrade);
+            _upgradeViews.Add(Instantiate(_upgradesPrefab, _levelUpContainer)
+                .GetComponent<UpgradeView>());
+
+            _upgradeViews.Last().Initialize(upgrade);
         }
     }
 }
