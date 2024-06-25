@@ -38,7 +38,7 @@ namespace Brotato_Clone.Views
         {
             _character = character;
             _controller = controller;
-            _icon.sprite = _character.Icon;
+            _icon.sprite = Resources.Load<Sprite>(character.SpritePath);
 
             gameObject.name = $"{_character.Name}_Spawned_Button";
 

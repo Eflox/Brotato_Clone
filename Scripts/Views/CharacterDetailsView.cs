@@ -41,7 +41,7 @@ namespace Brotato_Clone.Views
         {
             _container.SetActive(true);
             _characterName.text = character.Name;
-            _characterIcon.sprite = character.Icon;
+            _characterIcon.sprite = Resources.Load<Sprite>(character.SpritePath);
             _characterDescription.text = character.Description.WithNL().WithColors();
             _characterClass.text = string.Join(", ", character.Classes.Select(c => c.ToString()));
         }
