@@ -435,7 +435,6 @@ GameObject:
   - component: {fileID: 5172350805798484476}
   - component: {fileID: 817680596242458086}
   - component: {fileID: 9111035209665183083}
-  - component: {fileID: 9112476854359814902}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -546,20 +545,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &9112476854359814902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4536479576734962480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttonText: {fileID: 6630358299167072535}
-  _buttonImage: {fileID: 817680596242458086}
 --- !u!1 &5428864726915269561
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +557,6 @@ GameObject:
   - component: {fileID: 2142474138908091365}
   - component: {fileID: 5451446262865097305}
   - component: {fileID: 8901806012774500664}
-  - component: {fileID: 1952295503450055787}
   m_Layer: 5
   m_Name: LockButton
   m_TagString: Untagged
@@ -682,20 +666,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1952295503450055787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5428864726915269561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdbfa00e39fed34a9f88e162cf00ce4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _buttonText: {fileID: 8382052564403777362}
-  _buttonImage: {fileID: 5451446262865097305}
 --- !u!1 &5862045073665280353
 GameObject:
   m_ObjectHideFlags: 0
