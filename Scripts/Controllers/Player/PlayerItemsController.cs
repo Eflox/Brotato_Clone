@@ -21,13 +21,13 @@ namespace Brotato_Clone.Controllers
         #region Fields
 
         [SerializeField]
-        private List<NItem> _visibleItems = new List<NItem>();
+        private List<Item> _visibleItems = new List<Item>();
 
         [SerializeField]
-        private List<NItem> _allItems = new List<NItem>();
+        private List<Item> _allItems = new List<Item>();
 
         [SerializeField]
-        private List<NItem> _items = new List<NItem>();
+        private List<Item> _items = new List<Item>();
 
         [SerializeField]
         private List<Upgrade> _upgrades = new List<Upgrade>();
@@ -36,7 +36,7 @@ namespace Brotato_Clone.Controllers
         private List<Weapon> _weapons = new List<Weapon>();
 
         [SerializeField]
-        private NItem _character;
+        private Character _character;
 
         #endregion Fields
 
@@ -47,34 +47,58 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void SaveDefault()
         {
-            SaveManager.SaveCharacter(ItemsData.Items["WellRounded"]);
-
+            SaveManager.SaveCharacter(CharactersData.Characters[PlayerPrefs.GetString("StartCharacter")]);
+            SaveManager.SaveUpgrades(null);
             SaveManager.SaveItems(null);
 
             List<Weapon> weapons = new List<Weapon>
             {
-                WeaponsData.Weapons["Knife"],
-                WeaponsData.Weapons["Fist"]
+                WeaponsData.Weapons[PlayerPrefs.GetString("StartWeapon")]
             };
 
             SaveManager.SaveWeapons(weapons);
         }
 
+        public void SaveAll()
+        {
+            SaveManager.SaveCharacter(_character);
+            SaveManager.SaveUpgrades(_upgrades);
+            SaveManager.SaveItems(_items);
+            SaveManager.SaveWeapons(_weapons);
+        }
+
         /// <summary>
         /// Adds an item to the player's collection and saves it.
         /// </summary>
-        public void AddItem(NItem item)
+        public void AddItem(Item item)
         {
             SaveManager.SaveItem(item);
             LoadItems();
         }
 
         /// <summary>
+        /// Adds an item to the player's collection and saves it.
+        /// </summary>
+        public void AddUpgrade(Upgrade upgrade)
+        {
+            SaveManager.SaveUpgrade(upgrade);
+            LoadItems();
+        }
+
+        /// <summary>
         /// Gets the list of all items.
         /// </summary>
-        public List<NItem> GetItems()
+        public List<Item> GetItemsWithChildren()
         {
             return _allItems;
+        }
+
+        /// <summary>
+        /// Gets the list of items.
+        /// </summary>
+        public List<Item> GetItems()
+        {
+            return _items;
         }
 
         /// <summary>
@@ -96,7 +120,7 @@ namespace Brotato_Clone.Controllers
         /// <summary>
         /// Gets the current character item.
         /// </summary>
-        public NItem GetCharacter()
+        public Item GetCharacter()
         {
             return _character;
         }
@@ -104,7 +128,7 @@ namespace Brotato_Clone.Controllers
         /// <summary>
         /// Gets the list of visible items.
         /// </summary>
-        public List<NItem> GetVisibleItems()
+        public List<Item> GetVisibleItems()
         {
             return _visibleItems;
         }
@@ -141,7 +165,7 @@ namespace Brotato_Clone.Controllers
             _items = SaveManager.GetItems();
             _upgrades = SaveManager.GetUpgrades();
 
-            _allItems = new List<NItem>();
+            _allItems = new List<Item>();
             if (_weapons != null)
                 _allItems.AddRange(_weapons);
             if (_items != null)
@@ -151,11 +175,11 @@ namespace Brotato_Clone.Controllers
 
             _allItems.Add(_character);
 
-            List<NItem> allItemsWithChildItems = new List<NItem>(_allItems);
+            List<Item> allItemsWithChildItems = new List<Item>(_allItems);
 
             foreach (var item in _allItems)
             {
-                NItem[] childItems = GetChildItems(item);
+                Item[] childItems = GetChildItems(item);
 
                 if (childItems != null)
                     allItemsWithChildItems.AddRange(childItems);
@@ -164,10 +188,10 @@ namespace Brotato_Clone.Controllers
             _allItems = allItemsWithChildItems;
 
             foreach (var item in _allItems)
-                if (ItemsData.ItemAttributes.ContainsKey(item.Name))
-                    item.Attribute = ItemsData.ItemAttributes[item.Name];
+                if (ItemsData.Attributes.ContainsKey(item.Name))
+                    item.Attribute = ItemsData.Attributes[item.Name];
 
-            CategoriseItems();
+            //CategoriseItems();
         }
 
         #endregion Public Methods
@@ -221,7 +245,7 @@ namespace Brotato_Clone.Controllers
                                 break;
 
                             case Class.Character:
-                                _character = item;
+                                _character = item as Character;
                                 break;
                         }
                     }
@@ -229,7 +253,7 @@ namespace Brotato_Clone.Controllers
             }
         }
 
-        private NItem[] GetChildItems(NItem item)
+        private Item[] GetChildItems(Item item)
         {
             if (item.Attribute == null)
             {
@@ -248,7 +272,7 @@ namespace Brotato_Clone.Controllers
                     var value = field.GetValue(item.Attribute) as string[];
                     if (value != null && value.Length > 0)
                     {
-                        List<NItem> childItems = new List<NItem>();
+                        List<Item> childItems = new List<Item>();
 
                         foreach (var itemName in value)
                             if (ItemsData.Items.ContainsKey(itemName))

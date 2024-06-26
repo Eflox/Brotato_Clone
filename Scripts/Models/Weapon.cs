@@ -11,7 +11,7 @@ using UnityEngine;
 namespace Brotato_Clone.Models
 {
     [Serializable]
-    public class Weapon : NItem
+    public class Weapon : Item
     {
         public int Damage;
         public float Cooldown;

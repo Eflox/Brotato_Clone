@@ -5,7 +5,6 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Services;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,7 +40,7 @@ namespace Brotato_Clone.Controllers
 
         public void SetVolume()
         {
-            _musicSource.volume = PlayerPrefsManager.GetStat("MusicVolume");
+            _musicSource.volume = PlayerPrefs.GetInt("MusicVolume");
         }
 
         private void OnEnable()

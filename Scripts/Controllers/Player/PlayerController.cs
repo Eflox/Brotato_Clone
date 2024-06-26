@@ -31,7 +31,7 @@ namespace Brotato_Clone.Controllers
         private PlayerPickupController _playerPickupController;
         private PlayerMovementController _playerMovementController;
         private PlayerHealthController _playerHealthController;
-        private PlayerLevelUpMenuController _playerLevelUpMenuController;
+        private PlayerMenuController _playerLevelUpMenuController;
 
         #endregion Fields
 
@@ -52,21 +52,24 @@ namespace Brotato_Clone.Controllers
             _playerMovementController = GetComponent<PlayerMovementController>();
             _playerHealthController = GetComponent<PlayerHealthController>();
             _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
-            _playerLevelUpMenuController = GetComponent<PlayerLevelUpMenuController>();
+            _playerLevelUpMenuController = GetComponent<PlayerMenuController>();
 
             _playerLevelUpMenuController.Initialize();
             _playerMovementController.Initialize();
             _playerView.Initialize();
 
-            _playerItemsController.SaveDefault();
+            //_playerItemsController.SaveDefault();
 
             EventManager.Subscribe(GameEvent.GameStart, OnGameStart);
             EventManager.Subscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
             EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
             EventManager.Subscribe(PlayerEvent.PlayerDead, OnPlayerDead);
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
-            EventManager.Subscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
+            EventManager.Subscribe<Item>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
+            EventManager.Subscribe<Upgrade>(PlayerEvent.PlayerSelectUpgrade, OnSelectedUpgrade);
             EventManager.Subscribe(PlayerEvent.PlayerPickupDrop, OnPickupDrop);
+            EventManager.Subscribe(GameEvent.EnterShop, OnShopEnter);
+            EventManager.Subscribe(GameEvent.GameNewGame, OnNewGame);
 
             Debug.Log("Player Initialize");
         }
@@ -95,24 +98,19 @@ namespace Brotato_Clone.Controllers
             }
         }
 
-        private void OnDisable()
-        {
-            EventManager.Unsubscribe(GameEvent.GameStart, OnGameStart);
-            EventManager.Unsubscribe<Wave>(WaveEvent.WaveStart, OnWaveStart);
-            EventManager.Unsubscribe(WaveEvent.WaveEnd, OnWaveEnd);
-            EventManager.Unsubscribe(PlayerEvent.PlayerDead, OnPlayerDead);
-            EventManager.Unsubscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
-            EventManager.Unsubscribe<NItem>(PlayerEvent.PlayerSelectItem, OnSelectedItem);
-            EventManager.Unsubscribe(PlayerEvent.PlayerPickupDrop, OnPickupDrop);
-        }
-
         private void OnGameStart()
         {
             Debug.Log("On Game Start");
             _playerItemsController.LoadItems();
-            _playerStatsController.UpdateStats(_playerItemsController.GetItems());
+            _playerStatsController.UpdateStats(_playerItemsController.GetItemsWithChildren());
 
-            _playerView.LoadView(_playerItemsController.GetCharacter(), _playerItemsController.GetVisibleItems());
+            _playerView.LoadView(_playerItemsController.GetCharacter(), _playerItemsController.GetVisibleItems(), _playerItemsController.GetItems(), _playerItemsController.GetWeapons());
+        }
+
+        private void OnNewGame()
+        {
+            _playerItemsController.SaveDefault();
+            _playerStatsController.NewGameStats();
         }
 
         private void OnWaveStart(Wave wave)
@@ -155,10 +153,24 @@ namespace Brotato_Clone.Controllers
             _playerHealthController.UpdateMaxHP(stats.MaxHP[StatType.TotalVisible]);
         }
 
-        private void OnSelectedItem(NItem item)
+        private void OnShopEnter()
+        {
+            Debug.Log("Save All");
+
+            _playerItemsController.SaveAll();
+            _playerStatsController.SaveStats();
+        }
+
+        private void OnSelectedItem(Item item)
         {
             _playerItemsController.AddItem(item);
-            _playerStatsController.UpdateStats(_playerItemsController.GetItems());
+            _playerStatsController.UpdateStats(_playerItemsController.GetItemsWithChildren());
+        }
+
+        private void OnSelectedUpgrade(Upgrade upgrade)
+        {
+            _playerItemsController.AddUpgrade(upgrade);
+            _playerStatsController.UpdateStats(_playerItemsController.GetItemsWithChildren());
         }
 
         private void OnPickupDrop()

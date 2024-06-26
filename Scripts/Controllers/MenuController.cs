@@ -5,7 +5,6 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Services;
 using Brotato_Clone.Views;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,8 +39,8 @@ namespace Brotato_Clone.Controllers
 
         public void MuteAllSounds()
         {
-            PlayerPrefsManager.SetKey("SoundVolume", 0);
-            PlayerPrefsManager.SetKey("MusicVolume", 0);
+            PlayerPrefs.SetFloat("SoundVolume", 0);
+            PlayerPrefs.SetFloat("MusicVolume", 0);
         }
     }
 }

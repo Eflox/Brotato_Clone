@@ -35,7 +35,7 @@ namespace Brotato_Clone.Views
             _chooseButton.onClick.AddListener(Selected);
 
             _name.text = _upgrade.Name;
-            _icon.sprite = _upgrade.Icon;
+            _icon.sprite = Resources.Load<Sprite>(upgrade.SpritePath);
             _description.text = _upgrade.Description.WithColors();
         }
 
@@ -46,7 +46,8 @@ namespace Brotato_Clone.Views
 
         private void Selected()
         {
-            EventManager.TriggerEvent<NItem>(PlayerEvent.PlayerSelectItem, _upgrade);
+            Debug.Log("upgrade button pressed");
+            _upgrade.SelectUpgrade();
         }
     }
 }

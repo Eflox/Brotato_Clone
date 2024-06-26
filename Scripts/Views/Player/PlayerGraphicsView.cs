@@ -33,9 +33,9 @@ namespace Brotato_Clone.Player.Views
         /// <summary>
         /// Loads the player sprite based on the character and wearable items.
         /// </summary>
-        public void LoadPlayer(NItem character, List<NItem> wearableItems)
+        public void LoadPlayer(Item character, List<Item> wearableItems)
         {
-            _spriteRenderer.sprite = character.Icon;
+            _spriteRenderer.sprite = Resources.Load<Sprite>(character.SpritePath);
         }
 
         /// <summary>

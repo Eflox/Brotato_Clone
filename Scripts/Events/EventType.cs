@@ -15,6 +15,8 @@ public enum PlayerEvent
     PlayerDealDamage,
     PlayerTakeDamage,
     PlayerSelectItem,
+    PlayerSelectUpgrade,
+    PlayerSelectWeapon,
     PlayerStatsChanged,
     PlayerPickupDrop,
 }
@@ -31,4 +33,6 @@ public enum GameEvent
     GameStart,
     GameEnd,
     GamePaused,
+    GameNewGame,
+    EnterShop,
 }

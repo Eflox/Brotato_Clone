@@ -6,7 +6,6 @@
  */
 
 using Brotato_Clone.Models;
-using Brotato_Clone.Services;
 using Brotato_Clone.Views;
 using UnityEngine;
 
@@ -38,7 +37,7 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void OnGameStart()
         {
-            Wave wave = WaveData.Waves[PlayerPrefsManager.GetStat("Wave")];
+            Wave wave = WaveData.Waves[PlayerPrefs.GetInt("Wave")];
 
             _waveView.SetWaveCount(wave.Count);
 

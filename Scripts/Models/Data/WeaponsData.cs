@@ -18,6 +18,7 @@ namespace Brotato_Clone.Models
         public static readonly IReadOnlyDictionary<string, Type> WeaponControllers;
 
         private static readonly string _assetSource = "Brotato";
+        //private static readonly string _path = "Sprites/Weapons";
 
         static WeaponsData()
         {
@@ -34,7 +35,7 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Fist",
                         Description = "",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Weapons/Icons/Fist"),
+                        SpritePath = $"{_assetSource}/Sprites/Weapons/Icons/Fist",
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Unarmed },
 
@@ -56,7 +57,7 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Knife",
                         Description = "",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Weapons/Icons/Knife"),
+                        SpritePath = $"{_assetSource}/Sprites/Weapons/Icons/Knife",
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Precise },
 

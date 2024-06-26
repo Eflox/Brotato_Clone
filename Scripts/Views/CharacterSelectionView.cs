@@ -26,7 +26,7 @@ namespace Brotato_Clone.Views
         /// Initializes the character selection view with a list of characters.
         /// Creates a button for each character and sets it up with the provided controller.
         /// </summary>
-        public void InitializeCharacters(NItem[] characters, CharacterSelectionController controller)
+        public void InitializeCharacters(Character[] characters, CharacterSelectionController controller)
         {
             foreach (var character in characters)
             {

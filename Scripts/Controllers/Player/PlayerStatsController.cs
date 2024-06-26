@@ -46,28 +46,53 @@ namespace Brotato_Clone.Controllers
             return _playerStats;
         }
 
+        public void NewGameStats()
+        {
+            _playerStats.CurrentWave = 1;
+            _playerStats.CurrentLvl = 0;
+            _playerStats.CurrentXp = 0;
+            _playerStats.CurrentMaterials = 0;
+            _playerStats.CurrentBagMaterials = 0;
+
+            SaveStats();
+        }
+
         /// <summary>
         /// Initializes the stats at the start of the wave.
         /// </summary>
         public void StartWaveStats()
         {
             _playerStats.CurrentHP = _playerStats.MaxHP[StatType.TotalVisible];
-            _playerStats.CurrentWave = PlayerPrefsManager.GetStat("Wave");
-            _playerStats.CurrentLvl = PlayerPrefsManager.GetStat("Level");
-            _playerStats.CurrentXp = PlayerPrefsManager.GetStat("Xp");
-            _playerStats.CurrentMaterials = PlayerPrefsManager.GetStat("Materials");
-            _playerStats.CurrentMaterials = PlayerPrefsManager.GetStat("Materials");
-            _playerStats.CurrentBagMaterials = PlayerPrefsManager.GetStat("BagMaterials");
+
+            _playerStats.CurrentWave = PlayerPrefs.GetInt("Wave");
+            _playerStats.CurrentLvl = PlayerPrefs.GetInt("Level");
+            _playerStats.CurrentXp = PlayerPrefs.GetInt("Xp");
+            _playerStats.CurrentMaterials = PlayerPrefs.GetInt("Materials");
+            _playerStats.CurrentBagMaterials = PlayerPrefs.GetInt("BagMaterials");
 
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
+        }
+
+        public void NextWave()
+        {
+            _playerStats.CurrentWave++;
+        }
+
+        public void SaveStats()
+        {
+            PlayerPrefs.SetInt("Wave", _playerStats.CurrentWave);
+            PlayerPrefs.SetInt("Level", _playerStats.CurrentLvl);
+            PlayerPrefs.SetInt("Xp", _playerStats.CurrentXp);
+            PlayerPrefs.SetInt("Materials", _playerStats.CurrentMaterials);
+            PlayerPrefs.SetInt("BagMaterials", _playerStats.CurrentBagMaterials);
         }
 
         /// <summary>
         /// Updates the player stats based on a list of items.
         /// </summary>
-        public void UpdateStats(List<NItem> items)
+        public void UpdateStats(List<Item> items)
         {
-            Debug.Log($"Updated stats for: {items.Count} items");
+            _playerStats.SetDefaults();
 
             foreach (var item in items)
                 ApplyItem(item);
@@ -97,7 +122,6 @@ namespace Brotato_Clone.Controllers
 
             if (_playerStats.CurrentXp >= LevelData.LevelsXP[_playerStats.CurrentLvl])
             {
-                Debug.Log("Levelup");
                 _playerStats.CurrentXp = 0;
                 _playerStats.CurrentLvl++;
                 _playerStats.LevelsGainedDuringWave++;
@@ -109,7 +133,7 @@ namespace Brotato_Clone.Controllers
             EventManager.Unsubscribe<IDrop>(PlayerEvent.PlayerPickupDrop, OnDropPickup);
         }
 
-        private void ApplyItem(NItem item)
+        private void ApplyItem(Item item)
         {
             if (item.Attribute == null)
                 return;

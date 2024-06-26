@@ -37,7 +37,7 @@ namespace Brotato_Clone.Views
         /// <summary>
         /// Shows the details view and stats secific character.
         /// </summary>
-        public void ViewCharacter(NItem character)
+        public void ViewCharacter(Item character)
         {
             _container.SetActive(true);
             _characterName.text = character.Name;

@@ -5,11 +5,13 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone.Models;
+using System;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Models
 {
-    public class Upgrade : NItem
+    [Serializable]
+    public class Upgrade : Item
     {
+        public void SelectUpgrade() => EventManager.TriggerEvent(PlayerEvent.PlayerSelectUpgrade, this);
     }
 }

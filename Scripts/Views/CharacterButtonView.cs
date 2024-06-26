@@ -25,7 +25,7 @@ namespace Brotato_Clone.Views
         private Image _buttonBorder;
 
         [SerializeField]
-        private NItem _character;
+        private Character _character;
 
         private CharacterSelectionController _controller;
 
@@ -34,7 +34,7 @@ namespace Brotato_Clone.Views
         /// <summary>
         /// Initializes the button with character data and sets up the controller reference.
         /// </summary>
-        public void SetCharacter(NItem character, CharacterSelectionController controller)
+        public void SetCharacter(Character character, CharacterSelectionController controller)
         {
             _character = character;
             _controller = controller;

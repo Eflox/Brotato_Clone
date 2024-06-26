@@ -93,6 +93,7 @@ namespace Brotato_Clone.Controllers
             _ingameView.Initialize(this);
             _ingameMenuController.Initialize(this);
 
+            EventManager.TriggerEvent(GameEvent.GameNewGame);
             EventManager.TriggerEvent(GameEvent.GameStart);
         }
 

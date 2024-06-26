@@ -5,7 +5,6 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using Brotato_Clone;
 using Brotato_Clone.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -23,20 +22,34 @@ public static class SaveManager
 
     public static List<Upgrade> GetUpgrades() => LoadData<UpgradeListWrapper, Upgrade>(UpgradesSavePath);
 
-    public static List<NItem> GetItems() => LoadData<ItemListWrapper, NItem>(ItemsSavePath);
+    public static List<Item> GetItems() => LoadData<ItemListWrapper, Item>(ItemsSavePath);
 
-    public static void SaveItems(List<NItem> items)
+    public static void SaveItems(List<Item> items)
     {
         EnsureDirectoryExists();
         string json = JsonUtility.ToJson(new ItemListWrapper { Items = items }, true);
         File.WriteAllText(ItemsSavePath, json);
     }
 
-    public static void SaveItem(NItem item)
+    public static void SaveItem(Item item)
     {
         var items = GetItems();
         items.Add(item);
         SaveItems(items);
+    }
+
+    public static void SaveWeapon(Weapon weapon)
+    {
+        var weapons = GetWeapons();
+        weapons.Add(weapon);
+        SaveWeapons(weapons);
+    }
+
+    public static void SaveUpgrade(Upgrade upgrade)
+    {
+        var upgrades = GetUpgrades();
+        upgrades.Add(upgrade);
+        SaveUpgrades(upgrades);
     }
 
     public static void SaveWeapons(List<Weapon> weapons)
@@ -53,14 +66,14 @@ public static class SaveManager
         File.WriteAllText(UpgradesSavePath, json);
     }
 
-    public static void SaveCharacter(NItem character)
+    public static void SaveCharacter(Character character)
     {
         EnsureDirectoryExists();
         string json = JsonUtility.ToJson(character, true);
         File.WriteAllText(CharacterSavePath, json);
     }
 
-    public static NItem GetCharacter()
+    public static Character GetCharacter()
     {
         if (!File.Exists(CharacterSavePath))
             return null;
@@ -70,8 +83,7 @@ public static class SaveManager
         if (string.IsNullOrEmpty(json))
             return null;
 
-        NItem character = JsonUtility.FromJson<NItem>(json);
-        character.Icon = Resources.Load<Sprite>(character.SpritePath);
+        Character character = JsonUtility.FromJson<Character>(json);
         return character;
     }
 
@@ -107,20 +119,17 @@ public class WeaponListWrapper : IItemListWrapper<Weapon>
 
     public List<Weapon> GetItems()
     {
-        Weapons.ForEach(weapon => weapon.Icon = Resources.Load<Sprite>(weapon.SpritePath));
         return Weapons;
     }
 }
 
 [System.Serializable]
-public class ItemListWrapper : IItemListWrapper<NItem>
+public class ItemListWrapper : IItemListWrapper<Item>
 {
-    public List<NItem> Items;
+    public List<Item> Items;
 
-    public List<NItem> GetItems()
+    public List<Item> GetItems()
     {
-        if (Items != null)
-            Items.ForEach(i => i.ItemLoaded());
         return Items;
     }
 }
@@ -132,8 +141,6 @@ public class UpgradeListWrapper : IItemListWrapper<Upgrade>
 
     public List<Upgrade> GetItems()
     {
-        if (Upgrades != null)
-            Upgrades.ForEach(u => u.ItemLoaded());
         return Upgrades;
     }
 }

@@ -6,7 +6,6 @@
  */
 
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Brotato_Clone.Models
 {
@@ -15,9 +14,12 @@ namespace Brotato_Clone.Models
         public static readonly IReadOnlyDictionary<int, Upgrade> Upgrades;
 
         private static readonly string _assetSource = "Brotato";
+        private static readonly string _path = "Sprites/Upgrades";
 
         static UpgradesData()
         {
+            string fullPath = $"{_assetSource}/{_path}/";
+
             Upgrades = new Dictionary<int, Upgrade>
             {
                 {
@@ -26,9 +28,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Heart",
                         Description = "[g]+3[c] Max HP",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Max_HP_Upgrade"),
+                        SpritePath = $"{fullPath}Max_HP_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = new HeartAttribute()
                     }
                 },
                 {
@@ -37,9 +39,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Lungs",
                         Description = "[g]+2[c] HP Regeneration",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/HP_Regeneration_Upgrade"),
+                        SpritePath = $"{fullPath}HP_Regeneration_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = new LungsAttribute()
                     }
                 },
                 {
@@ -48,9 +50,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Teeth",
                         Description = "[g]+1[c] Life Steal",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Life_Steal_Upgrade"),
+                        SpritePath = $"{fullPath}Life_Steal_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = new TeethAttribute()
                     }
                 },
                 {
@@ -59,9 +61,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Triceps",
                         Description = "[g]+5[c] Damage",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Damage_Upgrade"),
+                        SpritePath = $"{fullPath}Damage_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -70,9 +72,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Forearms",
                         Description = "[g]+2[c] Melee Damage",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Melee_Damage_Upgrade"),
+                        SpritePath = $"{fullPath}Melee_Damage_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -81,9 +83,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Shoulders",
                         Description = "[g]+1[c] Ranged Damage",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Ranged_Damage_Upgrade"),
+                        SpritePath = $"{fullPath}Ranged_Damage_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -92,9 +94,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Brain",
                         Description = "[g]+1[c] Elemental Damage",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Elemental_Damage_Upgrade"),
+                        SpritePath = $"{fullPath}Elemental_Damage_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -103,9 +105,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Reflexes",
                         Description = "[g]+5[c] Attack Speed",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Attack_Speed_Upgrade"),
+                        SpritePath = $"{fullPath}Attack_Speed_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -114,9 +116,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Fingers",
                         Description = "[g]+3[c] Crit Chance",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Crit_Chance_Upgrade"),
+                        SpritePath = $"{fullPath}Crit_Chance_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -125,9 +127,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Skull",
                         Description = "[g]+2[c] Engineering",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Engineering_Upgrade"),
+                        SpritePath = $"{fullPath}Engineering_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -136,9 +138,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Eyes",
                         Description = "[g]+15[c] Range",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Range_Upgrade"),
+                        SpritePath = $"{fullPath}Range_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -147,9 +149,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Chest",
                         Description = "[g]+1[c] Armor",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Armor_Upgrade"),
+                        SpritePath = $"{fullPath}Armor_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -158,9 +160,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Back",
                         Description = "[g]+3[c] Dodge",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Dodge_Upgrade"),
+                        SpritePath = $"{fullPath}Dodge_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -169,9 +171,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Legs",
                         Description = "[g]+3[c] Speed",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Speed_Upgrade"),
+                        SpritePath = $"{fullPath}Speed_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -180,9 +182,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Nose",
                         Description = "[g]+5[c] Luck",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Luck_Upgrade"),
+                        SpritePath = $"{fullPath}Luck_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
                 {
@@ -191,9 +193,9 @@ namespace Brotato_Clone.Models
                     {
                         Name = "Hands",
                         Description = "[g]+5[c] Harvesting",
-                        Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Crit_Chance_Upgrade"),
+                        SpritePath = $"{fullPath}Harvesting_Upgrade",
+                        Classes = new Class[] { Class.Upgrade },
                         Rarity = Rarity.Common,
-                        Attribute = null
                     }
                 },
             };

@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using System;
 using System.Collections.Generic;
 
 namespace Brotato_Clone.Models
@@ -12,6 +13,11 @@ namespace Brotato_Clone.Models
     [System.Serializable]
     public class PlayerStats
     {
+        public PlayerStats()
+        {
+            SetDefaults();
+        }
+
         //Primary Stats
         [InspectableDictionary]
         public Dictionary<StatType, int> MaxHP = new Dictionary<StatType, int>
@@ -198,7 +204,7 @@ namespace Brotato_Clone.Models
 
         //Pick-Ups & Materials
 
-        public int PickupRange = 10;
+        public int PickupRange;
         public int Trees;
         public int MaterialsInCrates;
         public int ChanceDoubleMaterials;
@@ -228,6 +234,94 @@ namespace Brotato_Clone.Models
         public int SupportWeapons;
         public int ExplosiveWeapons;
         public int ToolWeapons;
+
+        public void SetDefaults()
+        {
+            MaxHP[StatType.Base] = 10;
+            MaxHP[StatType.Multiplier] = 0;
+            DefaultStatDictionary(HPRegen);
+            DefaultStatDictionary(LifeSteal);
+            DefaultStatDictionary(Damage);
+            DefaultStatDictionary(MeleeDmg);
+            DefaultStatDictionary(RangedDmg);
+            DefaultStatDictionary(ElementalDmg);
+            DefaultStatDictionary(AttackSpeed);
+            DefaultStatDictionary(CritChance);
+            DefaultStatDictionary(Engineering);
+            DefaultStatDictionary(Range);
+            DefaultStatDictionary(Armor);
+            DefaultStatDictionary(Dodge);
+            DefaultStatDictionary(Speed);
+            DefaultStatDictionary(Luck);
+            DefaultStatDictionary(Harvesting);
+            DefaultStatDictionary(XPGain);
+
+            SetDefaultVariables();
+        }
+
+        private void DefaultStatDictionary(Dictionary<StatType, int> statDictionary)
+        {
+            statDictionary.Clear();
+            foreach (StatType type in Enum.GetValues(typeof(StatType)))
+                statDictionary[type] = 0;
+        }
+
+        private void SetDefaultVariables()
+        {
+            MaxWeapons = 0;
+            UnarmedAttackSpeed = 0;
+            PreciseRange = 0;
+            PrimitiveLifeSteal = 0;
+            EtherealDamage = 0;
+            MedicalAttackSpeed = 0;
+
+            ExplosionDmg = 0;
+            ExplosionSize = 0;
+            Bounces = 0;
+            Piercing = 0;
+            PiercingDmg = 0;
+            BurningSpeed = 0;
+            BurningSpread = 0;
+            Knockback = 0;
+
+            StandStillArmor = 0;
+            StandStillDodge = 0;
+            StandStillDmg = 0;
+
+            EnemyAmount = 0;
+            EnemySpeed = 0;
+
+            ConsumableHeal = 0;
+            MaterialsHealing = 0;
+            HPPerMaterials = 0;
+
+            PickupRange = 3;
+            Trees = 0;
+            MaterialsInCrates = 0;
+            ChanceDoubleMaterials = 0;
+            ChanceInstantMaterialPickup = 0;
+            ChanceDamageOnMaterialPickUp = 0;
+
+            ItemPrice = 0;
+            FreeRolls = 0;
+            ItemRecycling = 0;
+            MaterialsInterestGain = 0;
+
+            UnarmedWeapons = 0;
+            PrimitiveWeapons = 0;
+            HeavyWeapons = 0;
+            BladeWeapons = 0;
+            MedicalWeapons = 0;
+            PreciseWeapons = 0;
+            LegendaryWeapons = 0;
+            MedievalWeapons = 0;
+            ElementalWeapons = 0;
+            EtherealWeapons = 0;
+            BluntWeapons = 0;
+            SupportWeapons = 0;
+            ExplosiveWeapons = 0;
+            ToolWeapons = 0;
+        }
     }
 
     public enum StatType

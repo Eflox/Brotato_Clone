@@ -5,11 +5,12 @@
  * Contact: c.dansembourg@icloud.com
  */
 
-using UnityEngine;
+using System;
 
-namespace Brotato_Clone
+namespace Brotato_Clone.Models
 {
-	public class Character : MonoBehaviour
-	{
-	}
+    [Serializable]
+    public class Character : Item
+    {
+    }
 }
