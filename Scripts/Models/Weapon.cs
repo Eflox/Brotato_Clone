@@ -20,7 +20,7 @@ namespace Brotato_Clone.Models
         public int Range;
         public int Knockback;
         public int LifeSteal;
-        public Sprite Sprite;
+        public string WeaponSpritePath;
         public AttackType AttackType;
         public WeaponType WeaponType;
         public AudioClip ImpactSound;

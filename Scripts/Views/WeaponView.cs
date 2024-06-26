@@ -36,9 +36,8 @@ namespace Brotato_Clone.Views
         {
             _audioSource.clip = weapon.ImpactSound;
 
-            SetSprite(weapon.Sprite);
+            SetSprite(Resources.Load<Sprite>(weapon.WeaponSpritePath));
 
-            EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
             EventManager.Subscribe<bool>(PlayerEvent.PlayerFlipPlayer, OnFlipPlayer);
         }
 
