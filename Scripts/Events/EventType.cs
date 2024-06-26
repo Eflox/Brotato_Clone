@@ -19,6 +19,7 @@ public enum PlayerEvent
     PlayerSelectWeapon,
     PlayerStatsChanged,
     PlayerPickupDrop,
+    PlayerPayed,
 }
 
 public enum WaveEvent

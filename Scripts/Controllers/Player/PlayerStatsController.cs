@@ -35,7 +35,8 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void Initialize()
         {
-            EventManager.Subscribe<IDrop>(PlayerEvent.PlayerPickupDrop, OnDropPickup);
+            //EventManager.Subscribe<IDrop>(PlayerEvent.PlayerPickupDrop, OnDropPickup);
+            EventManager.Subscribe<int>(PlayerEvent.PlayerPayed, OnPlayerPayed);
         }
 
         /// <summary>
@@ -115,6 +116,12 @@ namespace Brotato_Clone.Controllers
         #endregion Public Methods
 
         #region Private Methods
+
+        private void OnPlayerPayed(int amount)
+        {
+            _playerStats.CurrentMaterials -= amount;
+            EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
+        }
 
         private void IncreaseXP(int value)
         {

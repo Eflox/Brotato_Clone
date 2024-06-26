@@ -26,6 +26,9 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private MobsController _mobsController;
 
+        [SerializeField]
+        private ShopController _shopController;
+
         private IngameView _ingameView;
         private IngameMenuController _ingameMenuController;
         private IngameSettingsController _ingameSettingsController;
@@ -82,6 +85,7 @@ namespace Brotato_Clone.Controllers
             _ingameSettingsController = GetComponent<IngameSettingsController>();
             _ingameView = GetComponent<IngameView>();
 
+            _shopController.Initialize();
             _playerController.Initialize();
             _waveController.Initialize();
             _mobsController.Initialize(_playerController.GetPlayerObject().transform);

@@ -18,6 +18,8 @@ namespace Brotato_Clone.Models
         public Rarity Rarity;
         public Class[] Classes;
         public IAttribute Attribute;
+        public int BasePrice;
+        public int Limit;
 
         public void SelectItem() => EventManager.TriggerEvent(PlayerEvent.PlayerSelectItem, this);
     }

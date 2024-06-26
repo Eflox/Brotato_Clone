@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 5172350805798484476}
   - component: {fileID: 817680596242458086}
   - component: {fileID: 9111035209665183083}
+  - component: {fileID: 5764987982481476419}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -545,6 +546,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5764987982481476419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4536479576734962480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e9445b34e0a944920b02326bde04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5428864726915269561
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +570,7 @@ GameObject:
   - component: {fileID: 2142474138908091365}
   - component: {fileID: 5451446262865097305}
   - component: {fileID: 8901806012774500664}
+  - component: {fileID: 5222599117154158575}
   m_Layer: 5
   m_Name: LockButton
   m_TagString: Untagged
@@ -666,6 +680,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5222599117154158575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428864726915269561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e9445b34e0a944920b02326bde04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5862045073665280353
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +703,7 @@ GameObject:
   - component: {fileID: 4023372764099332044}
   - component: {fileID: 6021895521817569216}
   - component: {fileID: 4944684302971896404}
+  - component: {fileID: 3454121609928477618}
   m_Layer: 5
   m_Name: ShopItemPanel
   m_TagString: Untagged
@@ -747,6 +774,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3454121609928477618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862045073665280353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c9715dfa307cec4a9ec01d49e7bc916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemImage: {fileID: 8494216727104639459}
+  _itemName: {fileID: 1380111131462626089}
+  _itemClass: {fileID: 5762672804638370040}
+  _itemDescription: {fileID: 1148178022782707432}
+  _itemBuyPrice: {fileID: 6630358299167072535}
+  _buyButton: {fileID: 9111035209665183083}
+  _lockButton: {fileID: 8901806012774500664}
 --- !u!1 &5971786853209020991
 GameObject:
   m_ObjectHideFlags: 0

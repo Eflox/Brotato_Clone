@@ -16,9 +16,5 @@ namespace Brotato_Clone.Models
 
         [Stat(operation: StatOperation.Add)]
         public readonly int MaxHP = 15;
-
-        public int BasePrice => 80;
-
-        public int Limit => 0;
     }
 }

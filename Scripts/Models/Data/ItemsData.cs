@@ -44,6 +44,8 @@ namespace Brotato_Clone.Models
                         SpritePath = $"{fullPath}Alien_Baby",
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Item },
+                        BasePrice = 80,
+                        Limit = 0
                     }
                 },
             };
