@@ -43,6 +43,7 @@ namespace Brotato_Clone.Controllers
         {
             PlayerPrefs.SetString("StartCharacter", character.Name);
             PlayerPrefs.SetString("StartWeapon", "Knife");
+            PlayerPrefs.SetInt("NewGame", 1);
 
             SceneManager.LoadScene("GameScene");
         }

@@ -51,6 +51,7 @@ namespace Brotato_Clone.Controllers
         public void RestartGame()
         {
             _ingameMenuController.RestartGame();
+            PlayerPrefs.SetInt("NewGame", 1);
         }
 
         /// <summary>
@@ -97,7 +98,11 @@ namespace Brotato_Clone.Controllers
             _ingameView.Initialize(this);
             _ingameMenuController.Initialize(this);
 
-            EventManager.TriggerEvent(GameEvent.GameNewGame);
+            if (PlayerPrefs.GetInt("NewGame") == 1)
+                EventManager.TriggerEvent(GameEvent.GameNewGame);
+
+            PlayerPrefs.SetInt("NewGame", 0);
+
             EventManager.TriggerEvent(GameEvent.GameStart);
         }
 

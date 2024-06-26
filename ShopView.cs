@@ -30,9 +30,13 @@ namespace Brotato_Clone
         [SerializeField]
         private Button _rerollButton;
 
+        [SerializeField]
+        private Button _startWaveButton;
+
         public void Initialize(ShopController shopController)
         {
             _rerollButton.onClick.AddListener(shopController.Reroll);
+            _startWaveButton.onClick.AddListener(shopController.StartWave);
 
             EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnStatsChanged);
         }
@@ -58,7 +62,6 @@ namespace Brotato_Clone
             else
             {
                 _rerollButton.GetComponent<ButtonController>().ToggleEffect(false);
-                _rerollPrice.color = Color.white;
             }
         }
 

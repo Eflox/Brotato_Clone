@@ -11932,6 +11932,7 @@ MonoBehaviour:
   _materials: {fileID: 418112336}
   _rerollPrice: {fileID: 1219654115}
   _rerollButton: {fileID: 1742600888}
+  _startWaveButton: {fileID: 1815765381}
 --- !u!114 &1469660954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14508,6 +14509,7 @@ GameObject:
   - component: {fileID: 1742600890}
   - component: {fileID: 1742600889}
   - component: {fileID: 1742600888}
+  - component: {fileID: 1742600891}
   m_Layer: 5
   m_Name: RerollButton
   m_TagString: Untagged
@@ -14618,6 +14620,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742600886}
   m_CullTransparentMesh: 1
+--- !u!114 &1742600891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742600886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e9445b34e0a944920b02326bde04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742638894
 GameObject:
   m_ObjectHideFlags: 0
@@ -15162,6 +15176,7 @@ GameObject:
   - component: {fileID: 1815765383}
   - component: {fileID: 1815765382}
   - component: {fileID: 1815765381}
+  - component: {fileID: 1815765384}
   m_Layer: 5
   m_Name: NextWaveButton
   m_TagString: Untagged
@@ -15271,6 +15286,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815765379}
   m_CullTransparentMesh: 1
+--- !u!114 &1815765384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815765379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278e9445b34e0a944920b02326bde04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1826087665 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8522793275646340086, guid: d86f70d943b504e428caccead98baacd, type: 3}

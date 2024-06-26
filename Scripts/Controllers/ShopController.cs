@@ -8,6 +8,7 @@
 using Brotato_Clone.Models;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Brotato_Clone
 {
@@ -28,6 +29,9 @@ namespace Brotato_Clone
 
         public void Reroll()
         {
+            if (PlayerPrefs.GetInt("Materials") < _rerollPrice)
+                return;
+
             LoadItems();
             EventManager.TriggerEvent(PlayerEvent.PlayerPayed, _rerollPrice);
 
@@ -43,6 +47,14 @@ namespace Brotato_Clone
             _shopView.LoadReroll(_rerollPrice, true);
 
             LoadItems();
+        }
+
+        public void StartWave()
+        {
+            int currentWave = PlayerPrefs.GetInt("Wave");
+            PlayerPrefs.SetInt("Wave", currentWave++);
+
+            SceneManager.LoadScene("GameScene");
         }
 
         private void LoadItems()

@@ -54,6 +54,9 @@ namespace Brotato_Clone
 
         private void Selected()
         {
+            if (PlayerPrefs.GetInt("Materials") < _item.BasePrice)
+                return;
+
             _item.SelectItem();
             EventManager.TriggerEvent(PlayerEvent.PlayerPayed, _item.BasePrice);
             Destroy(this.gameObject);

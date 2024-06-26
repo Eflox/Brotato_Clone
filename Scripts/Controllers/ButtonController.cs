@@ -45,7 +45,10 @@ namespace Brotato_Clone.Controllers
             _audioSource.Play();
 
             if (_disableEffect)
+            {
+                _buttonImage.color = _originalButtonColor;
                 return;
+            }
 
             _buttonImage.color = _hoverButtonColor;
             _buttonText.color = _hoverTextColor;
@@ -54,7 +57,10 @@ namespace Brotato_Clone.Controllers
         public void OnPointerExit(PointerEventData eventData)
         {
             if (_disableEffect)
+            {
+                _buttonImage.color = _originalButtonColor;
                 return;
+            }
 
             _buttonImage.color = _originalButtonColor;
             _buttonText.color = _originalTextColor;
