@@ -6,6 +6,7 @@
  */
 
 using Brotato_Clone.Interfaces;
+using System;
 using UnityEngine;
 
 namespace Brotato_Clone.Models
@@ -22,5 +23,10 @@ namespace Brotato_Clone.Models
         public IAttribute Attribute;
 
         public void SelectItem() => EventManager.TriggerEvent(PlayerEvent.PlayerSelectItem, this);
+
+        public void ItemLoaded()
+        {
+            Type attributeType = Type.GetType($"Brotato_Clone.{Name}Attribute");
+        }
     }
 }

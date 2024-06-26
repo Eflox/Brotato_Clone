@@ -157,9 +157,6 @@ namespace Brotato_Clone.Controllers
 
         private void OnSelectedItem(NItem item)
         {
-            Debug.Log("On Selected Item");
-
-            Debug.Log(item.Name);
             _playerItemsController.AddItem(item);
             _playerStatsController.UpdateStats(_playerItemsController.GetItems());
         }

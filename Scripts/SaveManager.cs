@@ -119,7 +119,8 @@ public class ItemListWrapper : IItemListWrapper<NItem>
 
     public List<NItem> GetItems()
     {
-        Items.ForEach(item => item.Icon = Resources.Load<Sprite>(item.SpritePath));
+        if (Items != null)
+            Items.ForEach(i => i.ItemLoaded());
         return Items;
     }
 }
@@ -131,7 +132,8 @@ public class UpgradeListWrapper : IItemListWrapper<Upgrade>
 
     public List<Upgrade> GetItems()
     {
-        //Upgrades.ForEach(upgrade => upgrade.Icon = Resources.Load<Sprite>(upgrade.SpritePath));
+        if (Upgrades != null)
+            Upgrades.ForEach(u => u.ItemLoaded());
         return Upgrades;
     }
 }

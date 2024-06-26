@@ -49,6 +49,8 @@ namespace Brotato_Clone.Controllers
         {
             SaveManager.SaveCharacter(ItemsData.Items["WellRounded"]);
 
+            SaveManager.SaveItems(null);
+
             List<Weapon> weapons = new List<Weapon>
             {
                 WeaponsData.Weapons["Knife"],
@@ -147,15 +149,23 @@ namespace Brotato_Clone.Controllers
             if (_upgrades != null)
                 _allItems.AddRange(_upgrades);
 
+            _allItems.Add(_character);
+
             List<NItem> allItemsWithChildItems = new List<NItem>(_allItems);
 
             foreach (var item in _allItems)
             {
                 NItem[] childItems = GetChildItems(item);
+
                 if (childItems != null)
                     allItemsWithChildItems.AddRange(childItems);
             }
+
             _allItems = allItemsWithChildItems;
+
+            foreach (var item in _allItems)
+                if (ItemsData.ItemAttributes.ContainsKey(item.Name))
+                    item.Attribute = ItemsData.ItemAttributes[item.Name];
 
             CategoriseItems();
         }

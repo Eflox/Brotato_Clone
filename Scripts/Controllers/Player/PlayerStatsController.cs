@@ -67,6 +67,8 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void UpdateStats(List<NItem> items)
         {
+            Debug.Log($"Updated stats for: {items.Count} items");
+
             foreach (var item in items)
                 ApplyItem(item);
 
@@ -92,7 +94,6 @@ namespace Brotato_Clone.Controllers
         private void IncreaseXP(int value)
         {
             _playerStats.CurrentXp += value;
-            Debug.Log(_playerStats.CurrentXp);
 
             if (_playerStats.CurrentXp >= LevelData.LevelsXP[_playerStats.CurrentLvl])
             {
@@ -111,9 +112,7 @@ namespace Brotato_Clone.Controllers
         private void ApplyItem(NItem item)
         {
             if (item.Attribute == null)
-            {
                 return;
-            }
 
             ApplyItemStats(item.Attribute);
         }

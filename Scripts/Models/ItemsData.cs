@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,11 +14,18 @@ namespace Brotato_Clone.Models
     public static class ItemsData
     {
         public static readonly IReadOnlyDictionary<string, NItem> Items;
+        public static readonly IReadOnlyDictionary<string, IAttribute> ItemAttributes;
 
         private static readonly string _assetSource = "Brotato";
 
         static ItemsData()
         {
+            ItemAttributes = new Dictionary<string, IAttribute>
+            {
+                { "WellRounded", new WellRoundedAttribute() },
+                { "Brawler", new BrawlerAttributeData() }
+            };
+
             Items = new Dictionary<string, NItem>
             {
                 {
@@ -28,7 +36,6 @@ namespace Brotato_Clone.Models
                         SpritePath = $"{_assetSource}/Sprites/Characters/Well_Rounded",
                         Rarity = Rarity.Common,
                         Classes = new Class[] { Class.Character },
-                        Attribute = new WellRoundedAttributeData()
                     }
                 },
                 {

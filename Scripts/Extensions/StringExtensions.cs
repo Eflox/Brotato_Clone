@@ -5,6 +5,8 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using System.Text.RegularExpressions;
+
 namespace Brotato_Clone.Extensions
 {
     public static class StringExtensions
@@ -19,6 +21,21 @@ namespace Brotato_Clone.Extensions
         public static string WithNL(this string text)
         {
             return text.Replace("[nl]", "\n");
+        }
+
+        public static string WithPN(this string text)
+        {
+            var regex = new Regex(@"-?\d+");
+
+            return regex.Replace(text, match =>
+            {
+                int number = int.Parse(match.Value);
+                if (number == 0)
+                    return match.Value;
+
+                string color = number < 0 ? "red" : "green";
+                return $"<color={color}>{number}</color>";
+            });
         }
     }
 }

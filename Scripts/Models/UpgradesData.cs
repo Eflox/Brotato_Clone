@@ -28,7 +28,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+3[c] Max HP",
                         Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Max_HP_Upgrade"),
                         Rarity = Rarity.Common,
-                        Attribute = null
+                        Attribute = new HeartAttribute()
                     }
                 },
                 {
@@ -39,7 +39,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+2[c] HP Regeneration",
                         Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/HP_Regeneration_Upgrade"),
                         Rarity = Rarity.Common,
-                        Attribute = null
+                        Attribute = new LungsAttribute()
                     }
                 },
                 {
@@ -50,7 +50,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+1[c] Life Steal",
                         Icon = Resources.Load<Sprite>($"{_assetSource}/Sprites/Upgrades/Life_Steal_Upgrade"),
                         Rarity = Rarity.Common,
-                        Attribute = null
+                        Attribute = new TeethAttribute()
                     }
                 },
                 {

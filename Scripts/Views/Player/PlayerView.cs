@@ -46,6 +46,7 @@ namespace Brotato_Clone.Player.Views
             _playerStatsView = GetComponent<PlayerStatsView>();
             _playerUIStatusView = GetComponent<PlayerUIStatusView>();
 
+            _playerStatsView.Initialize();
             _animationsView.Initialize();
             _playerCameraView.Initialize();
             _playerUIStatusView.Initialize();

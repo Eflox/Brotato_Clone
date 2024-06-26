@@ -12,7 +12,7 @@ namespace Brotato_Clone.Models
     /// <summary>
     /// Well Rounded's attributes
     /// </summary>
-    public class WellRoundedAttributeData : IAttribute
+    public class WellRoundedAttribute : IAttribute
     {
         [Stat(operation: StatOperation.Add)]
         public readonly int Harvesting = 8;
