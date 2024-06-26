@@ -11933,6 +11933,7 @@ MonoBehaviour:
   _rerollPrice: {fileID: 1219654115}
   _rerollButton: {fileID: 1742600888}
   _startWaveButton: {fileID: 1815765381}
+  _startWaveButtonText: {fileID: 2065821729}
 --- !u!114 &1469660954
 MonoBehaviour:
   m_ObjectHideFlags: 0

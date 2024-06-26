@@ -20,6 +20,7 @@ public enum PlayerEvent
     PlayerStatsChanged,
     PlayerPickupDrop,
     PlayerPayed,
+    PlayerHeal
 }
 
 public enum WaveEvent

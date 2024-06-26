@@ -51,8 +51,8 @@ namespace Brotato_Clone
 
         public void StartWave()
         {
-            int currentWave = PlayerPrefs.GetInt("Wave");
-            PlayerPrefs.SetInt("Wave", currentWave++);
+            int nextWave = PlayerPrefs.GetInt("Wave") + 1;
+            PlayerPrefs.SetInt("Wave", nextWave);
 
             SceneManager.LoadScene("GameScene");
         }

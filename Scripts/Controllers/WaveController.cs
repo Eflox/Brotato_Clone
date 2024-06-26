@@ -39,7 +39,7 @@ namespace Brotato_Clone.Controllers
         {
             Wave wave = WaveData.Waves[PlayerPrefs.GetInt("Wave")];
 
-            _waveView.SetWaveCount(wave.Count);
+            _waveView.SetWaveCount(PlayerPrefs.GetInt("Wave"));
 
             _countdownTimer = wave.Duration;
             _waveStarted = true;

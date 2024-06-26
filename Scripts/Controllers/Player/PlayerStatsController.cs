@@ -49,6 +49,7 @@ namespace Brotato_Clone.Controllers
 
         public void NewGameStats()
         {
+            Debug.Log("new wave");
             _playerStats.CurrentWave = 1;
             _playerStats.CurrentLvl = 0;
             _playerStats.CurrentXp = 0;

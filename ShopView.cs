@@ -33,6 +33,9 @@ namespace Brotato_Clone
         [SerializeField]
         private Button _startWaveButton;
 
+        [SerializeField]
+        private TMP_Text _startWaveButtonText;
+
         public void Initialize(ShopController shopController)
         {
             _rerollButton.onClick.AddListener(shopController.Reroll);
@@ -43,6 +46,8 @@ namespace Brotato_Clone
 
         public void LoadShop(Item[] items)
         {
+            _startWaveButtonText.text = $"Go (Wave {PlayerPrefs.GetInt("Wave") + 1})";
+
             foreach (Transform child in _shopItemsContainer)
                 Destroy(child.gameObject);
 

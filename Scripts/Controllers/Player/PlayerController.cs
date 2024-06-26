@@ -56,9 +56,9 @@ namespace Brotato_Clone.Controllers
 
             _playerLevelUpMenuController.Initialize();
             _playerMovementController.Initialize();
-            _playerView.Initialize();
             _playerStatsController.Initialize();
 
+            _playerView.Initialize();
             //_playerItemsController.SaveDefault();
 
             EventManager.Subscribe(GameEvent.GameStart, OnGameStart);

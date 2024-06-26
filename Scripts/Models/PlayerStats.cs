@@ -200,7 +200,7 @@ namespace Brotato_Clone.Models
 
         public int ConsumableHeal;
         public int MaterialsHealing;
-        public int HPPerMaterials;
+        public int HPPerConsumable;
 
         //Pick-Ups & Materials
 
@@ -293,7 +293,7 @@ namespace Brotato_Clone.Models
 
             ConsumableHeal = 0;
             MaterialsHealing = 0;
-            HPPerMaterials = 0;
+            HPPerConsumable = 0;
 
             PickupRange = 3;
             Trees = 0;

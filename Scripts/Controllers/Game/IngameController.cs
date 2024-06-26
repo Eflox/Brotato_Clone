@@ -86,8 +86,8 @@ namespace Brotato_Clone.Controllers
             _ingameSettingsController = GetComponent<IngameSettingsController>();
             _ingameView = GetComponent<IngameView>();
 
-            _shopController.Initialize();
             _playerController.Initialize();
+            _shopController.Initialize();
             _waveController.Initialize();
             _mobsController.Initialize(_playerController.GetPlayerObject().transform);
         }
