@@ -5,6 +5,7 @@
  * Contact: c.dansembourg@icloud.com
  */
 
+using Brotato_Clone.Controllers;
 using Brotato_Clone.Models;
 using TMPro;
 using UnityEngine;
@@ -39,10 +40,26 @@ namespace Brotato_Clone
         public void LoadShop(Item[] items)
         {
             foreach (Transform child in _shopItemsContainer)
-                Destroy(child);
+                Destroy(child.gameObject);
 
             foreach (Item item in items)
                 Instantiate(_shopItemPrefab, _shopItemsContainer).GetComponent<ShopItemView>().Initialize(item);
+        }
+
+        public void LoadReroll(int price, bool canPay)
+        {
+            _rerollPrice.text = $"REROLL - {price.ToString()}";
+
+            if (!canPay)
+            {
+                _rerollButton.GetComponent<ButtonController>().ToggleEffect(true);
+                _rerollPrice.color = Color.red;
+            }
+            else
+            {
+                _rerollButton.GetComponent<ButtonController>().ToggleEffect(false);
+                _rerollPrice.color = Color.white;
+            }
         }
 
         private void OnStatsChanged(PlayerStats stats)

@@ -45,10 +45,10 @@ namespace Brotato_Clone.Player.Views
         private void ClearItems()
         {
             foreach (Transform child in _itemsContainer)
-                Destroy(child);
+                Destroy(child.gameObject);
 
             foreach (Transform child in _weaponsContainer)
-                Destroy(child);
+                Destroy(child.gameObject);
         }
     }
 }

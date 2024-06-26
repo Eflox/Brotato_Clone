@@ -56,10 +56,14 @@ namespace Brotato_Clone.Player.Views
         /// <summary>
         /// Loads the player view with character and visible items.
         /// </summary>
-        public void LoadView(Item character, List<Item> visibleItems, List<Item> items, List<Weapon> weapons)
+        public void LoadView(List<Item> visibleItems, Item character)
         {
             _animationsView.SetupAnimations();
             _playerGraphicsView.LoadPlayer(character, visibleItems);
+        }
+
+        public void LoadInventory(Item character, List<Item> items, List<Weapon> weapons)
+        {
             _playerItemsView.LoadItems(character, items, weapons);
         }
 

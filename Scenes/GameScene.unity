@@ -11930,6 +11930,8 @@ MonoBehaviour:
   _shopItemsContainer: {fileID: 459829841}
   _shopItemPrefab: {fileID: 5862045073665280353, guid: d9ca5edce2d60dd4bbda6dbce8337537, type: 3}
   _materials: {fileID: 418112336}
+  _rerollPrice: {fileID: 1219654115}
+  _rerollButton: {fileID: 1742600888}
 --- !u!114 &1469660954
 MonoBehaviour:
   m_ObjectHideFlags: 0

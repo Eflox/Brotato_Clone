@@ -105,7 +105,8 @@ namespace Brotato_Clone.Controllers
             _playerItemsController.LoadItems();
             _playerStatsController.UpdateStats(_playerItemsController.GetItemsWithChildren());
 
-            _playerView.LoadView(_playerItemsController.GetCharacter(), _playerItemsController.GetVisibleItems(), _playerItemsController.GetItems(), _playerItemsController.GetWeapons());
+            _playerView.LoadView(_playerItemsController.GetVisibleItems(), _playerItemsController.GetCharacter());
+            _playerView.LoadInventory(_playerItemsController.GetCharacter(), _playerItemsController.GetItems(), _playerItemsController.GetWeapons());
         }
 
         private void OnNewGame()
@@ -166,12 +167,14 @@ namespace Brotato_Clone.Controllers
         {
             _playerItemsController.AddItem(item);
             _playerStatsController.UpdateStats(_playerItemsController.GetItemsWithChildren());
+            _playerView.LoadInventory(_playerItemsController.GetCharacter(), _playerItemsController.GetItems(), _playerItemsController.GetWeapons());
         }
 
         private void OnSelectedUpgrade(Upgrade upgrade)
         {
             _playerItemsController.AddUpgrade(upgrade);
             _playerStatsController.UpdateStats(_playerItemsController.GetItemsWithChildren());
+            _playerView.LoadInventory(_playerItemsController.GetCharacter(), _playerItemsController.GetItems(), _playerItemsController.GetWeapons());
         }
 
         private void OnPickupDrop()

@@ -21,6 +21,12 @@ namespace Brotato_Clone.Controllers
         private Color _originalTextColor = Color.white;
         private Color _hoverTextColor = Color.black;
         private AudioSource _audioSource;
+        private bool _disableEffect = false;
+
+        public void ToggleEffect(bool toggle)
+        {
+            _disableEffect = toggle;
+        }
 
         private void Start()
         {
@@ -38,12 +44,18 @@ namespace Brotato_Clone.Controllers
         {
             _audioSource.Play();
 
+            if (_disableEffect)
+                return;
+
             _buttonImage.color = _hoverButtonColor;
             _buttonText.color = _hoverTextColor;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (_disableEffect)
+                return;
+
             _buttonImage.color = _originalButtonColor;
             _buttonText.color = _originalTextColor;
         }

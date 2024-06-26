@@ -120,6 +120,7 @@ namespace Brotato_Clone.Controllers
         private void OnPlayerPayed(int amount)
         {
             _playerStats.CurrentMaterials -= amount;
+            PlayerPrefs.SetInt("Materials", _playerStats.CurrentMaterials);
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
