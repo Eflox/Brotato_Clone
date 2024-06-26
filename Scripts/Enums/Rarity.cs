@@ -6,8 +6,8 @@
 
 public enum Rarity
 {
-    Common,
-    Uncommon,
-    Rare,
-    Legendary
+    Tier1,
+    Tier2,
+    Tier3,
+    Tier4
 }
