@@ -36,7 +36,7 @@ namespace Brotato_Clone.Models
                         Name = "Fist",
                         Description = "",
                         SpritePath = $"{_assetSource}/Sprites/Weapons/Icons/Fist",
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Unarmed },
 
                         Damage = 8,
@@ -58,7 +58,7 @@ namespace Brotato_Clone.Models
                         Name = "Knife",
                         Description = "",
                         SpritePath = $"{_assetSource}/Sprites/Weapons/Icons/Knife",
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Precise },
 
                         Damage = 6,

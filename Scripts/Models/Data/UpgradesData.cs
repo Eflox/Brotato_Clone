@@ -30,7 +30,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+3[c] Max HP",
                         SpritePath = $"{fullPath}Max_HP_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -41,7 +41,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+2[c] HP Regeneration",
                         SpritePath = $"{fullPath}HP_Regeneration_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -52,7 +52,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+1[c] Life Steal",
                         SpritePath = $"{fullPath}Life_Steal_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -63,7 +63,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+5[c] Damage",
                         SpritePath = $"{fullPath}Damage_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -74,7 +74,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+2[c] Melee Damage",
                         SpritePath = $"{fullPath}Melee_Damage_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -85,7 +85,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+1[c] Ranged Damage",
                         SpritePath = $"{fullPath}Ranged_Damage_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -96,7 +96,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+1[c] Elemental Damage",
                         SpritePath = $"{fullPath}Elemental_Damage_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -107,7 +107,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+5[c] Attack Speed",
                         SpritePath = $"{fullPath}Attack_Speed_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -118,7 +118,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+3[c] Crit Chance",
                         SpritePath = $"{fullPath}Crit_Chance_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -129,7 +129,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+2[c] Engineering",
                         SpritePath = $"{fullPath}Engineering_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -140,7 +140,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+15[c] Range",
                         SpritePath = $"{fullPath}Range_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -151,7 +151,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+1[c] Armor",
                         SpritePath = $"{fullPath}Armor_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -162,7 +162,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+3[c] Dodge",
                         SpritePath = $"{fullPath}Dodge_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -173,7 +173,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+3[c] Speed",
                         SpritePath = $"{fullPath}Speed_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -184,7 +184,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+5[c] Luck",
                         SpritePath = $"{fullPath}Luck_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
                 {
@@ -195,7 +195,7 @@ namespace Brotato_Clone.Models
                         Description = "[g]+5[c] Harvesting",
                         SpritePath = $"{fullPath}Harvesting_Upgrade",
                         Classes = new Class[] { Class.Upgrade },
-                        Rarity = Rarity.Common,
+                        Rarity = Rarity.Tier1,
                     }
                 },
             };

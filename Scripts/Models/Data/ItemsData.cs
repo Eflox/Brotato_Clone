@@ -215,7 +215,7 @@ namespace Brotato_Clone.Models
                     "Acid", new Item
                     {
                         Name = "Acid",
-                        Description = "+8 Max HP\n-4% Dodge",
+                        Description = "[g]+8[c] Max HP[nl][r]-4%[c] Dodge",
                         SpritePath = $"{fullPath}/Acid",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -227,7 +227,7 @@ namespace Brotato_Clone.Models
                     "Adrenaline", new Item
                     {
                         Name = "Adrenaline",
-                        Description = "+5% Dodge\n50% chance to heal 5 HP when dodging an attack",
+                        Description = "[g]+5%[c] Dodge[nl][g]50%[c] chance to heal [g]5[c] HP when dodging an attack",
                         SpritePath = $"{fullPath}/Adrenaline",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -239,7 +239,7 @@ namespace Brotato_Clone.Models
                     "AlienBaby", new Item
                     {
                         Name = "AlienBaby",
-                        Description = "+15 Max HP\n+8 Enemy Speed",
+                        Description = "[g]+15[c] Max HP[nl][g]+8[c] Enemy Speed",
                         SpritePath = $"{fullPath}/AlienBaby",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -251,7 +251,7 @@ namespace Brotato_Clone.Models
                     "AlienEyes", new Item
                     {
                         Name = "AlienEyes",
-                        Description = "Shoots +6 alien eyes around you every 3 seconds dealing (50% Max HP) damage",
+                        Description = "Shoots [g]+6[c] alien eyes around you every [g]3[c] seconds dealing ([g]50%[c] Max HP) damage",
                         SpritePath = $"{fullPath}/AlienEyes",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -263,7 +263,7 @@ namespace Brotato_Clone.Models
                     "AlienMagic", new Item
                     {
                         Name = "AlienMagic",
-                        Description = "+8 Max HP\n+3 HP Regeneration\n-8 Luck",
+                        Description = "[g]+8[c] Max HP[nl][g]+3[c] HP Regeneration[nl][r]-8[c] Luck",
                         SpritePath = $"{fullPath}/AlienMagic",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -275,7 +275,7 @@ namespace Brotato_Clone.Models
                     "AlienTongue", new Item
                     {
                         Name = "AlienTongue",
-                        Description = "+30% pickup range",
+                        Description = "[g]+30%[c] pickup range",
                         SpritePath = $"{fullPath}/AlienTongue",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -287,7 +287,7 @@ namespace Brotato_Clone.Models
                     "AlienWorm", new Item
                     {
                         Name = "AlienWorm",
-                        Description = "+2 HP Regeneration\n-1 HP recovered from consumables\n+3 Max HP",
+                        Description = "[g]+2[c] HP Regeneration[nl][r]-1[c] HP recovered from consumables[nl][g]+3[c] Max HP",
                         SpritePath = $"{fullPath}/AlienWorm",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -299,7 +299,7 @@ namespace Brotato_Clone.Models
                     "Alloy", new Item
                     {
                         Name = "Alloy",
-                        Description = "+3 Melee Damage\n+3 Ranged Damage\n+3 Elemental Damage\n+3 Engineering\n+5% Crit Chance\n-6% Dodge",
+                        Description = "[g]+3[c] Melee Damage[nl][g]+3[c] Ranged Damage[nl][g]+3[c] Elemental Damage[nl][g]+3[c] Engineering[nl][g]+5%[c] Crit Chance[nl][r]-6%[c] Dodge",
                         SpritePath = $"{fullPath}/Alloy",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -311,7 +311,7 @@ namespace Brotato_Clone.Models
                     "Anvil", new Item
                     {
                         Name = "Anvil",
-                        Description = "A random weapon is upgraded when entering a shop. If you have no weapon to upgrade, you gain +2 Armor instead.",
+                        Description = "A random weapon is upgraded when entering a shop. If you have no weapon to upgrade, you gain [g]+2[c] Armor instead.",
                         SpritePath = $"{fullPath}/Anvil",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -323,7 +323,7 @@ namespace Brotato_Clone.Models
                     "BabyElephant", new Item
                     {
                         Name = "BabyElephant",
-                        Description = "+25% chance to deal (25% Luck) damage to a random enemy when you pick up a material",
+                        Description = "[g]+25%[c] chance to deal ([g]25%[c] Luck) damage to a random enemy when you pick up a material",
                         SpritePath = $"{fullPath}/BabyElephant",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -335,7 +335,7 @@ namespace Brotato_Clone.Models
                     "BabyGecko", new Item
                     {
                         Name = "BabyGecko",
-                        Description = "+20% chance to instantly attract a material when it's dropped\n+10 Range",
+                        Description = "[g]+20%[c] chance to instantly attract a material when it's dropped[nl][g]+10[c] Range",
                         SpritePath = $"{fullPath}/BabyGecko",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -347,7 +347,7 @@ namespace Brotato_Clone.Models
                     "BabyWithABeard", new Item
                     {
                         Name = "BabyWithABeard",
-                        Description = "+1 bullet dealing 1+ (100% Ranged Damage) damage is fired from an enemy corpse when they die\n-50 Range",
+                        Description = "[g]+1[c] bullet dealing [g]1[c]+ ([g]100%[c] Ranged Damage) damage is fired from an enemy corpse when they die[nl][r]-50[c] Range",
                         SpritePath = $"{fullPath}/BabyWithABeard",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -359,7 +359,7 @@ namespace Brotato_Clone.Models
                     "Bag", new Item
                     {
                         Name = "Bag",
-                        Description = "+15 materials when you pick up a crate\n-1% Speed",
+                        Description = "[g]+15[c] materials when you pick up a crate[nl][r]-1%[c] Speed",
                         SpritePath = $"{fullPath}/Bag",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -371,7 +371,7 @@ namespace Brotato_Clone.Models
                     "Bait", new Item
                     {
                         Name = "Bait",
-                        Description = "+8% Damage\nSpecial enemies appear at the beginning of the next wave",
+                        Description = "[g]+8%[c] Damage[nl]Special enemies appear at the beginning of the next wave",
                         SpritePath = $"{fullPath}/Bait",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -383,7 +383,7 @@ namespace Brotato_Clone.Models
                     "Bandana", new Item
                     {
                         Name = "Bandana",
-                        Description = "Projectiles pierce through +1 additional target\n-10% Damage",
+                        Description = "Projectiles pierce through [g]+1[c] additional target[nl][r]-10%[c] Damage",
                         SpritePath = $"{fullPath}/Bandana",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -395,7 +395,7 @@ namespace Brotato_Clone.Models
                     "Banner", new Item
                     {
                         Name = "Banner",
-                        Description = "+20 Range\n+10% Attack Speed\n-2% Life Steal",
+                        Description = "[g]+20[c] Range[nl][g]+10%[c] Attack Speed[nl][r]-2%[c] Life Steal",
                         SpritePath = $"{fullPath}/Banner",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -407,7 +407,7 @@ namespace Brotato_Clone.Models
                     "Barricade", new Item
                     {
                         Name = "Barricade",
-                        Description = "+8 Armor while standing still.\n-5% Speed",
+                        Description = "[g]+8[c] Armor while standing still.[nl][r]-5%[c] Speed",
                         SpritePath = $"{fullPath}/Barricade",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -419,7 +419,7 @@ namespace Brotato_Clone.Models
                     "Bat", new Item
                     {
                         Name = "Bat",
-                        Description = "+2% Life Steal\n-2 Harvesting",
+                        Description = "[g]+2%[c] Life Steal[nl][r]-2[c] Harvesting",
                         SpritePath = $"{fullPath}/Bat",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -431,7 +431,7 @@ namespace Brotato_Clone.Models
                     "BeanTeacher", new Item
                     {
                         Name = "BeanTeacher",
-                        Description = "+40% XP Gain\n-2% Life Steal",
+                        Description = "[g]+40%[c] XP Gain[nl][r]-2%[c] Life Steal",
                         SpritePath = $"{fullPath}/BeanTeacher",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -443,7 +443,7 @@ namespace Brotato_Clone.Models
                     "Beanie", new Item
                     {
                         Name = "Beanie",
-                        Description = "+4% Speed\n-6 Range",
+                        Description = "[g]+4%[c] Speed[nl][r]-6[c] Range",
                         SpritePath = $"{fullPath}/Beanie",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -455,7 +455,7 @@ namespace Brotato_Clone.Models
                     "BigArms", new Item
                     {
                         Name = "BigArms",
-                        Description = "+12 Melee Damage\n+6 Ranged Damage\n-1 Armor\n-5% Speed",
+                        Description = "[g]+12[c] Melee Damage[nl][g]+6[c] Ranged Damage[nl][r]-1[c] Armor[nl][r]-5%[c] Speed",
                         SpritePath = $"{fullPath}/BigArms",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -467,7 +467,7 @@ namespace Brotato_Clone.Models
                     "BlackBelt", new Item
                     {
                         Name = "BlackBelt",
-                        Description = "+25% XP Gain\n+3 Melee Damage\n-8 Luck",
+                        Description = "[g]+25%[c] XP Gain[nl][g]+3[c] Melee Damage[nl][r]-8[c] Luck",
                         SpritePath = $"{fullPath}/BlackBelt",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -479,7 +479,7 @@ namespace Brotato_Clone.Models
                     "Blindfold", new Item
                     {
                         Name = "Blindfold",
-                        Description = "+5% Crit Chance\n+5% Dodge\n-15 Range",
+                        Description = "[g]+5%[c] Crit Chance[nl][g]+5%[c] Dodge[nl][r]-15[c] Range",
                         SpritePath = $"{fullPath}/Blindfold",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -491,7 +491,7 @@ namespace Brotato_Clone.Models
                     "BloodDonation", new Item
                     {
                         Name = "BloodDonation",
-                        Description = "+40 Harvesting\nYou take 1 damage per second (does not give invulnerability time)",
+                        Description = "[g]+40[c] Harvesting[nl]You take [r]1[c] damage per second (does not give invulnerability time)",
                         SpritePath = $"{fullPath}/BloodDonation",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -503,7 +503,7 @@ namespace Brotato_Clone.Models
                     "BloodLeech", new Item
                     {
                         Name = "BloodLeech",
-                        Description = "+2% Life Steal\n+2 HP Regeneration\n-4 Harvesting",
+                        Description = "[g]+2%[c] Life Steal[nl][g]+2[c] HP Regeneration[nl][r]-4[c] Harvesting",
                         SpritePath = $"{fullPath}/BloodLeech",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -515,7 +515,7 @@ namespace Brotato_Clone.Models
                     "BloodyHand", new Item
                     {
                         Name = "BloodyHand",
-                        Description = "+12% Life Steal\n+2% Damage for every 1% Life Steal you have\nYou take 1 damage per second (does not give invulnerability time)",
+                        Description = "[g]+12%[c] Life Steal[nl][g]+2%[c] Damage for every [g]1%[c] Life Steal you have[nl]You take [r]1[c] damage per second (does not give invulnerability time)",
                         SpritePath = $"{fullPath}/BloodyHand",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -527,7 +527,7 @@ namespace Brotato_Clone.Models
                     "BoilingWater", new Item
                     {
                         Name = "BoilingWater",
-                        Description = "+2 Elemental Damage\n-1 Max HP",
+                        Description = "[g]+2[c] Elemental Damage[nl][r]-1[c] Max HP",
                         SpritePath = $"{fullPath}/BoilingWater",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -539,7 +539,7 @@ namespace Brotato_Clone.Models
                     "Book", new Item
                     {
                         Name = "Book",
-                        Description = "+1 Engineering",
+                        Description = "[g]+1[c] Engineering",
                         SpritePath = $"{fullPath}/Book",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -551,7 +551,7 @@ namespace Brotato_Clone.Models
                     "BowlerHat", new Item
                     {
                         Name = "BowlerHat",
-                        Description = "+15 Luck\n+18 Harvesting\n-5% Attack Speed\n-3% Crit Chance",
+                        Description = "[g]+15[c] Luck[nl][g]+18[c] Harvesting[nl][r]-5%[c] Attack Speed[nl][r]-3%[c] Crit Chance",
                         SpritePath = $"{fullPath}/BowlerHat",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -563,7 +563,7 @@ namespace Brotato_Clone.Models
                     "BoxingGlove", new Item
                     {
                         Name = "BoxingGlove",
-                        Description = "+3 Knockback",
+                        Description = "[g]+3[c] Knockback",
                         SpritePath = $"{fullPath}/BoxingGlove",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -575,7 +575,7 @@ namespace Brotato_Clone.Models
                     "BrokenMouth", new Item
                     {
                         Name = "BrokenMouth",
-                        Description = "+5 Max HP\n-1 HP Regeneration",
+                        Description = "[g]+5[c] Max HP[nl][r]-1[c] HP Regeneration",
                         SpritePath = $"{fullPath}/BrokenMouth",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -587,7 +587,7 @@ namespace Brotato_Clone.Models
                     "Butterfly", new Item
                     {
                         Name = "Butterfly",
-                        Description = "+2% Life Steal\n-1 Elemental Damage",
+                        Description = "[g]+2%[c] Life Steal[nl][r]-1[c] Elemental Damage",
                         SpritePath = $"{fullPath}/Butterfly",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -599,7 +599,7 @@ namespace Brotato_Clone.Models
                     "Cake", new Item
                     {
                         Name = "Cake",
-                        Description = "+3 Max HP\n-1% Damage",
+                        Description = "[g]+3[c] Max HP[nl][r]-1%[c] Damage",
                         SpritePath = $"{fullPath}/Cake",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -611,7 +611,7 @@ namespace Brotato_Clone.Models
                     "Campfire", new Item
                     {
                         Name = "Campfire",
-                        Description = "+2 Elemental Damage\n+2 HP Regeneration\n-2% Speed",
+                        Description = "[g]+2[c] Elemental Damage[nl][g]+2[c] HP Regeneration[nl][r]-2%[c] Speed",
                         SpritePath = $"{fullPath}/Campfire",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -623,7 +623,7 @@ namespace Brotato_Clone.Models
                     "Candle", new Item
                     {
                         Name = "Candle",
-                        Description = "+4 Elemental Damage\n+1 HP Regeneration\n-10% Enemies\n-5% Damage",
+                        Description = "[g]+4[c] Elemental Damage[nl][g]+1[c] HP Regeneration[nl][r]-10%[c] Enemies[nl][r]-5%[c] Damage",
                         SpritePath = $"{fullPath}/Candle",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -635,7 +635,7 @@ namespace Brotato_Clone.Models
                     "Cape", new Item
                     {
                         Name = "Cape",
-                        Description = "+5% Life Steal\n+20% Dodge\n-2 Melee Damage\n-2 Ranged Damage\n-2 Elemental Damage",
+                        Description = "[g]+5%[c] Life Steal[nl][g]+20%[c] Dodge[nl][r]-2[c] Melee Damage[nl][r]-2[c] Ranged Damage[nl][r]-2[c] Elemental Damage",
                         SpritePath = $"{fullPath}/Cape",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -647,7 +647,7 @@ namespace Brotato_Clone.Models
                     "Chameleon", new Item
                     {
                         Name = "Chameleon",
-                        Description = "+20% Dodge while standing still.\n-4% Damage\n+3% Dodge",
+                        Description = "[g]+20%[c] Dodge while standing still.[nl][r]-4%[c] Damage[nl][g]+3%[c] Dodge",
                         SpritePath = $"{fullPath}/Chameleon",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -659,7 +659,7 @@ namespace Brotato_Clone.Models
                     "Charcoal", new Item
                     {
                         Name = "Charcoal",
-                        Description = "+1 Elemental Damage\n+2 Melee Damage\n-2 Harvesting",
+                        Description = "[g]+1[c] Elemental Damage[nl][g]+2[c] Melee Damage[nl][r]-2[c] Harvesting",
                         SpritePath = $"{fullPath}/Charcoal",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -671,7 +671,7 @@ namespace Brotato_Clone.Models
                     "ClawTree", new Item
                     {
                         Name = "ClawTree",
-                        Description = "+1 Melee Damage\n+3% Crit Chance\n-1 Max HP",
+                        Description = "[g]+1[c] Melee Damage[nl][g]+3%[c] Crit Chance[nl][r]-1[c] Max HP",
                         SpritePath = $"{fullPath}/ClawTree",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -683,7 +683,7 @@ namespace Brotato_Clone.Models
                     "Clover", new Item
                     {
                         Name = "Clover",
-                        Description = "+20 Luck\n+6% Dodge\n-2% Life Steal",
+                        Description = "[g]+20[c] Luck[nl][g]+6%[c] Dodge[nl][r]-2%[c] Life Steal",
                         SpritePath = $"{fullPath}/Clover",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -695,7 +695,7 @@ namespace Brotato_Clone.Models
                     "Coffee", new Item
                     {
                         Name = "Coffee",
-                        Description = "+10% Attack Speed\n-2% Damage",
+                        Description = "[g]+10%[c] Attack Speed[nl][r]-2%[c] Damage",
                         SpritePath = $"{fullPath}/Coffee",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -707,7 +707,7 @@ namespace Brotato_Clone.Models
                     "Cog", new Item
                     {
                         Name = "Cog",
-                        Description = "+4 Engineering\n-4% Damage",
+                        Description = "[g]+4[c] Engineering[nl][r]-4%[c] Damage",
                         SpritePath = $"{fullPath}/Cog",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -719,7 +719,7 @@ namespace Brotato_Clone.Models
                     "CommunitySupport", new Item
                     {
                         Name = "CommunitySupport",
-                        Description = "+1% Attack Speed for every current living enemy\n-2 Armor",
+                        Description = "[g]+1%[c] Attack Speed for every current living enemy[nl][r]-2[c] Armor",
                         SpritePath = $"{fullPath}/CommunitySupport",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -731,7 +731,7 @@ namespace Brotato_Clone.Models
                     "Compass", new Item
                     {
                         Name = "Compass",
-                        Description = "+5% Speed\n+3 Engineering\n-3% Crit Chance",
+                        Description = "[g]+5%[c] Speed[nl][g]+3[c] Engineering[nl][r]-3%[c] Crit Chance",
                         SpritePath = $"{fullPath}/Compass",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -743,7 +743,7 @@ namespace Brotato_Clone.Models
                     "Coupon", new Item
                     {
                         Name = "Coupon",
-                        Description = "-5% Price",
+                        Description = "[r]-5%[c] Price",
                         SpritePath = $"{fullPath}/Coupon",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -755,7 +755,7 @@ namespace Brotato_Clone.Models
                     "Crown", new Item
                     {
                         Name = "Crown",
-                        Description = "Harvesting increases by an additional +8% at the end of a wave (stacking)",
+                        Description = "Harvesting increases by an additional [g]+8%[c] at the end of a wave (stacking)",
                         SpritePath = $"{fullPath}/Crown",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -767,7 +767,7 @@ namespace Brotato_Clone.Models
                     "CuteMonkey", new Item
                     {
                         Name = "CuteMonkey",
-                        Description = "+8% chance to heal 1 HP when picking up a material\n-1 Ranged Damage",
+                        Description = "[g]+8%[c] chance to heal [g]1[c] HP when picking up a material[nl][r]-1[c] Ranged Damage",
                         SpritePath = $"{fullPath}/CuteMonkey",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -779,7 +779,7 @@ namespace Brotato_Clone.Models
                     "Cyberball", new Item
                     {
                         Name = "Cyberball",
-                        Description = "+25% chance to deal (25% Luck) damage to a random enemy when an enemy dies",
+                        Description = "[g]+25%[c] chance to deal ([g]25%[c] Luck) damage to a random enemy when an enemy dies",
                         SpritePath = $"{fullPath}/Cyberball",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -791,7 +791,7 @@ namespace Brotato_Clone.Models
                     "CyclopsWorm", new Item
                     {
                         Name = "CyclopsWorm",
-                        Description = "+12% Damage\n-12 Range",
+                        Description = "[g]+12%[c] Damage[nl][r]-12[c] Range",
                         SpritePath = $"{fullPath}/CyclopsWorm",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -803,7 +803,7 @@ namespace Brotato_Clone.Models
                     "DangerousBunny", new Item
                     {
                         Name = "DangerousBunny",
-                        Description = "+1 free reroll in the shop",
+                        Description = "[g]+1[c] free reroll in the shop",
                         SpritePath = $"{fullPath}/DangerousBunny",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -815,7 +815,7 @@ namespace Brotato_Clone.Models
                     "DefectiveSteroids", new Item
                     {
                         Name = "DefectiveSteroids",
-                        Description = "+2 Melee Damage\n-3% Attack Speed\n+2 Max HP",
+                        Description = "[g]+2[c] Melee Damage[nl][r]-3%[c] Attack Speed[nl][g]+2[c] Max HP",
                         SpritePath = $"{fullPath}/DefectiveSteroids",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -827,7 +827,7 @@ namespace Brotato_Clone.Models
                     "Diploma", new Item
                     {
                         Name = "Diploma",
-                        Description = "+10 Engineering\n+20% XP Gain\n-3 Max HP",
+                        Description = "[g]+10[c] Engineering[nl][g]+20%[c] XP Gain[nl][r]-3[c] Max HP",
                         SpritePath = $"{fullPath}/Diploma",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -839,7 +839,7 @@ namespace Brotato_Clone.Models
                     "DuctTape", new Item
                     {
                         Name = "DuctTape",
-                        Description = "+1 Armor\n+1 Engineering\n-2 Max HP",
+                        Description = "[g]+1[c] Armor[nl][g]+1[c] Engineering[nl][r]-2[c] Max HP",
                         SpritePath = $"{fullPath}/DuctTape",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -851,7 +851,7 @@ namespace Brotato_Clone.Models
                     "Dynamite", new Item
                     {
                         Name = "Dynamite",
-                        Description = "+15% Explosion Damage",
+                        Description = "[g]+15%[c] Explosion Damage",
                         SpritePath = $"{fullPath}/Dynamite",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -863,7 +863,7 @@ namespace Brotato_Clone.Models
                     "EnergyBracelet", new Item
                     {
                         Name = "EnergyBracelet",
-                        Description = "+4% Crit Chance\n+2 Elemental Damage\n-2 Ranged Damage",
+                        Description = "[g]+4%[c] Crit Chance[nl][g]+2[c] Elemental Damage[nl][r]-2[c] Ranged Damage",
                         SpritePath = $"{fullPath}/EnergyBracelet",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -875,7 +875,7 @@ namespace Brotato_Clone.Models
                     "EstysCouch", new Item
                     {
                         Name = "EstysCouch",
-                        Description = "+2 HP Regeneration for every permanent -1% Speed you have.\n+5 Max HP\n-15% Speed",
+                        Description = "[g]+2[c] HP Regeneration for every permanent [r]-1%[c] Speed you have.[nl][g]+5[c] Max HP[nl][r]-15%[c] Speed",
                         SpritePath = $"{fullPath}/EstysCouch",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -887,7 +887,7 @@ namespace Brotato_Clone.Models
                     "Exoskeleton", new Item
                     {
                         Name = "Exoskeleton",
-                        Description = "+5 Armor\n+5% Crit Chance\n+5 Engineering\n+5% Speed\n-2 HP Regeneration\n-2% Life Steal",
+                        Description = "[g]+5[c] Armor[nl][g]+5%[c] Crit Chance[nl][g]+5[c] Engineering[nl][g]+5%[c] Speed[nl][r]-2[c] HP Regeneration[nl][r]-2%[c] Life Steal",
                         SpritePath = $"{fullPath}/Exoskeleton",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -899,7 +899,7 @@ namespace Brotato_Clone.Models
                     "ExplosiveShells", new Item
                     {
                         Name = "ExplosiveShells",
-                        Description = "+60% Explosion Damage\n+15% Explosion Size\n-15% Damage",
+                        Description = "[g]+60%[c] Explosion Damage[nl][g]+15%[c] Explosion Size[nl][r]-15%[c] Damage",
                         SpritePath = $"{fullPath}/ExplosiveShells",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -911,7 +911,7 @@ namespace Brotato_Clone.Models
                     "ExplosiveTurret", new Item
                     {
                         Name = "ExplosiveTurret",
-                        Description = "Spawns a turret that shoots explosive bullets dealing 25 + (175% Engineering Stat) damage every 0.87s.",
+                        Description = "Spawns a turret that shoots explosive bullets dealing [g]25[c] + ([g]175%[c] Engineering Stat) damage every [g]0.87s[c].",
                         SpritePath = $"{fullPath}/ExplosiveTurret",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -923,7 +923,7 @@ namespace Brotato_Clone.Models
                     "ExtraStomach", new Item
                     {
                         Name = "ExtraStomach",
-                        Description = "+1 Max HP when picking up a consumable while at maximum health (max +10 per wave)",
+                        Description = "[g]+1[c] Max HP when picking up a consumable while at maximum health (max [g]+10[c] per wave)",
                         SpritePath = $"{fullPath}/ExtraStomach",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -935,7 +935,7 @@ namespace Brotato_Clone.Models
                     "EyesSurgery", new Item
                     {
                         Name = "EyesSurgery",
-                        Description = "Burning activates +10% faster\n-10 Range",
+                        Description = "Burning activates [g]+10%[c] faster[nl][r]-10[c] Range",
                         SpritePath = $"{fullPath}/EyesSurgery",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -947,7 +947,7 @@ namespace Brotato_Clone.Models
                     "Fertilizer", new Item
                     {
                         Name = "Fertilizer",
-                        Description = "+8 Harvesting\n-1 Melee Damage",
+                        Description = "[g]+8[c] Harvesting[nl][r]-1[c] Melee Damage",
                         SpritePath = $"{fullPath}/Fertilizer",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -959,7 +959,7 @@ namespace Brotato_Clone.Models
                     "Fairy", new Item
                     {
                         Name = "Fairy",
-                        Description = "+1 HP Regeneration for every different Tier I item you have\n-2 HP Regeneration for every different Tier IV item you have",
+                        Description = "[g]+1[c] HP Regeneration for every different Tier I item you have[nl][r]-2[c] HP Regeneration for every different Tier IV item you have",
                         SpritePath = $"{fullPath}/Fairy",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -971,7 +971,7 @@ namespace Brotato_Clone.Models
                     "Fin", new Item
                     {
                         Name = "Fin",
-                        Description = "+10% Speed\n+3% Life Steal\n-8 Luck",
+                        Description = "[g]+10%[c] Speed[nl][g]+3%[c] Life Steal[nl][r]-8[c] Luck",
                         SpritePath = $"{fullPath}/Fin",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -983,7 +983,7 @@ namespace Brotato_Clone.Models
                     "Focus", new Item
                     {
                         Name = "Focus",
-                        Description = "+30% Damage\n-3% Attack Speed for every different weapon you have",
+                        Description = "[g]+30%[c] Damage[nl][r]-3%[c] Attack Speed for every different weapon you have",
                         SpritePath = $"{fullPath}/Focus",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -995,7 +995,7 @@ namespace Brotato_Clone.Models
                     "FuelTank", new Item
                     {
                         Name = "FuelTank",
-                        Description = "+4 Elemental Damage\n-1 Melee Damage\n-1 Ranged Damage",
+                        Description = "[g]+4[c] Elemental Damage[nl][r]-1[c] Melee Damage[nl][r]-1[c] Ranged Damage",
                         SpritePath = $"{fullPath}/FuelTank",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1007,7 +1007,7 @@ namespace Brotato_Clone.Models
                     "GamblingToken", new Item
                     {
                         Name = "GamblingToken",
-                        Description = "+8% Dodge\n-1 Armor",
+                        Description = "[g]+8%[c] Dodge[nl][r]-1[c] Armor",
                         SpritePath = $"{fullPath}/GamblingToken",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1019,7 +1019,7 @@ namespace Brotato_Clone.Models
                     "Garden", new Item
                     {
                         Name = "Garden",
-                        Description = "Spawns a garden that creates a fruit every 15 seconds",
+                        Description = "Spawns a garden that creates a fruit every [g]15[c] seconds",
                         SpritePath = $"{fullPath}/Garden",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1031,7 +1031,7 @@ namespace Brotato_Clone.Models
                     "GentleAlien", new Item
                     {
                         Name = "GentleAlien",
-                        Description = "+5% Damage\n+5% Enemies\n+2 Max HP",
+                        Description = "[g]+5%[c] Damage[nl][g]+5%[c] Enemies[nl][g]+2[c] Max HP",
                         SpritePath = $"{fullPath}/GentleAlien",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1043,7 +1043,7 @@ namespace Brotato_Clone.Models
                     "GiantBelt", new Item
                     {
                         Name = "GiantBelt",
-                        Description = "Critical hits deal 10% of an enemy’s current health as bonus damage (1% for bosses and elites)",
+                        Description = "Critical hits deal [g]+10%[c] of an enemy’s current health as bonus damage ([g]+1%[c] for bosses and elites)",
                         SpritePath = $"{fullPath}/GiantBelt",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1055,7 +1055,7 @@ namespace Brotato_Clone.Models
                     "GlassCannon", new Item
                     {
                         Name = "GlassCannon",
-                        Description = "+25% Damage\n-3 Armor",
+                        Description = "[g]+25%[c] Damage[nl][r]-3[c] Armor",
                         SpritePath = $"{fullPath}/GlassCannon",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1067,7 +1067,7 @@ namespace Brotato_Clone.Models
                     "Glasses", new Item
                     {
                         Name = "Glasses",
-                        Description = "+20 Range",
+                        Description = "[g]+20[c] Range",
                         SpritePath = $"{fullPath}/Glasses",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1079,7 +1079,7 @@ namespace Brotato_Clone.Models
                     "Gnome", new Item
                     {
                         Name = "Gnome",
-                        Description = "+10 Melee Damage\n+10 Elemental Damage\n-20 Range\n-20% pickup range",
+                        Description = "[g]+10[c] Melee Damage[nl][g]+10[c] Elemental Damage[nl][r]-20[c] Range[nl][r]-20%[c] pickup range",
                         SpritePath = $"{fullPath}/Gnome",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1091,7 +1091,7 @@ namespace Brotato_Clone.Models
                     "GoatSkull", new Item
                     {
                         Name = "GoatSkull",
-                        Description = "+3 Melee Damage\n-2% Crit Chance",
+                        Description = "[g]+3[c] Melee Damage[nl][r]-2%[c] Crit Chance",
                         SpritePath = $"{fullPath}/GoatSkull",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1103,7 +1103,7 @@ namespace Brotato_Clone.Models
                     "GrindsMagicalLeaf", new Item
                     {
                         Name = "GrindsMagicalLeaf",
-                        Description = "+3 Max HP at the end of a wave (stacking)\n+1 HP Regeneration at the end of a wave (stacking)\n+1% Life Steal at the end of a wave (stacking)",
+                        Description = "[g]+3[c] Max HP at the end of a wave (stacking)[nl][g]+1[c] HP Regeneration at the end of a wave (stacking)[nl][g]+1%[c] Life Steal at the end of a wave (stacking)",
                         SpritePath = $"{fullPath}/GrindsMagicalLeaf",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1115,7 +1115,7 @@ namespace Brotato_Clone.Models
                     "GummyBerserker", new Item
                     {
                         Name = "GummyBerserker",
-                        Description = "+5% Attack Speed\n+15 Range\n-1 Armor",
+                        Description = "[g]+5%[c] Attack Speed[nl][g]+15[c] Range[nl][r]-1[c] Armor",
                         SpritePath = $"{fullPath}/GummyBerserker",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1127,7 +1127,7 @@ namespace Brotato_Clone.Models
                     "Handcuffs", new Item
                     {
                         Name = "Handcuffs",
-                        Description = "+8 Melee Damage\n+8 Ranged Damage\n+8 Elemental Damage\nYour max HP is capped at its current value",
+                        Description = "[g]+8[c] Melee Damage[nl][g]+8[c] Ranged Damage[nl][g]+8[c] Elemental Damage[nl]Your max HP is capped at its current value",
                         SpritePath = $"{fullPath}/Handcuffs",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1139,7 +1139,7 @@ namespace Brotato_Clone.Models
                     "HeadInjury", new Item
                     {
                         Name = "HeadInjury",
-                        Description = "+6% Damage\n-8 Range",
+                        Description = "[g]+6%[c] Damage[nl][r]-8[c] Range",
                         SpritePath = $"{fullPath}/HeadInjury",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1151,7 +1151,7 @@ namespace Brotato_Clone.Models
                     "HeavyBullets", new Item
                     {
                         Name = "HeavyBullets",
-                        Description = "+5 Ranged Damage\n+10% Damage\n+10 Range\n-5% Attack Speed\n-5% Crit Chance",
+                        Description = "[g]+5[c] Ranged Damage[nl][g]+10%[c] Damage[nl][g]+10[c] Range[nl][r]-5%[c] Attack Speed[nl][r]-5%[c] Crit Chance",
                         SpritePath = $"{fullPath}/HeavyBullets",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1163,7 +1163,7 @@ namespace Brotato_Clone.Models
                     "Hedgehog", new Item
                     {
                         Name = "Hedgehog",
-                        Description = "+2 Melee Damage\n+1 Ranged Damage\n-1 HP Regeneration",
+                        Description = "[g]+2[c] Melee Damage[nl][g]+1[c] Ranged Damage[nl][r]-1[c] HP Regeneration",
                         SpritePath = $"{fullPath}/Hedgehog",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1175,7 +1175,7 @@ namespace Brotato_Clone.Models
                     "Helmet", new Item
                     {
                         Name = "Helmet",
-                        Description = "+1 Armor\n-2% Speed",
+                        Description = "[g]+1[c] Armor[nl][r]-2%[c] Speed",
                         SpritePath = $"{fullPath}/Helmet",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1187,7 +1187,7 @@ namespace Brotato_Clone.Models
                     "HuntingTrophy", new Item
                     {
                         Name = "HuntingTrophy",
-                        Description = "+33% chance to get 1 material when killing an enemy with a critical hit",
+                        Description = "[g]+33%[c] chance to get [g]1[c] material when killing an enemy with a critical hit",
                         SpritePath = $"{fullPath}/HuntingTrophy",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1199,7 +1199,7 @@ namespace Brotato_Clone.Models
                     "ImprovedTools", new Item
                     {
                         Name = "ImprovedTools",
-                        Description = "+10% Attack Speed\nReduces the attack cooldown of your structures by 50%",
+                        Description = "[g]+10%[c] Attack Speed[nl]Reduces the attack cooldown of your structures by [g]50%[c]",
                         SpritePath = $"{fullPath}/ImprovedTools",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1211,7 +1211,7 @@ namespace Brotato_Clone.Models
                     "IncendiaryTurret", new Item
                     {
                         Name = "IncendiaryTurret",
-                        Description = "Spawns a turret that shoots piercing flames dealing 1 damage and inflicting burn for 5 + (33% Engineering Stat) damage every second for 8 seconds. Attacks every 0.28s.",
+                        Description = "Spawns a turret that shoots piercing flames dealing [g]1[c] damage and inflicting burn for [g]5[c] + ([g]33%[c] Engineering Stat) damage every second for [g]8[c] seconds. Attacks every [g]0.28s[c].",
                         SpritePath = $"{fullPath}/IncendiaryTurret",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1223,7 +1223,7 @@ namespace Brotato_Clone.Models
                     "Injection", new Item
                     {
                         Name = "Injection",
-                        Description = "+7% Damage\n-2 Max HP",
+                        Description = "[g]+7%[c] Damage[nl][r]-2[c] Max HP",
                         SpritePath = $"{fullPath}/Injection",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1235,7 +1235,7 @@ namespace Brotato_Clone.Models
                     "Insanity", new Item
                     {
                         Name = "Insanity",
-                        Description = "+6% Crit Chance\n-3% Damage",
+                        Description = "[g]+6%[c] Crit Chance[nl][r]-3%[c] Damage",
                         SpritePath = $"{fullPath}/Insanity",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1247,7 +1247,7 @@ namespace Brotato_Clone.Models
                     "JetPack", new Item
                     {
                         Name = "JetPack",
-                        Description = "+15% Speed\n+10% Dodge\n-5 Max HP\n-1 Armor",
+                        Description = "[g]+15%[c] Speed[nl][g]+10%[c] Dodge[nl][r]-5[c] Max HP[nl][r]-1[c] Armor",
                         SpritePath = $"{fullPath}/JetPack",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1259,7 +1259,7 @@ namespace Brotato_Clone.Models
                     "Landmines", new Item
                     {
                         Name = "Landmines",
-                        Description = "A landmine spawns every 12 seconds dealing 10 + (100% Engineering Stat) damage in an area",
+                        Description = "A landmine spawns every [g]12[c] seconds dealing [g]10[c] + ([g]100%[c] Engineering Stat) damage in an area",
                         SpritePath = $"{fullPath}/Landmines",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1271,7 +1271,7 @@ namespace Brotato_Clone.Models
                     "LaserTurret", new Item
                     {
                         Name = "LaserTurret",
-                        Description = "Spawns a turret that shoots piercing lasers dealing 20 + (150% Engineering Stat) damage every 0.87s. The laser pierces up to 3 targets.",
+                        Description = "Spawns a turret that shoots piercing lasers dealing [g]20[c] + ([g]150%[c] Engineering Stat) damage every [g]0.87s[c]. The laser pierces up to [g]3[c] targets.",
                         SpritePath = $"{fullPath}/LaserTurret",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1283,7 +1283,7 @@ namespace Brotato_Clone.Models
                     "LeatherVest", new Item
                     {
                         Name = "LeatherVest",
-                        Description = "+2 Armor\n+6% Dodge\n-3 Max HP",
+                        Description = "[g]+2[c] Armor[nl][g]+6%[c] Dodge[nl][r]-3[c] Max HP",
                         SpritePath = $"{fullPath}/LeatherVest",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1295,7 +1295,7 @@ namespace Brotato_Clone.Models
                     "Lemonade", new Item
                     {
                         Name = "Lemonade",
-                        Description = "+1 HP recovered from consumables",
+                        Description = "[g]+1[c] HP recovered from consumables",
                         SpritePath = $"{fullPath}/Lemonade",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1307,7 +1307,7 @@ namespace Brotato_Clone.Models
                     "Lens", new Item
                     {
                         Name = "Lens",
-                        Description = "+1 Ranged Damage\n-5 Range",
+                        Description = "[g]+1[c] Ranged Damage[nl][r]-5[c] Range",
                         SpritePath = $"{fullPath}/Lens",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1319,7 +1319,7 @@ namespace Brotato_Clone.Models
                     "LittleFrog", new Item
                     {
                         Name = "LittleFrog",
-                        Description = "+20% pickup range\n+10 Harvesting\n-5% Dodge",
+                        Description = "[g]+20%[c] pickup range[nl][g]+10[c] Harvesting[nl][r]-5%[c] Dodge",
                         SpritePath = $"{fullPath}/LittleFrog",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1331,7 +1331,7 @@ namespace Brotato_Clone.Models
                     "LittleMuscleyDude", new Item
                     {
                         Name = "LittleMuscleyDude",
-                        Description = "+3 Melee Damage\n+5 Max HP\n-15 Range",
+                        Description = "[g]+3[c] Melee Damage[nl][g]+5[c] Max HP[nl][r]-15[c] Range",
                         SpritePath = $"{fullPath}/LittleMuscleyDude",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1343,7 +1343,7 @@ namespace Brotato_Clone.Models
                     "LostDuck", new Item
                     {
                         Name = "LostDuck",
-                        Description = "+10 Luck\n-1 Elemental Damage",
+                        Description = "[g]+10[c] Luck[nl][r]-1[c] Elemental Damage",
                         SpritePath = $"{fullPath}/LostDuck",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1355,7 +1355,7 @@ namespace Brotato_Clone.Models
                     "LuckyCharm", new Item
                     {
                         Name = "LuckyCharm",
-                        Description = "+30 Luck\n-2 Melee Damage\n-1 Ranged Damage",
+                        Description = "[g]+30[c] Luck[nl][r]-2[c] Melee Damage[nl][r]-1[c] Ranged Damage",
                         SpritePath = $"{fullPath}/LuckyCharm",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1367,7 +1367,7 @@ namespace Brotato_Clone.Models
                     "LuckyCoin", new Item
                     {
                         Name = "LuckyCoin",
-                        Description = "+2 Luck for every 1% Crit Chance you have\n-2 Armor",
+                        Description = "[g]+2[c] Luck for every [g]1%[c] Crit Chance you have[nl][r]-2[c] Armor",
                         SpritePath = $"{fullPath}/LuckyCoin",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1379,7 +1379,7 @@ namespace Brotato_Clone.Models
                     "Lure", new Item
                     {
                         Name = "Lure",
-                        Description = "+3 HP Regeneration\n2 additional loot aliens appear during the next wave",
+                        Description = "[g]+3[c] HP Regeneration[nl]2 additional loot aliens appear during the next wave",
                         SpritePath = $"{fullPath}/Lure",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1403,7 +1403,7 @@ namespace Brotato_Clone.Models
                     "Mammoth", new Item
                     {
                         Name = "Mammoth",
-                        Description = "+20 Melee Damage\n+5 HP Regeneration\n-8% Damage\n-3% Speed",
+                        Description = "[g]+20[c] Melee Damage[nl][g]+5[c] HP Regeneration[nl][r]-8%[c] Damage[nl][r]-3%[c] Speed",
                         SpritePath = $"{fullPath}/Mammoth",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1415,7 +1415,7 @@ namespace Brotato_Clone.Models
                     "Mastery", new Item
                     {
                         Name = "Mastery",
-                        Description = "+6 Melee Damage\n-3 Ranged Damage",
+                        Description = "[g]+6[c] Melee Damage[nl][r]-3[c] Ranged Damage",
                         SpritePath = $"{fullPath}/Mastery",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1427,7 +1427,7 @@ namespace Brotato_Clone.Models
                     "Medal", new Item
                     {
                         Name = "Medal",
-                        Description = "+3 Max HP\n+3% Damage\n+1 Armor\n+3% Speed\n-4% Crit Chance",
+                        Description = "[g]+3[c] Max HP[nl][g]+3%[c] Damage[nl][g]+1[c] Armor[nl][g]+3%[c] Speed[nl][r]-4%[c] Crit Chance",
                         SpritePath = $"{fullPath}/Medal",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1439,7 +1439,7 @@ namespace Brotato_Clone.Models
                     "MedicalTurret", new Item
                     {
                         Name = "MedicalTurret",
-                        Description = "Spawns a medical turret that shoots projectiles healing 3 + (5% Engineering Stat) HP every 2.2s.",
+                        Description = "Spawns a medical turret that shoots projectiles healing [g]3[c] + ([g]5%[c] Engineering Stat) HP every [g]2.2s[c].",
                         SpritePath = $"{fullPath}/MedicalTurret",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1451,7 +1451,7 @@ namespace Brotato_Clone.Models
                     "Medikit", new Item
                     {
                         Name = "Medikit",
-                        Description = "+10 HP Regeneration\n+2 HP Regeneration every 5 seconds until the end of the wave\n-10 Luck",
+                        Description = "[g]+10[c] HP Regeneration[nl][g]+2[c] HP Regeneration every [g]5[c] seconds until the end of the wave[nl][r]-10[c] Luck",
                         SpritePath = $"{fullPath}/Medikit",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1463,7 +1463,7 @@ namespace Brotato_Clone.Models
                     "MetalDetector", new Item
                     {
                         Name = "MetalDetector",
-                        Description = "+5% chance to double the value of picked up materials\n+6 Luck\n+2 Engineering\n-5% Damage",
+                        Description = "[g]+5%[c] chance to double the value of picked up materials[nl][g]+6[c] Luck[nl][g]+2[c] Engineering[nl][r]-5%[c] Damage",
                         SpritePath = $"{fullPath}/MetalDetector",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1475,7 +1475,7 @@ namespace Brotato_Clone.Models
                     "MetalPlate", new Item
                     {
                         Name = "MetalPlate",
-                        Description = "+2 Armor\n-3% Damage",
+                        Description = "[g]+2[c] Armor[nl][r]-3%[c] Damage",
                         SpritePath = $"{fullPath}/MetalPlate",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1487,7 +1487,7 @@ namespace Brotato_Clone.Models
                     "Missile", new Item
                     {
                         Name = "Missile",
-                        Description = "+10% Damage\n-4% Attack Speed",
+                        Description = "[g]+10%[c] Damage[nl][r]-4%[c] Attack Speed",
                         SpritePath = $"{fullPath}/Missile",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1499,7 +1499,7 @@ namespace Brotato_Clone.Models
                     "Mouse", new Item
                     {
                         Name = "Mouse",
-                        Description = "+5% Life Steal\n+10% Enemies\n-5 Harvesting",
+                        Description = "[g]+5%[c] Life Steal[nl][g]+10%[c] Enemies[nl][r]-5[c] Harvesting",
                         SpritePath = $"{fullPath}/Mouse",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1511,7 +1511,7 @@ namespace Brotato_Clone.Models
                     "Mushroom", new Item
                     {
                         Name = "Mushroom",
-                        Description = "+3 HP Regeneration\n-2 Luck",
+                        Description = "[g]+3[c] HP Regeneration[nl][r]-2[c] Luck",
                         SpritePath = $"{fullPath}/Mushroom",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1523,7 +1523,7 @@ namespace Brotato_Clone.Models
                     "Mutation", new Item
                     {
                         Name = "Mutation",
-                        Description = "+1 Ranged Damage\n+1 Elemental Damage\n-3% Speed",
+                        Description = "[g]+1[c] Ranged Damage[nl][g]+1[c] Elemental Damage[nl][r]-3%[c] Speed",
                         SpritePath = $"{fullPath}/Mutation",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1535,7 +1535,7 @@ namespace Brotato_Clone.Models
                     "NightGoggles", new Item
                     {
                         Name = "NightGoggles",
-                        Description = "+15% Crit Chance\n+50 Range\n-3 Max HP\n-1 Armor",
+                        Description = "[g]+15%[c] Crit Chance[nl][g]+50[c] Range[nl][r]-3[c] Max HP[nl][r]-1[c] Armor",
                         SpritePath = $"{fullPath}/NightGoggles",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1547,7 +1547,7 @@ namespace Brotato_Clone.Models
                     "Octopus", new Item
                     {
                         Name = "Octopus",
-                        Description = "+12 Max HP\n+5 HP Regeneration\n+3% Life Steal\n-8% Crit Chance",
+                        Description = "[g]+12[c] Max HP[nl][g]+5[c] HP Regeneration[nl][g]+3%[c] Life Steal[nl][r]-8%[c] Crit Chance",
                         SpritePath = $"{fullPath}/Octopus",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1559,7 +1559,7 @@ namespace Brotato_Clone.Models
                     "Padding", new Item
                     {
                         Name = "Padding",
-                        Description = "+3 Max HP\n+1 Max HP for every 100 Materials you have.\n-5% Speed",
+                        Description = "[g]+3[c] Max HP[nl][g]+1[c] Max HP for every [g]100[c] Materials you have.[nl][r]-5%[c] Speed",
                         SpritePath = $"{fullPath}/Padding",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1571,7 +1571,7 @@ namespace Brotato_Clone.Models
                     "Panda", new Item
                     {
                         Name = "Panda",
-                        Description = "+12 Max HP\n+25 Luck\n-5% Damage",
+                        Description = "[g]+12[c] Max HP[nl][g]+25[c] Luck[nl][r]-5%[c] Damage",
                         SpritePath = $"{fullPath}/Panda",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1583,7 +1583,7 @@ namespace Brotato_Clone.Models
                     "PeacefulBee", new Item
                     {
                         Name = "PeacefulBee",
-                        Description = "+4% Dodge\n+4 Harvesting\n-1 Melee Damage\n-1 Ranged Damage",
+                        Description = "[g]+4%[c] Dodge[nl][g]+4[c] Harvesting[nl][r]-1[c] Melee Damage[nl][r]-1[c] Ranged Damage",
                         SpritePath = $"{fullPath}/PeacefulBee",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1595,7 +1595,7 @@ namespace Brotato_Clone.Models
                     "Peacock", new Item
                     {
                         Name = "Peacock",
-                        Description = "+25% XP Gain\n+100% XP Gain during the next wave\n+50% Enemy damage during the next wave",
+                        Description = "[g]+25%[c] XP Gain[nl][g]+100%[c] XP Gain during the next wave[nl][g]+50%[c] Enemy damage during the next wave",
                         SpritePath = $"{fullPath}/Peacock",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1607,7 +1607,7 @@ namespace Brotato_Clone.Models
                     "Pencil", new Item
                     {
                         Name = "Pencil",
-                        Description = "+2 Engineering\n-1% Attack Speed\n-1% Crit Chance",
+                        Description = "[g]+2[c] Engineering[nl][r]-1%[c] Attack Speed[nl][r]-1%[c] Crit Chance",
                         SpritePath = $"{fullPath}/Pencil",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1619,7 +1619,7 @@ namespace Brotato_Clone.Models
                     "PiggyBank", new Item
                     {
                         Name = "PiggyBank",
-                        Description = "+20% of your materials at the start of waves",
+                        Description = "[g]+20%[c] of your materials at the start of waves",
                         SpritePath = $"{fullPath}/PiggyBank",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1631,7 +1631,7 @@ namespace Brotato_Clone.Models
                     "Plant", new Item
                     {
                         Name = "Plant",
-                        Description = "+3 HP Regeneration\n-1% Life Steal",
+                        Description = "[g]+3[c] HP Regeneration[nl][r]-1%[c] Life Steal",
                         SpritePath = $"{fullPath}/Plant",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1643,7 +1643,7 @@ namespace Brotato_Clone.Models
                     "PlasticExplosive", new Item
                     {
                         Name = "PlasticExplosive",
-                        Description = "+25% Explosion Size",
+                        Description = "[g]+25%[c] Explosion Size",
                         SpritePath = $"{fullPath}/PlasticExplosive",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1655,7 +1655,7 @@ namespace Brotato_Clone.Models
                     "PoisonousTonic", new Item
                     {
                         Name = "PoisonousTonic",
-                        Description = "+10% Attack Speed\n+5% Crit Chance\n+15 Range\n-2 HP Regeneration",
+                        Description = "[g]+10%[c] Attack Speed[nl][g]+5%[c] Crit Chance[nl][g]+15[c] Range[nl][r]-2[c] HP Regeneration",
                         SpritePath = $"{fullPath}/PoisonousTonic",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1667,7 +1667,7 @@ namespace Brotato_Clone.Models
                     "PocketFactory", new Item
                     {
                         Name = "PocketFactory",
-                        Description = "+2 Engineering\nKilling a tree spawns a turret",
+                        Description = "[g]+2[c] Engineering[nl]Killing a tree spawns a turret",
                         SpritePath = $"{fullPath}/PocketFactory",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1679,7 +1679,7 @@ namespace Brotato_Clone.Models
                     "Potato", new Item
                     {
                         Name = "Potato",
-                        Description = "+3 Max HP\n+2 HP Regeneration\n+1% Life Steal\n+5% Damage\n+5% Attack Speed\n+3% Speed\n+3% Dodge\n+1 Armor\n+5 Luck",
+                        Description = "[g]+3[c] Max HP[nl][g]+2[c] HP Regeneration[nl][g]+1%[c] Life Steal[nl][g]+5%[c] Damage[nl][g]+5%[c] Attack Speed[nl][g]+3%[c] Speed[nl][g]+3%[c] Dodge[nl][g]+1[c] Armor[nl][g]+5[c] Luck",
                         SpritePath = $"{fullPath}/Potato",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1691,7 +1691,7 @@ namespace Brotato_Clone.Models
                     "PowerGenerator", new Item
                     {
                         Name = "PowerGenerator",
-                        Description = "+1% Damage for every permanent 1% Speed you have.\n-5% Damage",
+                        Description = "[g]+1%[c] Damage for every permanent [g]1%[c] Speed you have.[nl][r]-5%[c] Damage",
                         SpritePath = $"{fullPath}/PowerGenerator",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1703,7 +1703,7 @@ namespace Brotato_Clone.Models
                     "PropellerHat", new Item
                     {
                         Name = "PropellerHat",
-                        Description = "+10 Luck\n-2% Damage",
+                        Description = "[g]+10[c] Luck[nl][r]-2%[c] Damage",
                         SpritePath = $"{fullPath}/PropellerHat",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1715,7 +1715,7 @@ namespace Brotato_Clone.Models
                     "Pumpkin", new Item
                     {
                         Name = "Pumpkin",
-                        Description = "+15% Piercing Damage. Can't go above base damage\n-2% Damage",
+                        Description = "[g]+15%[c] Piercing Damage. Can't go above base damage[nl][r]-2%[c] Damage",
                         SpritePath = $"{fullPath}/Pumpkin",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1727,7 +1727,7 @@ namespace Brotato_Clone.Models
                     "RecyclingMachine", new Item
                     {
                         Name = "RecyclingMachine",
-                        Description = "Gain +35% more materials from recycling items",
+                        Description = "Gain [g]+35%[c] more materials from recycling items",
                         SpritePath = $"{fullPath}/RecyclingMachine",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1739,7 +1739,7 @@ namespace Brotato_Clone.Models
                     "RegenerationPotion", new Item
                     {
                         Name = "RegenerationPotion",
-                        Description = "HP Regeneration is doubled while you have less than 50% health\n+3 HP Regeneration",
+                        Description = "HP Regeneration is doubled while you have less than [g]50%[c] health[nl][g]+3[c] HP Regeneration",
                         SpritePath = $"{fullPath}/RegenerationPotion",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1751,7 +1751,7 @@ namespace Brotato_Clone.Models
                     "RetromationsHoodie", new Item
                     {
                         Name = "RetromationsHoodie",
-                        Description = "+2% Attack Speed for every 1% Dodge you have.\n-80 Range",
+                        Description = "[g]+2%[c] Attack Speed for every [g]1%[c] Dodge you have.[nl][r]-80[c] Range",
                         SpritePath = $"{fullPath}/RetromationsHoodie",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1763,7 +1763,7 @@ namespace Brotato_Clone.Models
                     "Ricochet", new Item
                     {
                         Name = "Ricochet",
-                        Description = "Your projectiles gain +1 bounce\n-25% Damage",
+                        Description = "Your projectiles gain [g]+1[c] bounce[nl][r]-25%[c] Damage",
                         SpritePath = $"{fullPath}/Ricochet",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1775,7 +1775,7 @@ namespace Brotato_Clone.Models
                     "RipAndTear", new Item
                     {
                         Name = "RipAndTear",
-                        Description = "Enemies have a +20% chance to explode for 10 + (50% Melee Damage) damage when they die\n-12 Harvesting",
+                        Description = "Enemies have a [g]+20%[c] chance to explode for [g]10[c] + ([g]50%[c] Melee Damage) damage when they die[nl][r]-12[c] Harvesting",
                         SpritePath = $"{fullPath}/RipAndTear",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1787,7 +1787,7 @@ namespace Brotato_Clone.Models
                     "Riposte", new Item
                     {
                         Name = "Riposte",
-                        Description = "+2 Melee Damage\n100% chance to deal 1 (300% Melee Damage) damage to an enemy when dodging their attack",
+                        Description = "[g]+2[c] Melee Damage[nl][g]100%[c] chance to deal [g]1[c] ([g]300%[c] Melee Damage) damage to an enemy when dodging their attack",
                         SpritePath = $"{fullPath}/Riposte",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1799,7 +1799,7 @@ namespace Brotato_Clone.Models
                     "Ritual", new Item
                     {
                         Name = "Ritual",
-                        Description = "+6% Damage\n+2% Life Steal\n-2 Engineering",
+                        Description = "[g]+6%[c] Damage[nl][g]+2%[c] Life Steal[nl][r]-2[c] Engineering",
                         SpritePath = $"{fullPath}/Ritual",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1811,7 +1811,7 @@ namespace Brotato_Clone.Models
                     "RobotArm", new Item
                     {
                         Name = "RobotArm",
-                        Description = "+6 Armor\n+6 Engineering\n-2 HP Regeneration\n-2% Life Steal",
+                        Description = "[g]+6[c] Armor[nl][g]+6[c] Engineering[nl][r]-2[c] HP Regeneration[nl][r]-2%[c] Life Steal",
                         SpritePath = $"{fullPath}/RobotArm",
                         Rarity = Rarity.Tier4,
                         Classes = new Class[] { Class.Item },
@@ -1823,7 +1823,7 @@ namespace Brotato_Clone.Models
                     "SadTomato", new Item
                     {
                         Name = "SadTomato",
-                        Description = "+8 HP Regeneration\nStart waves with -50% HP",
+                        Description = "[g]+8[c] HP Regeneration[nl]Start waves with [r]-50%[c] HP",
                         SpritePath = $"{fullPath}/SadTomato",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1835,7 +1835,7 @@ namespace Brotato_Clone.Models
                     "Scar", new Item
                     {
                         Name = "Scar",
-                        Description = "+20% XP Gain\n-8 Range",
+                        Description = "[g]+20%[c] XP Gain[nl][r]-8[c] Range",
                         SpritePath = $"{fullPath}/Scar",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1847,7 +1847,7 @@ namespace Brotato_Clone.Models
                     "ScaredSausage", new Item
                     {
                         Name = "ScaredSausage",
-                        Description = "Attacks have a +25% chance to deal 1x3 + (100% Elemental Damage) burning damage",
+                        Description = "Attacks have a [g]+25%[c] chance to deal [g]1x3[c] + ([g]100%[c] Elemental Damage) burning damage",
                         SpritePath = $"{fullPath}/ScaredSausage",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
@@ -1859,7 +1859,7 @@ namespace Brotato_Clone.Models
                     "Scope", new Item
                     {
                         Name = "Scope",
-                        Description = "+2 Ranged Damage\n+25 Range\n-7% Attack Speed",
+                        Description = "[g]+2[c] Ranged Damage[nl][g]+25[c] Range[nl][r]-7%[c] Attack Speed",
                         SpritePath = $"{fullPath}/Scope",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -1871,7 +1871,7 @@ namespace Brotato_Clone.Models
                     "Shackles", new Item
                     {
                         Name = "Shackles",
-                        Description = "+8 HP Regeneration\n+8 Engineering\n+80 Range\nYour Speed is capped at its current value",
+                        Description = "[g]+8[c] HP Regeneration[nl][g]+8[c] Engineering[nl][g]+80[c] Range[nl]Your Speed is capped at its current value",
                         SpritePath = $"{fullPath}/Shackles",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1883,59 +1883,23 @@ namespace Brotato_Clone.Models
                     "ShadyPotion", new Item
                     {
                         Name = "ShadyPotion",
-                        Description = "+20 Luck\n-2 HP Regeneration",
+                        Description = "[g]+20[c] Luck[nl][r]-2[c] HP Regeneration",
                         SpritePath = $"{fullPath}/ShadyPotion",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 48,
-                        Limit = 0
-                    }
-                },
-                {
-                    "SharpBullet", new Item
-                    {
-                        Name = "SharpBullet",
-                        Description = "Projectiles pierce through 1 additional target\n-20% Piercing Damage\n-5% Damage",
-                        SpritePath = $"{fullPath}/SharpBullet",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 25,
-                        Limit = 1
+                        BasePrice = 20,
+                        Limit = 0
                     }
                 },
                 {
                     "Shmoop", new Item
                     {
                         Name = "Shmoop",
-                        Description = "+6 Max HP\n+2 HP Regeneration\n-2 Melee Damage\n-1 Ranged Damage",
+                        Description = "[g]+6[c] Max HP[nl][g]+2[c] HP Regeneration[nl][g]+1%[c] Life Steal[nl][r]-3%[c] Speed",
                         SpritePath = $"{fullPath}/Shmoop",
-                        Rarity = Rarity.Tier3,
+                        Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 60,
-                        Limit = 0
-                    }
-                },
-                {
-                    "SifdsRelic", new Item
-                    {
-                        Name = "SifdsRelic",
-                        Description = "+100% chance to instantly attract a material when its dropped",
-                        SpritePath = $"{fullPath}/SifdsRelic",
-                        Rarity = Rarity.Tier4,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 100,
-                        Limit = 1
-                    }
-                },
-                {
-                    "SilverBullet", new Item
-                    {
-                        Name = "SilverBullet",
-                        Description = "+25% damage against bosses and elites",
-                        SpritePath = $"{fullPath}/SilverBullet",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 70,
+                        BasePrice = 45,
                         Limit = 0
                     }
                 },
@@ -1943,32 +1907,80 @@ namespace Brotato_Clone.Models
                     "SmallMagazine", new Item
                     {
                         Name = "SmallMagazine",
-                        Description = "+2 Ranged Damage\n+10% Attack Speed\n-6% Damage",
+                        Description = "[g]+12[c] Max HP[nl][g]+8[c] HP Regeneration[nl][r]-5%[c] Attack Speed[nl][r]-5%[c] Crit Chance",
                         SpritePath = $"{fullPath}/SmallMagazine",
-                        Rarity = Rarity.Tier2,
+                        Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 60,
                         Limit = 0
                     }
                 },
                 {
-                    "Snail", new Item
-                    {
-                        Name = "Snail",
-                        Description = "-5 Enemy Speed\n-3% Speed",
-                        SpritePath = $"{fullPath}/Snail",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 40,
-                        Limit = 1,
-                    }
-                },
-                {
                     "Snake", new Item
                     {
                         Name = "Snake",
-                        Description = "Burning spreads to a nearby enemy\n-1 Max HP",
+                        Description = "Burning spreads to a nearby enemy for [g]50%[c] of its remaining damage",
                         SpritePath = $"{fullPath}/Snake",
+                        Rarity = Rarity.Tier1,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 30,
+                        Limit = 0
+                    }
+                },
+                {
+                    "Spider", new Item
+                    {
+                        Name = "Spider",
+                        Description = "[g]+8%[c] Attack Speed for every different Tier III item you have[nl][r]-5%[c] Dodge",
+                        SpritePath = $"{fullPath}/Spider",
+                        Rarity = Rarity.Tier4,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 75,
+                        Limit = 0,
+                    }
+                },
+                {
+                    "SpicySauce", new Item
+                    {
+                        Name = "SpicySauce",
+                        Description = "[g]+2[c] Elemental Damage[nl]You take [r]1[c] damage per second (does not give invulnerability time)",
+                        SpritePath = $"{fullPath}/SpicySauce",
+                        Rarity = Rarity.Tier2,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 35,
+                        Limit = 0,
+                    }
+                },
+                {
+                    "SpiderFang", new Item
+                    {
+                        Name = "SpiderFang",
+                        Description = "[g]+6%[c] Crit Chance[nl][r]-3%[c] Dodge",
+                        SpritePath = $"{fullPath}/SpiderFang",
+                        Rarity = Rarity.Tier1,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 30,
+                        Limit = 0
+                    }
+                },
+                {
+                    "SpikedKnuckles", new Item
+                    {
+                        Name = "SpikedKnuckles",
+                        Description = "[g]+3[c] Melee Damage[nl][g]+2[c] Armor",
+                        SpritePath = $"{fullPath}/SpikedKnuckles",
+                        Rarity = Rarity.Tier3,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 60,
+                        Limit = 0,
+                    }
+                },
+                {
+                    "Spoon", new Item
+                    {
+                        Name = "Spoon",
+                        Description = "[g]+3[c] Elemental Damage[nl][r]-2[c] Melee Damage",
+                        SpritePath = $"{fullPath}/Spoon",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 25,
@@ -1976,179 +1988,23 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "SpicySauce", new Item
+                    "Stick", new Item
                     {
-                        Name = "SpicySauce",
-                        Description = "+3 Max HP\nConsumables have a 25% chance to explode for 10 (100% Max HP) damage when picked up",
-                        SpritePath = $"{fullPath}/SpicySauce",
+                        Name = "Stick",
+                        Description = "[g]+8[c] Melee Damage[nl][r]-3[c] Armor",
+                        SpritePath = $"{fullPath}/Stick",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 40,
-                        Limit = 4,
-                    }
-                },
-                {
-                    "Spider", new Item
-                    {
-                        Name = "Spider",
-                        Description = "+12% Damage\n+6% Attack Speed for every different weapon you have\n-3% Dodge\n-5 Harvesting",
-                        SpritePath = $"{fullPath}/Spider",
-                        Rarity = Rarity.Tier4,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 120,
-                        Limit = 0,
-                    }
-                },
-                {
-                    "Statue", new Item
-                    {
-                        Name = "Statue",
-                        Description = "+40% Attack Speed while standing still.\n-10% Speed",
-                        SpritePath = $"{fullPath}/Statue",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 60,
+                        BasePrice = 35,
                         Limit = 0
-                    }
-                },
-                {
-                    "StrangeBook", new Item
-                    {
-                        Name = "StrangeBook",
-                        Description = "+1 Engineering for every 1 Elemental Damage you have.\n-1 Melee Damage\n-1 Ranged Damage",
-                        SpritePath = $"{fullPath}/StrangeBook",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 70,
-                        Limit = 1
                     }
                 },
                 {
                     "StoneSkin", new Item
                     {
                         Name = "StoneSkin",
-                        Description = "+1 Max HP for every 1 permanent Armor you have\n-2 Armor",
+                        Description = "[g]+8[c] Armor[nl][r]-6[c] Luck",
                         SpritePath = $"{fullPath}/StoneSkin",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 80,
-                        Limit = 1,
-                    }
-                },
-                {
-                    "Sunglasses", new Item
-                    {
-                        Name = "Sunglasses",
-                        Description = "+10% Crit Chance\n-1 Armor",
-                        SpritePath = $"{fullPath}/Sunglasses",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 50,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Tardigrade", new Item
-                    {
-                        Name = "Tardigrade",
-                        Description = "Nullifies the damage of +1 hit taken every wave",
-                        SpritePath = $"{fullPath}/Tardigrade",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 50,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Tentacle", new Item
-                    {
-                        Name = "Tentacle",
-                        Description = "+3% Crit Chance\n+20% chance to heal 1 HP when killing an enemy with a critical hit",
-                        SpritePath = $"{fullPath}/Tentacle",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 32,
-                        Limit = 5,
-                    }
-                },
-                {
-                    "TerrifiedOnion", new Item
-                    {
-                        Name = "TerrifiedOnion",
-                        Description = "+4% Speed\n-6 Luck",
-                        SpritePath = $"{fullPath}/TerrifiedOnion",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 15,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Toolbox", new Item
-                    {
-                        Name = "Toolbox",
-                        Description = "+6 Engineering\n-8% Attack Speed",
-                        SpritePath = $"{fullPath}/Toolbox",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 55,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Torture", new Item
-                    {
-                        Name = "Torture",
-                        Description = "+15 Max HP\nRestore +4 HP per second. Cannot heal any other way.",
-                        SpritePath = $"{fullPath}/Torture",
-                        Rarity = Rarity.Tier4,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 110,
-                        Limit = 1
-                    }
-                },
-                {
-                    "ToxicSludge", new Item
-                    {
-                        Name = "ToxicSludge",
-                        Description = "+2 Elemental Damage\n-2% Dodge",
-                        SpritePath = $"{fullPath}/ToxicSludge",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 20,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Tractor", new Item
-                    {
-                        Name = "Tractor",
-                        Description = "+40 Harvesting\n-8% Damage",
-                        SpritePath = $"{fullPath}/Tractor",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 70,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Tree", new Item
-                    {
-                        Name = "Tree",
-                        Description = "More trees spawn",
-                        SpritePath = $"{fullPath}/Tree",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 15,
-                        Limit = 0
-                    }
-                },
-                {
-                    "TriangleOfPower", new Item
-                    {
-                        Name = "TriangleOfPower",
-                        Description = "+20% Damage\n+1 Armor\n-2% Damage until the end of the wave when you take damage",
-                        SpritePath = $"{fullPath}/TriangleOfPower",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 65,
@@ -2156,59 +2012,71 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "Turret", new Item
+                    "StrangeBook", new Item
                     {
-                        Name = "Turret",
-                        Description = "Spawns a turret that shoots bullets dealing 10 + (80% Engineering Stat) damage every 0.73s.",
-                        SpritePath = $"{fullPath}/Turret",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 15,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Tyler", new Item
-                    {
-                        Name = "Tyler",
-                        Description = "Spawns a little guy that slowly shoots 10 piercing lightning projectiles around him for 10 + (100% Engineering Stat) damage every 2.2s. The projectiles pierce up to 2 targets.",
-                        SpritePath = $"{fullPath}/Tyler",
+                        Name = "StrangeBook",
+                        Description = "[g]+8%[c] Chance to heal when dealing Elemental Damage",
+                        SpritePath = $"{fullPath}/StrangeBook",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 75,
+                        BasePrice = 50,
                         Limit = 0
                     }
                 },
                 {
-                    "UglyTooth", new Item
+                    "StrangeEye", new Item
                     {
-                        Name = "UglyTooth",
-                        Description = "Hitting an enemy removes +10% of their speed (Max: 30%)\n-3% Speed",
-                        SpritePath = $"{fullPath}/UglyTooth",
+                        Name = "StrangeEye",
+                        Description = "[g]+50[c] Range when standing still[nl][g]+25%[c] Crit Chance while standing still[nl][r]-10[c] Luck",
+                        SpritePath = $"{fullPath}/StrangeEye",
+                        Rarity = Rarity.Tier2,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 70,
+                        Limit = 0
+                    }
+                },
+                {
+                    "Sunglasses", new Item
+                    {
+                        Name = "Sunglasses",
+                        Description = "[g]+5%[c] Crit Chance[nl][r]-2[c] Armor",
+                        SpritePath = $"{fullPath}/Sunglasses",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 25,
+                        BasePrice = 35,
+                        Limit = 0
+                    }
+                },
+                {
+                    "ThiefDagger", new Item
+                    {
+                        Name = "ThiefDagger",
+                        Description = "[g]+10%[c] Life Steal[nl][g]+5%[c] Crit Chance[nl][g]+10%[c] Dodge[nl][r]-10[c] Max HP",
+                        SpritePath = $"{fullPath}/ThiefDagger",
+                        Rarity = Rarity.Tier4,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 85,
+                        Limit = 1,
+                    }
+                },
+                {
+                    "Tree", new Item
+                    {
+                        Name = "Tree",
+                        Description = "Spawns a tree at the start of the wave",
+                        SpritePath = $"{fullPath}/Tree",
+                        Rarity = Rarity.Tier1,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 10,
                         Limit = 1
                     }
                 },
                 {
-                    "VigilanteRing", new Item
+                    "TriangleOfPower", new Item
                     {
-                        Name = "VigilanteRing",
-                        Description = "+3% Damage at the end of a wave (stacking)",
-                        SpritePath = $"{fullPath}/VigilanteRing",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 92,
-                        Limit = 0
-                    }
-                },
-                {
-                    "WanderingBot", new Item
-                    {
-                        Name = "WanderingBot",
-                        Description = "Spawns a little bot that slows down nearby enemies",
-                        SpritePath = $"{fullPath}/WanderingBot",
+                        Name = "TriangleOfPower",
+                        Description = "[g]+20%[c] Damage[nl][r]-2[c] Damage for every damage you take until the end of the wave",
+                        SpritePath = $"{fullPath}/TriangleOfPower",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 60,
@@ -2216,38 +2084,50 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "WarriorHelmet", new Item
+                    "Turret", new Item
                     {
-                        Name = "WarriorHelmet",
-                        Description = "+3 Armor\n+5 Max HP\n-5% Speed",
-                        SpritePath = $"{fullPath}/WarriorHelmet",
+                        Name = "Turret",
+                        Description = "Spawns a turret that shoots bullets dealing [g]15[c] + ([g]150%[c] Engineering Stat) damage every [g]0.8s[c]",
+                        SpritePath = $"{fullPath}/Turret",
+                        Rarity = Rarity.Tier2,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 45,
+                        Limit = 0
+                    }
+                },
+                {
+                    "Tyler", new Item
+                    {
+                        Name = "Tyler",
+                        Description = "Spawns a little robot following you and dealing [g]50[c] Burning Damage (based on [g]250%[c] of your Elemental Damage)",
+                        SpritePath = $"{fullPath}/Tyler",
+                        Rarity = Rarity.Tier3,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 65,
+                        Limit = 1
+                    }
+                },
+                {
+                    "VigilanteRing", new Item
+                    {
+                        Name = "VigilanteRing",
+                        Description = "[g]+2%[c] Damage at the end of a wave (stacking)",
+                        SpritePath = $"{fullPath}/VigilanteRing",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 80,
-                        Limit = 0
+                        Limit = 1
                     }
                 },
                 {
-                    "WeirdFood", new Item
+                    "WarriorHelmet", new Item
                     {
-                        Name = "WeirdFood",
-                        Description = "+2 HP recovered from consumables\n-2% Dodge",
-                        SpritePath = $"{fullPath}/WeirdFood",
-                        Rarity = Rarity.Tier1,
+                        Name = "WarriorHelmet",
+                        Description = "[g]+5[c] Armor[nl][r]-15%[c] Crit Chance",
+                        SpritePath = $"{fullPath}/WarriorHelmet",
+                        Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 20,
-                        Limit = 0
-                    }
-                },
-                {
-                    "WeirdGhost", new Item
-                    {
-                        Name = "WeirdGhost",
-                        Description = "+3 Max HP\nStart the next wave with 1 HP",
-                        SpritePath = $"{fullPath}/WeirdGhost",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 12,
+                        BasePrice = 70,
                         Limit = 0
                     }
                 },
@@ -2255,59 +2135,11 @@ namespace Brotato_Clone.Models
                     "Wheat", new Item
                     {
                         Name = "Wheat",
-                        Description = "+4 Melee Damage\n+2 Ranged Damage\n+10 Harvesting\n-2 Elemental Damage",
+                        Description = "[g]+5[c] Harvesting[nl][g]+1%[c] Life Steal[nl][r]-3[c] Dodge",
                         SpritePath = $"{fullPath}/Wheat",
-                        Rarity = Rarity.Tier3,
+                        Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 85,
-                        Limit = 0,
-                    }
-                },
-                {
-                    "Wheelbarrow", new Item
-                    {
-                        Name = "Wheelbarrow",
-                        Description = "-1 Armor\n+16 Harvesting",
-                        SpritePath = $"{fullPath}/Wheelbarrow",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 40,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Whetstone", new Item
-                    {
-                        Name = "Whetstone",
-                        Description = "+4% Life Steal\n-3 Knockback",
-                        SpritePath = $"{fullPath}/Whetstone",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 40,
-                        Limit = 0,
-                    }
-                },
-                {
-                    "WhiteFlag", new Item
-                    {
-                        Name = "WhiteFlag",
-                        Description = "+5 Harvesting\n-5% Enemies",
-                        SpritePath = $"{fullPath}/WhiteFlag",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 40,
-                        Limit = 1
-                    }
-                },
-                {
-                    "Wings", new Item
-                    {
-                        Name = "Wings",
-                        Description = "+10% Speed\n+30 Range\n-2 Elemental Damage",
-                        SpritePath = $"{fullPath}/Wings",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 85,
+                        BasePrice = 25,
                         Limit = 0
                     }
                 },
@@ -2315,23 +2147,23 @@ namespace Brotato_Clone.Models
                     "Wisdom", new Item
                     {
                         Name = "Wisdom",
-                        Description = "+5 damage every 5 seconds\n-20% Damage",
+                        Description = "[g]+5%[c] Damage every [g]5[c] seconds until the end of the wave[nl][r]-20%[c] Damage",
                         SpritePath = $"{fullPath}/Wisdom",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 85,
-                        Limit = 1
+                        BasePrice = 75,
+                        Limit = 0
                     }
                 },
                 {
-                    "WolfHelmet", new Item
+                    "Worm", new Item
                     {
-                        Name = "WolfHelmet",
-                        Description = "+10 Elemental Damage\n+20 Luck\n-5 Engineering",
-                        SpritePath = $"{fullPath}/WolfHelmet",
-                        Rarity = Rarity.Tier4,
+                        Name = "Worm",
+                        Description = "[g]+5[c] HP Regeneration[nl][r]-2[c] Speed",
+                        SpritePath = $"{fullPath}/Worm",
+                        Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
-                        BasePrice = 90,
+                        BasePrice = 50,
                         Limit = 0
                     }
                 }
