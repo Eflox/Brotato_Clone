@@ -179,7 +179,7 @@ namespace Brotato_Clone.Models
         public int ExplosionDmg;
         public int ExplosionSize;
         public int Bounces;
-        public int Piercing;
+        public int Pierces;
         public int PiercingDmg;
         public int BurningSpeed;
         public int BurningSpread;
@@ -278,7 +278,7 @@ namespace Brotato_Clone.Models
             ExplosionDmg = 0;
             ExplosionSize = 0;
             Bounces = 0;
-            Piercing = 0;
+            Pierces = 0;
             PiercingDmg = 0;
             BurningSpeed = 0;
             BurningSpread = 0;
