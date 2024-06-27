@@ -2048,18 +2048,6 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "ThiefDagger", new Item
-                    {
-                        Name = "Thief Dagger",
-                        Description = "[g]+10%[c] Life Steal[nl][g]+5%[c] Crit Chance[nl][g]+10%[c] Dodge[nl][r]-10[c] Max HP",
-                        SpritePath = $"{fullPath}/ThiefDagger",
-                        Rarity = Rarity.Tier4,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 85,
-                        Limit = 1,
-                    }
-                },
-                {
                     "Tree", new Item
                     {
                         Name = "Tree",
