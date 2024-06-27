@@ -1246,7 +1246,7 @@ namespace Brotato_Clone.Models
                 {
                     "JetPack", new Item
                     {
-                        Name = "JetPack",
+                        Name = "Jet Pack",
                         Description = "[g]+15%[c] Speed[nl][g]+10%[c] Dodge[nl][r]-5[c] Max HP[nl][r]-1[c] Armor",
                         SpritePath = $"{fullPath}/JetPack",
                         Rarity = Rarity.Tier4,
