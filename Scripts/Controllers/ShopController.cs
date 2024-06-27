@@ -7,6 +7,8 @@
 
 using Brotato_Clone.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -59,15 +61,44 @@ namespace Brotato_Clone
 
         private void LoadItems()
         {
-            Item[] shopItems = new Item[]
-            {
-                ItemsData.Items["AlienBaby"],
-                ItemsData.Items["AlienBaby"],
-                ItemsData.Items["AlienBaby"],
-                ItemsData.Items["AlienBaby"]
-            };
+            //Item[] shopItems = new Item[]
+            //{
+            //    ItemsData.Items["AlienBaby"],
+            //    ItemsData.Items["AlienBaby"],
+            //    ItemsData.Items["AlienBaby"],
+            //    ItemsData.Items["AlienBaby"]
+            //};
 
-            _shopView.LoadShop(shopItems);
+            _shopView.LoadShop(GetRandomItems(4));
+        }
+
+        private Item[] GetRandomItems(int count)
+        {
+            var items = ItemsData.Items.Values.ToList();
+            var weightedItems = new List<Item>();
+
+            foreach (var item in items)
+            {
+                int weight = GetWeight(item.Rarity);
+                for (int i = 0; i < weight; i++)
+                {
+                    weightedItems.Add(item);
+                }
+            }
+
+            return weightedItems.OrderBy(x => UnityEngine.Random.value).Take(count).ToArray();
+        }
+
+        private int GetWeight(Rarity tier)
+        {
+            switch (tier)
+            {
+                case Rarity.Tier1: return 1;
+                case Rarity.Tier2: return 2;
+                case Rarity.Tier3: return 3;
+                case Rarity.Tier4: return 4;
+                default: throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }
