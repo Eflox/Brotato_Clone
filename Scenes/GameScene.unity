@@ -2957,8 +2957,8 @@ RectTransform:
   - {fileID: 808666007}
   - {fileID: 1980209283}
   - {fileID: 435214442}
-  - {fileID: 1136336732}
   - {fileID: 370403673}
+  - {fileID: 1136336732}
   m_Father: {fileID: 34618765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5485,6 +5485,7 @@ MonoBehaviour:
   _levelUpMenu: {fileID: 808666006}
   _levelUpContainer: {fileID: 1297311644}
   _upgradesPrefab: {fileID: 1820645957045056033, guid: f52cbf52b58cb7f42ba06a0d3f8a2802, type: 3}
+  _playerInventory: {fileID: 1136336731}
 --- !u!114 &541956809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,7 +5599,6 @@ GameObject:
   - component: {fileID: 583329139}
   - component: {fileID: 583329142}
   - component: {fileID: 583329141}
-  - component: {fileID: 583329140}
   m_Layer: 5
   m_Name: ItemsPanel
   m_TagString: Untagged
@@ -5626,36 +5626,6 @@ RectTransform:
   m_AnchoredPosition: {x: 212.54659, y: 62.316277}
   m_SizeDelta: {x: 350.5271, y: 87.4987}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &583329140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583329138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 0}
-  m_Horizontal: 1
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 0}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 0
-  m_HorizontalScrollbarSpacing: 0
-  m_VerticalScrollbarSpacing: 0
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &583329141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12156,6 +12126,7 @@ MonoBehaviour:
   _restartNoButton: {fileID: 162079331}
   _mainMenuYesButton: {fileID: 794893396}
   _mainMenuNoButton: {fileID: 2072442285}
+  _playerInventory: {fileID: 1136336731}
 --- !u!114 &1495163051
 MonoBehaviour:
   m_ObjectHideFlags: 0

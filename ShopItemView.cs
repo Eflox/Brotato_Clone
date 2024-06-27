@@ -17,6 +17,9 @@ namespace Brotato_Clone
     public class ShopItemView : MonoBehaviour
     {
         [SerializeField]
+        private Image _itemPanelBg;
+
+        [SerializeField]
         private Image _itemImage;
 
         [SerializeField]
@@ -43,6 +46,7 @@ namespace Brotato_Clone
         {
             _item = item;
 
+            _itemPanelBg.color = RarityColorsData.Colors[item.Rarity];
             _itemImage.sprite = Resources.Load<Sprite>(item.SpritePath);
             _itemName.text = item.Name;
             _itemClass.text = string.Join(", ", item.Classes.Select(c => c.ToString()).ToArray());

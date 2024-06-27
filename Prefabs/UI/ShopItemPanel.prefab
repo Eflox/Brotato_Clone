@@ -784,6 +784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9715dfa307cec4a9ec01d49e7bc916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemPanelBg: {fileID: 4944684302971896404}
   _itemImage: {fileID: 8494216727104639459}
   _itemName: {fileID: 1380111131462626089}
   _itemClass: {fileID: 5762672804638370040}

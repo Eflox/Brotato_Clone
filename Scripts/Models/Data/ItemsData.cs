@@ -217,7 +217,7 @@ namespace Brotato_Clone.Models
                         Name = "Acid",
                         Description = "[g]+8[c] Max HP[nl][r]-4%[c] Dodge",
                         SpritePath = $"{fullPath}/Acid",
-                        Rarity = Rarity.Tier2,
+                        Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 65,
                         Limit = 0
@@ -1952,54 +1952,6 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "SpiderFang", new Item
-                    {
-                        Name = "Spider Fang",
-                        Description = "[g]+6%[c] Crit Chance[nl][r]-3%[c] Dodge",
-                        SpritePath = $"{fullPath}/SpiderFang",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 30,
-                        Limit = 0
-                    }
-                },
-                {
-                    "SpikedKnuckles", new Item
-                    {
-                        Name = "Spiked Knuckles",
-                        Description = "[g]+3[c] Melee Damage[nl][g]+2[c] Armor",
-                        SpritePath = $"{fullPath}/SpikedKnuckles",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 60,
-                        Limit = 0,
-                    }
-                },
-                {
-                    "Spoon", new Item
-                    {
-                        Name = "Spoon",
-                        Description = "[g]+3[c] Elemental Damage[nl][r]-2[c] Melee Damage",
-                        SpritePath = $"{fullPath}/Spoon",
-                        Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 25,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Stick", new Item
-                    {
-                        Name = "Stick",
-                        Description = "[g]+8[c] Melee Damage[nl][r]-3[c] Armor",
-                        SpritePath = $"{fullPath}/Stick",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 35,
-                        Limit = 0
-                    }
-                },
-                {
                     "StoneSkin", new Item
                     {
                         Name = "Stone Skin",
@@ -2020,18 +1972,6 @@ namespace Brotato_Clone.Models
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 50,
-                        Limit = 0
-                    }
-                },
-                {
-                    "StrangeEye", new Item
-                    {
-                        Name = "Strange Eye",
-                        Description = "[g]+50[c] Range when standing still[nl][g]+25%[c] Crit Chance while standing still[nl][r]-10[c] Luck",
-                        SpritePath = $"{fullPath}/StrangeEye",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 70,
                         Limit = 0
                     }
                 },
@@ -2077,7 +2017,7 @@ namespace Brotato_Clone.Models
                         Name = "Turret",
                         Description = "Spawns a turret that shoots bullets dealing [g]15[c] + ([g]150%[c] Engineering Stat) damage every [g]0.8s[c]",
                         SpritePath = $"{fullPath}/Turret",
-                        Rarity = Rarity.Tier2,
+                        Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 45,
                         Limit = 0
@@ -2140,18 +2080,6 @@ namespace Brotato_Clone.Models
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 75,
-                        Limit = 0
-                    }
-                },
-                {
-                    "Worm", new Item
-                    {
-                        Name = "Worm",
-                        Description = "[g]+5[c] HP Regeneration[nl][r]-2[c] Speed",
-                        SpritePath = $"{fullPath}/Worm",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 50,
                         Limit = 0
                     }
                 }

@@ -54,6 +54,9 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private Button _mainMenuNoButton;
 
+        [SerializeField]
+        private GameObject _playerInventory;
+
         private IngameController _ingameController;
 
         #endregion Fields
@@ -87,6 +90,7 @@ namespace Brotato_Clone.Views
             CloseMainMenuConfirmationMenu();
             _pauseMenuBackground.SetActive(open);
             _pauseMenu.SetActive(open);
+            _playerInventory.SetActive(open);
         }
 
         #endregion Public Methods

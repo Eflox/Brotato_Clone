@@ -19,6 +19,7 @@ namespace Brotato_Clone
         private ShopView _shopView;
         private int _rerollPrice;
         private int _rerollIncrease;
+        private float _luck;
 
         public void Initialize()
         {
@@ -27,6 +28,7 @@ namespace Brotato_Clone
             _shopView.Initialize(this);
 
             EventManager.Subscribe(GameEvent.EnterShop, OnEnterShop);
+            EventManager.Subscribe<PlayerStats>(PlayerEvent.PlayerStatsChanged, OnPlayerStatsChanged);
         }
 
         public void Reroll()
@@ -61,14 +63,6 @@ namespace Brotato_Clone
 
         private void LoadItems()
         {
-            //Item[] shopItems = new Item[]
-            //{
-            //    ItemsData.Items["AlienBaby"],
-            //    ItemsData.Items["AlienBaby"],
-            //    ItemsData.Items["AlienBaby"],
-            //    ItemsData.Items["AlienBaby"]
-            //};
-
             _shopView.LoadShop(GetRandomItems(4));
         }
 
@@ -91,14 +85,55 @@ namespace Brotato_Clone
 
         private int GetWeight(Rarity tier)
         {
+            int wave = PlayerPrefs.GetInt("Wave");
+            float baseChance, chancePerWave, maxChance;
+            int minWave;
+
             switch (tier)
             {
-                case Rarity.Tier1: return 1;
-                case Rarity.Tier2: return 2;
-                case Rarity.Tier3: return 3;
-                case Rarity.Tier4: return 4;
-                default: throw new ArgumentOutOfRangeException();
+                case Rarity.Tier1:
+                    baseChance = 1f;
+                    chancePerWave = 0f;
+                    maxChance = 1f;
+                    minWave = 1;
+                    break;
+
+                case Rarity.Tier2:
+                    baseChance = 0.06f; // Changed base chance to be non-zero for initial waves
+                    chancePerWave = 0.06f;
+                    maxChance = 0.6f;
+                    minWave = 2;
+                    break;
+
+                case Rarity.Tier3:
+                    baseChance = 0.02f; // Changed base chance to be non-zero for initial waves
+                    chancePerWave = 0.02f;
+                    maxChance = 0.25f;
+                    minWave = 4;
+                    break;
+
+                case Rarity.Tier4:
+                    baseChance = 0.0023f; // Changed base chance to be non-zero for initial waves
+                    chancePerWave = 0.0023f;
+                    maxChance = 0.08f;
+                    minWave = 8;
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
+
+            float chance = ((chancePerWave * (wave - minWave + 1)) + baseChance) * (1 + _luck);
+            chance = Mathf.Clamp(chance, 0f, maxChance);
+
+            int weight = Mathf.RoundToInt(chance * 100);
+
+            return weight;
+        }
+
+        private void OnPlayerStatsChanged(PlayerStats playerStats)
+        {
+            _luck = playerStats.Luck[StatType.TotalVisible];
         }
     }
 }

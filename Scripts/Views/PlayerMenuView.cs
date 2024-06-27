@@ -26,6 +26,9 @@ namespace Brotato_Clone.Views
         [SerializeField]
         private GameObject _upgradesPrefab;
 
+        [SerializeField]
+        private GameObject _playerInventory;
+
         private List<UpgradeView> _upgradeViews = new List<UpgradeView>();
 
         public void ShowShopMenu()
@@ -39,6 +42,7 @@ namespace Brotato_Clone.Views
         public void ShowLevelMenu()
         {
             _levelUpMenu.SetActive(true);
+            _playerInventory.SetActive(true);
         }
 
         public void ClearLevelMenu()
