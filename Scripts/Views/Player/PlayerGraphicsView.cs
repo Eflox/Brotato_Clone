@@ -44,6 +44,11 @@ namespace Brotato_Clone.Player.Views
         public void OnFlipPlayer(bool right)
         {
             _spriteRenderer.flipX = !right;
+
+            foreach (SpriteRenderer child in _spriteRenderer.gameObject.GetComponentsInChildren<SpriteRenderer>())
+            {
+                child.flipX = !right;
+            }
         }
 
         #endregion Public Methods
