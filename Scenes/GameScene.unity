@@ -5292,7 +5292,7 @@ MonoBehaviour:
     ExplosionDmg: 0
     ExplosionSize: 0
     Bounces: 0
-    Piercing: 0
+    Pierces: 0
     PiercingDmg: 0
     BurningSpeed: 0
     BurningSpread: 0
@@ -5304,7 +5304,7 @@ MonoBehaviour:
     EnemySpeed: 0
     ConsumableHeal: 0
     MaterialsHealing: 0
-    HPPerMaterials: 0
+    HPPerConsumable: 0
     PickupRange: 3
     Trees: 0
     MaterialsInCrates: 0
