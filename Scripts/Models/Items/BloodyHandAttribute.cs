@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class BloodyHandAttribute : IAttribute, IOnTimer1
     {
-        public class BloodyHandAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int LifeSteal = 12;
+
+        public void OnTimer1()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

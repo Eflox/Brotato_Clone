@@ -5,11 +5,15 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class CrownAttribute : IAttribute, IOnWaveEnd
     {
-        public class CrownAttribute : IAttribute
+        public void OnWaveEnd()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

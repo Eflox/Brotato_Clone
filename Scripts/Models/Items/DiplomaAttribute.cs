@@ -11,5 +11,13 @@ namespace Brotato_Clone.Models
 {
     public class DiplomaAttribute : IAttribute
     {
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Engineering = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int XPGain = 20;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MaxHP = -3;
     }
 }

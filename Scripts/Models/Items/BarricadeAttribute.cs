@@ -9,7 +9,14 @@ using Brotato_Clone.Interfaces;
 
 namespace Brotato_Clone.Models
 {
-    public class BarricadeAttribute : IAttribute
+    public class BarricadeAttribute : IAttribute, IOnMovement
     {
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Speed = -5;
+
+        public void OnMovement(bool moving)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

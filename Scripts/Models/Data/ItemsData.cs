@@ -46,7 +46,6 @@ namespace Brotato_Clone.Models
                 { "Banner", new BannerAttribute() },
                 { "Barricade", new BarricadeAttribute() },
                 { "Bat", new BatAttribute() },
-                { "BeanTeacher", new BeanTeacherAttribute() },
                 { "Beanie", new BeanieAttribute() },
                 { "BigArms", new BigArmsAttribute() },
                 { "BlackBelt", new BlackBeltAttribute() },
@@ -743,7 +742,7 @@ namespace Brotato_Clone.Models
                     "Coupon", new Item
                     {
                         Name = "Coupon",
-                        Description = "[r]-5%[c] Price",
+                        Description = "[g]-5%[c] Price",
                         SpritePath = $"{fullPath}/Coupon",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },

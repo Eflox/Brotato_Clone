@@ -5,11 +5,19 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class DuctTapeAttribute : IAttribute
     {
-        public class DuctTapeAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Armor = 1;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Engineering = 1;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MaxHP = -2;
     }
+}

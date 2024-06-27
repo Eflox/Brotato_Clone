@@ -5,11 +5,22 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class CandleAttribute : IAttribute
     {
-        public class CandleAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int ElementalDmg = 4;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int HPRegen = 1;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int EnemyAmount = -10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -5;
     }
+}

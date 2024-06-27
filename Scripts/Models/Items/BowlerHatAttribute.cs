@@ -5,11 +5,22 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class BowlerHatAttribute : IAttribute
     {
-        public class BowlerHatAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Luck = 15;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Harvesting = 18;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int AttackSpeed = -5;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int CritChance = -3;
     }
+}

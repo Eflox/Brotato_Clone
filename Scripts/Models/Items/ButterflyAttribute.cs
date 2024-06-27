@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class ButterflyAttribute : IAttribute
     {
-        public class ButterflyAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int LifeSteal = 2;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int ElementalDmg = -1;
     }
+}

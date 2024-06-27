@@ -5,11 +5,15 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class CyberballAttribute : IAttribute, IOnMobDie
     {
-        public class CyberballAttribute : IAttribute
+        public void OnMobDie()
         {
+            throw new System.NotImplementedException();
         }
     }
+}
