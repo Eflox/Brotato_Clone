@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class RipandTearAttribute : IAttribute, IOnMobDie
     {
-        public class RipandTearAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Harvesting = -12;
+
+        public void OnMobDie()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

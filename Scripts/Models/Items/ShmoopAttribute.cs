@@ -5,11 +5,22 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class ShmoopAttribute : IAttribute
     {
-        public class ShmoopAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MaxHP = 6;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int HPRegen = 2;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MeleeDmg = -2;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int RangedDmg = -1;
     }
+}

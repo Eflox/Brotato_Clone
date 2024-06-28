@@ -5,11 +5,24 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class MetalDetectorAttribute : IAttribute, IOnMaterialPickup
     {
-        public class MetalDetectorAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Luck = 6;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Engineering = 2;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -5;
+
+        public void OnMaterialPickup()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

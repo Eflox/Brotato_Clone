@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class SadTomatoAttribute : IAttribute, IOnWaveStart
     {
-        public class SadTomatoAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int HPRegen = 8;
+
+        public void OnWaveStart()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

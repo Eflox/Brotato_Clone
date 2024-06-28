@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class RiposteAttribute : IAttribute, IOnDodge
     {
-        public class RiposteAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MeleeDmg = 2;
+
+        public void OnDodge()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

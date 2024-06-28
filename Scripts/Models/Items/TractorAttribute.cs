@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class TractorAttribute : IAttribute
     {
-        public class TractorAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Harvesting = 40;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -8;
     }
+}

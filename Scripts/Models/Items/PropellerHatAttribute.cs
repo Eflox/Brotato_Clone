@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class PropellerHatAttribute : IAttribute
     {
-        public class PropellerHatAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Luck = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -2;
     }
+}

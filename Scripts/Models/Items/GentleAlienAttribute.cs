@@ -5,11 +5,19 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class GentleAlienAttribute : IAttribute
     {
-        public class GentleAlienAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = 5;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Enemies = 5;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MaxHP = 2;
     }
+}

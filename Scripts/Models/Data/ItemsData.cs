@@ -109,7 +109,6 @@ namespace Brotato_Clone.Models
                 { "Hedgehog", new HedgehogAttribute() },
                 { "Helmet", new HelmetAttribute() },
                 { "HuntingTrophy", new HuntingTrophyAttribute() },
-                { "ImprovedTools", new ImprovedToolsAttribute() },
                 { "IncendiaryTurret", new IncendiaryTurretAttribute() },
                 { "Injection", new InjectionAttribute() },
                 { "Insanity", new InsanityAttribute() },
@@ -1195,18 +1194,6 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "ImprovedTools", new Item
-                    {
-                        Name = "Improved Tools",
-                        Description = "[g]+10%[c] Attack Speed[nl]Reduces the attack cooldown of your structures by [g]50%[c]",
-                        SpritePath = $"{fullPath}/ImprovedTools",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 70,
-                        Limit = 1,
-                    }
-                },
-                {
                     "IncendiaryTurret", new Item
                     {
                         Name = "Incendiary Turret",
@@ -1498,7 +1485,7 @@ namespace Brotato_Clone.Models
                     "Mouse", new Item
                     {
                         Name = "Mouse",
-                        Description = "[g]+5%[c] Life Steal[nl][g]+10%[c] Enemies[nl][r]-5[c] Harvesting",
+                        Description = "[g]+5%[c] Life Steal[nl][r]+10%[c] Enemies[nl][r]-5[c] Harvesting",
                         SpritePath = $"{fullPath}/Mouse",
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
@@ -1912,6 +1899,18 @@ namespace Brotato_Clone.Models
                         Classes = new Class[] { Class.Item },
                         BasePrice = 60,
                         Limit = 0
+                    }
+                },
+                {
+                    "Snail", new Item
+                    {
+                        Name = "Snail",
+                        Description = "[g]-5[r] Enemy Speed[nl][r]-3%[c] Speed",
+                        SpritePath = $"{fullPath}/Snail",
+                        Rarity = Rarity.Tier1,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 40,
+                        Limit = 1
                     }
                 },
                 {

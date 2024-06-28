@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class TentacleAttribute : IAttribute, IOnCriticalHitKill
     {
-        public class TentacleAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int CritChance = 3;
+
+        public void OnCriticalHitKill()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

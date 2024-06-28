@@ -5,11 +5,19 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class SmallMagazineAttribute : IAttribute
     {
-        public class SmallMagazineAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int RangedDmg = 2;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int AttackSpeed = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -6;
     }
+}

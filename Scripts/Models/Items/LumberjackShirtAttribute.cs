@@ -5,11 +5,15 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class LumberjackShirtAttribute : IAttribute, IOnCriticalHit
     {
-        public class LumberjackShirtAttribute : IAttribute
+        public void OnCriticalHit()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

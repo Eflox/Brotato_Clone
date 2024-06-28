@@ -5,11 +5,21 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class MedikitAttribute : IAttribute, IOnTimer5
     {
-        public class MedikitAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int HPRegen = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Luck = -10;
+
+        public void OnTimer5()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

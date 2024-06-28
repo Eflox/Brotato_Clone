@@ -5,11 +5,15 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class ExtraStomachAttribute : IAttribute, IOnConsumablePickup
     {
-        public class ExtraStomachAttribute : IAttribute
+        public void OnConsumablePickup()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

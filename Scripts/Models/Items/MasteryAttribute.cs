@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class MasteryAttribute : IAttribute
     {
-        public class MasteryAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MeleeDmg = 6;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int RangedDmg = -3;
     }
+}

@@ -5,11 +5,21 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class TriangleofPowerAttribute : IAttribute, IOnTakeDamage
     {
-        public class TriangleofPowerAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = 20;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Armor = 1;
+
+        public void OnTakeDamage()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

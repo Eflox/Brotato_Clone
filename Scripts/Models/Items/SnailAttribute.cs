@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class SnailAttribute : IAttribute
     {
-        public class SnailAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int EnemySpeed = -5;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Speed = -3;
     }
+}

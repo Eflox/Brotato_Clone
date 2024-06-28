@@ -5,11 +5,15 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class GiantBeltAttribute : IAttribute, IOnCriticalHit
     {
-        public class GiantBeltAttribute : IAttribute
+        public void OnCriticalHit()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

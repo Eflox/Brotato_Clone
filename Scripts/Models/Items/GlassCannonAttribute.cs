@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class GlassCannonAttribute : IAttribute
     {
-        public class GlassCannonAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = 25;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Armor = -3;
     }
+}

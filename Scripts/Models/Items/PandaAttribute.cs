@@ -5,11 +5,19 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class PandaAttribute : IAttribute
     {
-        public class PandaAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MaxHP = 12;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Luck = 25;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -5;
     }
+}

@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class StatueAttribute : IAttribute, IOnMovement
     {
-        public class StatueAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Speed = -10;
+
+        public void OnMovement(bool moving)
         {
+            throw new System.NotImplementedException();
         }
     }
+}

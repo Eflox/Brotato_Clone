@@ -195,12 +195,14 @@ namespace Brotato_Clone.Models
 
         public int EnemyAmount;
         public int EnemySpeed;
+        public int ElitesDamage;
 
         //HP & Healing
 
         public int ConsumableHeal;
         public int MaterialsHealing;
         public int HPPerConsumable;
+        public int Nullifies;
 
         //Pick-Ups & Materials
 

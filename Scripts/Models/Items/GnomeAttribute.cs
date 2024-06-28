@@ -5,11 +5,22 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class GnomeAttribute : IAttribute
     {
-        public class GnomeAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MeleeDmg = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int ElementalDmg = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Range = -20;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int PickupRange = -20;
     }
+}

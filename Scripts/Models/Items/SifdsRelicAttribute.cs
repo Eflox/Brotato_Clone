@@ -5,11 +5,15 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class SifdsRelicAttribute : IAttribute, IOnMaterialDrop
     {
-        public class SifdsRelicAttribute : IAttribute
+        public void OnMaterialDrop()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

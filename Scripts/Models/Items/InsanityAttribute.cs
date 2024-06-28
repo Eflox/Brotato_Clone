@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class InsanityAttribute : IAttribute
     {
-        public class InsanityAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int CritChance = 6;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -3;
     }
+}

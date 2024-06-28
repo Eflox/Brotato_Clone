@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class EyesSurgeryAttribute : IAttribute
     {
-        public class EyesSurgeryAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int BurnRate = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Range = -10;
     }
+}

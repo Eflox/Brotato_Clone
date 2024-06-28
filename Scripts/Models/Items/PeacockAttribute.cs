@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class PeacockAttribute : IAttribute, IOnWaveStart
     {
-        public class PeacockAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int XPGain = 25;
+
+        public void OnWaveStart()
         {
+            throw new System.NotImplementedException();
         }
     }
+}
