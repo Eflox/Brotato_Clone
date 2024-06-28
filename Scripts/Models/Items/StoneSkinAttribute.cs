@@ -12,6 +12,9 @@ namespace Brotato_Clone.Models
     public class StoneSkinAttribute : IAttribute
     {
         [Stat(operation: StatOperation.Add)]
-        public readonly int Armor = -2;
+        public readonly int Armor = 8;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Luck = -6;
     }
 }

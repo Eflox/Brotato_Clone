@@ -5,11 +5,18 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class WisdomAttribute : IAttribute, IOnTimer5
     {
-        public class WisdomAttribute : IAttribute
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -20;
+
+        public void OnTimer5()
         {
+            throw new System.NotImplementedException();
         }
     }
+}

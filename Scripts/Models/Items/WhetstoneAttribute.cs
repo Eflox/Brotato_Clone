@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class WhetstoneAttribute : IAttribute
     {
-        public class WhetstoneAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int LifeSteal = 4;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Knockback = -3;
     }
+}

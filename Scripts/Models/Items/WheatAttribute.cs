@@ -13,5 +13,14 @@ namespace Brotato_Clone.Models
     {
         [Stat(operation: StatOperation.Add)]
         public readonly int MeleeDmg = 4;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int RangedDmg = 2;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Harvesting = 10;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int ElementalDmg = -2;
     }
 }
