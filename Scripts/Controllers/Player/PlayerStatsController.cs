@@ -146,7 +146,7 @@ namespace Brotato_Clone.Controllers
         {
             if (item.Attribute == null)
             {
-                if (item.Classes[0] != Class.Weapon && item.Classes[0] != Class.Upgrade && item.Classes[0] != Class.Character)
+                if (item.Classes[0] != Class.Weapon && item.Classes[0] != Class.Character)
                     Debug.LogWarning($"{item.Name} does not have an attribute");
                 return;
             }

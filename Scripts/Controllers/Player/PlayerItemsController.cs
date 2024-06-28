@@ -77,7 +77,6 @@ namespace Brotato_Clone.Controllers
 
             if (existingItem != null)
             {
-                Debug.LogWarning("Duplicate adding to count");
                 existingItem.Count++;
                 SaveManager.SaveItems(_items);
             }

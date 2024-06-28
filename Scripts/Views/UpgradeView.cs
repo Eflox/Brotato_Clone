@@ -46,7 +46,6 @@ namespace Brotato_Clone.Views
 
         private void Selected()
         {
-            Debug.Log("upgrade button pressed");
             _upgrade.SelectUpgrade();
         }
     }
