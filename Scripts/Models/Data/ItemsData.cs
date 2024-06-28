@@ -366,18 +366,6 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "Bait", new Item
-                    {
-                        Name = "Bait",
-                        Description = "[g]+8%[c] Damage[nl]Special enemies appear at the beginning of the next wave",
-                        SpritePath = $"{fullPath}/Bait",
-                        Rarity = Rarity.Tier2,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 25,
-                        Limit = 0
-                    }
-                },
-                {
                     "Bandana", new Item
                     {
                         Name = "Bandana",
@@ -422,18 +410,6 @@ namespace Brotato_Clone.Models
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 20,
-                        Limit = 0
-                    }
-                },
-                {
-                    "BeanTeacher", new Item
-                    {
-                        Name = "Bean Teacher",
-                        Description = "[g]+40%[c] XP Gain[nl][r]-2%[c] Life Steal",
-                        SpritePath = $"{fullPath}/BeanTeacher",
-                        Rarity = Rarity.Tier3,
-                        Classes = new Class[] { Class.Item },
-                        BasePrice = 70,
                         Limit = 0
                     }
                 },
@@ -1626,7 +1602,7 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "Plastic Explosive", new Item
+                    "PlasticExplosive", new Item
                     {
                         Name = "PlasticExplosive",
                         Description = "[g]+25%[c] Explosion Size",
@@ -1638,7 +1614,7 @@ namespace Brotato_Clone.Models
                     }
                 },
                 {
-                    "Poisonous Tonic", new Item
+                    "PoisonousTonic", new Item
                     {
                         Name = "PoisonousTonic",
                         Description = "[g]+10%[c] Attack Speed[nl][g]+5%[c] Crit Chance[nl][g]+15[c] Range[nl][r]-2[c] HP Regeneration",
