@@ -37,7 +37,7 @@ namespace Brotato_Clone.Models
                         Description = "",
                         SpritePath = $"{_assetSource}/Sprites/Weapons/Icons/Fist",
                         Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Unarmed },
+                        Classes = new Class[] { Class.Weapon, Class.Unarmed },
 
                         Damage = 8,
                         Cooldown = 0.78f,
@@ -59,7 +59,7 @@ namespace Brotato_Clone.Models
                         Description = "",
                         SpritePath = $"{_assetSource}/Sprites/Weapons/Icons/Knife",
                         Rarity = Rarity.Tier1,
-                        Classes = new Class[] { Class.Precise },
+                        Classes = new Class[] { Class.Weapon, Class.Precise },
 
                         Damage = 6,
                         Cooldown = 1.01f,

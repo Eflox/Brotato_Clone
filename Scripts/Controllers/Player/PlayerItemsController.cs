@@ -8,6 +8,7 @@
 using Brotato_Clone.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -72,7 +73,17 @@ namespace Brotato_Clone.Controllers
         /// </summary>
         public void AddItem(Item item)
         {
-            SaveManager.SaveItem(item);
+            var existingItem = _items.FirstOrDefault(i => i.Name == item.Name);
+
+            if (existingItem != null)
+            {
+                Debug.LogWarning("Duplicate adding to count");
+                existingItem.Count++;
+                SaveManager.SaveItems(_items);
+            }
+            else
+                SaveManager.SaveItem(item);
+
             LoadItems();
         }
 

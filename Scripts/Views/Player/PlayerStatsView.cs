@@ -15,6 +15,9 @@ namespace Brotato_Clone.Player.Views
     public class PlayerStatsView : MonoBehaviour
     {
         [SerializeField]
+        private TMP_Text _currentLevelText;
+
+        [SerializeField]
         private TMP_Text _maxHPText;
 
         [SerializeField]
@@ -69,6 +72,8 @@ namespace Brotato_Clone.Player.Views
 
         private void OnPlayerStatsChanged(PlayerStats stats)
         {
+            _currentLevelText.text = stats.CurrentLvl.ToString();
+
             _maxHPText.text = stats.MaxHP[StatType.TotalVisible].ToString().WithPN();
             _HPRegenText.text = stats.HPRegen[StatType.TotalVisible].ToString().WithPN();
             _lifeStealText.text = stats.LifeSteal[StatType.TotalVisible].ToString().WithPN();

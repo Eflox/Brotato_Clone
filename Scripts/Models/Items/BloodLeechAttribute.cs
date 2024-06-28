@@ -12,7 +12,7 @@ namespace Brotato_Clone.Models
     public class BloodLeechAttribute : IAttribute
     {
         [Stat(operation: StatOperation.Add)]
-        public readonly int LifeSteak = 2;
+        public readonly int LifeSteal = 2;
 
         [Stat(operation: StatOperation.Add)]
         public readonly int HPRegen = 2;

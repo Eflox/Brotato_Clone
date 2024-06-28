@@ -145,9 +145,14 @@ namespace Brotato_Clone.Controllers
         private void ApplyItem(Item item)
         {
             if (item.Attribute == null)
+            {
+                if (item.Classes[0] != Class.Weapon && item.Classes[0] != Class.Upgrade && item.Classes[0] != Class.Character)
+                    Debug.LogWarning($"{item.Name} does not have an attribute");
                 return;
+            }
 
-            ApplyItemStats(item.Attribute);
+            for (int i = 0; i < item.Count; i++)
+                ApplyItemStats(item.Attribute);
         }
 
         private void ApplyItemStats(IAttribute attribute)
@@ -193,6 +198,10 @@ namespace Brotato_Clone.Controllers
                     else if (statAttribute.Operation == StatOperation.Set)
                         statField.SetValue(_playerStats, valueToApply);
                 }
+            }
+            else
+            {
+                Debug.LogWarning($"Stat field '{statFieldName}' not found in type '{statsType.Name}' for attribute '{attribute.GetType().Name}'.");
             }
         }
 

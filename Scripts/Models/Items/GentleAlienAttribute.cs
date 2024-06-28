@@ -15,7 +15,7 @@ namespace Brotato_Clone.Models
         public readonly int Damage = 5;
 
         [Stat(operation: StatOperation.Add)]
-        public readonly int Enemies = 5;
+        public readonly int EnemyAmount = 5;
 
         [Stat(operation: StatOperation.Add)]
         public readonly int MaxHP = 2;

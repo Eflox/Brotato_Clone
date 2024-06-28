@@ -12,7 +12,7 @@ namespace Brotato_Clone.Models
     public class LuckyCharmAttribute : IAttribute
     {
         [Stat(operation: StatOperation.Add)]
-        public readonly int luck = 30;
+        public readonly int Luck = 30;
 
         [Stat(operation: StatOperation.Add)]
         public readonly int MeleeDmg = -2;

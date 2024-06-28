@@ -184,6 +184,8 @@ namespace Brotato_Clone.Models
         public int BurningSpeed;
         public int BurningSpread;
         public int Knockback;
+        public int BurnSpread;
+        public int BurnRate;
 
         //Stand Still
 
@@ -196,6 +198,7 @@ namespace Brotato_Clone.Models
         public int EnemyAmount;
         public int EnemySpeed;
         public int ElitesDamage;
+        public int TreeCount;
 
         //HP & Healing
 

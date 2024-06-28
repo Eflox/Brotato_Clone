@@ -12,6 +12,6 @@ namespace Brotato_Clone.Models
     public class LemonadeAttribute : IAttribute
     {
         [Stat(operation: StatOperation.Add)]
-        public readonly int ConsumableHealing = 1;
+        public readonly int ConsumableHeal = 1;
     }
 }

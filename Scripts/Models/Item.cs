@@ -20,6 +20,7 @@ namespace Brotato_Clone.Models
         public IAttribute Attribute;
         public int BasePrice;
         public int Limit;
+        public int Count = 1;
 
         public void SelectItem() => EventManager.TriggerEvent(PlayerEvent.PlayerSelectItem, this);
     }
