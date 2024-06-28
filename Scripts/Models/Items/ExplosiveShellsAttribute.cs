@@ -5,11 +5,19 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class ExplosiveShellsAttribute : IAttribute
     {
-        public class ExplosiveShellsAttribute : IAttribute
-        {
-        }
+        [Stat(operation: StatOperation.Add)]
+        public readonly int ExplosionDmg = 60;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int ExplosionSize = 15;
+
+        [Stat(operation: StatOperation.Add)]
+        public readonly int Damage = -15;
     }
+}

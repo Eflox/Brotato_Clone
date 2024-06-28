@@ -5,11 +5,16 @@
      * Contact: c.dansembourg@icloud.com
      */
 
-    using Brotato_Clone.Interfaces;
+using Brotato_Clone.Interfaces;
 
-    namespace Brotato_Clone.Models
+namespace Brotato_Clone.Models
+{
+    public class EstysCouchAttribute : IAttribute
     {
-        public class EstysCouchAttribute : IAttribute
-        {
-        }
+        /// <summary>
+        [Stat(operation: StatOperation.Add)]
+        public readonly int MaxHP = 5;
+
+        public readonly int Speed = -15;
     }
+}
