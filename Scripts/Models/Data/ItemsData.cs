@@ -1894,7 +1894,7 @@ namespace Brotato_Clone.Models
                     "Snail", new Item
                     {
                         Name = "Snail",
-                        Description = "[r]-5[c] Enemy Speed[nl][r]-3%[c] Speed",
+                        Description = "[g]-5[c] Enemy Speed[nl][r]-3%[c] Speed",
                         SpritePath = $"{fullPath}/Snail",
                         Rarity = Rarity.Tier1,
                         Classes = new Class[] { Class.Item },

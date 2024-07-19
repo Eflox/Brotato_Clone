@@ -15,7 +15,7 @@ namespace Brotato_Clone.Models
         public readonly int LifeSteal = 3;
 
         [Stat(operation: StatOperation.Add)]
-        public readonly int Enemies = 10;
+        public readonly int EnemyAmount = 10;
 
         [Stat(operation: StatOperation.Add)]
         public readonly int Harvesting = -5;
