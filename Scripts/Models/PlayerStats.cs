@@ -24,7 +24,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 10 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -32,7 +33,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -40,7 +42,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -48,7 +51,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -56,7 +60,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -64,7 +69,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -72,7 +78,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -80,7 +87,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -88,7 +96,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -96,7 +105,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -104,7 +114,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -112,7 +123,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -120,7 +132,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -128,7 +141,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -136,7 +150,8 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
@@ -144,14 +159,17 @@ namespace Brotato_Clone.Models
         {
             { StatType.Base, 0 },
             { StatType.Multiplier, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         [InspectableDictionary]
         public Dictionary<StatType, int> XPGain = new Dictionary<StatType, int>
         {
             { StatType.Base, 0 },
-            { StatType.TotalVisible, 0 }
+            { StatType.Multiplier, 0 },
+            { StatType.TotalVisible, 0 },
+            { StatType.Temporary, 0 }
         };
 
         //Variable Stats
@@ -334,5 +352,6 @@ namespace Brotato_Clone.Models
         Base,
         Multiplier,
         TotalVisible,
+        Temporary,
     }
 }

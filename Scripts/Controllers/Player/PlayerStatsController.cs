@@ -77,6 +77,11 @@ namespace Brotato_Clone.Controllers
             EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
         }
 
+        public void EndWaveStats()
+        {
+            EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
+        }
+
         public void NextWave()
         {
             _playerStats.CurrentWave++;
