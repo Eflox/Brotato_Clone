@@ -16,20 +16,19 @@ namespace Brotato_Clone.Controllers
     {
         #region Public Methods
 
-        /// <summary>
-        /// Sets the player's maximum health points.
-        /// </summary>
-        public void SetHealth(int maxHP)
+        public void Initialize()
         {
-        }
-
-        /// <summary>
-        /// Updates the player's maximum health points.
-        /// </summary>
-        public void UpdateMaxHP(int maxHP)
-        {
+            EventManager.Subscribe<int>(PlayerEvent.PlayerTakeDamage, OnTakeDamage);
         }
 
         #endregion Public Methods
+
+        #region Private Methods
+
+        private void OnTakeDamage(int damage)
+        {
+        }
+
+        #endregion Private Methods
     }
 }

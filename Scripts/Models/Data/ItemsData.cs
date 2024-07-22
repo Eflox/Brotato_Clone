@@ -215,7 +215,8 @@ namespace Brotato_Clone.Models
                 { "White Flag", new WhiteFlagAttribute() },
                 { "Wings", new WingsAttribute() },
                 { "Wisdom", new WisdomAttribute() },
-                { "Wolf Helmet", new WolfHelmetAttribute() }
+                { "Wolf Helmet", new WolfHelmetAttribute() },
+                { "Test", new TestAttribute() }
             };
 
             string fullPath = $"{_assetSource}/{_path}";
@@ -1930,7 +1931,7 @@ namespace Brotato_Clone.Models
                     "SpicySauce", new Item
                     {
                         Name = "Spicy Sauce",
-                        Description = "[g]+2[c] Elemental Damage[nl]You take [r]1[c] damage per second (does not give invulnerability time)",
+                        Description = "[g]+3[c] Max HP[nl]Consumables have a [g]25%[c] chance to explode for [g]10[c] (100%Max HP) damage when picked up\r\n",
                         SpritePath = $"{fullPath}/SpicySauce",
                         Rarity = Rarity.Tier2,
                         Classes = new Class[] { Class.Item },
@@ -2067,6 +2068,18 @@ namespace Brotato_Clone.Models
                         Rarity = Rarity.Tier3,
                         Classes = new Class[] { Class.Item },
                         BasePrice = 75,
+                        Limit = 0
+                    }
+                },
+                {
+                    "Test", new Item
+                    {
+                        Name = "Test",
+                        Description = "Test item",
+                        SpritePath = $"{fullPath}/WhiteFlag",
+                        Rarity = Rarity.Tier1,
+                        Classes = new Class[] { Class.Item },
+                        BasePrice = 0,
                         Limit = 0
                     }
                 }

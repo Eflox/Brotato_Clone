@@ -239,23 +239,39 @@ namespace Brotato_Clone.Controllers
 
         private void OnTimer1()
         {
-            foreach (var item in _allItems)
-                if (item is IOnTimer1 attribute)
+            Debug.Log("Calling timer 1");
+            foreach (var item in _items)
+            {
+                if (ItemsData.Attributes[item.Name] is IOnTimer1 attribute)
+                {
+                    Debug.Log($"{item.Name} called OnTimer3");
                     attribute.OnTimer1();
+                }
+            }
         }
 
         private void OnTimer3()
         {
-            foreach (var item in _allItems)
+            foreach (var item in _items)
+            {
                 if (item is IOnTimer3 attribute)
+                {
+                    Debug.Log($"{item.Name} called OnTimer3");
                     attribute.OnTimer3();
+                }
+            }
         }
 
         private void OnTimer5()
         {
-            foreach (var item in _allItems)
+            foreach (var item in _items)
+            {
                 if (item is IOnTimer5 attribute)
+                {
+                    Debug.Log($"{item.Name} called OnTimer3");
                     attribute.OnTimer5();
+                }
+            }
         }
 
         private void ClearCharacterSave()
