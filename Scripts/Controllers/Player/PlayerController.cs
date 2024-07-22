@@ -30,7 +30,6 @@ namespace Brotato_Clone.Controllers
         private PlayerStatsController _playerStatsController;
         private PlayerPickupController _playerPickupController;
         private PlayerMovementController _playerMovementController;
-        private PlayerHealthController _playerHealthController;
         private PlayerMenuController _playerLevelUpMenuController;
 
         #endregion Fields
@@ -50,7 +49,6 @@ namespace Brotato_Clone.Controllers
             _playerStatsController = GetComponent<PlayerStatsController>();
             _playerPickupController = GetComponent<PlayerPickupController>();
             _playerMovementController = GetComponent<PlayerMovementController>();
-            _playerHealthController = GetComponent<PlayerHealthController>();
             _playerAllWeaponsController = GetComponent<PlayerAllWeaponsController>();
             _playerLevelUpMenuController = GetComponent<PlayerMenuController>();
 
@@ -124,9 +122,10 @@ namespace Brotato_Clone.Controllers
             _playerStatsController.StartWaveStats();
             _playerCameraController.StartFollow(_playerObject.transform);
             _playerMovementController.StartMovement(stats.Speed[StatType.TotalVisible], _playerObject.transform);
-            _playerHealthController.SetHealth(stats.MaxHP[StatType.TotalVisible]);
             _playerPickupController.StartPickupSearch(_playerObject);
             _playerAllWeaponsController.LoadWeapons(_playerItemsController.GetWeapons(), _playerObject.transform);
+
+            _playerItemsController.Ingame = true;
         }
 
         private void OnPlayerDead()
@@ -145,6 +144,7 @@ namespace Brotato_Clone.Controllers
             _playerMovementController.StopMovement();
             _playerPickupController.StopSearch();
             _playerLevelUpMenuController.ShowMenu(_playerStatsController.GetStats().LevelsGainedDuringWave);
+            _playerItemsController.Ingame = false;
         }
 
         private void OnStatsChanged(PlayerStats stats)
@@ -152,7 +152,6 @@ namespace Brotato_Clone.Controllers
             Debug.Log("On Stats Changed");
             _playerPickupController.UpdateRange(stats.PickupRange);
             _playerMovementController.UpdateSpeed(stats.Speed[StatType.TotalVisible]);
-            _playerHealthController.UpdateMaxHP(stats.MaxHP[StatType.TotalVisible]);
         }
 
         private void OnShopEnter()

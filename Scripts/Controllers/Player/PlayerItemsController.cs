@@ -39,6 +39,8 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private Character _character;
 
+        public bool Ingame = false;
+
         private float _timer1 = 0;
         private float _timer3 = 0;
         private float _timer5 = 0;
@@ -214,6 +216,9 @@ namespace Brotato_Clone.Controllers
 
         private void Update()
         {
+            if (!Ingame)
+                return;
+
             _timer1 += Time.deltaTime;
             _timer3 += Time.deltaTime;
             _timer5 += Time.deltaTime;

@@ -13,7 +13,7 @@ namespace DamageNumbersPro
     [CustomEditor(typeof(DamageNumber), true), CanEditMultipleObjects]
     public class DamageNumberEditor : Editor
     {
-        public static string version = "4.34";
+        public static string version = "4.36";
 
         void OnEnable()
         {
@@ -1162,6 +1162,51 @@ namespace DamageNumbersPro
                         GUI.enabled = true;
                         DNPEditorInternal.Lines();
 
+
+                        SerializedProperty scaleWithFOV = serializedObject.FindProperty("scaleWithFov");
+                        EditorGUILayout.PropertyField(scaleWithFOV);
+                        if (scaleWithFOV.boolValue || scaleWithFOV.hasMultipleDifferentValues)
+                        {
+                            EditorGUILayout.PropertyField(serializedObject.FindProperty("defaultFov"));
+                            EditorGUILayout.PropertyField(serializedObject.FindProperty("fovCamera"));
+
+                            bool noFovCameraOverride = true;
+                            foreach (DamageNumber dn in DNPEditorInternal.damageNumbers)
+                            {
+                                if (dn.fovCamera != null)
+                                {
+                                    noFovCameraOverride = false;
+                                    break;
+                                }
+                            }
+                            if (noFovCameraOverride)
+                            {
+                                string overlayString = "Main Camera";
+
+                                if (DNPEditorInternal.currentWidth < 404)
+                                {
+                                    overlayString = "<size=11>Main Camera</size>";
+
+                                    if (DNPEditorInternal.currentWidth < 389)
+                                    {
+                                        overlayString = "";
+                                    }
+                                }
+
+                                if (DNPEditorInternal.currentWidth > 293)
+                                {
+                                    PropertyOverlay(DNPEditorInternal.CheckmarkString(true) + "  " + overlayString + "      ");
+                                }
+                            }
+                            else
+                            {
+                                GUI.color = new Color(1, 1, 1, 0.7f);
+                                DNPEditorInternal.ScalingLabel("Only required if your <b>main camera</b> is not the FOV camera.", 362);
+                                GUI.color = Color.white;
+                            }
+                        }
+                        DNPEditorInternal.Lines();
+
                         EditorGUILayout.PropertyField(serializedObject.FindProperty("cameraOverride"));
                         bool noCameraOverride = true;
                         foreach(DamageNumber dn in DNPEditorInternal.damageNumbers)
@@ -1197,6 +1242,7 @@ namespace DamageNumbersPro
                             DNPEditorInternal.ScalingLabel("Only required if your <b>main camera</b> is not the target camera.", 362);
                             GUI.color = Color.white;
                         }
+
                         break;
 
                     //Text Content:

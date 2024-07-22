@@ -32,21 +32,30 @@ namespace Brotato_Clone.Player.Views
         /// </summary>
         public void Initialize()
         {
-            EventManager.Subscribe(PlayerEvent.PlayerTakeDamage, OnDealOrTakeDamage);
-            EventManager.Subscribe(PlayerEvent.PlayerDealDamage, OnDealOrTakeDamage);
+            EventManager.Subscribe<int>(PlayerEvent.PlayerTakeDamage, OnTakeDamage);
+            EventManager.Subscribe(PlayerEvent.PlayerDealDamage, OnDealDamage);
         }
 
         #endregion Public Methods
 
         #region Private Methods
 
-        private void OnDealOrTakeDamage()
+        private void OnTakeDamage(int amount)
         {
             if (_shakeCoroutine != null)
                 StopCoroutine(_shakeCoroutine);
 
             _originalPosition = _camera.transform.localPosition;
-            _shakeCoroutine = StartCoroutine(ShakeCamera(0.06f, 0.1f));
+            _shakeCoroutine = StartCoroutine(ShakeCamera(0.06f, 0.05f));
+        }
+
+        private void OnDealDamage()
+        {
+            if (_shakeCoroutine != null)
+                StopCoroutine(_shakeCoroutine);
+
+            _originalPosition = _camera.transform.localPosition;
+            _shakeCoroutine = StartCoroutine(ShakeCamera(0.06f, 0.05f));
         }
 
         private IEnumerator ShakeCamera(float duration, float magnitude)

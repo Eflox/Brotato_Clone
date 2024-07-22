@@ -23,10 +23,10 @@ namespace Brotato_Clone.Player.Views
         private PlayerCameraView _playerCameraView;
         private PlayerGraphicsView _playerGraphicsView;
         private PlayerUIStatusView _playerUIStatusView;
-
         private PlayerStatsView _playerStatsView;
         private PlayerItemsView _playerItemsView;
         private PlayerSoundsView _playerSoundsView;
+        private PlayerDamageNumbersView _playerDamageNumbersView;
 
         #endregion Fields
 
@@ -45,12 +45,14 @@ namespace Brotato_Clone.Player.Views
             _playerSoundsView = GetComponent<PlayerSoundsView>();
             _playerStatsView = GetComponent<PlayerStatsView>();
             _playerUIStatusView = GetComponent<PlayerUIStatusView>();
+            _playerDamageNumbersView = GetComponent<PlayerDamageNumbersView>();
 
             _playerStatsView.Initialize();
             _animationsView.Initialize();
             _playerCameraView.Initialize();
             _playerUIStatusView.Initialize();
             _playerGraphicsView.Initialize();
+            _playerDamageNumbersView.Initialize();
         }
 
         /// <summary>

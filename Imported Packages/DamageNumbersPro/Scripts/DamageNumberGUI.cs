@@ -189,7 +189,7 @@ namespace DamageNumbersPro
         public override void SetPosition(Vector3 newPosition)
         {
             GetReferencesIfNecessary();
-            myRect.anchoredPosition3D = newPosition;
+            position = myRect.anchoredPosition3D = newPosition;
         }
         public override void SetAnchoredPosition(Transform rectParent, Vector2 anchoredPosition)
         {

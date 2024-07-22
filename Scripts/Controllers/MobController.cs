@@ -8,6 +8,7 @@
 using Brotato_Clone.Models;
 using Brotato_Clone.Views;
 using DamageNumbersPro;
+using System.Collections;
 using UnityEngine;
 
 namespace Brotato_Clone.Controllers
@@ -52,6 +53,33 @@ namespace Brotato_Clone.Controllers
             EventManager.Subscribe(WaveEvent.WaveEnd, OnWaveEnd);
 
             Invoke("Spawn", 1f);
+        }
+
+        private bool _isPlayerInRange = false;
+
+        private void Update()
+        {
+            float distanceToPlayer = Vector2.Distance(_player.position, transform.position);
+
+            if (distanceToPlayer < 0.2f && !_isPlayerInRange)
+            {
+                _isPlayerInRange = true;
+                StartCoroutine(TriggerDamageEvent());
+            }
+            else if (distanceToPlayer >= 0.2f && _isPlayerInRange)
+            {
+                _isPlayerInRange = false;
+                StopCoroutine(TriggerDamageEvent());
+            }
+        }
+
+        private IEnumerator TriggerDamageEvent()
+        {
+            while (_isPlayerInRange)
+            {
+                EventManager.TriggerEvent(PlayerEvent.PlayerTakeDamage, 3);
+                yield return new WaitForSeconds(0.8f);
+            }
         }
 
         private void OnWaveEnd()

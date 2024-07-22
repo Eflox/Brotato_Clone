@@ -35,6 +35,12 @@ namespace DamageNumbersPro
         [Tooltip("Keeps the screen-size consistent accross different distances.")]
         public bool consistentScreenSize = false;
         public DistanceScalingSettings distanceScalingSettings = new DistanceScalingSettings(0);
+        [Tooltip("Scales the popup with the camera's field of view to keep it's size consistent.")]
+        public bool scaleWithFov = false;
+        [Tooltip("The default field of view, where the popup will be at it's default scale.")]
+        public float defaultFov = 60f;
+        [Tooltip("The camera whose field of view the popup will react to.")]
+        public Camera fovCamera;
         [Tooltip("Override the camera looked at and scaled for.\nIf this set to None the Main Camera will be used.")]
         public Transform cameraOverride;
         #endregion
@@ -270,6 +276,7 @@ namespace DamageNumbersPro
 
         //3D:
         Transform targetCamera;
+        Camera targetFovCamera;
         float simulatedScale;
 
         //Destruction:
@@ -335,7 +342,7 @@ namespace DamageNumbersPro
         public void UpdateDamageNumber(float delta, float time)
         {
             //Check activity.
-            if(gameObject.activeInHierarchy == false)
+            if(isActiveAndEnabled == false)
             {
                 startTime += delta;
                 startLifeTime += delta;
@@ -1301,6 +1308,23 @@ namespace DamageNumbersPro
                 {
                     targetCamera = Camera.current.transform;
                 }
+
+                //Scale with FOV:
+                if (scaleWithFov)
+                {
+                    if (fovCamera != null)
+                    {
+                        targetFovCamera = fovCamera;
+                    }
+                    else if (Camera.main != null)
+                    {
+                        targetFovCamera = Camera.main;
+                    }
+                    else if (Camera.current != null)
+                    {
+                        targetFovCamera = Camera.current;
+                    }
+                }
             }
 
             //Scale:
@@ -2029,7 +2053,7 @@ namespace DamageNumbersPro
 
         public virtual void SetPosition(Vector3 newPosition)
         {
-            transform.position = newPosition;
+            position = transform.position = newPosition;
         }
 
         /// <summary>
@@ -2096,6 +2120,17 @@ namespace DamageNumbersPro
         #endregion
 
         #region Spam Control
+        /// <summary>
+        /// Use this function to change the spam group of the popup.
+        /// Using the public spamGroup variable will also work within the spawn frame.
+        /// </summary>
+        public void SetSpamGroup(string newSpamGroup)
+        {
+            RemoveFromDictionary();
+            spamGroup = newSpamGroup;
+            AddToDictionary();
+        }
+
         void AddToDictionary()
         {
             if (spamGroup != "")
@@ -2568,6 +2603,13 @@ namespace DamageNumbersPro
                     }
                 }
 
+                //FOV Scaling.
+                if (scaleWithFov)
+                {
+                    lastScaleFactor *= targetFovCamera.fieldOfView / defaultFov;
+                }
+
+                //Apply scale.
                 appliedScale *= lastScaleFactor;
                 simulatedScale = appliedScale.x;
 

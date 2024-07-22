@@ -15,6 +15,8 @@ namespace Brotato_Clone.Models
         public void OnTimer1()
         {
             Debug.Log("Test Attribute Timer Called");
+            EventManager.TriggerEvent(PlayerEvent.PlayerHeal, 1);
+            EventManager.TriggerEvent(PlayerEvent.PlayerTakeDamage, 1);
         }
     }
 }

@@ -37,6 +37,8 @@ namespace Brotato_Clone.Controllers
         {
             //EventManager.Subscribe<IDrop>(PlayerEvent.PlayerPickupDrop, OnDropPickup);
             EventManager.Subscribe<int>(PlayerEvent.PlayerPayed, OnPlayerPayed);
+            EventManager.Subscribe<int>(PlayerEvent.PlayerTakeDamage, OnTakeDamage);
+            EventManager.Subscribe<int>(PlayerEvent.PlayerHeal, OnHeal);
         }
 
         /// <summary>
@@ -117,6 +119,18 @@ namespace Brotato_Clone.Controllers
         #endregion Public Methods
 
         #region Private Methods
+
+        private void OnTakeDamage(int damage)
+        {
+            _playerStats.CurrentHP -= damage;
+            EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
+        }
+
+        private void OnHeal(int amount)
+        {
+            _playerStats.CurrentHP += amount;
+            EventManager.TriggerEvent(PlayerEvent.PlayerStatsChanged, _playerStats);
+        }
 
         private void OnPlayerPayed(int amount)
         {
