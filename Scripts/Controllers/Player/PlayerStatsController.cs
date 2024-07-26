@@ -26,6 +26,9 @@ namespace Brotato_Clone.Controllers
         [SerializeField]
         private PlayerStats _playerStats;
 
+        [SerializeField]
+        private PlayerItemsController _playerItemsController;
+
         #endregion Fields
 
         #region Public Methods
