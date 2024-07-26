@@ -124,8 +124,6 @@ namespace Brotato_Clone.Controllers
             _playerMovementController.StartMovement(stats.Speed[StatType.TotalVisible], _playerObject.transform);
             _playerPickupController.StartPickupSearch(_playerObject);
             _playerAllWeaponsController.LoadWeapons(_playerItemsController.GetWeapons(), _playerObject.transform);
-
-            _playerItemsController.Ingame = true;
         }
 
         private void OnPlayerDead()
@@ -144,7 +142,6 @@ namespace Brotato_Clone.Controllers
             _playerMovementController.StopMovement();
             _playerPickupController.StopSearch();
             _playerLevelUpMenuController.ShowMenu(_playerStatsController.GetStats().LevelsGainedDuringWave);
-            _playerItemsController.Ingame = false;
         }
 
         private void OnStatsChanged(PlayerStats stats)

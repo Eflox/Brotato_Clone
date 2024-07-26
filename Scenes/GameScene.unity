@@ -5152,6 +5152,7 @@ GameObject:
   - component: {fileID: 541956808}
   - component: {fileID: 541956810}
   - component: {fileID: 541956811}
+  - component: {fileID: 541956812}
   m_Layer: 0
   m_Name: PlayerHandler
   m_TagString: Untagged
@@ -5264,7 +5265,6 @@ MonoBehaviour:
     BasePrice: 0
     Limit: 0
     Count: 0
-  Ingame: 0
 --- !u!114 &541956795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5336,6 +5336,7 @@ MonoBehaviour:
     SupportWeapons: 0
     ExplosiveWeapons: 0
     ToolWeapons: 0
+  _playerItemsController: {fileID: 0}
 --- !u!114 &541956796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5539,6 +5540,18 @@ MonoBehaviour:
   _dealDamageNumber: {fileID: 0}
   _dealCritDamageNumber: {fileID: 0}
   _playerTransform: {fileID: 1539324854}
+--- !u!114 &541956812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541956786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbafee51d26de24387d231f4df4fb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &550984083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8522793275646340086, guid: d86f70d943b504e428caccead98baacd, type: 3}
